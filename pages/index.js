@@ -1,6 +1,3 @@
-import Page from "../components/Page.js";
-import Cat from "../svgs/cat.svg";
-
-const Index = () => <Page>"yolo"</Page>;
+const Index = () => <div>"yolo"</div>;
 
 export default Index;

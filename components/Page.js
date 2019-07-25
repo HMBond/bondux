@@ -1,4 +1,4 @@
-import { ThemeProvider, createGlobalStyle } from "styled-components";
+import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 import Nav from "./Nav.js";
 import Meta from "./Meta.js";
 import Logo from "./styles/Logo.js";
@@ -37,15 +37,20 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+const StyledPage = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 const Page = props => (
   <ThemeProvider theme={theme}>
-    <div>
+    <StyledPage>
       <Meta />
       <GlobalStyle />
       <Nav />
       <Logo />
       <div>{props.children}</div>
-    </div>
+    </StyledPage>
   </ThemeProvider>
 );
 

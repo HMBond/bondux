@@ -3,7 +3,7 @@ import LogoIcon from "../../static/bondux.svg";
 
 const Logo = styled(LogoIcon)`
   max-width: 500px;
-  margin: auto;
+  align-self: center;
 `;
 
 export default Logo;
