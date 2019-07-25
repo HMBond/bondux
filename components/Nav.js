@@ -1,42 +1,49 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import Link from "next/link";
-import MenuSvg from "../static/menu-toggle.svg";
+import NavSvg from "../static/nav-toggle.svg";
 
-const NavPage = styled.div`
+const NavBase = styled.div`
+  display: flex;
+  justify-content: center;
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
+  opacity: ${props => (props.open ? "1" : "0")};
+  transition: opacity 0.5s ease-in-out;
 `;
 
-const Menu = styled.div`
+const NavMenu = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 75vh;
-  overflow: scroll;
-  margin-left: 25px;
-  margin-top: 25px;
+  flex-wrap: nowrap;
+  overflow-y: auto;
+  margin: 50px auto;
 `;
 
-const MenuItem = styled.a`
+const NavItem = styled.span`
+  font-family: "DejaVu Serif";
+  color: white;
+  font-size: 1.5em;
   width: 250px;
   padding: 5px;
-  background: blue;
+  margin: 10px;
 `;
 
-const MenuToggle = styled.div`
+const NavToggleBase = styled.div`
   position: fixed;
-  bottom: 10px;
-  left: 10px;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
 `;
 
-const MenuToggleIcon = styled(MenuSvg)`
+const NavToggleIcon = styled(NavSvg)`
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  bottom: 20px;
+  left: 20px;
   width: 30px;
   height: 30px;
   fill: white;
@@ -45,13 +52,19 @@ const MenuToggleIcon = styled(MenuSvg)`
   transition: transform 0.3s ease-in-out;
 `;
 
-const MenuToggleBall = styled.div`
-  width: 50px;
-  height: 50px;
+const NavToggleBall = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: ${props => (props.open ? "0 0 -250vh -250vh" : "10px")};
+  width: ${props => (props.open ? "500vh" : "50px")};
+  height: ${props => (props.open ? "500vh" : "50px")};
   border-radius: 50%;
   background-color: ${props => (props.open ? "orange" : "#4a4a4a")};
-  transform: ${props => (props.open ? "scale(30)" : "scale(1)")};
-  transition: transform 0.5s ease-in-out, background-color 0.2s ease-in;
+  ${props =>
+    props.open
+      ? "transition: all 0.5s ease-in-out, background-color 0.2s linear"
+      : "transition: all 0.5s ease-in-out, background-color 0.2s linear 0.5s"};
 `;
 
 class Nav extends Component {
@@ -59,42 +72,36 @@ class Nav extends Component {
     super(props);
 
     this.state = {
-      toggle: false
+      open: false
     };
   }
   onToggleNav = () => {
     this.setState(prevState => ({
-      toggle: !prevState.toggle
+      open: !prevState.open
     }));
-  };
-
-  preventBubbling = e => {
-    e.stopPropagation();
   };
 
   render() {
     return (
       <div>
-        <MenuToggle onClick={this.onToggleNav}>
-          <MenuToggleBall open={this.state.toggle} />
-          <MenuToggleIcon open={this.state.toggle} />
-        </MenuToggle>
-        {this.state.toggle && (
-          <NavPage onClick={this.onToggleNav}>
-            <Menu onClick={this.preventBubbling}>
-              <MenuItem onClick={this.onToggleNav}>hide</MenuItem>
-              <MenuItem onClick={this.onToggleNav}>hide</MenuItem>
-              <MenuItem onClick={this.onToggleNav}>hide</MenuItem>
-              <MenuItem onClick={this.onToggleNav}>hide</MenuItem>
-              <Link href="/">
-                <MenuItem>index</MenuItem>
-              </Link>
-              <Link href="/blog">
-                <MenuItem>blog</MenuItem>
-              </Link>
-            </Menu>
-          </NavPage>
-        )}
+        <NavToggleBase onClick={this.onToggleNav}>
+          <NavToggleBall open={this.state.open} />
+          <NavToggleIcon open={this.state.open} />
+        </NavToggleBase>
+        <NavBase onClick={this.onToggleNav} open={this.state.open}>
+          <NavMenu>
+            <NavItem>hide</NavItem>
+            <NavItem>hide</NavItem>
+            <NavItem>hide</NavItem>
+            <NavItem>hide</NavItem>
+            <Link href="/">
+              <NavItem>index</NavItem>
+            </Link>
+            <Link href="/blog">
+              <NavItem>blog</NavItem>
+            </Link>
+          </NavMenu>
+        </NavBase>
       </div>
     );
   }

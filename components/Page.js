@@ -34,6 +34,7 @@ const GlobalStyle = createGlobalStyle`
     color: ${props => props.theme.black};
     font-size: 1.2em;
     font-family: 'DejaVu Extra Light';
+    margin: 10px;
   }
 `;
 
