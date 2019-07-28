@@ -1,7 +1,6 @@
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 import Nav from "./Nav.js";
 import Meta from "./Meta.js";
-import Logo from "./styles/Logo.js";
 
 const theme = {
   black: "#4A4A4A",
@@ -49,7 +48,6 @@ const Page = props => (
       <Meta />
       <GlobalStyle />
       <Nav />
-      <Logo />
       <div>{props.children}</div>
     </StyledPage>
   </ThemeProvider>
