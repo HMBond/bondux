@@ -33,7 +33,7 @@ const GlobalStyle = createGlobalStyle`
     color: ${props => props.theme.black};
     font-size: 1.2em;
     font-family: 'DejaVu Extra Light';
-    margin: 10px;
+    margin: 0px;
   }
 `;
 
@@ -48,7 +48,7 @@ const Page = props => (
       <Meta />
       <GlobalStyle />
       <Nav />
-      <div>{props.children}</div>
+      {props.children}
     </StyledPage>
   </ThemeProvider>
 );

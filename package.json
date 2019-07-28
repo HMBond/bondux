@@ -1,7 +1,7 @@
 {
   "name": "bondux",
   "version": "1.0.0",
-  "description": "Homepage, blog and portfolio of Mike Bond",
+  "description": "Homepage",
   "main": "index.js",
   "scripts": {
     "dev": "next",
@@ -10,7 +10,7 @@
     "heroku-postbuild": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "HMBond",
+  "author": "Mike Bond",
   "license": "ISC",
   "dependencies": {
     "@svgr/webpack": "^4.3.2",
@@ -20,9 +20,9 @@
     "styled-components": "^4.3.2"
   },
   "devDependencies": {
-    "@babel/core": "*",
-    "babel-plugin-root-import": "*",
-    "babel-plugin-styled-components": "*",
-    "webpack": "*"
+    "@babel/core": "^7.5.5",
+    "babel-plugin-root-import": "^6.4.1",
+    "babel-plugin-styled-components": "^1.10.6",
+    "webpack": "^4.38.0"
   }
 }

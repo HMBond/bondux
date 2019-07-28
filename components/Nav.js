@@ -1,18 +1,30 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import debounce from "lodash/debounce";
 import Link from "next/link";
 import NavSvg from "../static/nav-toggle.svg";
 
-const NavBase = styled.div`
-  display: flex;
-  justify-content: center;
+const NavItems = [
+  { name: "Intro", url: "/" },
+  { name: "Blog", url: "/blog" },
+  { name: "Skills", url: "/skills" },
+  { name: "Hire Me!" }
+];
+
+const NavBase = styled.div``;
+
+const NavPage = styled.div`
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
+  display: flex;
+  justify-content: center;
+  cursor: alias;
   opacity: ${props => (props.open ? "1" : "0")};
   transition: opacity 0.5s ease-in-out;
+  z-index: ${props => (props.open ? "1" : "-1")};
 `;
 
 const NavMenu = styled.div`
@@ -20,16 +32,25 @@ const NavMenu = styled.div`
   flex-direction: column;
   flex-wrap: nowrap;
   overflow-y: auto;
-  margin: 50px auto;
+  margin: auto;
+  width: 250px;
+  user-select: none;
 `;
 
 const NavItem = styled.span`
   font-family: "DejaVu Serif";
   color: white;
   font-size: 1.5em;
-  width: 250px;
-  padding: 5px;
+  width: max-content;
+  padding: 10px;
+  border: solid;
   margin: 10px;
+  cursor: pointer;
+  background-color: ${props =>
+    props.selected ? "rgba(0,0,0,0.2)" : "transparent"};
+  :nth-child(odd) {
+    align-self: flex-end;
+  }
 `;
 
 const NavToggleBase = styled.div`
@@ -48,6 +69,7 @@ const NavToggleIcon = styled(NavSvg)`
   height: 30px;
   fill: white;
   stroke: white;
+  cursor: pointer;
   transform: ${props => (props.open ? "rotate(-540deg)" : "rotate(0deg)")};
   transition: transform 0.3s ease-in-out;
 `;
@@ -72,37 +94,39 @@ class Nav extends Component {
     super(props);
 
     this.state = {
-      open: false
+      open: false,
+      selector: 0
     };
   }
-  onToggleNav = () => {
-    this.setState(prevState => ({
-      open: !prevState.open
-    }));
-  };
+  onToggleNav = debounce(
+    () => {
+      this.setState(prevState => ({
+        open: !prevState.open
+      }));
+    },
+    500,
+    { leading: true, trailing: false }
+  );
 
   render() {
     return (
-      <div>
-        <NavToggleBase onClick={this.onToggleNav}>
-          <NavToggleBall open={this.state.open} />
-          <NavToggleIcon open={this.state.open} />
+      <NavBase>
+        <NavToggleBase>
+          <NavToggleBall open={this.state.open} onClick={this.onToggleNav} />
+          <NavToggleIcon open={this.state.open} onClick={this.onToggleNav} />
         </NavToggleBase>
-        <NavBase onClick={this.onToggleNav} open={this.state.open}>
+        <NavPage open={this.state.open} onClick={this.onToggleNav}>
           <NavMenu>
-            <NavItem>hide</NavItem>
-            <NavItem>hide</NavItem>
-            <NavItem>hide</NavItem>
-            <NavItem>hide</NavItem>
-            <Link href="/">
-              <NavItem>index</NavItem>
-            </Link>
-            <Link href="/blog">
-              <NavItem>blog</NavItem>
-            </Link>
+            {NavItems.map(({ name, url }, index) => (
+              <Link href={url || "/"}>
+                <NavItem selected={this.selectorId == this.state.selector}>
+                  {name}
+                </NavItem>
+              </Link>
+            ))}
           </NavMenu>
-        </NavBase>
-      </div>
+        </NavPage>
+      </NavBase>
     );
   }
 }
