@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import styled from "styled-components";
 import debounce from "lodash/debounce";
-import Link from "next/link";
+import NavItem from "./styles/NavItem";
 import NavSvg from "../static/nav-toggle.svg";
 
 const NavItems = [
@@ -35,22 +35,6 @@ const NavMenu = styled.div`
   margin: auto;
   width: 250px;
   user-select: none;
-`;
-
-const NavItem = styled.span`
-  font-family: "DejaVu Serif";
-  color: white;
-  font-size: 1.5em;
-  width: max-content;
-  padding: 10px;
-  border: solid;
-  margin: 10px;
-  cursor: pointer;
-  background-color: ${props =>
-    props.selected ? "rgba(0,0,0,0.2)" : "transparent"};
-  :nth-child(odd) {
-    align-self: flex-end;
-  }
 `;
 
 const NavToggleBase = styled.div`
@@ -117,12 +101,8 @@ class Nav extends Component {
         </NavToggleBase>
         <NavPage open={this.state.open} onClick={this.onToggleNav}>
           <NavMenu>
-            {NavItems.map(({ name, url }, index) => (
-              <Link href={url || "/"}>
-                <NavItem selected={this.selectorId == this.state.selector}>
-                  {name}
-                </NavItem>
-              </Link>
+            {NavItems.map((item, index) => (
+              <NavItem item={item} key={index} selectable />
             ))}
           </NavMenu>
         </NavPage>

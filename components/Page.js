@@ -42,15 +42,17 @@ const StyledPage = styled.div`
   flex-direction: column;
 `;
 
-const Page = props => (
-  <ThemeProvider theme={theme}>
-    <StyledPage>
-      <Meta />
-      <GlobalStyle />
-      <Nav />
-      {props.children}
-    </StyledPage>
-  </ThemeProvider>
-);
+const Page = props => {
+  return (
+    <ThemeProvider theme={theme}>
+      <StyledPage>
+        <Meta />
+        <GlobalStyle />
+        <Nav />
+        {props.children}
+      </StyledPage>
+    </ThemeProvider>
+  );
+};
 
 export default Page;
