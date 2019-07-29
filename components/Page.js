@@ -29,6 +29,13 @@ const GlobalStyle = createGlobalStyle`
     font-style: normal;
   }
 
+  @font-face {
+    font-family: 'DejaVu Condensed Bold';
+    src: url('/static/DejaVuSansCondensed-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
+
   body {
     color: ${props => props.theme.black};
     font-size: 1.2em;
