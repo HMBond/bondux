@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import styled from "styled-components";
 import NavItemLink from "next/link";
 
-const NavItemButton = styled.span`
+const NavItemButton = styled.div`
   font-family: "DejaVu Serif";
   color: white;
   font-size: 1.5em;
@@ -18,12 +18,12 @@ const NavItemButton = styled.span`
   }
 `;
 
-const NavItem = props => {
-  const { name, url } = props.item;
+const NavItem = ({ item, selected }) => {
+  const { name, url } = item;
   return (
     <Fragment>
       <NavItemLink href={url || "/"}>
-        <NavItemButton>{name}</NavItemButton>
+        <NavItemButton selected={selected}>{name}</NavItemButton>
       </NavItemLink>
     </Fragment>
   );

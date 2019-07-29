@@ -1,6 +1,9 @@
 import { Component } from "react";
+import Context from "./Context";
 import styled from "styled-components";
 import debounce from "lodash/debounce";
+
+import Logo from "./styles/Logo.js";
 import NavItem from "./styles/NavItem";
 import NavSvg from "../static/nav-toggle.svg";
 
@@ -8,7 +11,7 @@ const NavItems = [
   { name: "Intro", url: "/" },
   { name: "Blog", url: "/blog" },
   { name: "Skills", url: "/skills" },
-  { name: "Hire Me!" }
+  { name: "Hire Me!", url: "/contact" }
 ];
 
 const NavBase = styled.div``;
@@ -20,11 +23,11 @@ const NavPage = styled.div`
   bottom: 0;
   right: 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  cursor: alias;
   opacity: ${props => (props.open ? "1" : "0")};
+  pointer-events: ${props => (props.open ? "all" : "none")};
   transition: opacity 0.5s ease-in-out;
-  z-index: ${props => (props.open ? "1" : "-1")};
 `;
 
 const NavMenu = styled.div`
@@ -74,19 +77,14 @@ const NavToggleBall = styled.div`
 `;
 
 class Nav extends Component {
+  static contextType = Context;
   constructor(props) {
     super(props);
-
-    this.state = {
-      open: false,
-      selector: 0
-    };
   }
+
   onToggleNav = debounce(
-    () => {
-      this.setState(prevState => ({
-        open: !prevState.open
-      }));
+    ({ toggleNav }) => {
+      toggleNav();
     },
     500,
     { leading: true, trailing: false }
@@ -94,19 +92,40 @@ class Nav extends Component {
 
   render() {
     return (
-      <NavBase>
-        <NavToggleBase>
-          <NavToggleBall open={this.state.open} onClick={this.onToggleNav} />
-          <NavToggleIcon open={this.state.open} onClick={this.onToggleNav} />
-        </NavToggleBase>
-        <NavPage open={this.state.open} onClick={this.onToggleNav}>
-          <NavMenu>
-            {NavItems.map((item, index) => (
-              <NavItem item={item} key={index} selectable />
-            ))}
-          </NavMenu>
-        </NavPage>
-      </NavBase>
+      <Context.Consumer>
+        {context => (
+          <NavBase>
+            <NavToggleBase>
+              <NavToggleBall
+                open={context.navOpen}
+                onClick={() => this.onToggleNav(context)}
+              />
+              <NavToggleIcon
+                open={context.navOpen}
+                onClick={() => this.onToggleNav(context)}
+              />
+            </NavToggleBase>
+            <NavPage
+              open={context.navOpen}
+              onClick={() => this.onToggleNav(context)}
+            >
+              <Logo extra light />
+              <NavMenu>
+                {NavItems.map(
+                  (item, index) =>
+                    context.createSelectorId(item.url) && (
+                      <NavItem
+                        item={item}
+                        key={index}
+                        selected={index === context.selector}
+                      />
+                    )
+                )}
+              </NavMenu>
+            </NavPage>
+          </NavBase>
+        )}
+      </Context.Consumer>
     );
   }
 }
