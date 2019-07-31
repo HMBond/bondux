@@ -14,6 +14,8 @@ const NavItems = [
   { name: "Hire Me!", url: "/contact" }
 ];
 
+const ICON_SIZE = 30;
+
 const NavBase = styled.div``;
 
 const NavPage = styled.div`
@@ -42,33 +44,33 @@ const NavMenu = styled.div`
 
 const NavToggleBase = styled.div`
   position: fixed;
-  bottom: 0;
-  left: 0;
   top: 0;
   right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 `;
 
 const NavToggleIcon = styled(NavSvg)`
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  width: 30px;
-  height: 30px;
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: ${ICON_SIZE}px;
   fill: white;
-  stroke: white;
   cursor: pointer;
   transform: ${props => (props.open ? "rotate(-540deg)" : "rotate(0deg)")};
   transition: transform 0.3s ease-in-out;
 `;
 
 const NavToggleBall = styled.div`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  margin: ${props => (props.open ? "0 0 -250vh -250vh" : "10px")};
-  width: ${props => (props.open ? "500vh" : "50px")};
-  height: ${props => (props.open ? "500vh" : "50px")};
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
+  transform: ${props => (props.open ? "scale(50)" : "none")};
   background-color: ${props => (props.open ? "orange" : "#4a4a4a")};
   ${props =>
     props.open
