@@ -5,7 +5,7 @@ import debounce from "lodash/debounce";
 
 import Logo from "./styles/Logo.js";
 import NavItem from "./styles/NavItem";
-import NavSvg from "../static/nav-toggle.svg";
+import NavButton from "./styles/NavButtons";
 
 const NavItems = [
   { name: "Intro", url: "/" },
@@ -14,9 +14,16 @@ const NavItems = [
   { name: "Hire Me!", url: "/contact" }
 ];
 
-const ICON_SIZE = 30;
-
-const NavBase = styled.div``;
+const NavBase = styled.div`
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+`;
 
 const NavPage = styled.div`
   position: fixed;
@@ -42,42 +49,6 @@ const NavMenu = styled.div`
   user-select: none;
 `;
 
-const NavToggleBase = styled.div`
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-`;
-
-const NavToggleIcon = styled(NavSvg)`
-  position: fixed;
-  bottom: 10px;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: ${ICON_SIZE}px;
-  fill: white;
-  cursor: pointer;
-  transform: ${props => (props.open ? "rotate(-540deg)" : "rotate(0deg)")};
-  transition: transform 0.3s ease-in-out;
-`;
-
-const NavToggleBall = styled.div`
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  transform: ${props => (props.open ? "scale(50)" : "none")};
-  background-color: ${props => (props.open ? "orange" : "#4a4a4a")};
-  ${props =>
-    props.open
-      ? "transition: all 0.5s ease-in-out, background-color 0.2s linear"
-      : "transition: all 0.5s ease-in-out, background-color 0.2s linear 0.5s"};
-`;
-
 class Nav extends Component {
   static contextType = Context;
   constructor(props) {
@@ -97,16 +68,11 @@ class Nav extends Component {
       <Context.Consumer>
         {context => (
           <NavBase>
-            <NavToggleBase>
-              <NavToggleBall
-                open={context.navOpen}
-                onClick={() => this.onToggleNav(context)}
-              />
-              <NavToggleIcon
-                open={context.navOpen}
-                onClick={() => this.onToggleNav(context)}
-              />
-            </NavToggleBase>
+            <NavButton
+              open={context.navOpen}
+              onClick={() => this.onToggleNav(context)}
+              type={"menu"}
+            />
             <NavPage
               open={context.navOpen}
               onClick={() => this.onToggleNav(context)}
