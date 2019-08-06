@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import styled from "styled-components";
 import NavItemLink from "next/link";
 
@@ -24,14 +23,14 @@ const NavItemButton = styled.div`
   }
 `;
 
-const NavItem = ({ item, selected }) => {
+const NavItem = ({ item, selected, select }) => {
   const { name, url } = item;
   return (
-    <Fragment>
-      <NavItemLink href={url || "/"}>
-        <NavItemButton selected={selected}>{name}</NavItemButton>
-      </NavItemLink>
-    </Fragment>
+    <NavItemLink href={url || "/"}>
+      <NavItemButton selected={selected} onMouseOver={() => select()}>
+        {name}
+      </NavItemButton>
+    </NavItemLink>
   );
 };
 

@@ -81,11 +81,12 @@ class Nav extends Component {
               <NavMenu>
                 {NavItems.map(
                   (item, index) =>
-                    context.createSelectorId(item.url) && (
+                    context.createSelectable(item.url) && (
                       <NavItem
                         item={item}
                         key={index}
                         selected={index === context.selector}
+                        select={() => context.setSelector(index)}
                       />
                     )
                 )}

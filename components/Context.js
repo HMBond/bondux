@@ -12,7 +12,7 @@ export class ContextProvider extends Component {
     let selectorCollection = [];
     this.state = {
       selector: 0,
-      createSelectorId: url => {
+      createSelectable: url => {
         if (!selectorCollection.includes(url)) {
           selectorCollection.push(url);
         }
