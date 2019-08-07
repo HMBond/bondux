@@ -1,33 +1,62 @@
 import styled, { css } from "styled-components";
 
-import NavSvg from "../../static/nav-toggle.svg";
+import NavToggleSvg from "../../static/nav-toggle.svg";
+import NavForwardSvg from "../../static/nav-forward.svg";
+
+const iconSize = "30px";
 
 const NavButtonBase = styled.div`
+  display: flex;
+
   ${props =>
     !props.open &&
     css`
+      max-width: 50px;
       :hover {
-        > div {
+        > [class*="NavBall"] {
           transform: scale(1.2);
         }
       }
     `}
 `;
 
-const NavToggleIcon = styled(NavSvg)`
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 30px;
+const NavIconContainer = styled.div`
+  position: relative;
+  left: -40px;
+  top: 10px;
+  width: 0;
+`;
+
+const NavBackIcon = styled(NavForwardSvg)`
+  width: ${iconSize};
+  height: ${iconSize};
+  fill: white;
+  cursor: pointer;
+  transform: ${props =>
+    props.open ? "rotate(-540deg + 180deg)" : "rotate(180deg)"};
+  transition: transform 0.3s ease-in-out;
+`;
+
+const NavToggleIcon = styled(NavToggleSvg)`
+  width: ${iconSize};
+  height: ${iconSize};
   fill: white;
   cursor: pointer;
   transform: ${props => (props.open ? "rotate(-540deg)" : "rotate(0deg)")};
   transition: transform 0.3s ease-in-out;
 `;
 
-const NavToggleBall = styled.div`
+const NavForwardIcon = styled(NavForwardSvg)`
+  width: ${iconSize};
+  height: ${iconSize};
+  fill: white;
+  cursor: pointer;
+  transform: ${props => (props.open ? "rotate(-540deg)" : "rotate(0deg)")};
+  transition: transform 0.3s ease-in-out;
+`;
+
+const NavBall = styled.div`
+  display: block;
   margin-bottom: 10px;
   width: 50px;
   height: 50px;
@@ -40,16 +69,35 @@ const NavToggleBall = styled.div`
       : "transition: all 0.5s ease-in-out, background-color 0.2s linear 0.5s"};
 `;
 
-const NavButton = ({ type, open, onClick }) => {
-  switch (type) {
-    case "menu":
-      return (
-        <NavButtonBase open={open}>
-          <NavToggleBall open={open} onClick={() => onClick()} />
-          <NavToggleIcon open={open} onClick={() => onClick()} />
-        </NavButtonBase>
-      );
-  }
+export const NavBackButton = ({ onClick }) => {
+  return (
+    <NavButtonBase>
+      <NavBall onClick={() => onClick()} />
+      <NavIconContainer>
+        <NavBackIcon onClick={() => onClick()} />
+      </NavIconContainer>
+    </NavButtonBase>
+  );
 };
 
-export default NavButton;
+export const NavToggleButton = ({ open, onClick }) => {
+  return (
+    <NavButtonBase open={open}>
+      <NavBall open={open} onClick={() => onClick()} />
+      <NavIconContainer>
+        <NavToggleIcon open={open} onClick={() => onClick()} />
+      </NavIconContainer>
+    </NavButtonBase>
+  );
+};
+
+export const NavForwardButton = ({ onClick }) => {
+  return (
+    <NavButtonBase>
+      <NavBall onClick={() => onClick()} />
+      <NavIconContainer>
+        <NavForwardIcon onClick={() => onClick()} />
+      </NavIconContainer>
+    </NavButtonBase>
+  );
+};

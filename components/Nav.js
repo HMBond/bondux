@@ -5,7 +5,11 @@ import debounce from "lodash/debounce";
 
 import Logo from "./styles/Logo.js";
 import NavItem from "./styles/NavItem";
-import NavButton from "./styles/NavButtons";
+import {
+  NavToggleButton,
+  NavBackButton,
+  NavForwardButton
+} from "./styles/NavButtons";
 
 const NavItems = [
   { name: "Intro", url: "/" },
@@ -17,12 +21,12 @@ const NavItems = [
 const NavBase = styled.div`
   position: fixed;
   top: 0;
-  right: 0;
+  right: 10px;
   bottom: 0;
-  left: 0;
+  left: 10px;
   display: flex;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: space-between;
 `;
 
 const NavPage = styled.div`
@@ -68,11 +72,12 @@ class Nav extends Component {
       <Context.Consumer>
         {context => (
           <NavBase>
-            <NavButton
+            <NavBackButton />
+            <NavToggleButton
               open={context.navOpen}
               onClick={() => this.onToggleNav(context)}
-              type={"menu"}
             />
+            <NavForwardButton />
             <NavPage
               open={context.navOpen}
               onClick={() => this.onToggleNav(context)}
