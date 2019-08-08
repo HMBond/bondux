@@ -1,7 +1,6 @@
 import { Component } from "react";
 import Context from "./Context";
 import styled from "styled-components";
-import debounce from "lodash/debounce";
 
 import Logo from "./styles/Logo.js";
 import NavItem from "./styles/NavItem";
@@ -10,13 +9,6 @@ import {
   NavBackButton,
   NavForwardButton
 } from "./styles/NavButtons";
-
-const NavItems = [
-  { name: "Intro", url: "/" },
-  { name: "Blog", url: "/blog" },
-  { name: "Skills", url: "/skills" },
-  { name: "Hire Me!", url: "/contact" }
-];
 
 const NavBase = styled.div`
   position: fixed;
@@ -59,42 +51,34 @@ class Nav extends Component {
     super(props);
   }
 
-  onToggleNav = debounce(
-    ({ toggleNav }) => {
-      toggleNav();
-    },
-    500,
-    { leading: true, trailing: false }
-  );
-
   render() {
     return (
       <Context.Consumer>
         {context => (
           <NavBase>
-            <NavBackButton />
+            <NavBackButton hidden={context.nav.currentPage === "home"} />
             <NavToggleButton
-              open={context.navOpen}
-              onClick={() => this.onToggleNav(context)}
+              open={context.nav.open}
+              onClick={() => context.nav.toggleNav()}
             />
-            <NavForwardButton />
+            <NavForwardButton
+              hidden={context.nav.currentPage === "contact"}
+              onClick={() => console.log("go forward")}
+            />
             <NavPage
-              open={context.navOpen}
-              onClick={() => this.onToggleNav(context)}
+              open={context.nav.open}
+              onClick={() => context.nav.toggleNav()}
             >
               <Logo extra light />
               <NavMenu>
-                {NavItems.map(
-                  (item, index) =>
-                    context.createSelectable(item.url) && (
-                      <NavItem
-                        item={item}
-                        key={index}
-                        selected={index === context.selector}
-                        select={() => context.setSelector(index)}
-                      />
-                    )
-                )}
+                {context.content.map((item, index) => (
+                  <NavItem
+                    item={item}
+                    key={index}
+                    selected={index === context.selector.position}
+                    select={() => context.selector.setPosition(index)}
+                  />
+                ))}
               </NavMenu>
             </NavPage>
           </NavBase>

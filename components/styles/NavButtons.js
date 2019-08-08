@@ -6,7 +6,7 @@ import NavForwardSvg from "../../static/nav-forward.svg";
 const iconSize = "30px";
 
 const NavButtonBase = styled.div`
-  display: flex;
+  display: ${props => (props.hidden ? "none" : "flex")};
 
   ${props =>
     !props.open &&
@@ -69,9 +69,9 @@ const NavBall = styled.div`
       : "transition: all 0.5s ease-in-out, background-color 0.2s linear 0.5s"};
 `;
 
-export const NavBackButton = ({ onClick }) => {
+export const NavBackButton = ({ onClick, hidden }) => {
   return (
-    <NavButtonBase>
+    <NavButtonBase hidden={hidden}>
       <NavBall onClick={() => onClick()} />
       <NavIconContainer>
         <NavBackIcon onClick={() => onClick()} />
@@ -91,9 +91,9 @@ export const NavToggleButton = ({ open, onClick }) => {
   );
 };
 
-export const NavForwardButton = ({ onClick }) => {
+export const NavForwardButton = ({ onClick, hidden }) => {
   return (
-    <NavButtonBase>
+    <NavButtonBase hidden={hidden}>
       <NavBall onClick={() => onClick()} />
       <NavIconContainer>
         <NavForwardIcon onClick={() => onClick()} />
