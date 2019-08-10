@@ -38,7 +38,6 @@ export class ContextProvider extends Component {
       },
       nav: {
         open: false,
-        currentPage: "home",
         toggleNav: debounce(
           () =>
             this.setState(prevstate => ({

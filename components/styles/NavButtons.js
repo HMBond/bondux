@@ -61,7 +61,7 @@ const NavBall = styled.div`
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  transform: ${props => (props.open ? "scale(50)" : "none")};
+  transform: ${props => (props.open ? "scale(100)" : "none")};
   background-color: ${props => (props.open ? "orange" : "#4a4a4a")};
   ${props =>
     props.open

@@ -49,6 +49,25 @@ class Nav extends Component {
   static contextType = Context;
   constructor(props) {
     super(props);
+    this.state = {
+      currentPage: null
+    };
+  }
+
+  checkLocation = () => {
+    this.setState(prevstate => {
+      if (prevstate.currentPage !== window.location.pathname) {
+        return { currentPage: window.location.pathname };
+      }
+    });
+  };
+
+  componentDidMount() {
+    this.checkLocation();
+  }
+
+  componentDidUpdate() {
+    this.checkLocation();
   }
 
   render() {
@@ -56,13 +75,13 @@ class Nav extends Component {
       <Context.Consumer>
         {context => (
           <NavBase>
-            <NavBackButton hidden={context.nav.currentPage === "home"} />
+            <NavBackButton hidden={this.state.currentPage === "/"} />
             <NavToggleButton
               open={context.nav.open}
               onClick={() => context.nav.toggleNav()}
             />
             <NavForwardButton
-              hidden={context.nav.currentPage === "contact"}
+              hidden={this.state.currentPage === "contact"}
               onClick={() => console.log("go forward")}
             />
             <NavPage

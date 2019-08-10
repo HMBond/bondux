@@ -6,7 +6,7 @@ class SelectorKeyboardControl extends Component {
     super(props);
   }
 
-  KeyUpHandler = e => {
+  keyUpHandler = e => {
     if (e.key == "ArrowUp") {
       this.props.context.selector.setPosition(
         this.props.context.selector.position - 1
@@ -23,11 +23,11 @@ class SelectorKeyboardControl extends Component {
   };
 
   componentDidMount() {
-    document.addEventListener("keyup", this.KeyUpHandler);
+    document.addEventListener("keyup", this.keyUpHandler);
   }
 
   componentWillUnmount() {
-    document.removeEventListener("keyup", this.KeyUpHandler);
+    document.removeEventListener("keyup", this.keyUpHandler);
   }
 
   render() {
