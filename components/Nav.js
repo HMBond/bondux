@@ -1,16 +1,17 @@
 import { Component } from "react";
 import Context from "./Context";
 import styled from "styled-components";
+import Router from "next/router";
+import debounce from "lodash/debounce";
 
 import Logo from "./styles/Logo.js";
 import NavItem from "./styles/NavItem";
-import {
-  NavToggleButton,
-  NavBackButton,
-  NavForwardButton
-} from "./styles/NavButtons";
+import { NavBackIcon, NavForwardIcon, NavToggleIcon } from "./styles/NavIcons";
+import { NavButton } from "./styles/NavButton";
 
 const NavBase = styled.div`
+  opacity: ${props => (props.ssrReady ? "1" : "0")};
+  transition: opacity 0.3s ease-in;
   position: fixed;
   top: 0;
   right: 10px;
@@ -50,19 +51,29 @@ class Nav extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentPage: null
+      ssrReady: false,
+      currentPage: null,
+      properlyClosed: true
     };
   }
 
   checkLocation = () => {
     this.setState(prevstate => {
-      if (prevstate.currentPage !== window.location.pathname) {
-        return { currentPage: window.location.pathname };
+      if (prevstate.currentPage !== Router.router.pathname) {
+        return { ...prevstate, currentPage: Router.router.pathname };
       }
     });
   };
 
+  setProperlyClosed = debounce(properlyClosed => {
+    this.setState(prevstate => ({
+      ...prevstate,
+      properlyClosed: properlyClosed
+    }));
+  }, 500);
+
   componentDidMount() {
+    this.setState(prevstate => ({ ...prevstate, ssrReady: true }));
     this.checkLocation();
   }
 
@@ -71,22 +82,43 @@ class Nav extends Component {
   }
 
   render() {
+    const { ssrReady, currentPage, properlyClosed } = this.state;
+
     return (
       <Context.Consumer>
         {context => (
-          <NavBase>
-            <NavBackButton hidden={this.state.currentPage === "/"} />
-            <NavToggleButton
+          <NavBase ssrReady={ssrReady}>
+            <NavButton
+              hidden={currentPage === "/"}
+              onClick={() => Router.back()}
+              order={1}
+            >
+              <NavBackIcon />
+            </NavButton>
+            <NavButton
+              hidden={currentPage === "/contact"}
+              onClick={() => context.nav.forward()}
+              order={3}
+            >
+              <NavForwardIcon />
+            </NavButton>
+            <NavButton
               open={context.nav.open}
-              onClick={() => context.nav.toggleNav()}
-            />
-            <NavForwardButton
-              hidden={this.state.currentPage === "contact"}
-              onClick={() => console.log("go forward")}
-            />
+              properlyClosed={properlyClosed}
+              onClick={() => {
+                this.setProperlyClosed(false);
+                context.nav.setOpen(true);
+              }}
+              order={2}
+            >
+              <NavToggleIcon open={context.nav.open} />
+            </NavButton>
             <NavPage
               open={context.nav.open}
-              onClick={() => context.nav.toggleNav()}
+              onClick={() => {
+                this.setProperlyClosed(true);
+                context.nav.setOpen(false);
+              }}
             >
               <Logo extra light />
               <NavMenu>

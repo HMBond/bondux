@@ -7,18 +7,19 @@ class SelectorKeyboardControl extends Component {
   }
 
   keyUpHandler = e => {
+    const { selector, nav } = this.props.context;
     if (e.key == "ArrowUp") {
-      this.props.context.selector.setPosition(
-        this.props.context.selector.position - 1
-      );
+      selector.setPosition(position - 1);
     } else if (e.key == "ArrowDown") {
-      this.props.context.selector.setPosition(
-        this.props.context.selector.position + 1
-      );
+      selector.setPosition(position + 1);
+    } else if (e.key == "ArrowLeft") {
+      nav.back();
+    } else if (e.key == "ArrowRight") {
+      nav.forward();
     } else if (e.key == "Enter") {
-      this.props.context.selector.go();
+      go();
     } else if (e.key == "Escape") {
-      this.props.context.nav.toggleNav();
+      nav.setOpen(!nav.open);
     }
   };
 

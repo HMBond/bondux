@@ -31,20 +31,25 @@ export class ContextProvider extends Component {
             Router.push(content[prevstate.selector.position].url);
             return {
               ...prevstate,
-              nav: { ...prevstate.nav, open: false }
+              nav: {
+                ...prevstate.nav,
+                open: false
+              }
             };
           });
         }
       },
       nav: {
         open: false,
-        toggleNav: debounce(
-          () =>
+        back: () => Router.back(),
+        forward: () => console.log("next page"),
+        setOpen: debounce(
+          open =>
             this.setState(prevstate => ({
               ...prevstate,
               nav: {
                 ...prevstate.nav,
-                open: !prevstate.nav.open
+                open: open
               }
             })),
           400,
@@ -53,6 +58,10 @@ export class ContextProvider extends Component {
       },
       content
     };
+  }
+
+  componentDidUpdate() {
+    window.context = this.state;
   }
 
   render() {
