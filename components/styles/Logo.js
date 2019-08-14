@@ -16,6 +16,20 @@ const StyledLogo = styled(({ extra, light, ...rest }) => (
   .bondux_svg__svg-dark-stroke {
     stroke: ${props => (props.light ? "white" : "#4A4A49")};
   }
+  .bondux_svg__stroke-animation {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: dash 1s ease-in 1s forwards normal;
+  }
+
+  @keyframes dash {
+    from {
+      stroke-dashoffset: 100;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
 `;
 
 const Logo = props => {
