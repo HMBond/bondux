@@ -90,6 +90,7 @@ class Nav extends Component {
           <NavBase ssrReady={ssrReady}>
             <NavButton
               hidden={currentPage === "/"}
+              properlyClosed={properlyClosed}
               onClick={() => Router.back()}
               order={1}
             >
@@ -97,6 +98,7 @@ class Nav extends Component {
             </NavButton>
             <NavButton
               hidden={currentPage === "/contact"}
+              properlyClosed={properlyClosed}
               onClick={() => context.nav.forward()}
               order={3}
             >
