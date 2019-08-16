@@ -40,9 +40,9 @@ export class ContextProvider extends Component {
         }
       },
       nav: {
-        open: false,
         back: () => Router.back(),
         forward: () => console.log("next page"),
+        open: false,
         setOpen: debounce(
           open =>
             this.setState(prevstate => ({

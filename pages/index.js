@@ -1,6 +1,10 @@
-import styled from "styled-components";
+import { Fragment } from "react";
 import Logo from "../components/styles/Logo.js";
 
-const Index = () => <Logo />;
+const Index = () => (
+  <Fragment>
+    <Logo />
+  </Fragment>
+);
 
 export default Index;

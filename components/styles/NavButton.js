@@ -56,7 +56,7 @@ export const NavButton = ({
       hidden={hidden}
       open={open}
       order={order}
-      onMouseMove={() => {
+      onMouseEnter={() => {
         if (properlyClosed) {
           setHover(true);
         }
