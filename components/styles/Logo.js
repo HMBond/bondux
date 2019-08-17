@@ -38,35 +38,45 @@ const StyledLogo = styled(({ extra, light, ...rest }) => (
 class Logo extends Component {
   constructor(props) {
     super(props);
-    this.logoTween = null;
+    this.eyeTween = null;
   }
-  moveEye = debounce(
-    (className, left, top) => {
-      this.logoTween.to(className, 0.5, {
-        rotation: (Math.atan2(top, left) * 180) / Math.PI,
-        transformOrigin: "5px 50%"
-      });
+
+  moveEyes = debounce(
+    (x, y) => {
+      this.eyeTween.staggerTo(
+        [".bondux_svg__right-eye", ".bondux_svg__left-eye"],
+        0.5,
+        {
+          rotation: (Math.atan2(y, x) * 180) / Math.PI,
+          transformOrigin: "5px 50%"
+        }
+      );
     },
     100,
     { leading: false, trailing: true }
   );
 
+  googlyEyes = event => {
+    let x = event.pageX;
+    let y = event.pageY;
+    let leftEye = document.getElementsByClassName("bondux_svg__left-eye")[0];
+    let rightEye = document.getElementsByClassName("bondux_svg__right-eye")[0];
+    let offsetsLeft = leftEye.getBoundingClientRect();
+    let offsetsRight = rightEye.getBoundingClientRect();
+    let xLeft = x - offsetsLeft.left;
+    let yLeft = y - offsetsLeft.top;
+    let xRight = x - offsetsRight.left;
+    let yRight = y - offsetsRight.top;
+    this.moveEyes(xRight, yLeft);
+  };
+
   componentDidMount() {
-    this.logoTween = new TimelineLite({ paused: false });
-    document.addEventListener("mousemove", event => {
-      let x = event.pageX;
-      let y = event.pageY;
-      let eye = document.getElementsByClassName("bondux_svg__left-eye")[0];
-      let offsets = eye.getBoundingClientRect();
-      let left = x - offsets.left;
-      let top = y - offsets.top;
-      console.log({ left, top });
-      this.moveEye(".bondux_svg__left-eye", left, top);
-    });
+    this.eyeTween = new TimelineLite();
+    document.addEventListener("mousemove", this.googlyEyes);
   }
 
   componentWillUnmount() {
-    document.removeEventListener("mousemove");
+    document.removeEventListener("mousemove", this.googlyEyes);
   }
 
   render() {
