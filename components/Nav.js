@@ -13,7 +13,6 @@ const NavBase = styled.div`
   opacity: ${props => (props.ssrReady ? "1" : "0")};
   transition: opacity 0.3s ease-in;
   position: fixed;
-  top: 0;
   right: 10px;
   bottom: 0;
   left: 10px;

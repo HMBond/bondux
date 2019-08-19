@@ -12,8 +12,8 @@ class Introduction extends Component {
     const { content } = this.props;
     return (
       <div>
-        {content.map((string, index) => (
-          <div key={index}>{string}</div>
+        {content.map(quote => (
+          <div key={quote.id}>{quote.string}</div>
         ))}
       </div>
     );
