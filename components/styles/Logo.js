@@ -1,7 +1,6 @@
 import { Component } from "react";
 import styled from "styled-components";
 import LogoIcon from "../../static/bondux.svg";
-import { TimelineLite } from "gsap/umd/TweenMax";
 import debounce from "lodash/debounce";
 
 const StyledLogo = styled(({ extra, light, ...rest }) => (
@@ -38,19 +37,18 @@ const StyledLogo = styled(({ extra, light, ...rest }) => (
 class Logo extends Component {
   constructor(props) {
     super(props);
-    this.eyeTween = null;
   }
 
   moveEyes = debounce(
     (x, y) => {
-      this.eyeTween.staggerTo(
-        [".bondux_svg__right-eye", ".bondux_svg__left-eye"],
-        0.5,
-        {
-          rotation: (Math.atan2(y, x) * 180) / Math.PI,
-          transformOrigin: "5px 50%"
-        }
-      );
+      // this.eyeTween.staggerTo(
+      //   [".bondux_svg__right-eye", ".bondux_svg__left-eye"],
+      //   0.5,
+      //   {
+      //     rotation: (Math.atan2(y, x) * 180) / Math.PI,
+      //     transformOrigin: "5px 50%"
+      //   }
+      // );
     },
     100,
     { leading: false, trailing: true }
@@ -71,7 +69,6 @@ class Logo extends Component {
   };
 
   componentDidMount() {
-    this.eyeTween = new TimelineLite();
     document.addEventListener("mousemove", this.googlyEyes);
   }
 
