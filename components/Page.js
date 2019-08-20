@@ -42,6 +42,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'DejaVu Extra Light';
     margin: 0px;
   }
+
+  .overflow-hidden {
+    overflow: hidden;
+  }
 `;
 
 const StyledPage = styled.div`

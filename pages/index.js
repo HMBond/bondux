@@ -7,7 +7,9 @@ const Index = () => (
   <Fragment>
     <Logo />
     <Context.Consumer>
-      {context => <Introduction content={context.content[0].introduction} />}
+      {context => (
+        <Introduction introductionLines={context.content[0].introduction} />
+      )}
     </Context.Consumer>
   </Fragment>
 );
