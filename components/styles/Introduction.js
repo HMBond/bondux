@@ -2,8 +2,15 @@ import { Component } from "react";
 import Link from "next/link";
 import posed from "react-pose";
 import SplitText from "react-pose-text";
+import styled from "styled-components";
+
 import delay from "lodash/debounce";
 
+const TextBox = styled.div`
+  max-width: 400px;
+  text-align: center;
+  margin: auto;
+`;
 const PosedLine = posed.div({
   exit: {
     opacity: "0",
@@ -11,52 +18,52 @@ const PosedLine = posed.div({
   },
   enter: {
     opacity: "1",
-    height: "200px",
+    height: "100%",
     beforeChildren: true,
-    staggerChildren: 40
+    staggerChildren: 20
   }
 });
 
 const charPoses = {
-  exit: { opacity: 0, y: "100%" },
-  enter: { opacity: 1, y: "0" }
+  exit: { opacity: 0 },
+  enter: { opacity: 1 }
 };
 
 class Introduction extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showLineNumber: 0
+      showLine: 0
     };
+
     this.nextLine = () => {
       this.setState(prevstate => {
-        if (
-          prevstate.showLineNumber <
-          this.props.introductionLines.length - 1
-        ) {
-          return { showLineNumber: prevstate.showLineNumber + 1 };
+        if (prevstate.showLine < this.props.introductionLines.length - 1) {
+          return { showLine: prevstate.showLine + 1 };
         } else {
-          return { showLineNumber: prevstate.showLineNumber };
+          return { showLine: prevstate.showLine };
         }
       });
     };
   }
 
   componentDidMount() {
-    delay(this.nextLine, 2000);
+    window.setTimeout(this.nextLine, 3500);
+    window.setTimeout(this.nextLine, 9000);
+    window.setTimeout(this.nextLine, 13000);
+    window.setTimeout(this.nextLine, 17000);
   }
 
   render() {
     const { introductionLines } = this.props;
-    const { showLineNumber } = this.state;
+    const { showLine } = this.state;
     return (
-      <div>
-        <button onClick={this.nextLine}>next</button>
+      <TextBox>
         {introductionLines.map((quote, index) => (
           <PosedLine
             initialPose="exit"
             className="overflow-hidden"
-            pose={index === showLineNumber ? "enter" : "exit"}
+            pose={index === showLine ? "enter" : "exit"}
             key={quote.id}
           >
             <h1>
@@ -64,7 +71,7 @@ class Introduction extends Component {
             </h1>
           </PosedLine>
         ))}
-      </div>
+      </TextBox>
     );
   }
 }
