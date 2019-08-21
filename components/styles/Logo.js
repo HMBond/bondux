@@ -38,16 +38,10 @@ const Path = styled.path`
   }
 `;
 
-const Circle = styled.circle`
-  transform: rotate(${props => props.rotation}deg);
-  transform-origin: ${props => props.cx - props.r / 2}px ${props => props.cy}px;
-  transition: transform 0.4s ease;
-`;
-
 class Logo extends Component {
   constructor(props) {
     super(props);
-    this.state = { leftEyeRotation: 0, rightEyeRotation: 0 };
+    this.state = { leftEyeRotation: 10, rightEyeRotation: 0 };
     this.leftEye = null;
     this.rightEye = null;
   }
@@ -75,8 +69,8 @@ class Logo extends Component {
 
   componentDidMount() {
     document.addEventListener("mousemove", this.googlyEyes);
-    this.leftEye = document.querySelectorAll("circle[class*=Circle]")[0];
-    this.rightEye = document.querySelectorAll("circle[class*=Circle]")[1];
+    this.leftEye = document.querySelector("circle[class=logo-left-eye]");
+    this.rightEye = document.querySelector("circle[class=logo-right-eye]");
   }
 
   componentWillUnmount() {
@@ -130,15 +124,25 @@ class Logo extends Component {
           strokeMiterlimit="10"
           d="M88.668 78.459c8.75 8.75 21.166 8.833 30 0"
         />
-        <Circle
-          rotation={leftEyeRotation}
+        <circle
+          style={{
+            transform: `rotate(${leftEyeRotation}deg)`,
+            transformOrigin: "69px 50px",
+            transition: "transform 0.4s ease"
+          }}
+          className="logo-left-eye"
           r="10"
           cx="74"
           cy="50"
           fill="orange"
         />
-        <Circle
-          rotation={rightEyeRotation}
+        <circle
+          style={{
+            transform: `rotate(${rightEyeRotation}deg)`,
+            transformOrigin: "137px 50px",
+            transition: "transform 0.4s ease"
+          }}
+          className="logo-right-eye"
           r="10"
           cx="142"
           cy="50"
