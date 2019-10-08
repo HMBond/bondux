@@ -2,22 +2,30 @@ import { Component } from "react";
 import posed from "react-pose";
 import SplitText from "react-pose-text";
 import styled from "styled-components";
-import Context from "./Context";
 import Link from "next/link";
-import Timer from "./helpers/Timer";
+
+const IntroductionBase = styled.div`
+  width: 100%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+`;
 
 const TextBox = styled.div`
   max-width: 400px;
+  padding: 10px;
   text-align: center;
-  margin: auto;
+  opacity: ${props => (props.ssrReady ? "1" : "0")};
 `;
 const PosedLine = posed.div({
   exit: {
-    opacity: "0",
+    opacity: 0,
     height: "0px"
   },
   enter: {
-    opacity: "1",
+    opacity: 1,
     height: "100%",
     beforeChildren: true,
     staggerChildren: 20
@@ -25,16 +33,27 @@ const PosedLine = posed.div({
 });
 
 const charPoses = {
-  exit: { opacity: 0 },
-  enter: { opacity: 1 }
+  exit: { opacity: 0, height: "0" },
+  enter: { opacity: 1, height: "100%" }
 };
+
+const Text = styled.h2`
+  margin: 0;
+  cursor: pointer;
+`;
+
+const Label = styled.h2`
+  margin: 0;
+  color: ${props => props.theme.orange};
+  cursor: pointer;
+`;
 
 class Introduction extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showLine: null,
-      timers: null
+      ssrReady: false,
+      showLine: null
     };
 
     this.nextLine = () => {
@@ -45,45 +64,60 @@ class Introduction extends Component {
         ) {
           return { showLine: prevstate.showLine + 1 };
         } else {
-          return { showLine: prevstate.showLine };
+          return { showLine: 0 };
         }
       });
     };
   }
 
   componentDidMount() {
-    this.setState({ showLine: 0, timers: new Timer(this.nextLine, 3500) });
-    // window.setTimeout(this.nextLine, 9000);
-    // window.setTimeout(this.nextLine, 13000);
-    // window.setTimeout(this.nextLine, 17000);
+    this.setState({
+      ssrReady: true,
+      showLine: 0
+    });
   }
+  newTimer = () => {
+    if (window.timer) {
+      window.clearTimeout(window.timer);
+    }
+    window.timer = window.setTimeout(this.nextLine, 2500);
+  };
 
   render() {
     const { context } = this.props;
-    const { showLine, timers } = this.state;
+    const { ssrReady, showLine } = this.state;
+
     if (context.nav.open) {
-      timers.pause();
+      ssrReady && window.clearTimeout(window.timer);
     } else {
-      timers && timers.resume();
+      ssrReady && this.newTimer();
     }
+
     return (
-      <TextBox>
-        {context.content[0].introduction.map((quote, index) => (
-          <PosedLine
-            initialPose="exit"
-            className="overflow-hidden"
-            pose={index === showLine && !context.nav.open ? "enter" : "exit"}
-            key={quote.id}
-          >
-            <h1>
-              <SplitText charPoses={charPoses}>{quote.string}</SplitText>
-            </h1>
-            {false && quote.link && (
-              <Link href={quote.link.url}>{quote.link.label}</Link>
-            )}
-          </PosedLine>
-        ))}
-      </TextBox>
+      <IntroductionBase>
+        <TextBox ssrReady={ssrReady}>
+          {context.content[0].introduction.map((quote, index) => (
+            <PosedLine
+              initialPose="exit"
+              pose={index === showLine ? "enter" : "exit"}
+              key={quote.id}
+            >
+              <Text>
+                <SplitText charPoses={charPoses}>{quote.text}</SplitText>
+              </Text>
+              {quote.link && (
+                <Link href={quote.link.url}>
+                  <Label>
+                    <SplitText charPoses={charPoses}>
+                      {quote.link.label}
+                    </SplitText>
+                  </Label>
+                </Link>
+              )}
+            </PosedLine>
+          ))}
+        </TextBox>
+      </IntroductionBase>
     );
   }
 }

@@ -7,20 +7,11 @@ const NavItemButton = styled.div`
   font-size: 1.2em;
   padding: 10px;
   margin: 10px;
-  border: solid;
   width: max-content;
   align-self: center;
   cursor: pointer;
   background-color: ${props =>
-    props.selected ? "rgba(0,0,0,0.2)" : "transparent"};
-  @media only screen and (min-width: 960px) {
-    :nth-child(odd) {
-      align-self: flex-end;
-    }
-    :nth-child(even) {
-      align-self: flex-start;
-    }
-  }
+    props.selected ? "rgba(255,255,255,0.2)" : "transparent"};
 `;
 
 const NavItem = ({ item, selected, select }) => {

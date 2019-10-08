@@ -4,12 +4,14 @@ import Introduction from "../components/Introduction.js";
 import Context from "../components/Context";
 
 const Index = () => (
-  <Fragment>
-    <Logo />
-    <Context.Consumer>
-      {context => <Introduction context={context} />}
-    </Context.Consumer>
-  </Fragment>
+  <Context.Consumer>
+    {context => (
+      <Fragment>
+        <Logo />
+        <Introduction context={context} />
+      </Fragment>
+    )}
+  </Context.Consumer>
 );
 
 export default Index;

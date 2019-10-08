@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Context from "../Context";
 
-class SelectorKeyboardControl extends Component {
+class Keyboard extends Component {
   constructor(props) {
     super(props);
   }
@@ -36,8 +36,8 @@ class SelectorKeyboardControl extends Component {
   }
 }
 
-export default props => (
+export default () => (
   <Context.Consumer>
-    {context => <SelectorKeyboardControl context={context} />}
+    {context => <Keyboard context={context} />}
   </Context.Consumer>
 );

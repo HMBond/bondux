@@ -1,8 +1,6 @@
 import { Component, createContext } from "react";
 import Router from "next/router";
 import debounce from "lodash/debounce";
-
-import SelectorKeyboardControl from "./styles/SelectorKeyboardControl";
 import content from "../Content";
 
 const Context = createContext();
@@ -66,11 +64,6 @@ export class ContextProvider extends Component {
 
   render() {
     const { children } = this.props;
-    return (
-      <Context.Provider value={this.state}>
-        <SelectorKeyboardControl />
-        {children}
-      </Context.Provider>
-    );
+    return <Context.Provider value={this.state}>{children}</Context.Provider>;
   }
 }

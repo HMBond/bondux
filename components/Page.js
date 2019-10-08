@@ -1,6 +1,7 @@
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 import Nav from "./Nav.js";
 import Meta from "./Meta.js";
+import Keyboard from "./helpers/Keyboard";
 
 const theme = {
   black: "#4A4A4A",
@@ -51,6 +52,9 @@ const GlobalStyle = createGlobalStyle`
 const StyledPage = styled.div`
   display: flex;
   flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
 `;
 
 const Page = props => {
@@ -58,9 +62,10 @@ const Page = props => {
     <ThemeProvider theme={theme}>
       <StyledPage>
         <Meta />
+        <Keyboard />
         <GlobalStyle />
-        <Nav />
         {props.children}
+        <Nav />
       </StyledPage>
     </ThemeProvider>
   );

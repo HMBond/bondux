@@ -4,28 +4,46 @@ export const content = [
     url: "/",
     page: "home",
     introduction: [
-      { id: 1, string: "Hi, I'm Mike Bond..." },
+      { id: 1, text: "Hi, I'm Mike Bond!" },
       {
         id: 2,
-        string:
-          "I'm a Frontend Developer, an Interaction and Experience Designer and musician...",
-        link: { url: "/skills", label: ">>> to skills >>>" }
+        text: "I'm a ",
+        link: { url: "/skills", label: "Frontend Developer,.." }
       },
       {
         id: 3,
-        string:
-          "I love how technology can provoke emotions and make people connect in many different ways...",
-        link: { url: "/blog", label: ">>> to blog >>>" }
+        text: "...an Interaction and ",
+        link: { url: "/skills", label: "Experience Designer..." }
       },
       {
         id: 4,
-        string: "I'm a freelancer and eager to work for you as a developer..."
+        text: "...and ",
+        link: { url: "/skills", label: "musician." }
       },
       {
         id: 5,
-        string:
-          "...or if you like to learn overtone singing, don't wait to contact me!",
-        link: { url: "/contact", label: ">>> to contact >>>" }
+        text: "I love how technology can ",
+        link: { url: "/blog", label: "provoke emotions..." }
+      },
+      {
+        id: 6,
+        text: "...and connects people ",
+        link: { url: "/blog", label: "socially." }
+      },
+      {
+        id: 7,
+        text: "I'm a freelancer and ",
+        link: { url: "/contact", label: "eager to work for you!" }
+      },
+      {
+        id: 8,
+        text: "...or if you like to learn ",
+        link: { url: "/blog", label: "overtone singing,.." }
+      },
+      {
+        id: 9,
+        text: "...please ",
+        link: { url: "/contact", label: "contact me!" }
       }
     ]
   },
