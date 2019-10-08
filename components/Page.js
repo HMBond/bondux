@@ -1,5 +1,6 @@
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 import Nav from "./Nav.js";
+import WhiteSpace from "./styles/WhiteSpace";
 import Meta from "./Meta.js";
 import Keyboard from "./helpers/Keyboard";
 
@@ -39,7 +40,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     color: ${props => props.theme.black};
-    font-size: 1.2em;
+    font-size: 1em;
     font-family: 'DejaVu Extra Light';
     margin: 0px;
   }
@@ -52,6 +53,7 @@ const GlobalStyle = createGlobalStyle`
 const StyledPage = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   height: 100vh;
   width: 100vw;
   overflow-x: hidden;
@@ -65,6 +67,7 @@ const Page = props => {
         <Keyboard />
         <GlobalStyle />
         {props.children}
+        <WhiteSpace />
         <Nav />
       </StyledPage>
     </ThemeProvider>

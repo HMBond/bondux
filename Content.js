@@ -47,7 +47,34 @@ export const content = [
       }
     ]
   },
-  { name: "Blog", url: "/blog" },
+  {
+    name: "Blog",
+    url: "/blog",
+    blogPosts: [
+      {
+        id: 1,
+        category: "example",
+        title: "Blogpost",
+        summary:
+          "Hello, this is the introduction of a blogpost. The text goes here like a summary. Lets talk about the subject, but not yet in dept. So the reader gets interested!",
+        paragraphs: [
+          {
+            id: 1,
+            text: "First paragraph about something",
+            imgUrl: "../static/image.jpg"
+          },
+          {
+            id: 2,
+            text: "Second paragraph about something",
+            imgUrl: "../static/image.jpg"
+          }
+        ],
+        topImgUrl: "../static/bondux.svg",
+        topImgRoundness: "50%",
+        imgUrls: ["../static/image.jpg", "../static/image.jpg"]
+      }
+    ]
+  },
   { name: "Skills", url: "/skills" },
   { name: "Hire Me!", url: "/contact", page: "contact" }
 ];

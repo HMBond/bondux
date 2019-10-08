@@ -1,15 +1,14 @@
-import Heading from "../components/styles/Heading.js";
+import Context from "../components/Context";
+import BlogPost from "../components/BlogPost.js";
 
 const Blog = () => (
-  <Heading>
-    BLOG
-    <br />
-    BOND
-    <br />
-    SKILLS
-    <br />
-    PHOTOS
-  </Heading>
+  <Context.Consumer>
+    {context =>
+      context.content[1].blogPosts.map(entry => (
+        <BlogPost visible contents={entry} key={entry.id} />
+      ))
+    }
+  </Context.Consumer>
 );
 
 export default Blog;
