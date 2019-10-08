@@ -1,10 +1,10 @@
 import { Component } from "react";
-import Link from "next/link";
 import posed from "react-pose";
 import SplitText from "react-pose-text";
 import styled from "styled-components";
-
-import delay from "lodash/debounce";
+import Context from "./Context";
+import Link from "next/link";
+import Timer from "./helpers/Timer";
 
 const TextBox = styled.div`
   max-width: 400px;
@@ -33,12 +33,16 @@ class Introduction extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showLine: 0
+      showLine: null,
+      timers: null
     };
 
     this.nextLine = () => {
       this.setState(prevstate => {
-        if (prevstate.showLine < this.props.introductionLines.length - 1) {
+        if (
+          prevstate.showLine <
+          this.props.context.content[0].introduction.length - 1
+        ) {
           return { showLine: prevstate.showLine + 1 };
         } else {
           return { showLine: prevstate.showLine };
@@ -48,27 +52,35 @@ class Introduction extends Component {
   }
 
   componentDidMount() {
-    window.setTimeout(this.nextLine, 3500);
-    window.setTimeout(this.nextLine, 9000);
-    window.setTimeout(this.nextLine, 13000);
-    window.setTimeout(this.nextLine, 17000);
+    this.setState({ showLine: 0, timers: new Timer(this.nextLine, 3500) });
+    // window.setTimeout(this.nextLine, 9000);
+    // window.setTimeout(this.nextLine, 13000);
+    // window.setTimeout(this.nextLine, 17000);
   }
 
   render() {
-    const { introductionLines } = this.props;
-    const { showLine } = this.state;
+    const { context } = this.props;
+    const { showLine, timers } = this.state;
+    if (context.nav.open) {
+      timers.pause();
+    } else {
+      timers && timers.resume();
+    }
     return (
       <TextBox>
-        {introductionLines.map((quote, index) => (
+        {context.content[0].introduction.map((quote, index) => (
           <PosedLine
             initialPose="exit"
             className="overflow-hidden"
-            pose={index === showLine ? "enter" : "exit"}
+            pose={index === showLine && !context.nav.open ? "enter" : "exit"}
             key={quote.id}
           >
             <h1>
               <SplitText charPoses={charPoses}>{quote.string}</SplitText>
             </h1>
+            {false && quote.link && (
+              <Link href={quote.link.url}>{quote.link.label}</Link>
+            )}
           </PosedLine>
         ))}
       </TextBox>

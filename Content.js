@@ -8,12 +8,14 @@ export const content = [
       {
         id: 2,
         string:
-          "I'm a <Link href={'/skills'} >Frontend Developer, an Interaction and Experience Designer and musician...</Link>"
+          "I'm a Frontend Developer, an Interaction and Experience Designer and musician...",
+        link: { url: "/skills", label: ">>> to skills >>>" }
       },
       {
         id: 3,
         string:
-          "I love how technology can provoke emotions and make people connect in many different ways..."
+          "I love how technology can provoke emotions and make people connect in many different ways...",
+        link: { url: "/blog", label: ">>> to blog >>>" }
       },
       {
         id: 4,
@@ -22,7 +24,8 @@ export const content = [
       {
         id: 5,
         string:
-          "...or if you like to learn overtone singing, don't wait to <Link href={'/contact'} >contact me!</Link>"
+          "...or if you like to learn overtone singing, don't wait to contact me!",
+        link: { url: "/contact", label: ">>> to contact >>>" }
       }
     ]
   },
