@@ -21,6 +21,7 @@ const NavBall = styled.div`
   width: 50px;
   height: 50px;
   border-radius: 50%;
+
   transform: ${props => {
     if (props.open) {
       return "scale(100)";
@@ -30,7 +31,9 @@ const NavBall = styled.div`
       return "none";
     }
   }};
-  background-color: ${props => (props.open ? "orange" : "#4a4a4a")};
+
+  background-color: ${props =>
+    props.open ? props.theme.acColor : props.theme.fgColor};
   ${props => {
     if (props.open) {
       return "transition: transform 0.5s ease-in, background-color 0.2s linear";

@@ -19,6 +19,10 @@ const NavBase = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+  max-width: 400px;
+  padding: 0 auto;
+  box-shadow: 0 0 15px 15px ${props => props.theme.bgColor};
+  background: ${props => props.theme.bgColor};
 `;
 
 const NavPage = styled.div`

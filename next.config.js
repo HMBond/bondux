@@ -10,3 +10,9 @@ module.exports = {
     return config;
   }
 };
+
+module.exports = {
+  devIndicators: {
+    autoPrerender: false
+  }
+};

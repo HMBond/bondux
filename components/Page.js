@@ -5,18 +5,23 @@ import Meta from "./Meta.js";
 import Keyboard from "./helpers/Keyboard";
 
 const theme = {
-  black: "#4A4A4A",
-  orange: "#F5A100",
-  green: "#ED90ED",
+  bgColor: "white",
+  fgColor: "#4A4A4A",
+  acColor: "#FF9800",
   grey: "#3A3A3A",
   lightGrey: "#E1E1E1",
-  lightgrey: "#E1E1E1",
   offWhite: "#EDEDED",
   maxWidth: "1000px",
   bs: "0 12px 24px 0 rgba(0, 0, 0, 0.09)"
 };
 
 const GlobalStyle = createGlobalStyle`
+  :root {
+    --main-background-color: ${props => props.theme.bgColor};
+    --main-foreground-color: ${props => props.theme.fgColor};
+    --main-accent-color: ${props => props.theme.acColor};
+  }
+
   @font-face {
     font-family: 'DejaVu Serif';
     src: url('/static/DejaVuSerifCondensed-Bold.ttf') format('truetype');
@@ -39,7 +44,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    color: ${props => props.theme.black};
+    color: ${props => props.theme.fgColor};
     font-size: 1em;
     font-family: 'DejaVu Extra Light';
     margin: 0px;

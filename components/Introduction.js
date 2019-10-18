@@ -44,7 +44,7 @@ const Text = styled.h2`
 
 const Label = styled.h2`
   margin: 0;
-  color: ${props => props.theme.orange};
+  color: ${props => props.theme.acColor};
   cursor: pointer;
 `;
 
@@ -76,6 +76,7 @@ class Introduction extends Component {
       showLine: 0
     });
   }
+
   newTimer = () => {
     if (window.timer) {
       window.clearTimeout(window.timer);

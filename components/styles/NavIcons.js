@@ -8,7 +8,7 @@ const iconSize = "30px";
 export const NavBackIcon = styled(NavForwardSvg)`
   width: ${iconSize};
   height: ${iconSize};
-  fill: white;
+  fill: ${props => props.theme.bgColor};
   cursor: pointer;
   transform: ${props =>
     props.open ? "rotate(-540deg + 180deg)" : "rotate(180deg)"};
@@ -18,7 +18,7 @@ export const NavBackIcon = styled(NavForwardSvg)`
 export const NavToggleIcon = styled(NavToggleSvg)`
   width: ${iconSize};
   height: ${iconSize};
-  fill: white;
+  fill: ${props => props.theme.bgColor};
   cursor: pointer;
   transform: ${props => (props.open ? "rotate(-540deg)" : "rotate(0deg)")};
   transition: transform 0.3s ease-in-out;
@@ -27,7 +27,7 @@ export const NavToggleIcon = styled(NavToggleSvg)`
 export const NavForwardIcon = styled(NavForwardSvg)`
   width: ${iconSize};
   height: ${iconSize};
-  fill: white;
+  fill: ${props => props.theme.bgColor};
   cursor: pointer;
   transform: ${props => (props.open ? "rotate(-540deg)" : "rotate(0deg)")};
   transition: transform 0.3s ease-in-out;
