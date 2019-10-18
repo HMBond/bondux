@@ -6,6 +6,7 @@ const NavButtonBase = styled.div`
   order: ${props => props.order};
   opacity: ${props => (props.hidden ? "0" : "1")};
   transition: opacity 0.5s ease-in-out;
+  margin: 10px;
 `;
 
 const NavIconContainer = styled.div`
@@ -17,7 +18,6 @@ const NavIconContainer = styled.div`
 
 const NavBall = styled.div`
   display: block;
-  margin-bottom: 10px;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -26,7 +26,7 @@ const NavBall = styled.div`
     if (props.open) {
       return "scale(100)";
     } else if (props.hover) {
-      return "scale(1.2)";
+      return "scale(1.1)";
     } else {
       return "none";
     }

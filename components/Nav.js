@@ -13,16 +13,21 @@ const NavBase = styled.div`
   opacity: ${props => (props.ssrReady ? "1" : "0")};
   transition: opacity 0.3s ease-in;
   position: fixed;
-  right: 10px;
-  bottom: 0;
-  left: 10px;
+  bottom: -1px;
+  width: 100%;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   max-width: 400px;
-  padding: 0 auto;
-  box-shadow: 0 0 15px 15px ${props => props.theme.bgColor};
-  background: ${props => props.theme.bgColor};
+  background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 2px,
+      ${props => props.theme.bgColor} 2px,
+      ${props => props.theme.bgColor} 4px
+    ),
+    linear-gradient(transparent, ${props => props.theme.bgColor}),
+    linear-gradient(transparent, ${props => props.theme.bgColor});
 `;
 
 const NavPage = styled.div`

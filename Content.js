@@ -60,18 +60,20 @@ export const content = [
         paragraphs: [
           {
             id: 1,
-            text: "First paragraph about something",
-            imgUrl: "../static/image.jpg"
+            text:
+              "In mathematics, two quantities are in the silver ratio (also silver mean or silver constant) if the ratio of the sum of the smaller and twice the larger of those quantities, to the larger quantity, is the same as the ratio of the larger one to the smaller one (see below). This defines the silver ratio as an irrational mathematical constant, whose value of one plus the square root of 2 is approximately 2.4142135623. Its name is an allusion to the golden ratio; analogously to the way the golden ratio is the limiting ratio of consecutive Fibonacci numbers, the silver ratio is the limiting ratio of consecutive Pell numbers. The silver ratio is denoted by δS.",
+            imgUrl: "../static/image2.jpg"
           },
           {
             id: 2,
-            text: "Second paragraph about something",
-            imgUrl: "../static/image.jpg"
+            text:
+              "Los matemáticos han estudiado la proporción de plata desde el tiempo de los griegos (aunque tal vez sin darle un nombre especial hasta hace poco) debido a sus conexiones con la raíz cuadrada de 2, sus convergentes, los números cuadrados triangulares y otros números similares.",
+            imgUrl: "../static/image3.jpg"
           }
         ],
-        topImgUrl: "../static/bondux.svg",
+        topImgUrl: "../static/image4.jpg",
         topImgRoundness: "50%",
-        imgUrls: ["../static/image.jpg", "../static/image.jpg"]
+        imgUrls: ["../static/image2.jpg", "../static/image3.jpg"]
       }
     ]
   },
