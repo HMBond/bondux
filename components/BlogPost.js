@@ -1,37 +1,45 @@
 import styled from "styled-components";
-import Heading from "./styles/Heading.js";
-import Summary from "./styles/Summary.js";
+import Heading from "./styles/Heading";
+import Summary from "./styles/Summary";
+import Hr from "./styles/Hr";
 
 const BlogPostBase = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 40rem;
-  margin-top: 2rem;
 `;
 
 const BlogImage = styled.div`
-  margin-top: ${props => (props.headImage ? 0 : "2em")};
-  margin-bottom: ${props => (props.headImage ? "2em" : 0)};
+  margin-top: 2rem;
   background: url(${props => props.src});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  height: ${props => (props.roundness ? "100vw" : "17em")};
+  height: ${props => (props.roundness ? "100vw" : "28rem")};
   max-height: 40rem;
   border-radius: ${props => props.roundness};
 `;
 
 const Paragraph = styled.div`
   width: 100%;
+  & p:first-letter {
+    font-size: 2rem;
+    font-weight: bolder;
+  }
 `;
 
-const BlogText = styled.div`
+const BlogHeading = styled(Heading)`
   margin-top: 2rem;
-  padding-left: 2rem;
-  width: calc(100% - 3rem);
-  text-indent: -1rem;
+`;
+
+const BlogSummary = styled(Summary)`
+  margin: 1rem 10px;
+`;
+
+const BlogText = styled.p`
+  margin: 2rem;
   line-height: 1.4rem;
 `;
 
@@ -42,11 +50,10 @@ const BlogPost = ({ visible, contents, ...props }) => (
         {...props}
         src={contents.topImgUrl}
         roundness={contents.topImgRoundness}
-        headImage
       />
     )}
-    {contents.title && <Heading>{contents.title}</Heading>}
-    {contents.summary && <Summary>{contents.summary}</Summary>}
+    {contents.title && <BlogHeading>{contents.title}</BlogHeading>}
+    {contents.summary && <BlogSummary>{contents.summary}</BlogSummary>}
     {contents.paragraphs &&
       contents.paragraphs.map(paragraph => (
         <Paragraph key={paragraph.id}>
@@ -54,6 +61,7 @@ const BlogPost = ({ visible, contents, ...props }) => (
           <BlogText>{paragraph.text}</BlogText>
         </Paragraph>
       ))}
+    <Hr />
   </BlogPostBase>
 );
 

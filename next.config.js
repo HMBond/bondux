@@ -1,6 +1,9 @@
 const webpack = require("webpack");
 
 module.exports = {
+  devIndicators: {
+    autoPrerender: false
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
@@ -8,11 +11,5 @@ module.exports = {
     });
 
     return config;
-  }
-};
-
-module.exports = {
-  devIndicators: {
-    autoPrerender: false
   }
 };
