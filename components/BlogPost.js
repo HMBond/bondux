@@ -26,7 +26,8 @@ const Paragraph = styled.div`
   width: 100%;
   & p:first-letter {
     font-size: 2rem;
-    font-weight: bolder;
+    font-family: "DejaVu Serif";
+    color: ${props => props.theme.fgColor + "80"};
   }
 `;
 
