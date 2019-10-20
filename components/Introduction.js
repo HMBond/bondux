@@ -3,6 +3,7 @@ import posed from "react-pose";
 import SplitText from "react-pose-text";
 import styled from "styled-components";
 import Link from "next/link";
+import uniqid from "uniqid";
 
 const IntroductionBase = styled.div`
   width: 100%;
@@ -101,7 +102,7 @@ class Introduction extends Component {
             <PosedLine
               initialPose="exit"
               pose={index === showLine ? "enter" : "exit"}
-              key={quote.id}
+              key={uniqid()}
             >
               <Text>
                 <SplitText charPoses={charPoses}>{quote.text}</SplitText>

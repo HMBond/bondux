@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Heading from "./styles/Heading";
 import Summary from "./styles/Summary";
 import Hr from "./styles/Hr";
+import uniqid from "uniqid";
 
 const BlogPostBase = styled.div`
   display: flex;
@@ -57,7 +58,7 @@ const BlogPost = ({ visible, contents, ...props }) => (
     {contents.summary && <BlogSummary>{contents.summary}</BlogSummary>}
     {contents.paragraphs &&
       contents.paragraphs.map(paragraph => (
-        <Paragraph key={paragraph.id}>
+        <Paragraph key={uniqid()}>
           <BlogImage src={paragraph.imgUrl} />
           <BlogText>{paragraph.text}</BlogText>
         </Paragraph>
