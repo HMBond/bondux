@@ -7,7 +7,7 @@ class Keyboard extends Component {
   }
 
   keyUpHandler = e => {
-    const { selector, nav } = this.props.context;
+    const { selector, nav, toggleDevMode } = this.props.context;
     if (e.key == "ArrowUp") {
       selector.setPosition(selector.position - 1);
     } else if (e.key == "ArrowDown") {
@@ -20,6 +20,8 @@ class Keyboard extends Component {
       selector.go();
     } else if (e.key == "Escape") {
       nav.setOpen(!nav.open);
+    } else if (e.key == "Dead") {
+      toggleDevMode();
     }
   };
 

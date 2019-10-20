@@ -11,7 +11,7 @@ export class ContextProvider extends Component {
   constructor() {
     super();
     this.state = {
-      devMode: true,
+      devMode: false,
       toggleDevMode: () =>
         this.setState(prevstate => ({
           ...prevstate,
