@@ -28,7 +28,8 @@ const Path = styled.path`
         props.light ? props.theme.bgColor : props.theme.fgColor};
       stroke-dasharray: 100;
       stroke-dashoffset: 100;
-      animation: dash 1s ease-in 1s forwards normal;
+      animation: ${props =>
+        props.light ? "" : "dash 1s ease-in 1s forwards normal"};
     `}
 
   @keyframes dash {
