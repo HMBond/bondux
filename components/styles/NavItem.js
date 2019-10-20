@@ -3,7 +3,7 @@ import NavItemLink from "next/link";
 
 const NavItemButton = styled.div`
   font-family: "DejaVu Condensed Bold";
-  color: white;
+  color: ${props => props.theme.colors.bg};
   font-size: 1.2rem;
   padding: 10px;
   margin: 10px;
@@ -11,7 +11,7 @@ const NavItemButton = styled.div`
   align-self: center;
   cursor: pointer;
   background-color: ${props =>
-    props.selected ? "rgba(255,255,255,0.2)" : "transparent"};
+    props.selected ? props.theme.colors.lighten : "transparent"};
 `;
 
 const NavItem = ({ item, selected, select }) => {

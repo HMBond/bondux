@@ -12,20 +12,21 @@ const Path = styled.path`
     props.colorClass === "svg-dark" &&
     css`
       fill: ${props =>
-        props.light ? props.theme.bgColor : props.theme.fgColor};
+        props.light ? props.theme.colors.bg : props.theme.colors.primary};
     `}
   ${props =>
     props.colorClass === "svg-orange" &&
     css`
       fill: ${props =>
-        props.light ? props.theme.fgColor : props.theme.acColor};
-      fill: ${props => (props.extra && props.light ? props.theme.bgColor : "")};
+        props.light ? props.theme.colors.primary : props.theme.colors.accent};
+      fill: ${props =>
+        props.extra && props.light ? props.theme.colors.bg : ""};
     `}
   ${props =>
     props.colorClass === "svg-dark-stroke-animation" &&
     css`
       stroke: ${props =>
-        props.light ? props.theme.bgColor : props.theme.fgColor};
+        props.light ? props.theme.colors.bg : props.theme.colors.primary};
       stroke-dasharray: 100;
       stroke-dashoffset: 100;
       animation: ${props =>

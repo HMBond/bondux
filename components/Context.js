@@ -11,6 +11,12 @@ export class ContextProvider extends Component {
   constructor() {
     super();
     this.state = {
+      themeInvert: false,
+      invertTheme: () =>
+        this.setState(prevstate => ({
+          ...prevstate,
+          themeInvert: !prevstate.themeInvert
+        })),
       selector: {
         position: 0,
         setPosition: newPosition => {
@@ -37,6 +43,7 @@ export class ContextProvider extends Component {
           });
         }
       },
+
       nav: {
         back: () => Router.back(),
         forward: () => console.log("next page"),
@@ -58,7 +65,7 @@ export class ContextProvider extends Component {
     };
   }
 
-  componentDidUpdate() {
+  componentDidMount() {
     window.context = this.state;
   }
 

@@ -23,11 +23,11 @@ const NavBase = styled.div`
       -45deg,
       transparent,
       transparent 2px,
-      ${props => props.theme.bgColor} 2px,
-      ${props => props.theme.bgColor} 4px
+      ${props => props.theme.colors.bg} 2px,
+      ${props => props.theme.colors.bg} 4px
     ),
-    linear-gradient(transparent, ${props => props.theme.bgColor}),
-    linear-gradient(transparent, ${props => props.theme.bgColor});
+    linear-gradient(transparent, ${props => props.theme.colors.bg}),
+    linear-gradient(transparent, ${props => props.theme.colors.bg});
 `;
 
 const NavPage = styled.div`

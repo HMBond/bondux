@@ -1,5 +1,6 @@
 import { useState } from "react";
-import styled from "styled-components";
+import styled, { css, keyframes } from "styled-components";
+import Context from "../Context";
 
 const NavButtonBase = styled.div`
   display: flex;
@@ -14,6 +15,15 @@ const NavIconContainer = styled.div`
   left: -40px;
   top: 10px;
   width: 0;
+`;
+
+const devanimation = keyframes`
+  0%, 90% {
+    background-position: 0;
+  }
+  100% {
+    background-position: 50px;
+  }
 `;
 
 const NavBall = styled.div`
@@ -32,17 +42,26 @@ const NavBall = styled.div`
     }
   }};
 
-  background-color: ${props =>
-    props.open ? props.theme.acColor : props.theme.fgColor};
   ${props => {
     if (props.open) {
-      return "transition: transform 0.5s ease-in, background-color 0.2s linear";
+      return "transition: transform 0.5s ease-in, background 0.2s linear";
     } else if (props.hover) {
-      return "transition: transform 0.2s ease-out, background-color 0.2s linear 0.5s";
+      return "transition: transform 0.2s ease-out, background 0.2s linear 0.5s";
     } else {
-      return "transition: transform 0.5s ease-out, background-color 0.2s linear 0.5s";
+      return "transition: transform 0.5s ease-out, background 0.2s linear 0.5s";
     }
   }};
+
+  ${props =>
+    (props.devMode &&
+      css`
+        background: linear-gradient(to right, white, lime 25%, lime 75%, white);
+        animation: ${devanimation} 10s 0s ease infinite;
+      `) ||
+    css`
+      background: ${props =>
+        props.open ? props.theme.colors.accent : props.theme.colors.primary};
+    `}
 `;
 
 export const NavButton = ({
@@ -55,20 +74,24 @@ export const NavButton = ({
 }) => {
   const [hover, setHover] = useState(false);
   return (
-    <NavButtonBase
-      hidden={hidden}
-      open={open}
-      order={order}
-      onMouseEnter={() => {
-        if (properlyClosed) {
-          setHover(true);
-        }
-      }}
-      onMouseLeave={() => setHover(false)}
-      onClick={() => onClick()}
-    >
-      <NavBall open={open} hover={hover} />
-      <NavIconContainer>{children}</NavIconContainer>
-    </NavButtonBase>
+    <Context.Consumer>
+      {context => (
+        <NavButtonBase
+          hidden={hidden}
+          open={open}
+          order={order}
+          onMouseEnter={() => {
+            if (properlyClosed) {
+              setHover(true);
+            }
+          }}
+          onMouseLeave={() => setHover(false)}
+          onClick={() => onClick()}
+        >
+          <NavBall open={open} hover={hover} devMode={context.themeInvert} />
+          <NavIconContainer>{children}</NavIconContainer>
+        </NavButtonBase>
+      )}
+    </Context.Consumer>
   );
 };

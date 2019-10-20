@@ -45,7 +45,7 @@ const Text = styled.h2`
 
 const Label = styled.h2`
   margin: 0;
-  color: ${props => props.theme.acColor};
+  color: ${props => props.theme.colors.accent};
   cursor: pointer;
 `;
 

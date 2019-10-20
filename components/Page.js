@@ -1,25 +1,16 @@
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
+import Context from "./Context";
 import Nav from "./Nav.js";
 import WhiteSpace from "./styles/WhiteSpace";
 import Meta from "./Meta.js";
 import Keyboard from "./helpers/Keyboard";
-
-const theme = {
-  bgColor: "white",
-  fgColor: "#4A4A4A",
-  acColor: "#FF9800",
-  grey: "#3A3A3A",
-  lightGrey: "#E1E1E1",
-  offWhite: "#EDEDED",
-  maxWidth: "1000px",
-  bs: "0 12px 24px 0 rgba(0, 0, 0, 0.09)"
-};
+import { theme, invertTheme } from "./styles/theme";
 
 const GlobalStyle = createGlobalStyle`
   :root {
-    --main-background-color: ${props => props.theme.bgColor};
-    --main-foreground-color: ${props => props.theme.fgColor};
-    --main-accent-color: ${props => props.theme.acColor};
+    --main-background-color: ${props => props.theme.colors.bg};
+    --main-foreground-color: ${props => props.theme.colors.primary};
+    --main-accent-color: ${props => props.theme.colors.accent};
   }
 
   @font-face {
@@ -44,7 +35,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    color: ${props => props.theme.fgColor};
+    background-color: ${props => props.theme.colors.bg};
+    color: ${props => props.theme.colors.primary};
     font-size: 1em;
     font-family: 'DejaVu Extra Light';
     margin: 0px;
@@ -66,16 +58,20 @@ const StyledPage = styled.div`
 
 const Page = props => {
   return (
-    <ThemeProvider theme={theme}>
-      <StyledPage>
-        <Meta />
-        <Keyboard />
-        <GlobalStyle />
-        {props.children}
-        <WhiteSpace />
-        <Nav />
-      </StyledPage>
-    </ThemeProvider>
+    <Context.Consumer>
+      {context => (
+        <ThemeProvider theme={context.themeInvert ? invertTheme(theme) : theme}>
+          <StyledPage>
+            <Meta />
+            <Keyboard />
+            <GlobalStyle />
+            {props.children}
+            <WhiteSpace />
+            <Nav />
+          </StyledPage>
+        </ThemeProvider>
+      )}
+    </Context.Consumer>
   );
 };
 
