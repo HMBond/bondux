@@ -1,10 +1,9 @@
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 import Context from "./Context";
 import Nav from "./Nav.js";
-import WhiteSpace from "./styles/WhiteSpace";
 import Meta from "./Meta.js";
 import Keyboard from "./helpers/Keyboard";
-import { theme, invertTheme } from "./styles/theme";
+import { theme, devMode } from "./styles/Theme";
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -60,13 +59,12 @@ const Page = props => {
   return (
     <Context.Consumer>
       {context => (
-        <ThemeProvider theme={context.themeInvert ? invertTheme(theme) : theme}>
+        <ThemeProvider theme={context.devMode ? devMode(theme) : theme}>
           <StyledPage>
             <Meta />
             <Keyboard />
             <GlobalStyle />
             {props.children}
-            <WhiteSpace />
             <Nav />
           </StyledPage>
         </ThemeProvider>

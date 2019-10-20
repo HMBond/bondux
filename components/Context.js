@@ -11,11 +11,11 @@ export class ContextProvider extends Component {
   constructor() {
     super();
     this.state = {
-      themeInvert: false,
-      invertTheme: () =>
+      devMode: true,
+      toggleDevMode: () =>
         this.setState(prevstate => ({
           ...prevstate,
-          themeInvert: !prevstate.themeInvert
+          devMode: !prevstate.devMode
         })),
       selector: {
         position: 0,

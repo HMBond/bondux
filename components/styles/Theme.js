@@ -1,6 +1,6 @@
 export const theme = {
   colors: {
-    bg: "white",
+    bg: "#ffffff",
     primary: "#4A4A4A",
     accent: "#FF9800",
     grey: "#3A3A3A",
@@ -12,15 +12,17 @@ export const theme = {
   bs: "0 12px 24px 0 rgba(0, 0, 0, 0.09)"
 };
 
-export const invertTheme = ({ colors: { bg, lightGrey }, ...rest }) => ({
+export const devMode = ({ colors: { bg, grey, lightGrey }, ...rest }) => ({
   colors: {
     primary: bg,
     bg: "#1a1a1a",
     accent: "lime",
-    grey: lightGrey
+    grey: lightGrey,
+    lightGrey: grey,
+    offWhite: "#111",
+    lighten: "rgba(0,0,0,0.2)"
   },
   ...rest
 });
 
-export const getFontSize = size => props => props.theme.fontSize[size];
 export const getColor = color => props => props.theme.colors[color];

@@ -1,15 +1,13 @@
 import styled from "styled-components";
+import { getColor } from "./Theme";
+
+const grey = getColor("grey");
 
 const Hr = styled.hr`
   width: 80%;
   height: calc(1rem / 2.14);
   border: none;
-  border-image: radial-gradient(
-      at top center,
-      ${props => props.theme.grey},
-      transparent 90%
-    )
-    1;
+  border-image: radial-gradient(at top center, ${grey}, transparent 90%) 1;
   border-style: solid;
   border-width: 1px;
   border-left-width: 0;

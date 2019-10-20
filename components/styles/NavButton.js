@@ -18,11 +18,11 @@ const NavIconContainer = styled.div`
 `;
 
 const devanimation = keyframes`
-  0%, 90% {
-    background-position: 0;
+  0%, 50% {
+    background-position-y: 0px;
   }
   100% {
-    background-position: 50px;
+    background-position-y: 50px;
   }
 `;
 
@@ -44,23 +44,26 @@ const NavBall = styled.div`
 
   ${props => {
     if (props.open) {
-      return "transition: transform 0.5s ease-in, background 0.2s linear";
+      return "transition: transform 0.5s ease-in, background-color 0.2s linear";
     } else if (props.hover) {
-      return "transition: transform 0.2s ease-out, background 0.2s linear 0.5s";
+      return "transition: transform 0.2s ease-out, background-color 0.2s linear 0.5s";
     } else {
-      return "transition: transform 0.5s ease-out, background 0.2s linear 0.5s";
+      return "transition: transform 0.5s ease-out, background-color 0.2s linear 0.5s";
     }
   }};
 
+  background-color: ${props =>
+    props.open ? props.theme.colors.accent : props.theme.colors.primary};
+  background-position: center;
+  background-repeat: no-repeat;
+
   ${props =>
-    (props.devMode &&
-      css`
-        background: linear-gradient(to right, white, lime 25%, lime 75%, white);
-        animation: ${devanimation} 10s 0s ease infinite;
-      `) ||
+    props.devMode &&
+    props.open &&
     css`
-      background: ${props =>
-        props.open ? props.theme.colors.accent : props.theme.colors.primary};
+      background-image: linear-gradient(lime, white 5%, lime 10%);
+      background-position: 0 0;
+      animation: ${devanimation} 5s 0s linear infinite;
     `}
 `;
 
@@ -73,6 +76,7 @@ export const NavButton = ({
   order
 }) => {
   const [hover, setHover] = useState(false);
+
   return (
     <Context.Consumer>
       {context => (
@@ -88,7 +92,7 @@ export const NavButton = ({
           onMouseLeave={() => setHover(false)}
           onClick={() => onClick()}
         >
-          <NavBall open={open} hover={hover} devMode={context.themeInvert} />
+          <NavBall open={open} hover={hover} devMode={context.devMode} />
           <NavIconContainer>{children}</NavIconContainer>
         </NavButtonBase>
       )}

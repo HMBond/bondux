@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Heading from "./styles/Heading";
 import Summary from "./styles/Summary";
 import Hr from "./styles/Hr";
+import WhiteSpace from "./styles/WhiteSpace";
 import uniqid from "uniqid";
 
 const BlogPostBase = styled.div`
@@ -64,6 +65,7 @@ const BlogPost = ({ visible, contents, ...props }) => (
         </Paragraph>
       ))}
     <Hr />
+    <WhiteSpace />
   </BlogPostBase>
 );
 
