@@ -1,6 +1,5 @@
-- name: Intro
+- name: intro
   url: "/"
-  page: home
   introduction:
     - text: "Hi, I'm Mike Bond!"
     - text: "I'm a "
@@ -35,7 +34,7 @@
       link:
         url: "/contact"
         label: "contact me!"
-- name: Blog
+- name: "blog"
   url: "/blog"
   blogPosts:
     - category: example
@@ -51,8 +50,34 @@
           imgUrls:
             - "../static/image2.jpg"
             - "../static/image3.jpg"
-- name: Skills
+    - category: design
+      title: Design Vision
+      topImgUrl: "../static/design.jpg"
+      topImgRoundness: "50%"
+      summary: "How do I think about design practice? What do I recommend to any designer? A broad overview of the things I learned during my study at Tu-Delft and my own point of view on design!"
+      paragraphs:
+        - heading: Simplicity
+          text: "The main outcome of my graduation project was that simplicity is effective. Throughout my study and work I heared many people talking about Keep It Simple Stupid (KISS), but in practice this is hard to maintain throughout the coarse of time. I learned some methotodology to keep things simple and clear, let me share some of them."
+          imgUrl: "../static/design1.jpg"
+        - heading: Diverge and converge
+          text: "Generate many ideas, concepts, sub-solutions, abstracts or however you may call these things that swirl in the brain and get fixated on paper anchors (Post-Its) to be compared to each other. But do not yet work them out! Do not go into the details before you examined and explored all the options, because after working out your first idea into detail for a while, you might find a more simpel solution. Design is about keeping a broad overview, then choosing a path. After each choice, you explore new paths where to go, and so on, and so on... However, I found myself pressured to chose the 'right' path and got stuck quite often. As in life, there is no right path and (design) choices can be overruled if the path happened to be a dead end. What you gain by working this way? You will spend less time on working out something that later will become irrelevant cause of something better that you overlooked before. Please, tell your manager or boss: Design saves time and resources!"
+          imgUrl: "../static/design2.jpg"
+        - heading: Design Together
+          text: "Choosing the right path to go is not only done in a broad way, e.g. Marketing wants a design for getting more customer trust. As a designer or developer you have to make little decisions quite often and sometimes you need to stop if it didn't work out and go back to see if there are aternatives. To evaluate your options it is very important to use the resources around you. A good company provides the ability, by mentality and organization, to speak about any (small or big) choice to be made. A designer carries the responsibility to make this possible, by breaking the boundaries between departments, because he or she knows the importance of open communication in the design process. Pro-efficient communication can be organized just like a designer organizes user-research, by using tools. Workshops, morning-standups, a stage for giving simple lectures about relevant problems and solutions and many more are proven to be more effective then the old-school board-room meeting. It also improves the atmosphere and mentality towards the ease of just asking each other about any opinion on any small choice to be made. I had very happy experiences in my job at Mobiel.nl regarding an open work-mentality, but many friends of mine experience the slugginess of big companies that struggle with open communication between departments or distance between colleagues. Next to back-end communication, there is the commucation with the actual users of the product or service you design. An outgoing user-research team can provide amazing insights, data and general information to be used to base decisions on. Again, this is only used to its full potention when communicated (and presented!) openly within the company or organization."
+          imgUrl: "../static/design2.jpg"
+        - heading: Iterate
+          text: "As mentioned in Diverge and Converge, do not start building the final version from an underdeveloped design. There is a long road in between an idea and a product, but this long road will be shortened by iteration. When you have the general idea of what you are about to create, it is time to create a simplified version of the product in mind. An iteration can take many shapes: A drawing, paper prototype, story in form of futuristic or best/worst-case scenario, a collage of what it should represent emotionally, a rapid prototype, etc. etc. <br> The beauty of making a simplified version is that it generates obstacles straight away. Forseeing obstacles helps making decisions and forces the design process, thus making your design more elaborate. Iteration is all about revealing the hidden pitfalls and generating new ideas to solve earlier obstacles. I heared that Dyson iterated over 100+ times by building prototypes of a vacuum cleaner in order to make the best vacuum cleaner of the world. That's dedication!"
+          imgUrl: "../static/design3.jpg"
+        - heading: Dig, Cut and Restructure
+          text: "Most design is redesign. Imagine a restaurant owner that has a huge menu card, three cooks from which two of them are on the edge of having a burn-out, customers who are confused and waiters who mess up the orders. This situation is common within companies and organisations, just in a different jacket. The over extended menu card can be compared to an app with too many features - a.k. the feature christmas tree. Like with the restaurant, the necessary approach is to dig the pearls. Find out what is the core selling point. Isolate all the attributes that are needed to achieve this and cut out the additional crap. Later, the scraped stuff could be re-evaluated and maybe added back in a structured way. Redesign can be harsh because you have to dig through the crap, but the restructuring of all the functionalities often ends up with a beautiful outcome that could not have become this way by starting al blanco."
+          imgUrl: "../static/design4.jpg"
+        - heading: Graphic Design and the absence of ScheissDeco
+          text: "Unless ScheissDeco is your stylo, decorations tend to distract and keep the eyes from seeing the real beauty of work. Cutting away all irrelevant is used in Zen-art and became a rule in design since the nineties. Although widely known by designers and artists, this principle is not allways taken to its full potential. The use of ratios and symetry also helps in giving the viewer focus to what is important. Many viusal designers know, but I run into many websites that are inconsistent as hell. I do not strife for a minimalistic zen visual style in everything though as I love exentric, vulgare, outgoing and provocative styles. But if the intention is to have simplicity, keep it simple. It goes wrong when the intention is not clear or not clearly communicated through the design, but it does make me smile sometimes when I run into visuals that went completely wrong."
+          imgUrl: "../static/design5.jpg"
+          imgUrls:
+            - "../static/image2.jpg"
+            - "../static/image3.jpg"
+- name: skills
   url: "/skills"
-- name: "Hire Me!"
+- name: contact
   url: "/contact"
-  page: contact
