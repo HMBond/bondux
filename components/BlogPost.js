@@ -38,6 +38,15 @@ const BlogImage = styled.div`
   border-radius: ${props => props.roundness};
 
   ${props =>
+    props.titleInTopImage &&
+    css`
+      color: ${props => props.theme.colors.offWhite};
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    `};
+
+  ${props =>
     props.card &&
     css`
       padding: 2rem;
@@ -94,9 +103,16 @@ const BlogPost = ({ card, contents, ...props }) => {
             {...props}
             src={contents.topImgUrl}
             roundness={contents.topImgRoundness}
-          />
+            titleInTopImage={contents.titleInTopImage}
+          >
+            {contents.title && contents.titleInTopImage && (
+              <BlogHeading>{contents.title}</BlogHeading>
+            )}
+          </BlogImage>
         )}
-        {contents.title && <BlogHeading>{contents.title}</BlogHeading>}
+        {contents.title && !contents.titleInTopImage && (
+          <BlogHeading>{contents.title}</BlogHeading>
+        )}
         {contents.summary && <BlogSummary>{contents.summary}</BlogSummary>}
         {contents.paragraphs &&
           contents.paragraphs.map(paragraph => (
