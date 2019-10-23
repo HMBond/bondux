@@ -39,6 +39,10 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1em;
     font-family: 'DejaVu Extra Light';
     margin: 0px;
+    
+    * {
+        box-sizing: border-box;
+      }
   }
 
   .overflow-hidden {

@@ -1,11 +1,12 @@
 import styled, { css } from "styled-components";
-import Heading from "./styles/Heading";
+import Heading, { SubHeading } from "./styles/Heading";
 import Summary from "./styles/Summary";
 import Hr from "./styles/Hr";
 import WhiteSpace from "./styles/WhiteSpace";
 import uniqid from "uniqid";
 
 const BlogPostBase = styled.div`
+  order: ${props => (props.card ? "" : "-1")};
   max-width: 40rem;
   display: flex;
   flex-direction: column;
@@ -26,6 +27,7 @@ const BlogPostBase = styled.div`
 `;
 
 const BlogImage = styled.div`
+  width: 100%;
   margin-top: 2rem;
   background: url(${props => props.src});
   background-size: cover;
@@ -52,7 +54,9 @@ const BlogSummary = styled(Summary)`
 `;
 
 const Paragraph = styled.div`
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   & p:first-letter {
     font-size: 2rem;
     font-family: "DejaVu Serif";
@@ -84,7 +88,7 @@ const BlogPost = ({ card, contents, ...props }) => {
     );
   } else {
     return (
-      <BlogPostBase {...props}>
+      <BlogPostBase card={false} {...props}>
         {contents.topImgUrl && (
           <BlogImage
             {...props}
