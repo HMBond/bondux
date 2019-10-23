@@ -40,7 +40,6 @@
     - category: example
       title: Blogpost
       topImgUrl: "../static/image4.jpg"
-      titleInTopImage: true
       topImgRoundness: "50%"
       summary: "Hello, this is the introduction of a blogpost. The text goes here like a summary. Lets talk about the subject, but not yet in dept. So the reader gets interested!"
       paragraphs:
@@ -54,7 +53,8 @@
     - category: design
       title: Design Vision
       topImgUrl: "../static/design.jpg"
-      titleInTopImage: true
+      titleInTopImg:
+        color: "accent"
       topImgRoundness: "50%"
       summary: "How do I think about design practice? What do I recommend to any designer? A broad overview of the things I learned during my study at Tu-Delft and my own point of view on design!"
       paragraphs:

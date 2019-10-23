@@ -15,13 +15,16 @@ const Blog = () => {
   return (
     <Context.Consumer>
       {context => (
-        <BlogPage>
+        <BlogPage id={"blog-page"}>
           {context.content
             .find(page => page.name == "blog")
             .blogPosts.map(entry => (
               <BlogPost
                 onClick={() => {
                   setOpenPost(entry);
+                  if (entry !== openPost) {
+                    document.getElementById("blog-page").scrollIntoView();
+                  }
                 }}
                 card={entry !== openPost}
                 contents={entry}

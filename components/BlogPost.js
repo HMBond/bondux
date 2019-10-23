@@ -3,6 +3,7 @@ import Heading, { SubHeading } from "./styles/Heading";
 import Summary from "./styles/Summary";
 import Hr from "./styles/Hr";
 import WhiteSpace from "./styles/WhiteSpace";
+import { getColor } from "./styles/Theme";
 import uniqid from "uniqid";
 
 const BlogPostBase = styled.div`
@@ -38,9 +39,15 @@ const BlogImage = styled.div`
   border-radius: ${props => props.roundness};
 
   ${props =>
-    props.titleInTopImage &&
+    props.titleInTopImg &&
     css`
-      color: ${props => props.theme.colors.offWhite};
+      color: ${props =>
+        props.titleInTopImg.color
+          ? getColor(props.titleInTopImg.color)
+          : props.theme.colors.offWhite};
+      span {
+        margin: 0 10px;
+      }
       display: flex;
       justify-content: center;
       align-items: center;
@@ -103,14 +110,14 @@ const BlogPost = ({ card, contents, ...props }) => {
             {...props}
             src={contents.topImgUrl}
             roundness={contents.topImgRoundness}
-            titleInTopImage={contents.titleInTopImage}
+            titleInTopImg={contents.titleInTopImg}
           >
-            {contents.title && contents.titleInTopImage && (
+            {contents.title && contents.titleInTopImg && (
               <BlogHeading>{contents.title}</BlogHeading>
             )}
           </BlogImage>
         )}
-        {contents.title && !contents.titleInTopImage && (
+        {contents.title && !contents.titleInTopImg && (
           <BlogHeading>{contents.title}</BlogHeading>
         )}
         {contents.summary && <BlogSummary>{contents.summary}</BlogSummary>}
