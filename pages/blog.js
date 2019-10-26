@@ -27,7 +27,7 @@ const Blog = () => {
                   }
                 }}
                 card={entry !== openPost}
-                contents={entry}
+                entry={entry}
                 key={uniqid()}
               />
             ))}

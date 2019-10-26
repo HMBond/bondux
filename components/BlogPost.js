@@ -85,16 +85,16 @@ const BlogText = styled.p`
   line-height: 1.4rem;
 `;
 
-const BlogPost = ({ card, contents, ...props }) => {
+const BlogPost = ({ card, entry, ...props }) => {
   if (card) {
     return (
       <BlogPostBase card {...props}>
-        {contents.topImgUrl && (
-          <BlogImage src={contents.topImgUrl} card {...props}>
-            {contents.title && <BlogHeading>{contents.title}</BlogHeading>}
-            {contents.summary && (
+        {entry.topImgUrl && (
+          <BlogImage src={entry.topImgUrl} card {...props}>
+            {entry.title && <BlogHeading>{entry.title}</BlogHeading>}
+            {entry.summary && (
               <BlogSummary>
-                <span>{contents.summary}</span>
+                <span>{entry.summary}</span>
               </BlogSummary>
             )}
           </BlogImage>
@@ -105,24 +105,24 @@ const BlogPost = ({ card, contents, ...props }) => {
   } else {
     return (
       <BlogPostBase card={false} {...props}>
-        {contents.topImgUrl && (
+        {entry.topImgUrl && (
           <BlogImage
             {...props}
-            src={contents.topImgUrl}
-            roundness={contents.topImgRoundness}
-            titleInTopImg={contents.titleInTopImg}
+            src={entry.topImgUrl}
+            roundness={entry.topImgRoundness}
+            titleInTopImg={entry.titleInTopImg}
           >
-            {contents.title && contents.titleInTopImg && (
-              <BlogHeading>{contents.title}</BlogHeading>
+            {entry.title && entry.titleInTopImg && (
+              <BlogHeading>{entry.title}</BlogHeading>
             )}
           </BlogImage>
         )}
-        {contents.title && !contents.titleInTopImg && (
-          <BlogHeading>{contents.title}</BlogHeading>
+        {entry.title && !entry.titleInTopImg && (
+          <BlogHeading>{entry.title}</BlogHeading>
         )}
-        {contents.summary && <BlogSummary>{contents.summary}</BlogSummary>}
-        {contents.paragraphs &&
-          contents.paragraphs.map(paragraph => (
+        {entry.summary && <BlogSummary>{entry.summary}</BlogSummary>}
+        {entry.paragraphs &&
+          entry.paragraphs.map(paragraph => (
             <Paragraph key={uniqid()}>
               {paragraph.heading && (
                 <SubHeading>{paragraph.heading}</SubHeading>
