@@ -58,16 +58,17 @@ class Introduction extends Component {
     };
 
     this.nextLine = () => {
-      this.setState(prevstate => {
-        if (
-          prevstate.showLine <
-          this.props.context.content[0].introduction.length - 1
-        ) {
-          return { showLine: prevstate.showLine + 1 };
-        } else {
-          return { showLine: 0 };
-        }
-      });
+      this.state.ssrReady &&
+        this.setState(prevstate => {
+          if (
+            prevstate.showLine <
+            this.props.context.content[0].introduction.length - 1
+          ) {
+            return { showLine: prevstate.showLine + 1 };
+          } else {
+            return { showLine: 0 };
+          }
+        });
     };
   }
 
@@ -78,22 +79,26 @@ class Introduction extends Component {
     });
   }
 
-  newTimer = () => {
-    if (window.timer) {
-      window.clearTimeout(window.timer);
+  componentDidUpdate() {
+    if (this.props.context.nav.open) {
+      this.state.ssrReady && clearTimeout(timer);
+    } else {
+      this.state.ssrReady && this.newTimer();
     }
-    window.timer = window.setTimeout(this.nextLine, 2500);
+  }
+
+  componentWillUnmount() {
+    this.state = { ssrReady: false, showLine: 0 };
+  }
+
+  newTimer = () => {
+    timer && clearTimeout(timer);
+    let timer = setTimeout(this.nextLine, 2500);
   };
 
   render() {
     const { context } = this.props;
     const { ssrReady, showLine } = this.state;
-
-    if (context.nav.open) {
-      ssrReady && window.clearTimeout(window.timer);
-    } else {
-      ssrReady && this.newTimer();
-    }
 
     return (
       <IntroductionBase>

@@ -51,16 +51,11 @@ class Logo extends Component {
     this.rightEye = null;
   }
 
-  moveEyes = debounce(
-    (xLeft, yLeft, xRight, yRight) => {
-      this.setState({
-        leftEyeRotation: (Math.atan2(yLeft, xLeft) * 180) / Math.PI,
-        rightEyeRotation: (Math.atan2(yRight, xRight) * 180) / Math.PI
-      });
-    },
-    500,
-    { leading: false, trailing: true }
-  );
+  componentDidMount() {
+    addEventListener("mousemove", this.googlyEyes);
+    this.leftEye = document.querySelector("circle[class=logo-left-eye]");
+    this.rightEye = document.querySelector("circle[class=logo-right-eye]");
+  }
 
   googlyEyes = event => {
     let x = event.pageX;
@@ -72,14 +67,20 @@ class Logo extends Component {
     this.moveEyes(xLeft, yLeft, xRight, yRight);
   };
 
-  componentDidMount() {
-    document.addEventListener("mousemove", this.googlyEyes);
-    this.leftEye = document.querySelector("circle[class=logo-left-eye]");
-    this.rightEye = document.querySelector("circle[class=logo-right-eye]");
-  }
+  moveEyes = debounce(
+    (xLeft, yLeft, xRight, yRight) => {
+      this.setState({
+        leftEyeRotation: (Math.atan2(yLeft, xLeft) * 180) / Math.PI,
+        rightEyeRotation: (Math.atan2(yRight, xRight) * 180) / Math.PI
+      });
+    },
+    500,
+    { leading: false, trailing: true }
+  );
 
   componentWillUnmount() {
-    document.removeEventListener("mousemove", this.googlyEyes);
+    removeEventListener("mousemove", this.googlyEyes);
+    this.moveEyes.cancel();
   }
 
   render() {
