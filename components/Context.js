@@ -44,12 +44,12 @@ export class ContextProvider extends Component {
   }
 
   updateCurrentPath = () => {
-    this.setState(prevState => {
-      if (prevState.nav.currentPath !== Router.router.pathname) {
+    this.setState(prevstate => {
+      if (prevstate.nav.currentPath !== Router.router.pathname) {
         return {
-          ...prevState,
+          ...prevstate,
           nav: {
-            ...prevState.nav,
+            ...prevstate.nav,
             currentPath: Router.router.pathname
           }
         };
@@ -58,18 +58,18 @@ export class ContextProvider extends Component {
   };
 
   toggleDevMode = () => {
-    this.setState(prevState => ({
-      ...prevState,
-      devMode: !prevState.devMode
+    this.setState(prevstate => ({
+      ...prevstate,
+      devMode: !prevstate.devMode
     }));
   };
 
   setSelectorPos = newPosition => {
     if (content[newPosition]) {
-      this.setState(prevState => ({
-        ...prevState,
+      this.setState(prevstate => ({
+        ...prevstate,
         selector: {
-          ...prevState.selector,
+          ...prevstate.selector,
           position: newPosition
         }
       }));
@@ -77,12 +77,12 @@ export class ContextProvider extends Component {
   };
 
   visitSelectionAndCloseNav = () => {
-    this.setState(prevState => {
-      Router.push(content[prevState.selector.position].url);
+    this.setState(prevstate => {
+      Router.push(content[prevstate.selector.position].url);
       return {
-        ...prevState,
+        ...prevstate,
         nav: {
-          ...prevState.nav,
+          ...prevstate.nav,
           open: false
         }
       };
@@ -94,7 +94,7 @@ export class ContextProvider extends Component {
     const index = content.indexOf(
       content.find(page => page.url === Router.router.pathname)
     );
-    this.setState(prevState => {
+    this.setState(prevstate => {
       Router.push(content[constrain(index + advance, content.length)].url);
     });
     this.updateCurrentPath();
@@ -102,10 +102,10 @@ export class ContextProvider extends Component {
 
   setNavOpen = debounce(
     bool =>
-      this.setState(prevState => ({
-        ...prevState,
+      this.setState(prevstate => ({
+        ...prevstate,
         nav: {
-          ...prevState.nav,
+          ...prevstate.nav,
           open: bool
         }
       })),
