@@ -21,7 +21,6 @@ export class ContextProvider extends Component {
 
       nav: {
         currentPath: "/",
-        currentPos: 0,
         back: () => this.navigate(-1),
         forward: () => this.navigate(1),
         open: false,
@@ -32,7 +31,11 @@ export class ContextProvider extends Component {
   }
 
   componentDidMount() {
-    this.setNavCurrentPos();
+    this.updateCurrentPath();
+  }
+
+  componentDidUpdate() {
+    this.updateCurrentPath();
   }
 
   render() {
@@ -40,18 +43,19 @@ export class ContextProvider extends Component {
     return <Context.Provider value={this.state}>{children}</Context.Provider>;
   }
 
-  setNavCurrentPos() {
-    this.setState(prevState => ({
-      ...prevState,
-      nav: {
-        ...prevState.nav,
-        currentPath: window.location.pathname,
-        currentPos: content.indexOf(
-          content.find(page => page.url === window.location.pathname)
-        )
+  updateCurrentPath = () => {
+    this.setState(prevState => {
+      if (prevState.nav.currentPath !== Router.router.pathname) {
+        return {
+          ...prevState,
+          nav: {
+            ...prevState.nav,
+            currentPath: Router.router.pathname
+          }
+        };
       }
-    }));
-  }
+    });
+  };
 
   toggleDevMode = () => {
     this.setState(prevState => ({
@@ -83,16 +87,17 @@ export class ContextProvider extends Component {
         }
       };
     });
+    this.updateCurrentPath();
   };
 
   navigate = advance => {
-    this.setNavCurrentPos();
+    const index = content.indexOf(
+      content.find(page => page.url === Router.router.pathname)
+    );
     this.setState(prevState => {
-      Router.push(
-        content[constrain(prevState.nav.currentPos + advance, content.length)]
-          .url
-      );
+      Router.push(content[constrain(index + advance, content.length)].url);
     });
+    this.updateCurrentPath();
   };
 
   setNavOpen = debounce(

@@ -60,18 +60,9 @@ class Nav extends Component {
     super(props);
     this.state = {
       ssrReady: false,
-      currentPage: null,
       properlyClosed: true
     };
   }
-
-  checkLocation = () => {
-    this.setState(prevstate => {
-      if (prevstate.currentPage !== Router.router.pathname) {
-        return { ...prevstate, currentPage: Router.router.pathname };
-      }
-    });
-  };
 
   setProperlyClosed = debounce(properlyClosed => {
     this.setState(prevstate => ({
@@ -82,30 +73,28 @@ class Nav extends Component {
 
   componentDidMount() {
     this.setState(prevstate => ({ ...prevstate, ssrReady: true }));
-    this.checkLocation();
-  }
-
-  componentDidUpdate() {
-    this.checkLocation();
   }
 
   render() {
-    const { ssrReady, currentPage, properlyClosed } = this.state;
+    const { ssrReady, properlyClosed } = this.state;
 
     return (
       <Context.Consumer>
         {context => (
           <NavBase ssrReady={ssrReady}>
             <NavButton
-              hidden={currentPage === "/"}
+              hidden={context.nav.currentPath === context.content[0].url}
               properlyClosed={properlyClosed}
-              onClick={() => Router.back()}
+              onClick={() => context.nav.back()}
               order={1}
             >
               <NavBackIcon />
             </NavButton>
             <NavButton
-              hidden={currentPage === "/contact"}
+              hidden={
+                context.nav.currentPath ===
+                context.content[context.content.length - 1].url
+              }
               properlyClosed={properlyClosed}
               onClick={() => context.nav.forward()}
               order={3}
