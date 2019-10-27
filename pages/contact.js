@@ -1,5 +1,5 @@
 import { Title } from "../components/styles/Heading.js";
 
-const Contact = () => <Title>Contact</Title>;
+const Contact = () => <Title extraLarge>Contact</Title>;
 
 export default Contact;

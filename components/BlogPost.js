@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { Heading, SubHeading, Summary } from "./styles/Heading";
+import { Title, SubHeading, Summary } from "./styles/Heading";
 import Hr from "./styles/Hr";
 import WhiteSpace from "./styles/WhiteSpace";
 import { getColor } from "./styles/Theme";
@@ -59,7 +59,7 @@ const BlogImage = styled.div`
     `};
 `;
 
-const BlogHeading = styled(Heading)`
+const BlogHeading = styled(Title)`
   margin-top: 2rem;
 `;
 
@@ -90,7 +90,7 @@ const BlogPost = ({ card, entry, ...props }) => {
       <BlogPostBase card {...props}>
         {entry.topImgUrl && (
           <BlogImage src={entry.topImgUrl} card {...props}>
-            {entry.title && <BlogHeading>{entry.title}</BlogHeading>}
+            {entry.title && <BlogHeading large>{entry.title}</BlogHeading>}
             {entry.summary && (
               <BlogSummary>
                 <span>{entry.summary}</span>
