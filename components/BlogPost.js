@@ -8,6 +8,7 @@ import uniqid from "uniqid";
 const BlogPostBase = styled.div`
   order: ${props => (props.card ? "" : "-1")};
   max-width: 40rem;
+  position: relative;
   display: flex;
   flex-direction: column;
   margin: 2rem 0 4rem 0;
@@ -96,12 +97,35 @@ const BlogText = styled.p`
   }
 `;
 
+const Category = styled.div`
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: ${props => props.theme.colors.bg};
+  font-weight: bolder;
+  padding: 1rem;
+  height: 3rem;
+  background: ${props => props.theme.colors.grey};
+  &:before {
+    content: " ";
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    right: 99.98%;
+    border-left: 3rem solid transparent;
+    border-bottom: 3rem solid transparent;
+    border-top: 3rem solid ${props => props.theme.colors.grey};
+  }
+`;
+
 const BlogPost = ({ card, entry, ...props }) => {
   if (card) {
     return (
       <BlogPostBase card {...props}>
         {entry.topImgUrl && (
           <BlogImage src={entry.topImgUrl} card {...props}>
+            {entry.category && <Category>{entry.category}</Category>}
             {entry.title && <BlogTitle>{entry.title}</BlogTitle>}
             {entry.summary && (
               <BlogSummary>

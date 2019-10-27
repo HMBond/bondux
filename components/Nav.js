@@ -48,7 +48,6 @@ const NavMenu = styled.div`
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  overflow-y: auto;
   margin: auto;
   width: 250px;
   user-select: none;

@@ -6,7 +6,8 @@ const NavItemButton = styled.div`
   color: ${props => props.theme.colors.bg};
   font-size: 2.8rem;
   padding: 10px;
-  margin: 10px;
+  transform: ${props => (props.selected ? "rotateX(-190deg)" : "")};
+  transition: transform 0.2s linear;
   width: max-content;
   align-self: center;
   cursor: pointer;
