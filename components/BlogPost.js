@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { Title, SubHeading, Summary } from "./styles/Heading";
+import { Title, SubHeading } from "./styles/Heading";
 import Hr from "./styles/Hr";
 import WhiteSpace from "./styles/WhiteSpace";
 import { getColor } from "./styles/Theme";
@@ -10,7 +10,7 @@ const BlogPostBase = styled.div`
   max-width: 40rem;
   display: flex;
   flex-direction: column;
-  margin-bottom: 4rem;
+  margin: 2rem 0 4rem 0;
   align-items: center;
   ${props =>
     props.card &&
@@ -27,15 +27,19 @@ const BlogPostBase = styled.div`
 `;
 
 const BlogImage = styled.div`
-  width: 100%;
-  margin-top: 2rem;
   background: url(${props => props.src});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: ${props => (props.roundness ? "100vw" : "28rem")};
-  max-height: 40rem;
   border-radius: ${props => props.roundness};
+  width: calc(100% - 4rem);
+  height: calc(100vw - 4rem);
+
+  @media screen and (min-width: 600px) {
+    width: 100%;
+    height: ${props => (props.roundness ? "100vw" : "28rem")};
+    max-height: 40rem;
+  }
 
   ${props =>
     props.titleInTopImg &&
@@ -45,7 +49,7 @@ const BlogImage = styled.div`
           ? getColor(props.titleInTopImg.color)
           : props.theme.colors.offWhite};
       span {
-        margin: 0 10px;
+        margin: 0 1rem;
       }
       display: flex;
       justify-content: center;
@@ -56,19 +60,24 @@ const BlogImage = styled.div`
     props.card &&
     css`
       padding: 2rem;
+      width: 100%;
     `};
 `;
 
-const BlogHeading = styled(Title)`
+const BlogTitle = styled(Title)`
   margin-top: 2rem;
 `;
 
-const BlogSummary = styled(Summary)`
-  margin: 1rem 10px;
-  line-height: 1.8rem;
+const BlogSummary = styled.div`
+  font-size: 1.4rem;
+  font-weight: bolder;
+  line-height: 2rem;
+  margin: 1rem;
+  line-height: 2rem;
 `;
 
 const Paragraph = styled.div`
+  margin-top: 2em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -80,8 +89,11 @@ const Paragraph = styled.div`
 `;
 
 const BlogText = styled.p`
-  margin: 2rem;
-  line-height: 1.4rem;
+  margin: 1rem 2rem 3rem 2rem;
+  line-height: 1.8rem;
+  @media screen and (min-width: 600px) {
+    margin: 1rem 0 3rem;
+  }
 `;
 
 const BlogPost = ({ card, entry, ...props }) => {
@@ -90,7 +102,7 @@ const BlogPost = ({ card, entry, ...props }) => {
       <BlogPostBase card {...props}>
         {entry.topImgUrl && (
           <BlogImage src={entry.topImgUrl} card {...props}>
-            {entry.title && <BlogHeading large>{entry.title}</BlogHeading>}
+            {entry.title && <BlogTitle>{entry.title}</BlogTitle>}
             {entry.summary && (
               <BlogSummary>
                 <span>{entry.summary}</span>
@@ -112,14 +124,13 @@ const BlogPost = ({ card, entry, ...props }) => {
             titleInTopImg={entry.titleInTopImg}
           >
             {entry.title && entry.titleInTopImg && (
-              <BlogHeading>{entry.title}</BlogHeading>
+              <BlogTitle large>{entry.title}</BlogTitle>
             )}
           </BlogImage>
         )}
         {entry.title && !entry.titleInTopImg && (
-          <BlogHeading>{entry.title}</BlogHeading>
+          <BlogTitle large>{entry.title}</BlogTitle>
         )}
-        {entry.summary && <BlogSummary>{entry.summary}</BlogSummary>}
         {entry.paragraphs &&
           entry.paragraphs.map(paragraph => (
             <Paragraph key={uniqid()}>
@@ -131,7 +142,6 @@ const BlogPost = ({ card, entry, ...props }) => {
             </Paragraph>
           ))}
         <Hr />
-        <WhiteSpace height={"3rem"} />
       </BlogPostBase>
     );
   }

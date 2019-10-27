@@ -44,6 +44,12 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
       }
   }
+  
+  @media screen and (max-width: 420px) {
+    html {
+      font-size: 12px;
+    }
+  }
 
   .overflow-hidden {
     overflow: hidden;
