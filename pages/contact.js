@@ -1,5 +1,5 @@
-import Heading from "../components/styles/Heading.js";
+import { Title } from "../components/styles/Heading.js";
 
-const Contact = () => <Heading>Contact</Heading>;
+const Contact = () => <Title>Contact</Title>;
 
 export default Contact;

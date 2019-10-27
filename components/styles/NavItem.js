@@ -4,7 +4,7 @@ import NavItemLink from "next/link";
 const NavItemButton = styled.div`
   font-family: "DejaVu Condensed Bold";
   color: ${props => props.theme.colors.bg};
-  font-size: 1.2rem;
+  font-size: 2.8rem;
   padding: 10px;
   margin: 10px;
   width: max-content;

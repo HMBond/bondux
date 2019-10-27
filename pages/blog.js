@@ -17,7 +17,7 @@ const Blog = () => {
       {context => (
         <BlogPage id={"blog-page"}>
           {context.content
-            .find(page => page.name == "blog")
+            .find(page => page.url == "/blog")
             .blogPosts.map(entry => (
               <BlogPost
                 onClick={() => {

@@ -56,6 +56,7 @@ class Introduction extends Component {
       ssrReady: false,
       showLine: null
     };
+    this.timer = null;
   }
 
   componentDidMount() {
@@ -67,7 +68,7 @@ class Introduction extends Component {
 
   componentDidUpdate() {
     if (this.props.context.nav.open) {
-      this.state.ssrReady && clearTimeout(timer);
+      this.state.ssrReady && clearTimeout(this.timer);
     } else {
       this.state.ssrReady && this.newTimer();
     }
@@ -78,8 +79,8 @@ class Introduction extends Component {
   }
 
   newTimer = () => {
-    timer && clearTimeout(timer);
-    let timer = setTimeout(this.nextLine, 2500);
+    this.timer && clearTimeout(this.timer);
+    this.timer = setTimeout(this.nextLine, 2500);
   };
 
   nextLine = () => {

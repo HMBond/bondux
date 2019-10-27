@@ -1,6 +1,5 @@
 import styled, { css } from "styled-components";
-import Heading, { SubHeading } from "./styles/Heading";
-import Summary from "./styles/Summary";
+import { Heading, SubHeading, Summary } from "./styles/Heading";
 import Hr from "./styles/Hr";
 import WhiteSpace from "./styles/WhiteSpace";
 import { getColor } from "./styles/Theme";

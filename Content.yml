@@ -1,4 +1,4 @@
-- name: intro
+- name: INTRO
   url: "/"
   introduction:
     - text: "Hi, I'm Mike Bond!"
@@ -34,7 +34,7 @@
       link:
         url: "/contact"
         label: "contact me!"
-- name: "blog"
+- name: BLOG
   url: "/blog"
   blogPosts:
     - category: example
@@ -79,7 +79,7 @@
           imgUrls:
             - "../static/image2.jpg"
             - "../static/image3.jpg"
-- name: skills
+- name: SKILLS
   url: "/skills"
-- name: contact
+- name: CONTACT
   url: "/contact"
