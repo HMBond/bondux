@@ -56,20 +56,6 @@ class Introduction extends Component {
       ssrReady: false,
       showLine: null
     };
-
-    this.nextLine = () => {
-      this.state.ssrReady &&
-        this.setState(prevstate => {
-          if (
-            prevstate.showLine <
-            this.props.context.content[0].introduction.length - 1
-          ) {
-            return { showLine: prevstate.showLine + 1 };
-          } else {
-            return { showLine: 0 };
-          }
-        });
-    };
   }
 
   componentDidMount() {
@@ -94,6 +80,20 @@ class Introduction extends Component {
   newTimer = () => {
     timer && clearTimeout(timer);
     let timer = setTimeout(this.nextLine, 2500);
+  };
+
+  nextLine = () => {
+    this.state.ssrReady &&
+      this.setState(prevstate => {
+        if (
+          prevstate.showLine <
+          this.props.context.content[0].introduction.length - 1
+        ) {
+          return { showLine: prevstate.showLine + 1 };
+        } else {
+          return { showLine: 0 };
+        }
+      });
   };
 
   render() {

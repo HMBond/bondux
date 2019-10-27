@@ -46,16 +46,42 @@ const Path = styled.path`
 class Logo extends Component {
   constructor(props) {
     super(props);
-    this.state = { leftEyeRotation: 10, rightEyeRotation: 0 };
+    this.state = { leftEyeRotation: 10, rightEyeRotation: 0, popEyes: false };
     this.leftEye = null;
     this.rightEye = null;
+    this.popEyesTimer = null;
+    this.popEyesEndTimer = null;
   }
 
   componentDidMount() {
     addEventListener("mousemove", this.googlyEyes);
     this.leftEye = document.querySelector("circle[class=logo-left-eye]");
     this.rightEye = document.querySelector("circle[class=logo-right-eye]");
+    this.popEyesTimer = setTimeout(this.popEyes, 20000);
   }
+
+  componentWillUnmount() {
+    removeEventListener("mousemove", this.googlyEyes);
+    this.popEyesTimer && clearTimeout(this.popEyesTimer);
+    this.popEyesEndTimer && clearTimeout(this.popEyesEndTimer);
+    this.moveEyes && this.moveEyes.cancel();
+  }
+
+  popEyes = () => {
+    this.setState({
+      leftEyeRotation: 0,
+      rightEyeRotation: 0,
+      popEyes: true
+    });
+    this.popEyesEndTimer = setTimeout(this.unPopEyes, 4000);
+  };
+
+  unPopEyes = () =>
+    this.setState({
+      leftEyeRotation: 840,
+      rightEyeRotation: -765,
+      popEyes: false
+    });
 
   googlyEyes = event => {
     let x = event.pageX;
@@ -78,13 +104,8 @@ class Logo extends Component {
     { leading: false, trailing: true }
   );
 
-  componentWillUnmount() {
-    removeEventListener("mousemove", this.googlyEyes);
-    this.moveEyes.cancel();
-  }
-
   render() {
-    const { leftEyeRotation, rightEyeRotation } = this.state;
+    const { leftEyeRotation, rightEyeRotation, popEyes } = this.state;
 
     return (
       <StyledSvg
@@ -129,26 +150,32 @@ class Logo extends Component {
         />
         <circle
           style={{
-            transform: `rotate(${leftEyeRotation}deg)`,
+            transform: popEyes ? "scale(1.2)" : `rotate(${leftEyeRotation}deg)`,
             transformOrigin: "69px 50px",
-            transition: "transform 0.4s ease",
+            transition: popEyes
+              ? "transform 2s linear 1s"
+              : "transform 0.4s ease",
             fill: "var(--main-accent-color)"
           }}
           className="logo-left-eye"
           r="10"
-          cx="74"
+          cx={popEyes ? "70" : "74"}
           cy="50"
         />
         <circle
           style={{
-            transform: `rotate(${rightEyeRotation}deg)`,
+            transform: popEyes
+              ? "scale(1.3)"
+              : `rotate(${rightEyeRotation}deg)`,
             transformOrigin: "137px 50px",
-            transition: "transform 0.4s ease",
+            transition: popEyes
+              ? "transform 2s linear 1s"
+              : "transform 0.4s ease",
             fill: "var(--main-accent-color)"
           }}
           className="logo-right-eye"
           r="10"
-          cx="142"
+          cx={popEyes ? "138" : "142"}
           cy="50"
         />
       </StyledSvg>
