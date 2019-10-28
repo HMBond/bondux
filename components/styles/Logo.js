@@ -17,7 +17,8 @@ const Path = styled.path`
   ${props =>
     props.colorClass === "svg-orange" &&
     css`
-      fill: ${props => (props.light ? props.theme.colors.bg : "")};
+      fill: ${props =>
+        props.light ? props.theme.colors.bg : props.theme.colors.accent};
     `}
   ${props =>
     props.colorClass === "svg-dark-stroke-animation" &&
