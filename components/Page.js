@@ -7,9 +7,9 @@ import { theme, devMode } from "./styles/Theme";
 
 const GlobalStyle = createGlobalStyle`
   :root {
-    --main-background-color: ${props => props.theme.colors.bg};
-    --main-foreground-color: ${props => props.theme.colors.primary};
-    --main-accent-color: ${props => props.theme.colors.accent};
+    --theme-background-color: ${props => props.theme.colors.bg};
+    --theme-foreground-color: ${props => props.theme.colors.primary};
+    --theme-accent-color: ${props => props.theme.colors.accent};
   }
 
   @font-face {

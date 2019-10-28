@@ -1,8 +1,6 @@
 import styled, { css } from "styled-components";
 import { Title, SubHeading } from "./styles/Heading";
 import Hr from "./styles/Hr";
-import WhiteSpace from "./styles/WhiteSpace";
-import { getColor } from "./styles/Theme";
 import uniqid from "uniqid";
 
 const BlogPostBase = styled.div`
@@ -47,7 +45,7 @@ const BlogImage = styled.div`
     css`
       color: ${props =>
         props.titleInTopImg.color
-          ? getColor(props.titleInTopImg.color)
+          ? props.theme.colors[props.titleInTopImg.color]
           : props.theme.colors.offWhite};
       span {
         margin: 0 1rem;

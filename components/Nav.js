@@ -118,7 +118,7 @@ class Nav extends Component {
                 context.nav.setOpen(false);
               }}
             >
-              <Logo extra light />
+              <Logo light />
               <NavMenu>
                 {context.content.map((item, index) => (
                   <NavItem

@@ -17,10 +17,7 @@ const Path = styled.path`
   ${props =>
     props.colorClass === "svg-orange" &&
     css`
-      fill: ${props =>
-        props.light ? props.theme.colors.primary : props.theme.colors.accent};
-      fill: ${props =>
-        props.extra && props.light ? props.theme.colors.bg : ""};
+      fill: ${props => (props.light ? props.theme.colors.bg : "")};
     `}
   ${props =>
     props.colorClass === "svg-dark-stroke-animation" &&
@@ -106,7 +103,6 @@ class Logo extends Component {
 
   render() {
     const { leftEyeRotation, rightEyeRotation, popEyes } = this.state;
-
     return (
       <StyledSvg
         version="1.0"
@@ -143,7 +139,7 @@ class Logo extends Component {
           {...this.props}
           colorClass="svg-dark-stroke-animation"
           fill="none"
-          stroke="var(--main-foreground-color)"
+          stroke="var(--theme-foreground-color)"
           strokeWidth="2"
           strokeMiterlimit="10"
           d="M88.668 78.459c8.75 8.75 21.166 8.833 30 0"
@@ -155,7 +151,7 @@ class Logo extends Component {
             transition: popEyes
               ? "transform 2s linear 1s"
               : "transform 0.4s ease",
-            fill: "var(--main-accent-color)"
+            fill: this.props.light ? "transparent" : "var(--theme-accent-color)"
           }}
           className="logo-left-eye"
           r="10"
@@ -171,7 +167,7 @@ class Logo extends Component {
             transition: popEyes
               ? "transform 2s linear 1s"
               : "transform 0.4s ease",
-            fill: "var(--main-accent-color)"
+            fill: this.props.light ? "transparent" : "var(--theme-accent-color)"
           }}
           className="logo-right-eye"
           r="10"

@@ -24,5 +24,3 @@ export const devMode = ({ colors: { bg, grey, lightGrey }, ...rest }) => ({
   },
   ...rest
 });
-
-export const getColor = color => props => props.theme.colors[color];
