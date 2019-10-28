@@ -22,11 +22,9 @@ const TextBox = styled.div`
 `;
 const PosedLine = posed.div({
   exit: {
-    opacity: 0,
     height: "0px"
   },
   enter: {
-    opacity: 1,
     height: "100%",
     beforeChildren: true,
     staggerChildren: 20
@@ -40,7 +38,7 @@ const charPoses = {
 
 const Text = styled.h2`
   margin: 0;
-  cursor: pointer;
+  cursor: default;
 `;
 
 const Label = styled.h2`
@@ -103,28 +101,30 @@ class Introduction extends Component {
 
     return (
       <IntroductionBase>
-        <TextBox ssrReady={ssrReady}>
-          {context.content[0].introduction.map((quote, index) => (
-            <PosedLine
-              initialPose="exit"
-              pose={index === showLine ? "enter" : "exit"}
-              key={uniqid()}
-            >
-              <Text>
-                <SplitText charPoses={charPoses}>{quote.text}</SplitText>
-              </Text>
-              {quote.link && (
-                <Link href={quote.link.url}>
-                  <Label>
-                    <SplitText charPoses={charPoses}>
-                      {quote.link.label}
-                    </SplitText>
-                  </Label>
-                </Link>
-              )}
-            </PosedLine>
-          ))}
-        </TextBox>
+        {!context.nav.open && (
+          <TextBox ssrReady={ssrReady}>
+            {context.content[0].introduction.map((quote, index) => (
+              <PosedLine
+                initialPose="exit"
+                pose={index === showLine ? "enter" : "exit"}
+                key={uniqid()}
+              >
+                <Text>
+                  <SplitText charPoses={charPoses}>{quote.text}</SplitText>
+                </Text>
+                {quote.link && (
+                  <Link href={quote.link.url}>
+                    <Label>
+                      <SplitText charPoses={charPoses}>
+                        {quote.link.label}
+                      </SplitText>
+                    </Label>
+                  </Link>
+                )}
+              </PosedLine>
+            ))}
+          </TextBox>
+        )}
       </IntroductionBase>
     );
   }
