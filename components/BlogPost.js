@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { Title, SubHeading } from "./styles/Heading";
+import { Title, SubHeading } from "./styles/Text";
 import Hr from "./styles/Hr";
 import uniqid from "uniqid";
 

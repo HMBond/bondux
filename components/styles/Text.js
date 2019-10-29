@@ -18,3 +18,10 @@ export const SubHeading = styled.span`
   font-size: 2rem;
   margin: 1rem 0;
 `;
+
+export const Label = styled.a`
+  font-size: 1.4rem;
+  font-weight: bolder;
+  color: ${props => props.theme.colors.accent};
+  cursor: pointer;
+`;

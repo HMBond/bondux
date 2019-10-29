@@ -1,8 +1,9 @@
 import { Component } from "react";
+import styled from "styled-components";
 import posed from "react-pose";
 import SplitText from "react-pose-text";
-import styled from "styled-components";
 import Link from "next/link";
+import { Label } from "./styles/Text";
 import uniqid from "uniqid";
 
 const IntroductionBase = styled.div`
@@ -36,15 +37,10 @@ const charPoses = {
   enter: { opacity: 1, height: "100%" }
 };
 
-const Text = styled.h2`
+const Text = styled(Label)`
   margin: 0;
+  color: ${props => props.theme.colors.primary};
   cursor: default;
-`;
-
-const Label = styled.h2`
-  margin: 0;
-  color: ${props => props.theme.colors.accent};
-  cursor: pointer;
 `;
 
 class Introduction extends Component {
