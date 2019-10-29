@@ -8,7 +8,7 @@ export const theme = {
     offWhite: "#EDEDED",
     lighten: "rgba(255,255,255,0.2)"
   },
-  maxWidth: "1000px",
+  maxWidth: "40rem",
   bs: "0 12px 24px 0 rgba(0, 0, 0, 0.09)"
 };
 

@@ -5,7 +5,7 @@ import uniqid from "uniqid";
 
 const BlogPostBase = styled.div`
   order: ${props => (props.card ? "" : "-1")};
-  max-width: 40rem;
+  max-width: ${props => props.theme.maxWidth};
   position: relative;
   display: flex;
   flex-direction: column;
@@ -37,7 +37,7 @@ const BlogImage = styled.div`
   @media screen and (min-width: 600px) {
     width: 100%;
     height: ${props => (props.roundness ? "100vw" : "28rem")};
-    max-height: 40rem;
+    max-height: ${props => props.theme.maxWidth};
   }
 
   ${props =>
