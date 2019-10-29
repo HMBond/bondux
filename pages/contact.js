@@ -1,15 +1,26 @@
 import styled from "styled-components";
-import { Title, Heading, Label } from "../components/styles/Text";
-import Link from "next/link";
+import {
+  Title,
+  Heading,
+  SubHeading,
+  HoverLabel
+} from "../components/styles/Text";
 
 const ContactPage = styled.div`
   max-width: ${props => props.theme.maxWidth};
   margin: 2rem;
+  display: flex;
+  flex-direction: column;
 `;
 
 const ContactTitle = styled(Title)`
   display: block;
   margin-bottom: 0.4rem;
+  align-self: center;
+`;
+
+const ContactHeading = styled(Heading)`
+  align-self: flex-end;
 `;
 
 const ContactLinks = styled.div`
@@ -17,9 +28,11 @@ const ContactLinks = styled.div`
 `;
 
 const ContactItem = styled.div`
-  display: flex;
-  align-items: center;
-  line-height: 4rem;
+  a {
+    display: flex;
+    align-items: center;
+    line-height: 4rem;
+  }
 `;
 
 const Icon = styled.div`
@@ -32,27 +45,37 @@ const Icon = styled.div`
 
 const Contact = () => (
   <ContactPage>
-    <Heading>{"Please get in "}</Heading>
+    <SubHeading>{"Please get in "}</SubHeading>
     <ContactTitle extraLarge>{"contact"}</ContactTitle>
-    <Heading>{" with me!"}</Heading>
+    <ContactHeading>{" with me!"}</ContactHeading>
     <ContactLinks>
       <ContactItem>
-        <Icon src={"../static/email.svg"} />
-        <Link href={"/contact"}>
-          <Label>{"Email"}</Label>
-        </Link>
+        <a
+          target={"_blank"}
+          href={
+            "mailto:post@bondux.dev?subject=Contact&body=Hi Mike, ...%0D%0A%0D%0A%0D%0A%0D%0A"
+          }
+        >
+          <Icon src={"../static/email.svg"} />
+          <HoverLabel>{"Email"}</HoverLabel>
+        </a>
       </ContactItem>
       <ContactItem>
-        <Icon src={"../static/phone.svg"} />
-        <Link href={"/contact"}>
-          <Label>{"WhatsApp"}</Label>
-        </Link>
+        <a
+          target={"_blank"}
+          href={
+            "https://api.whatsapp.com/send?phone=31654356094&text=Hi%20mike"
+          }
+        >
+          <Icon src={"../static/phone.svg"} />
+          <HoverLabel>{"WhatsApp"}</HoverLabel>
+        </a>
       </ContactItem>
       <ContactItem>
-        <Icon src={"../static/camera.svg"} />
-        <Link href={"/contact"}>
-          <Label>{"Photography"}</Label>
-        </Link>
+        <a target={"_blank"} href={"https://www.flickr.com/photos/7363277@N07"}>
+          <Icon src={"../static/camera.svg"} />
+          <HoverLabel>{"Photography"}</HoverLabel>
+        </a>
       </ContactItem>
     </ContactLinks>
   </ContactPage>

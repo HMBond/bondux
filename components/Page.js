@@ -39,10 +39,14 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1em;
     font-family: 'DejaVu Extra Light';
     margin: 0px;
-    
-    * {
-        box-sizing: border-box;
-      }
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  a {
+    text-decoration: none;
   }
   
   @media screen and (max-width: 420px) {
@@ -55,10 +59,6 @@ const GlobalStyle = createGlobalStyle`
     html {
       font-size: 12px;
     }
-  }
-
-  .overflow-hidden {
-    overflow: hidden;
   }
 `;
 
