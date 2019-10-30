@@ -159,7 +159,11 @@ const BlogPost = ({ card, entry, ...props }) => {
               {paragraph.heading && (
                 <SubHeading>{paragraph.heading}</SubHeading>
               )}
-              {paragraph.text && <BlogText>{paragraph.text}</BlogText>}
+              {paragraph.text && (
+                <BlogText
+                  dangerouslySetInnerHTML={{ __html: paragraph.text }}
+                />
+              )}
               {paragraph.imgUrl && <BlogImage src={paragraph.imgUrl} />}
             </Paragraph>
           ))}
