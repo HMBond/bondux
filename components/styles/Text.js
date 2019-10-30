@@ -25,10 +25,3 @@ export const Label = styled.span`
   color: ${props => props.theme.colors.accent};
   cursor: pointer;
 `;
-
-export const HoverLabel = styled(Label)`
-  color: ${props => props.theme.colors.primary};
-  &:hover {
-    color: ${props => props.theme.colors.accent};
-  }
-`;

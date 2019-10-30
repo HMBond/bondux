@@ -1,10 +1,5 @@
 import styled from "styled-components";
-import {
-  Title,
-  Heading,
-  SubHeading,
-  HoverLabel
-} from "../components/styles/Text";
+import { Title, Heading, SubHeading, Label } from "../components/styles/Text";
 
 const ContactPage = styled.div`
   max-width: ${props => props.theme.maxWidth};
@@ -28,6 +23,20 @@ const ContactLinks = styled.div`
 `;
 
 const ContactItem = styled.div`
+  span {
+    color: ${props => props.theme.colors.primary};
+  }
+  &:hover span {
+    color: ${props => props.theme.colors.accent};
+  }
+  div {
+    transition: border 0.3s linear, background-color 0.3s linear;
+  }
+  &:hover div {
+    background-color: ${props => props.theme.colors.accent};
+    border: 5px solid ${props => props.theme.colors.accent};
+    transition: border 0.3s linear;
+  }
   a {
     display: flex;
     align-items: center;
@@ -41,6 +50,8 @@ const Icon = styled.div`
   width: 2.8rem;
   height: 2.8rem;
   margin-right: 1rem;
+  border-radius: 50%;
+  border: 0px solid ${props => props.theme.colors.accent};
 `;
 
 const Contact = () => (
@@ -57,7 +68,7 @@ const Contact = () => (
           }
         >
           <Icon src={"../static/email.svg"} />
-          <HoverLabel>{"Email"}</HoverLabel>
+          <Label>{"Email"}</Label>
         </a>
       </ContactItem>
       <ContactItem>
@@ -68,13 +79,13 @@ const Contact = () => (
           }
         >
           <Icon src={"../static/phone.svg"} />
-          <HoverLabel>{"WhatsApp"}</HoverLabel>
+          <Label>{"WhatsApp"}</Label>
         </a>
       </ContactItem>
       <ContactItem>
         <a target={"_blank"} href={"https://www.flickr.com/photos/7363277@N07"}>
           <Icon src={"../static/camera.svg"} />
-          <HoverLabel>{"Photography"}</HoverLabel>
+          <Label>{"Photography"}</Label>
         </a>
       </ContactItem>
     </ContactLinks>
