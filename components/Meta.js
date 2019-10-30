@@ -9,6 +9,7 @@ const Meta = () => (
     <meta charSet="utf-8" />
     <title>The Bond Experience</title>
     <link rel="icon" type="image/png" href="./static/favicon.png"></link>
+    <link rel="stylesheet" type="text/css" href="./static/fonts.css" />
   </Head>
 );
 

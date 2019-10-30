@@ -12,27 +12,6 @@ const GlobalStyle = createGlobalStyle`
     --theme-accent-color: ${props => props.theme.colors.accent};
   }
 
-  @font-face {
-    font-family: 'DejaVu Serif';
-    src: url('/static/DejaVuSerifCondensed-Bold.ttf') format('truetype');
-    font-weight: condensed-bold;
-    font-style: serif;
-  }
-
-  @font-face {
-    font-family: 'DejaVu Extra Light';
-    src: url('/static/DejaVuSans-ExtraLight.ttf') format('truetype');
-    font-weight: extra-light;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'DejaVu Condensed Bold';
-    src: url('/static/DejaVuSansCondensed-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-  }
-
   body {
     background-color: ${props => props.theme.colors.bg};
     color: ${props => props.theme.colors.primary};
