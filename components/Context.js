@@ -78,7 +78,9 @@ export class ContextProvider extends Component {
 
   visitSelectionAndCloseNav = () => {
     this.setState(prevstate => {
-      Router.push(content[prevstate.selector.position].url);
+      const go = () => Router.push(content[prevstate.selector.position].url);
+      setTimeout(go, 100);
+      Router.prefetch(content[prevstate.selector.position].url);
       return {
         ...prevstate,
         nav: {

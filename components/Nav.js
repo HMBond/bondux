@@ -1,7 +1,6 @@
 import { Component } from "react";
 import Context from "./Context";
 import styled from "styled-components";
-import Router from "next/router";
 import debounce from "lodash/debounce";
 
 import Logo from "./styles/Logo.js";
