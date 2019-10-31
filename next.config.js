@@ -1,7 +1,4 @@
 module.exports = {
-  devIndicators: {
-    autoPrerender: false
-  },
   webpack: function(config) {
     config.module.rules.push({
       test: /\.ya?ml$/,
@@ -11,6 +8,10 @@ module.exports = {
       test: /\.svg$/,
       use: ["@svgr/webpack"]
     });
+    // Fixes npm packages that depend on `fs` module
+    config.node = {
+      fs: "empty"
+    };
     return config;
   }
 };
