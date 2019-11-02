@@ -37,19 +37,6 @@
 - name: BLOG
   url: "/blog"
   blogPosts:
-    - category: example
-      title: Blogpost
-      topImgUrl: "../static/image4.jpg"
-      topImgRoundness: "50%"
-      summary: "Hello, this is the introduction of a blogpost. The text goes here like a summary. Lets talk about the subject, but not yet in dept. So the reader gets interested!"
-      paragraphs:
-        - text: "In mathematics, two quantities are in the silver ratio (also silver mean or silver constant) if the ratio of the sum of the smaller and twice the larger of those quantities, to the larger quantity, is the same as the ratio of the larger one to the smaller one (see below). This defines the silver ratio as an irrational mathematical constant, whose value of one plus the square root of 2 is approximately 2.4142135623. Its name is an allusion to the golden ratio; analogously to the way the golden ratio is the limiting ratio of consecutive Fibonacci numbers, the silver ratio is the limiting ratio of consecutive Pell numbers. The silver ratio is denoted by δS."
-          imgUrl: "../static/image2.jpg"
-        - text: "Los matemáticos han estudiado la proporción de plata desde el tiempo de los griegos (aunque tal vez sin darle un nombre especial hasta hace poco) debido a sus conexiones con la raíz cuadrada de 2, sus convergentes, los números cuadrados triangulares y otros números similares."
-          imgUrl: "../static/image3.jpg"
-          imgUrls:
-            - "../static/image2.jpg"
-            - "../static/image3.jpg"
     - category: design
       title: Design Vision
       topImgUrl: "../static/design.jpg"
@@ -68,7 +55,7 @@
           text: "Choosing the right path to go is not only done in a broad way, e.g. Marketing wants a design for getting more customer trust. As a designer or developer you have to make little decisions quite often and sometimes you need to stop if it didn't work out and go back to see if there are aternatives. To evaluate your options it is very important to use the resources around you. A good company provides the ability, by mentality and organization, to speak about any (small or big) choice to be made. A designer carries the responsibility to make this possible, by breaking the boundaries between departments, because he or she knows the importance of open communication in the design process. Pro-efficient communication can be organized just like a designer organizes user-research, by using tools. Workshops, morning-standups, a stage for giving simple lectures about relevant problems and solutions and many more are proven to be more effective then the old-school board-room meeting. It also improves the atmosphere and mentality towards the ease of just asking each other about any opinion on any small choice to be made. I had very happy experiences in my job at Mobiel.nl regarding an open work-mentality, but many friends of mine experience the slugginess of big companies that struggle with open communication between departments or distance between colleagues. Next to back-end communication, there is the commucation with the actual users of the product or service you design. An outgoing user-research team can provide amazing insights, data and general information to be used to base decisions on. Again, this is only used to its full potention when communicated (and presented!) openly within the company or organization."
           imgUrl: "../static/design2.jpg"
         - heading: Iterate
-          text: "As mentioned in Diverge and Converge, do not start building the final version from an underdeveloped design. There is a long road in between an idea and a product, but this long road will be shortened by iteration. When you have the general idea of what you are about to create, it is time to create a simplified version of the product in mind. An iteration can take many shapes: A drawing, paper prototype, story in form of futuristic or best/worst-case scenario, a collage of what it should represent emotionally, a rapid prototype, etc. etc. <br><br> The beauty of making a simplified version is that it generates obstacles straight away. Forseeing obstacles helps making decisions and forces the design process, thus making your design more elaborate. Iteration is all about revealing the hidden pitfalls and generating new ideas to solve earlier obstacles. I heared that Dyson iterated over 5000+ times by building prototypes of a vacuum cleaner in order to make the worlds best vacuum cleaner. This is dedication!"
+          text: "As mentioned in Diverge and Converge, do not start building the final version from an underdeveloped design. There is a long road in between an idea and a product, but this long road will be shortened by iteration. When you have the general idea of what you are about to create, it is time to create a simplified version of the product in mind. An iteration can take many shapes: A drawing, paper prototype, story in form of futuristic or best/worst-case scenario, a collage of what it should represent emotionally, a rapid prototype, etc. etc. <br><br> The beauty of making a simplified version is that it generates obstacles straight away. Forseeing obstacles helps making decisions and forces the design process, thus making your design more elaborate. Iteration is all about revealing the hidden pitfalls and generating new ideas to solve earlier obstacles. I heared that Dyson iterated over 5000+ times by building prototypes in order to make the worlds best vacuum cleaner. This is dedication!"
           imgUrl: "../static/design3.jpg"
         - heading: Dig, Cut and Restructure
           text: "Most design is redesign. Imagine a restaurant owner that has a huge menu card, three cooks from which two of them are on the edge of having a burn-out, customers who are confused and waiters who mess up the orders. This situation is common within companies and organisations. The over extended menu card can be compared to an app with too many features - a.k. the feature christmas tree. Like with the restaurant, the necessary approach is to dig the pearls. Find out what is the core selling point. Isolate all the attributes that are needed to achieve this and cut out the additional crap. Later, the scraped stuff could be re-evaluated and maybe added back in a structured way. Redesign can be harsh because you have to dig through the crap, but the restructuring of all the functionalities often ends up with a beautiful outcome that could not have become this way by starting al blanco."
@@ -79,6 +66,26 @@
           imgUrls:
             - "../static/image2.jpg"
             - "../static/image3.jpg"
+    - category: photography
+      title: Photography
+      topImgUrl: "../static/photography.jpg"
+      titleInTopImg: true
+      summary: "My vision on photography is still under development, but this is what I can share already!"
+      paragraphs:
+        - heading: Advices
+          text: "Mother's advice: 'When you look back at the photos you've made, the ones that mean something to you are always the ones with people in it. All the other pictures with mountains and trees on it can be thrown in the bin.' <br><br> Contrary to this advice are the masses that are taking selfies everywhere all the time. I never joined the selfie culture, but I would imagine that a selfie looses its value when you take so many of them. But let's focus on something far more interesting: Art Photography!"
+          imgUrl: "../static/photography1.jpg"
+        - heading: Truth
+          text: "For me, the photos that remain value are the ones that tell the truth about the time and situation I was in when I shot the photo. This truth-factor in photography is fragile. It is destroyed whenever I play around with the objects or scene I want to shoot. Same goes for posing, although taking portraits is interesting. It is hard, because you want to tell the truth about the subject, but the subject is posing. So looking back at all those photos, only few will be satisfying. With posing there can be a truth reveiled when the posing is done honestly. This is hard for the subject and Matthieu Stern provides some nice tricks to help them out. Although posing and setting up a scene generally destroys the truth, it can be used to tell a hidden truth that is in your mind as an artist. I'd like to explore this in the near future. But for now, my photos will hopefully show the true beauty of the moments I'm in, from the eyes of a spectator."
+          imgUrl: "../static/photography2.jpg"
+        - heading: Selfie Culture
+          text: "I try to be as less intrusive as possible when shooting photos, but all around me, photographers (and especially the models) seem to think differently. On a train to Ella in Sri Lanka I saw a white couple hanging from the traindoor, screaming and getting a lot of attention. Next to me I heard a member of the train staff mumbling worried and eventually shouting to his collueage near the girl to do something. Two weeks later on Instagram, I see this hip travel photography agent posting the photos of the couple pretending this photo was taken spontaniously. For their information, kissing in public and hanging out of the train is not acceptable in Sri Lanka, the train staff is just too kind to give a fine."
+          imgUrl: "../static/photography3.jpg"
+        - heading: Consent
+          text: "On the other hand there are many western tourists shooting photos of Asian children without permission or consent. I must say that I'm guilty of that as well, but there is a clear boundary. Some photographers or tourists did not develop themselfs in regards to respect and are not reading the reaction of their subjects. Does the subject mind if you take a photo? If you develop a sense of social empathy, you can not only see, but feel if the situation is appropriate for shooting a photo. I've seen many photographers without giving a shit, resulting in awkward situations such as: disrespect to locals, ruining beautifull sights, blindness to cultural differences and destroying the nature which made them come there in the first place, etc., etc..."
+          imgUrl: "../static/photography4.jpg"
+        - heading: My most appreciated photographers and vloggers
+          text: <ul><li>Fan Ho</li> <li>Jamie Windsor</li> <li>Matthieu Stern</li></ul>
 - name: SKILLS
   url: "/skills"
 - name: CONTACT
