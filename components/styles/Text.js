@@ -10,13 +10,13 @@ export const Title = styled.span`
 export const Heading = styled.span`
   font-family: "DejaVu Serif";
   font-size: 2.8rem;
-  margin: 1rem 0;
+  margin: 1rem;
 `;
 
 export const SubHeading = styled.span`
   font-family: "DejaVu Serif";
   font-size: 2rem;
-  margin: 1rem 0;
+  margin: 1rem;
 `;
 
 export const Label = styled.span`

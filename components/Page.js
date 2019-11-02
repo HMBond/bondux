@@ -25,7 +25,10 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
+    cursor: pointer;
     text-decoration: none;
+    color: inherit;
+    color: ${props => props.theme.colors.accent};
   }
   
   @media screen and (max-width: 420px) {
