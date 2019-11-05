@@ -6,6 +6,18 @@ import Anchor from "../components/styles/Anchor";
 import { arrange, makeHash } from "../components/helpers/functions";
 import uniqid from "uniqid";
 
+const SkillPageBackground = styled.div`
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+`;
+
 const SkillDiagram = styled.div`
   width: 100%;
   max-width: ${props => props.theme.maxWidth};
@@ -71,35 +83,42 @@ const heightAnimation = keyframes`
 const Skills = () => {
   const [openSkill, setOpenSkill] = useState(null);
 
+  const openSkillWithoutBubbles = ({ e, index }) => {
+    e.stopPropagation();
+    setOpenSkill(index);
+  };
+
   return (
     <Context.Consumer>
       {context => (
-        <SkillDiagram hasOpenSkill={openSkill !== null}>
-          {arrange(context.content[2].skillList).map((skill, index) => (
-            <Anchor id={makeHash(skill.name)} key={uniqid()}>
-              <Skill
-                progress={skill.progress}
-                open={openSkill === index}
-                onClick={() => setOpenSkill(index)}
-              >
-                <SkillTitle>{skill.name}</SkillTitle>
-                {skill.description && openSkill === index && (
-                  <SkillDescription
-                    dangerouslySetInnerHTML={{ __html: skill.description }}
-                  ></SkillDescription>
-                )}
-                {skill.subSkills &&
-                  openSkill === index &&
-                  arrange(skill.subSkills).map(subSkill => (
-                    <SubSkill progress={subSkill.progress} key={uniqid()}>
-                      {subSkill.name}
-                    </SubSkill>
-                  ))}
-              </Skill>
-            </Anchor>
-          ))}
-          <WhiteSpace />
-        </SkillDiagram>
+        <SkillPageBackground onClick={() => setOpenSkill(null)}>
+          <SkillDiagram onClick={e => e.preventDefault()}>
+            {arrange(context.content[2].skillList).map((skill, index) => (
+              <Anchor id={makeHash(skill.name)} key={uniqid()}>
+                <Skill
+                  progress={skill.progress}
+                  open={openSkill === index}
+                  onClick={e => openSkillWithoutBubbles({ e, index })}
+                >
+                  <SkillTitle>{skill.name}</SkillTitle>
+                  {skill.description && openSkill === index && (
+                    <SkillDescription
+                      dangerouslySetInnerHTML={{ __html: skill.description }}
+                    ></SkillDescription>
+                  )}
+                  {skill.subSkills &&
+                    openSkill === index &&
+                    arrange(skill.subSkills).map(subSkill => (
+                      <SubSkill progress={subSkill.progress} key={uniqid()}>
+                        {subSkill.name}
+                      </SubSkill>
+                    ))}
+                </Skill>
+              </Anchor>
+            ))}
+            <WhiteSpace />
+          </SkillDiagram>
+        </SkillPageBackground>
       )}
     </Context.Consumer>
   );
