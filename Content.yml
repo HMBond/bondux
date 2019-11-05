@@ -39,6 +39,7 @@
   blogPosts:
     - category: design
       title: Design Vision
+      hash: design-vision
       topImgUrl: "../static/design.jpg"
       titleInTopImg: true
       topImgRoundness: "50%"
@@ -87,5 +88,48 @@
           text: <ul><li>Fan Ho</li> <li>Jamie Windsor</li> <a href="https://www.youtube.com/user/mat0fr" target="_blank"><li>Matthieu Stern</li></a></ul>
 - name: SKILLS
   url: "/skills"
+  skillList:
+    - name: Coding
+      progress: 80%
+      subSkills:
+        - name: React
+          progress: 90%
+        - name: Javascript
+          progress: 75%
+        - name: HTML5
+          progress: 80%
+        - name: CSS
+          progress: 85%
+        - name: Ruby on Rails
+          progress: 70%
+        - name: Max MSP
+          progress: 60%
+        - name: ES6
+          progress: 100%
+        - name: Git
+          progress: 65%
+      description: "I started HTML, CSS and simple Javascript coding when I was 13 years old. During my masters study I picked up coding and at Mobiel.nl, I learned how to code professionally: readable, reliable and concise. There, I discovered working methods and structural principles, such as TDD, Mobile First and CRUD."
+    - name: Design
+      subSkills:
+        - name: Design Thinking
+          progress: 70%
+        - name: Sketching
+          progress: 60%
+        - name: User Research
+          progress: 50%
+        - name: Context Mapping
+          progress: 45%
+        - name: Graphic Design
+          progress: 40%
+        - name: Prototyping
+          progress: 80%
+      description: "With a Masters Degree in Design For Interaction, I helped many people in their personal projects to clearify their design choices and future process. The advice can be about the technical aspects, but often comes down to rethinking the motives that drive a project. Moreover, the chosen working method has a great influence on the end-product and service. Although helping others is fun and interesting, I would still like to become better at design by doing design related work. <a href='/blog#design-vision'>Please read my vision on design for more!</a>"
+      progress: 70%
+    - name: Music
+      subSkills:
+      progress: 90%
+    - name: Prototyping
+      subSkills:
+      progress: 50%
 - name: CONTACT
   url: "/contact"

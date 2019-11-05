@@ -2,7 +2,7 @@ import { Component, createContext } from "react";
 import Router from "next/router";
 import debounce from "lodash/debounce";
 import content from "../content.yml";
-import constrain from "./helpers/constrain";
+import { constrain } from "./helpers/functions";
 const Context = createContext();
 
 export default Context;
