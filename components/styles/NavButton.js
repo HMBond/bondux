@@ -27,6 +27,7 @@ const devanimation = keyframes`
 `;
 
 const NavBall = styled.div`
+  z-index: -1; /* fix for FireFox */
   display: block;
   width: 50px;
   height: 50px;

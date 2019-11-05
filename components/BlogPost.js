@@ -46,7 +46,7 @@ const BlogImage = styled.div`
 `;
 
 const BlogCardTitleBox = styled.div`
-  background: ${props => props.theme.colors.primary}50;
+  background: ${props => props.theme.colors.primaryTransparent};
   color: ${props => props.theme.colors.bg};
   width: 100%;
   padding: 2rem;

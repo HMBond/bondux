@@ -38,10 +38,11 @@ const Skill = styled.div`
       width: 100%;
       background: radial-gradient(
         at top left,
-        ${props => props.theme.colors.accent} 20%,
-        transparent 80%
+        ${props => props.theme.colors.accent} 25%,
+        transparent
       );
-      line-height: 3rem;
+      line-height: auto;
+      padding: 1rem;
       cursor: default;
       animation: ${heightAnimation} 0.4s 0s linear normal;
       max-height: 40rem;
@@ -65,7 +66,11 @@ const SubSkill = styled.div`
 `;
 
 const SkillDescription = styled.div`
-  background-color: ${props => props.theme.colors.bg};
+  background-color: ${props => props.theme.colors.bgTransparent};
+  color: ${props => props.theme.colors.primary};
+  a {
+    font-family: "DejaVu Condensed Bold";
+  }
   padding: 1rem;
   margin-bottom: 1rem;
   line-height: 1.5rem;
