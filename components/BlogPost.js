@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import Fade from "react-reveal/Fade";
 import { Title, SubHeading } from "./styles/Text";
 import Hr from "./styles/Hr";
 import uniqid from "uniqid";
@@ -171,17 +172,19 @@ const BlogPost = ({ card, entry, ...props }) => {
         )}
         {entry.paragraphs &&
           entry.paragraphs.map(paragraph => (
-            <Paragraph key={uniqid()}>
-              {paragraph.heading && (
-                <SubHeading>{paragraph.heading}</SubHeading>
-              )}
-              {paragraph.text && (
-                <BlogText
-                  dangerouslySetInnerHTML={{ __html: paragraph.text }}
-                />
-              )}
-              {paragraph.imgUrl && <BlogImage src={paragraph.imgUrl} />}
-            </Paragraph>
+            <Fade cascade big>
+              <Paragraph key={uniqid()}>
+                {paragraph.heading && (
+                  <SubHeading>{paragraph.heading}</SubHeading>
+                )}
+                {paragraph.text && (
+                  <BlogText
+                    dangerouslySetInnerHTML={{ __html: paragraph.text }}
+                  />
+                )}
+                {paragraph.imgUrl && <BlogImage src={paragraph.imgUrl} />}
+              </Paragraph>
+            </Fade>
           ))}
         <Hr />
       </BlogPostBase>
