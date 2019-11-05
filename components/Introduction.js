@@ -1,7 +1,6 @@
 import { Component } from "react";
 import styled from "styled-components";
-import posed from "react-pose";
-import SplitText from "react-pose-text";
+import Flip from "react-reveal/Flip";
 import Link from "next/link";
 import { Label } from "./styles/Text";
 import uniqid from "uniqid";
@@ -21,21 +20,6 @@ const TextBox = styled.div`
   text-align: center;
   opacity: ${props => (props.ssrReady ? "1" : "0")};
 `;
-const PosedLine = posed.div({
-  exit: {
-    height: "0px"
-  },
-  enter: {
-    height: "100%",
-    beforeChildren: true,
-    staggerChildren: 20
-  }
-});
-
-const charPoses = {
-  exit: { opacity: 0, height: "0" },
-  enter: { opacity: 1, height: "100%" }
-};
 
 const Text = styled(Label)`
   margin: 0;
@@ -94,31 +78,28 @@ class Introduction extends Component {
   render() {
     const { context } = this.props;
     const { ssrReady, showLine } = this.state;
+    const quote = context.content[0].introduction[showLine];
 
     return (
       <IntroductionBase>
-        {!context.nav.open && (
-          <TextBox ssrReady={ssrReady}>
-            {context.content[0].introduction.map((quote, index) => (
-              <PosedLine
-                initialPose="exit"
-                pose={index === showLine ? "enter" : "exit"}
-                key={uniqid()}
-              >
-                <Text>
-                  <SplitText charPoses={charPoses}>{quote.text}</SplitText>
-                </Text>
-                {quote.link && (
-                  <Link href={quote.link.url}>
-                    <Label>
-                      <SplitText charPoses={charPoses}>
-                        {quote.link.label}
-                      </SplitText>
-                    </Label>
-                  </Link>
-                )}
-              </PosedLine>
-            ))}
+        {!context.nav.open && quote && (
+          <TextBox ssrReady={ssrReady} key={uniqid()}>
+            {quote.text && (
+              <Text>
+                <Flip right cascade>
+                  {quote.text}
+                </Flip>
+              </Text>
+            )}
+            {quote.link && (
+              <Link href={quote.link.url}>
+                <Label>
+                  <Flip right cascade>
+                    {quote.link.label}
+                  </Flip>
+                </Label>
+              </Link>
+            )}
           </TextBox>
         )}
       </IntroductionBase>
