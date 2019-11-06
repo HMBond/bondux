@@ -9,11 +9,14 @@ const BlogPostBase = styled.div`
   max-width: ${props => props.theme.maxWidth};
   display: flex;
   flex-direction: column;
-  margin-top: ${props => (props.card ? "2rem" : 0)};
+  margin-top: ${props => (props.card ? "4rem" : 0)};
   align-items: center;
 `;
 
 const BlogImage = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: relative;
   background: url(${props => props.src});
   background-size: cover;
@@ -25,9 +28,20 @@ const BlogImage = styled.div`
   height: ${props => (props.card ? "50vh" : "calc(100vw - 4rem)")};
 
   @media screen and (min-width: 600px) {
-    width: 100%;
-    height: ${props => (props.roundness ? "100vw" : "28rem")};
-    max-height: ${props => props.theme.maxWidth};
+    height: 28rem;
+    ${props =>
+      props.roundness &&
+      css`
+        width: 100%;
+        height: 100vw;
+        max-height: ${props => props.theme.maxWidth};
+      `}
+    ${props =>
+      !props.roundness &&
+      props.titlePhoto &&
+      css`
+        width: 100vw;
+      `}
   }
 
   ${props =>
@@ -47,15 +61,31 @@ const BlogImage = styled.div`
 `;
 
 const BlogCardTitleBox = styled.div`
-  background: ${props => props.theme.colors.primaryTransparent};
-  color: ${props => props.theme.colors.bg};
-  width: 100%;
-  padding: 2rem;
+  position: relative;
+  margin-right: auto;
+  color: ${props => props.theme.colors.primary};
+  background: ${props => props.theme.colors.bg};
+  height: 5rem;
+  padding: 0rem 2rem 3rem 0rem;
+  &:before {
+    content: " ";
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 99.98%;
+    border-bottom: 5rem solid transparent;
+    border-right: 5rem solid transparent;
+    border-top: 5rem solid ${props => props.theme.colors.bg};
+  }
 `;
 
+const BlogTitle = styled(Title)``;
+
 const BlogCardSummaryBox = styled.div`
-  padding: 1rem;
+  margin-top: auto;
   width: 100%;
+  padding: 2rem 4rem 2rem 2rem;
   color: ${props => props.theme.colors.bg};
   background-image: radial-gradient(
     at bottom left,
@@ -75,7 +105,7 @@ const Category = styled.div`
   font-variant: small-caps;
   padding: 0.8rem 0.8rem 0.8rem 0;
   height: 3rem;
-  background: ${props => props.theme.colors.lightGrey};
+  background: ${props => props.theme.colors.bg};
   &:before {
     content: " ";
     width: 0;
@@ -85,21 +115,14 @@ const Category = styled.div`
     right: 99.98%;
     border-top: 3rem solid transparent;
     border-left: 3rem solid transparent;
-    border-bottom: 3rem solid ${props => props.theme.colors.lightGrey};
+    border-bottom: 3rem solid ${props => props.theme.colors.bg};
   }
 `;
 
-const BlogTitle = styled(Title)`
-  margin-top: 2rem;
-`;
-
 const BlogSummary = styled.div`
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: bolder;
-  line-height: 2rem;
-  margin: 1rem;
-  line-height: 2rem;
-  font-family: "DejaVu Condensed Bold";
+  line-height: 1.8rem;
 `;
 
 const Paragraph = styled.div`
@@ -149,7 +172,6 @@ const BlogPost = ({ card, entry, ...props }) => {
             </BlogCardSummaryBox>
           </BlogImage>
         )}
-        <Hr />
       </BlogPostBase>
     );
   } else {
@@ -161,6 +183,7 @@ const BlogPost = ({ card, entry, ...props }) => {
             src={entry.topImgUrl}
             roundness={entry.topImgRoundness}
             titleInTopImg={entry.titleInTopImg}
+            titlePhoto
           >
             {entry.title && entry.titleInTopImg && (
               <BlogTitle large>{entry.title}</BlogTitle>
