@@ -23,24 +23,29 @@ const ContactLinks = styled.div`
 `;
 
 const ContactItem = styled.div`
-  span {
-    color: ${props => props.theme.colors.primary};
-  }
-  &:hover span {
-    color: ${props => props.theme.colors.accent};
-  }
-  div {
-    transition: border 0.3s linear, background-color 0.3s linear;
-  }
-  &:hover div {
-    background-color: ${props => props.theme.colors.accent};
-    border: 5px solid ${props => props.theme.colors.accent};
-    transition: border 0.3s linear;
-  }
   a {
     display: flex;
     align-items: center;
     line-height: 4rem;
+  }
+  @media screen and (pointer: fine) {
+    /* only cursor operated devices */
+    span {
+      color: ${props => props.theme.colors.primary};
+    }
+    &:hover span {
+      color: ${props => props.theme.colors.accent};
+    }
+    div {
+      transition: border 0.3s linear, background-color 0.3s linear;
+      background-color: transparent;
+      border: none;
+    }
+    &:hover div {
+      background-color: ${props => props.theme.colors.accent};
+      border: 5px solid ${props => props.theme.colors.accent};
+      transition: border 0.3s linear;
+    }
   }
 `;
 
