@@ -49,7 +49,7 @@
           text: "The main outcome of my graduation project was that simplicity is effective. Throughout my study and work I heard many people talking about Keep It Simple Stupid (KISS), but in practice this is hard to maintain throughout. I learned some methodology to keep things simple and clear, let me share some of them."
           imgUrl: "../static/design1.jpg"
         - heading: Diverge and converge
-          text: "Generate many ideas, concepts, sub-solutions, abstracts or however you may call these things that swirl in the brain and get fixated on paper anchors (Post-Its) to be compared to each other. But do not yet work them out! Do not go into the details before you examined and explored all the options, because after working out your first idea into detail for a while, you might find a more simple solution. Design is about keeping a broad overview and then choosing a path. After each choice, you explore new paths where to go, and so on, and so on... However, I found myself pressured to choose the 'right' path and got stuck quite often. As in life, there is no right path and (design) choices can be overruled if the path happened to be a dead end. What you gain by working this way? You will spend less time on working out something that later will become irrelevant cause of something better that you overlooked before."
+          text: "Generate many ideas, concepts, sub-solutions and abstracts on post-its on a wall to compare them side by side. This helps in not to always choose the first idea/solution that pops up in your mind to be worked out. The first idea/solution often turns out to not be the most easy and efficient one, after you briefly investigate the alternatives. Design is about keeping a broad overview and then choosing a path. After each choice, you explore new paths where to go, and so on, and so on... However, I found myself pressured to choose the 'right' path and got stuck quite often. As in life, there is no right path and (design) choices can be overruled if the path happened to be a dead end. What you gain by working this way? You will spend less time on working out something that later will become irrelevant cause of something better that you overlooked before."
           imgUrl: "../static/design2.jpg"
         - heading: Design Together
           text: "Choosing the right path to go is not only done in a global manner, e.g. Marketing wants a design for getting more customer trust. As a designer or developer you have to make little decisions quite often and sometimes you need to stop if it didn't work out and go back to see if there are alternatives. To evaluate your options, it is important to use surrounding resources. A good company provides the ability, by mentality and organization, to speak about any (small or big) choice to be made. A designer carries the responsibility to make this possible, by breaking the boundaries between departments, because he or she knows the importance of open communication in the design process. Pro-efficient internal communication can be organized just like a designer organizes user-research, by using tools. Workshops, stand-ups, a stage for giving simple lectures about relevant problems and solutions and many more are proven to be more effective than the old-school board-room meeting. It also improves the atmosphere and mentality towards the ease of just asking each other about any opinion on any small choice to be made. I had very happy experiences in my job at Mobiel.nl regarding an open work-mentality, but many friends of mine experience the sluggishness of big companies that struggle with open communication between departments or distance between colleagues. Next to internal communication, there is the communication with the actual users of the product or service you design. An outgoing user-research team can provide amazing insights, data and general information to be used to base decisions on. Again, this is only used to its full potential when communicated (and presented) openly within the company or organization."
@@ -86,6 +86,17 @@
           imgUrl: "../static/photography4.jpg"
         - heading: My most appreciated photographers and vloggers
           text: <ul><li>Fan Ho</li> <li>Jamie Windsor</li> <a href="https://www.youtube.com/user/mat0fr" target="_blank"><li>Matthieu Stern</li></a></ul>
+    - category: music
+      title: Music & Art
+      topImgUrl: "../static/music.jpg"
+      titleInTopImg: true
+      summary: "My mind is currently focussed at code and photography, but my heart still belongs to music."
+      paragraphs:
+        - heading: Popmusic
+          text: "Music, as a form of art, has the strongest emotional impact on an audience. Music can change moods, makes you sleepy or awake, helps you think or relax.. But for me, not all music is art. When the motive of a piece of music is only to become popular by the bare minimum use of chliché musical formulas, the music sounds to me just like that. Once you listen clearly to music, you can hear the intention behind it and you will come to a choice: Does this suit me or nothning to me at all? Most popular music sounds like it is made to sell. Just that. And if it has nothing else then this motive, it is considered a business product or advertisement. So for me, that is fine, but I do not consider it to be art. An art piece needs three aspects: form, impact and creativity. In general, popmusic misses out on the creativity part. The creativity part is interesting. I asked some friends who are in music business what they do at the very beginning of making a piece of music. All (except one) answered they start off with improvisation and they come across some sounds that provoke kind of idea to build from. One answered that he started by taking an existing song and copying everything but the lyrics to record them in Dutch. His goal was to become rich oneday making music."
+          imgUrl: "../static/music1.jpg"
+        - heading: Recommended to listen
+          text: <ul><a href="https://www.youtube.com/watch?v=Rnm-w6ifpbc" ><li>Sphongle</li></a> <a href="https://www.youtube.com/watch?v=rFUVLGqsgts" > <li>Colin Stetson</li></a> <a href="https://www.youtube.com/watch?v=ne4PoC7V0Mk" target="_blank"><li>Igor Stravinsky</li></a></ul>
 - name: SKILLS
   url: "/skills"
   skillList:
@@ -94,6 +105,7 @@
       subSkills:
         - name: React
           progress: 85%
+          description: <ul><li>React State Hooks</li><li>NextJS</li><li>Styled Components</li></ul>
         - name: JavaScript
           progress: 70%
         - name: HTML5
