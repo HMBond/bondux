@@ -93,21 +93,21 @@
       progress: 80%
       subSkills:
         - name: React
-          progress: 90%
+          progress: 85%
         - name: JavaScript
-          progress: 75%
+          progress: 70%
         - name: HTML5
           progress: 80%
         - name: CSS
-          progress: 85%
+          progress: 75%
         - name: Ruby on Rails
-          progress: 70%
-        - name: Max MSP
-          progress: 60%
-        - name: ES6
-          progress: 100%
-        - name: Git
           progress: 65%
+        - name: Max MSP
+          progress: 55%
+        - name: ES6
+          progress: 95%
+        - name: Git
+          progress: 60%
       description: "I started HTML, CSS and simple JavaScript coding when I was 13 years old. During my masters study I picked up coding and at Mobiel.nl, I learned how to code professionally: readable, reliable and concise. There, I discovered working methods and structural principles, such as TDD, Mobile First and CRUD."
     - name: Design
       subSkills:

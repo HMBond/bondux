@@ -3,6 +3,7 @@ import styled, { keyframes, css } from "styled-components";
 import Context from "../components/Context";
 import WhiteSpace from "../components/styles/WhiteSpace";
 import Anchor from "../components/styles/Anchor";
+import SkillProgressBar from "../components/styles/SkillProgressBar";
 import { arrange, makeHash } from "../components/helpers/functions";
 import uniqid from "uniqid";
 
@@ -19,33 +20,19 @@ const SkillPageBackground = styled.div`
 `;
 
 const SkillDiagram = styled.div`
+  margin: auto 0;
   width: 100%;
   max-width: ${props => props.theme.maxWidth};
 `;
 
-const Skill = styled.div`
-  margin-top: 1rem;
-  padding: 0 1rem;
-  overflow: hidden;
-  width: ${props => props.progress};
+const Skill = styled(SkillProgressBar)`
   background: ${props => props.theme.colors.accent};
-  line-height: 2rem;
   cursor: pointer;
-  max-height: 2rem;
   ${props =>
     props.open &&
     css`
-      width: 100%;
-      background: radial-gradient(
-        at top left,
-        ${props => props.theme.colors.accent} 25%,
-        transparent
-      );
-      line-height: auto;
-      padding: 1rem;
+      background: ${props => props.theme.colors.grey};
       cursor: default;
-      animation: ${heightAnimation} 0.4s 0s linear normal;
-      max-height: 40rem;
     `}
 `;
 
@@ -55,25 +42,17 @@ const SkillTitle = styled.div`
   font-family: "DejaVu Condensed Bold";
 `;
 
-const SubSkill = styled.div`
-  width: ${props => props.progress};
-  background-color: ${props => props.theme.colors.accent};
-  color: ${props => props.theme.colors.bg};
-  margin-bottom: 1rem;
-  padding-left: 1rem;
-  line-height: 2rem;
-  font-family: "DejaVu Condensed Bold";
-`;
-
 const SkillDescription = styled.div`
-  background-color: ${props => props.theme.colors.bgTransparent};
-  color: ${props => props.theme.colors.primary};
-  a {
-    font-family: "DejaVu Condensed Bold";
-  }
   padding: 1rem;
   margin-bottom: 1rem;
   line-height: 1.5rem;
+`;
+
+const SubSkill = styled(SkillProgressBar)`
+  margin-left: 1rem;
+  background: ${props => props.theme.colors.grey};
+  color: ${props => props.theme.colors.bg};
+  font-family: "DejaVu Condensed Bold";
 `;
 
 const heightAnimation = keyframes`
@@ -97,7 +76,7 @@ const Skills = () => {
     <Context.Consumer>
       {context => (
         <SkillPageBackground onClick={() => setOpenSkill(null)}>
-          <SkillDiagram onClick={e => e.preventDefault()}>
+          <SkillDiagram onClick={e => e.stopPropagation()}>
             {arrange(context.content[2].skillList).map((skill, index) => (
               <Anchor id={makeHash(skill.name)} key={uniqid()}>
                 <Skill
@@ -106,19 +85,19 @@ const Skills = () => {
                   onClick={e => openSkillWithoutBubbles({ e, index })}
                 >
                   <SkillTitle>{skill.name}</SkillTitle>
-                  {skill.description && openSkill === index && (
-                    <SkillDescription
-                      dangerouslySetInnerHTML={{ __html: skill.description }}
-                    ></SkillDescription>
-                  )}
-                  {skill.subSkills &&
-                    openSkill === index &&
-                    arrange(skill.subSkills).map(subSkill => (
-                      <SubSkill progress={subSkill.progress} key={uniqid()}>
-                        {subSkill.name}
-                      </SubSkill>
-                    ))}
                 </Skill>
+                {skill.description && openSkill === index && (
+                  <SkillDescription
+                    dangerouslySetInnerHTML={{ __html: skill.description }}
+                  ></SkillDescription>
+                )}
+                {skill.subSkills &&
+                  openSkill === index &&
+                  arrange(skill.subSkills).map(subSkill => (
+                    <SubSkill progress={subSkill.progress} key={uniqid()}>
+                      {subSkill.name}
+                    </SubSkill>
+                  ))}
               </Anchor>
             ))}
             <WhiteSpace />
