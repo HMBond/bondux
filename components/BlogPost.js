@@ -62,23 +62,27 @@ const BlogImage = styled.div`
 `;
 
 const BlogCardTitleBox = styled.div`
-  position: relative;
-  margin-right: auto;
   color: ${props => props.theme.colors.primary};
-  background: ${props => props.theme.colors.bg};
-  height: 5rem;
-  padding: 0rem 2rem 3rem 0rem;
-  &:before {
-    content: " ";
-    width: 0;
-    height: 0;
-    position: absolute;
-    top: 0;
-    left: 99.98%;
-    border-bottom: 5rem solid transparent;
-    border-right: 5rem solid transparent;
-    border-top: 5rem solid ${props => props.theme.colors.bg};
-  }
+  background: ${props => props.theme.colors.lightGrey};
+  padding: 0.8rem 0rem 1rem 1rem;
+  ${props =>
+    !props.longTitle &&
+    css`
+      position: relative;
+      margin-right: auto;
+      height: 5rem;
+      &:before {
+        content: " ";
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 0;
+        left: 99.98%;
+        border-bottom: 5rem solid transparent;
+        border-right: 5rem solid transparent;
+        border-top: 5rem solid ${props => props.theme.colors.lightGrey};
+      }
+    `}
 `;
 
 const BlogTitle = styled(Title)``;
@@ -106,7 +110,7 @@ const Category = styled.div`
   font-variant: small-caps;
   padding: 0.8rem 0.8rem 0.8rem 0;
   height: 3rem;
-  background: ${props => props.theme.colors.bg};
+  background: ${props => props.theme.colors.lightGrey};
   &:before {
     content: " ";
     width: 0;
@@ -116,7 +120,7 @@ const Category = styled.div`
     right: 99.98%;
     border-top: 3rem solid transparent;
     border-left: 3rem solid transparent;
-    border-bottom: 3rem solid ${props => props.theme.colors.bg};
+    border-bottom: 3rem solid ${props => props.theme.colors.lightGrey};
   }
 `;
 
@@ -159,7 +163,7 @@ const BlogPost = ({ card, entry, ...props }) => {
         {entry.topImgUrl && (
           <BlogImage src={entry.topImgUrl} card {...props}>
             {entry.title && (
-              <BlogCardTitleBox>
+              <BlogCardTitleBox longTitle={entry.title.length > 16}>
                 <BlogTitle>{entry.title}</BlogTitle>
               </BlogCardTitleBox>
             )}
