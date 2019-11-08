@@ -93,13 +93,16 @@ export class ContextProvider extends Component {
   };
 
   navigate = advance => {
-    const index = content.indexOf(
+    const currentPageIndex = content.indexOf(
       content.find(page => page.url === Router.router.pathname)
     );
     this.setState(prevstate => {
-      Router.push(content[constrain(index + advance, content.length)].url);
+      Router.push(
+        content[constrain(currentPageIndex + advance, content.length)].url
+      );
     });
     this.updateCurrentPath();
+    this.setNavOpen(false);
   };
 
   setNavOpen = debounce(

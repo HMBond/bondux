@@ -2,6 +2,7 @@ import { Component } from "react";
 import Context from "./Context";
 import styled from "styled-components";
 import debounce from "lodash/debounce";
+import uniqid from "uniqid";
 
 import Logo from "./styles/Logo.js";
 import NavItem from "./styles/NavItem";
@@ -81,7 +82,10 @@ class Nav extends Component {
         {context => (
           <NavBase ssrReady={ssrReady}>
             <NavButton
-              hidden={context.nav.currentPath === context.content[0].url}
+              hidden={
+                context.nav.currentPath === context.content[0].url ||
+                context.nav.open
+              }
               properlyClosed={properlyClosed}
               onClick={() => context.nav.back()}
               order={1}
@@ -91,7 +95,8 @@ class Nav extends Component {
             <NavButton
               hidden={
                 context.nav.currentPath ===
-                context.content[context.content.length - 1].url
+                  context.content[context.content.length - 1].url ||
+                context.nav.open
               }
               properlyClosed={properlyClosed}
               onClick={() => context.nav.forward()}
