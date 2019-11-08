@@ -1,3 +1,9 @@
+import { hexToRGBA } from "../helpers/functions";
+
+const makeTransparent = (color, transparency) => {
+  return hexToRGBA(theme.colors[color], transparency);
+};
+
 export const theme = {
   colors: {
     bg: "#ffffff",
@@ -6,9 +12,7 @@ export const theme = {
     grey: "#5A5A5A",
     lightGrey: "#E1E1E1",
     offWhite: "#EDEDED",
-    lighten: "rgba(255,255,255,0.2)",
-    bgTransparent: "rgba(255,255,255,0.8)",
-    primaryTransparent: "rgba(74,74,74,0.4)"
+    transparent: makeTransparent
   },
   maxWidth: "40rem",
   bs: "0 12px 24px 0 rgba(0, 0, 0, 0.09)"
@@ -21,8 +25,7 @@ export const devMode = ({ colors: { bg, grey, lightGrey }, ...rest }) => ({
     accent: "lime",
     grey: lightGrey,
     lightGrey: grey,
-    offWhite: "#111",
-    lighten: "rgba(0,0,0,0.2)"
+    offWhite: "#111"
   },
   ...rest
 });

@@ -64,13 +64,14 @@ const BlogImage = styled.div`
 const BlogCardTitleBox = styled.div`
   color: ${props => props.theme.colors.primary};
   background: ${props => props.theme.colors.lightGrey};
-  padding: 0.8rem 0rem 1rem 1rem;
+  padding: 2rem;
   ${props =>
     !props.longTitle &&
     css`
+      padding: 1.2rem 0rem 2rem 2rem;
       position: relative;
       margin-right: auto;
-      height: 5rem;
+      height: 6rem;
       &:before {
         content: " ";
         width: 0;
@@ -78,9 +79,9 @@ const BlogCardTitleBox = styled.div`
         position: absolute;
         top: 0;
         left: 99.98%;
-        border-bottom: 5rem solid transparent;
-        border-right: 5rem solid transparent;
-        border-top: 5rem solid ${props => props.theme.colors.lightGrey};
+        border-bottom: 6rem solid transparent;
+        border-right: 6rem solid transparent;
+        border-top: 6rem solid ${props => props.theme.colors.lightGrey};
       }
     `}
 `;
@@ -90,12 +91,12 @@ const BlogTitle = styled(Title)``;
 const BlogCardSummaryBox = styled.div`
   margin-top: auto;
   width: 100%;
-  padding: 2rem 4rem 2rem 2rem;
+  padding: 2rem 30% 2rem 2rem;
   color: ${props => props.theme.colors.bg};
   background-image: radial-gradient(
     at bottom left,
     ${props => props.theme.colors.accent} 20%,
-    ${props => props.theme.colors.accent}40
+    ${props => props.theme.colors.transparent("accent", 0.4)}
   );
   hyphens: none;
 `;
@@ -125,9 +126,9 @@ const Category = styled.div`
 `;
 
 const BlogSummary = styled.div`
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: bolder;
-  line-height: 1.8rem;
+  line-height: 1.4rem;
 `;
 
 const Paragraph = styled.div`
@@ -169,11 +170,7 @@ const BlogPost = ({ card, entry, ...props }) => {
             )}
             <BlogCardSummaryBox>
               {entry.category && <Category>{entry.category}</Category>}
-              {entry.summary && (
-                <BlogSummary>
-                  <span>{entry.summary}</span>
-                </BlogSummary>
-              )}
+              {entry.summary && <BlogSummary>{entry.summary}</BlogSummary>}
             </BlogCardSummaryBox>
           </BlogImage>
         )}
@@ -200,8 +197,8 @@ const BlogPost = ({ card, entry, ...props }) => {
         )}
         {entry.paragraphs &&
           entry.paragraphs.map(paragraph => (
-            <Fade cascade big>
-              <Paragraph key={uniqid()}>
+            <Fade cascade big key={uniqid()}>
+              <Paragraph>
                 {paragraph.heading && (
                   <SubHeading>{paragraph.heading}</SubHeading>
                 )}
