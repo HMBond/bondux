@@ -62,11 +62,11 @@ const BlogImage = styled.div`
 `;
 
 const BlogCardTitleBox = styled.div`
-  color: ${props => props.theme.colors.primary};
-  background: ${props => props.theme.colors.lightGrey};
+  color: ${props => props.theme.colors.bg};
+  background: ${props => props.theme.colors.primary};
   padding: 2rem;
   ${props =>
-    !props.longTitle &&
+    props.shortTitle &&
     css`
       padding: 1.2rem 0rem 2rem 2rem;
       position: relative;
@@ -81,7 +81,7 @@ const BlogCardTitleBox = styled.div`
         left: 99.98%;
         border-bottom: 6rem solid transparent;
         border-right: 6rem solid transparent;
-        border-top: 6rem solid ${props => props.theme.colors.lightGrey};
+        border-top: 6rem solid ${props => props.theme.colors.primary};
       }
     `}
 `;
@@ -164,7 +164,7 @@ const BlogPost = ({ card, entry, ...props }) => {
         {entry.topImgUrl && (
           <BlogImage src={entry.topImgUrl} card {...props}>
             {entry.title && (
-              <BlogCardTitleBox longTitle={entry.title.length > 16}>
+              <BlogCardTitleBox shortTitle={entry.title.length < 16}>
                 <BlogTitle>{entry.title}</BlogTitle>
               </BlogCardTitleBox>
             )}
