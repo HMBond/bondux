@@ -33,20 +33,23 @@ const SkillDescription = styled.div`
   padding: 1rem;
   margin-bottom: 1rem;
   line-height: 1.5rem;
+  ul {
+    margin: 0;
+  }
 `;
 
 const SubSkill = styled(SkillProgressBar)`
   display: flex;
   height: 2rem;
-  background: ${props => props.theme.colors.accent};
-  cursor: pointer;
+  background: ${props =>
+    props.hasChildren ? props.theme.colors.accent : props.theme.colors.grey};
+  cursor: ${props => (props.hasChildren ? "pointer" : "default")};
   ${props =>
     props.open &&
     css`
       background: ${props => props.theme.colors.grey};
     `}
   margin-left: 1rem;
-  background: ${props => props.theme.colors.grey};
   color: ${props => props.theme.colors.bg};
   font-family: "DejaVu Condensed Bold";
 `;
@@ -94,6 +97,7 @@ const SkillDiagram = ({
                 onClick={e =>
                   skillLabelClickHandler({ e, index, subSkill: true })
                 }
+                hasChildren={subSkill.description}
               >
                 {subSkill.description && (
                   <CollapseIcon open={openSubSkill === index} />
