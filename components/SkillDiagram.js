@@ -4,7 +4,7 @@ import styled, { css } from "styled-components";
 import SkillProgressBar from "./styles/SkillProgressBar";
 import ArrowSvg from "../static/arrow.svg";
 
-import { arrange, makeHash } from "./helpers/functions";
+import { arrange, makeSlug } from "./helpers/functions";
 import uniqid from "uniqid";
 
 const SkillDiagramBase = styled.div``;
@@ -75,7 +75,7 @@ const SkillDiagram = ({
     {arrange(skillList).map((skill, index) => (
       <Skill key={uniqid()}>
         <SkillLabel
-          id={makeHash(skill.name)}
+          id={makeSlug(skill.name)}
           progress={skill.progress}
           open={openSkill === index}
           onClick={e => skillLabelClickHandler({ e, index })}

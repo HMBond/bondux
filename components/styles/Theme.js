@@ -12,7 +12,7 @@ export const theme = {
     grey: "#5A5A5A",
     lightGrey: "#E1E1E1",
     offWhite: "#EDEDED",
-    transparent: makeTransparent
+    transparent: (color, transparency) => makeTransparent(color, transparency)
   },
   maxWidth: "40rem",
   bs: "0 12px 24px 0 rgba(0, 0, 0, 0.09)"

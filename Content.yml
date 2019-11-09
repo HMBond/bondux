@@ -39,7 +39,6 @@
   blogPosts:
     - category: design
       title: Design Vision
-      hash: design-vision
       topImgUrl: "../static/design.jpg"
       titleInTopImg: true
       topImgRoundness: "50%"
@@ -88,6 +87,7 @@
           text: <ul><li>Fan Ho</li> <li>Jamie Windsor</li> <a href="https://www.youtube.com/user/mat0fr" target="_blank"><li>Matthieu Stern</li></a></ul>
     - category: music
       title: Music & Art
+      slug: music-art
       topImgUrl: "../static/music.jpg"
       titleInTopImg: true
       summary: "My mind is currently focussed at code and photography, but my heart still belongs to music."

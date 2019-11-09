@@ -1,3 +1,7 @@
+export const clientSideRender = () => {
+  return typeof window !== "undefined" && window.document ? true : false;
+};
+
 export const constrain = (value, arrayLength) => {
   if (value <= 0) {
     return 0;
@@ -14,11 +18,11 @@ export const arrange = array => {
   });
 };
 
-export const makeHash = string => {
+export const makeSlug = string => {
   return string.toLocaleLowerCase().replace(" ", "-");
 };
 
-export function hexToRGBA(hex, opacity) {
+export const hexToRGBA = (hex, opacity) => {
   return (
     "rgba(" +
     (hex = hex.replace("#", ""))
@@ -30,4 +34,4 @@ export function hexToRGBA(hex, opacity) {
       .join(",") +
     ")"
   );
-}
+};
