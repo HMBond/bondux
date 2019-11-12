@@ -113,7 +113,7 @@
           progress: 70%
         - name: HTML5
           progress: 80%
-        - name: CSS
+        - name: CSS / SCSS / SASS
           progress: 75%
         - name: Ruby on Rails
           progress: 65%
@@ -135,16 +135,24 @@
           progress: 70%
         - name: Scrum
           progress: 67%
-        - name: Sketching
+        - name: Design Drawing
+          progress: 40%
+        - name: Concept Sketching
           progress: 60%
+        - name: Interactive Audio Design
+          progress: 80%
+        - name: Tactility
+          progress: 40%
+        - name: Data Visualization
+          progress: 35%
         - name: User Research
           progress: 50%
         - name: Context Mapping
           progress: 45%
         - name: Graphic Design
-          progress: 40%
+          progress: 55%
         - name: Prototyping
-          progress: 80%
+          progress: 75%
       description: "With a Master's Degree in Design For Interaction, I helped many people in their personal projects to clarify their design choices and future process. The advice can be about the technical aspects, but often comes down to rethinking the motives that drive a project. Practically, the chosen work method has a great influence on the end-product and service. Although helping others is fun and interesting, I would still like to become better at design by doing design related work. For more in depth explanation, read my <a href='/blog#design-vision'>vision on design</a>!"
       progress: 70%
     - name: Music
@@ -169,6 +177,8 @@
           progress: 30%
         - name: Recording
           progress: 65%
+        - name: Sound Design
+          progress: 67%
       progress: 90%
     - name: Prototyping
       subSkills:
