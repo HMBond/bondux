@@ -45,8 +45,8 @@ const Skills = () => {
       {context => (
         <Fragment>
           <FullScreenContainer onClick={e => collapseAll(e)}>
-            <SkillsHeading>{"These are my "}</SkillsHeading>
-            <SkillsTitle>{"Skills"}</SkillsTitle>
+            <SkillsHeading>{"This is my "}</SkillsHeading>
+            <SkillsTitle>{"Skill Set"}</SkillsTitle>
             <SkillDiagram
               onClick={e => {
                 e.stopPropagation();
