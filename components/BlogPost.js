@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import Fade from "react-reveal/Fade";
-import { Title, SubHeading } from "./styles/Text";
+import { Title, SubHeading } from "./styles/Headings";
 import Hr from "./styles/Hr";
 import uniqid from "uniqid";
 
@@ -9,7 +9,7 @@ const BlogPostBase = styled.div`
   max-width: ${props => props.theme.maxWidth};
   display: flex;
   flex-direction: column;
-  margin-top: ${props => (props.card ? "4rem" : 0)};
+  margin-bottom: ${props => (props.card ? "4rem" : 0)};
   align-items: center;
   cursor: pointer;
 `;

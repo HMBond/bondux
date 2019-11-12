@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Title, Heading, SubHeading, Label } from "../components/styles/Text";
+import { Title, SubHeading, Label } from "../components/styles/Headings";
 
 const ContactPage = styled.div`
   max-width: ${props => props.theme.maxWidth};
@@ -14,8 +14,8 @@ const ContactTitle = styled(Title)`
   align-self: center;
 `;
 
-const FlexEndHeading = styled(Heading)`
-  align-self: flex-end;
+const ContactHeading = styled(SubHeading)`
+  font-family: "DejaVu Extra Light";
 `;
 
 const ContactLinks = styled.div`
@@ -61,9 +61,8 @@ const Icon = styled.div`
 
 const Contact = () => (
   <ContactPage>
-    <SubHeading>{"Please get in "}</SubHeading>
+    <ContactHeading>{"Let's get in"}</ContactHeading>
     <ContactTitle extraLarge>{"contact"}</ContactTitle>
-    <FlexEndHeading>{" with me!"}</FlexEndHeading>
     <ContactLinks>
       <ContactItem>
         <a

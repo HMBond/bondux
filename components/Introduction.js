@@ -2,7 +2,7 @@ import { Component } from "react";
 import styled from "styled-components";
 import Flip from "react-reveal/Flip";
 import Link from "next/link";
-import { Label } from "./styles/Text";
+import { Label } from "./styles/Headings";
 import uniqid from "uniqid";
 
 const IntroductionBase = styled.div`

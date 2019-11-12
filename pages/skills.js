@@ -4,7 +4,7 @@ import Context from "../components/Context";
 
 import WhiteSpace from "../components/styles/WhiteSpace";
 import SkillDiagram from "../components/SkillDiagram";
-import { Title, SubHeading } from "../components/styles/Text";
+import { Title, SubHeading } from "../components/styles/Headings";
 
 const FullScreenContainer = styled.div`
   width: 100vw;
@@ -17,6 +17,7 @@ const FullScreenContainer = styled.div`
 `;
 
 const SkillsHeading = styled(SubHeading)`
+  font-family: "DejaVu Extra Light";
   margin-top: 3rem;
 `;
 
@@ -50,7 +51,9 @@ const Skills = () => {
               onClick={e => {
                 e.stopPropagation();
               }}
-              skillList={context.content[2].skillList}
+              skillList={
+                context.content.find(page => page.url == "/skills").skillList
+              }
               skillLabelClickHandler={skillLabelClickHandler}
               openSkill={openSkill}
               openSubSkill={openSubSkill}
