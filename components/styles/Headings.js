@@ -7,6 +7,14 @@ export const Title = styled.span`
   text-align: center;
 `;
 
+export const SubTitle = styled.span`
+  font-size: 1.4rem;
+  margin: 1rem;
+  font-family: "DejaVu Extra Light";
+  text-align: center;
+  color: ${props => props.theme.colors.accent};
+`;
+
 export const Heading = styled.span`
   font-family: "DejaVu Serif";
   font-size: 2.8rem;

@@ -7,7 +7,7 @@ import Context from "../components/Context";
 import BlogPost from "../components/BlogPost.js";
 import uniqid from "uniqid";
 import WhiteSpace from "../components/styles/WhiteSpace";
-import { Title, SubHeading } from "../components/styles/Headings";
+import { Title, SubTitle } from "../components/styles/Headings";
 import { makeSlug } from "../components/helpers/functions";
 
 const BlogPage = styled.div`
@@ -15,17 +15,11 @@ const BlogPage = styled.div`
   flex-direction: column;
 `;
 
-const BlogTitleContainer = styled.div`
-  display: flex;
-  align-items: baseline;
-  margin: 3rem auto;
-`;
+const BlogSubTitle = styled(SubTitle)``;
 
-const BlogSubHeading = styled(SubHeading)`
-  font-family: "DejaVu Extra Light";
+const BlogTitle = styled(Title)`
+  margin-top: 4rem;
 `;
-
-const BlogTitle = styled(Title)``;
 
 const Blog = () => {
   const [openPost, setOpenPost] = useState(null);
@@ -49,10 +43,8 @@ const Blog = () => {
     <Context.Consumer>
       {context => (
         <BlogPage id={"blog-page"}>
-          <BlogTitleContainer>
-            <BlogSubHeading>{"Let's"}</BlogSubHeading>
-            <BlogTitle>{"Read"}</BlogTitle>
-          </BlogTitleContainer>
+          <BlogTitle>{"My Blog"}</BlogTitle>
+          <BlogSubTitle>{"HOW I THINK"}</BlogSubTitle>
           {context.content
             .find(page => page.url == "/blog")
             .blogPosts.map(entry => {

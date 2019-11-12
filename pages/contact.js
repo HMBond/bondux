@@ -1,25 +1,21 @@
 import styled from "styled-components";
-import { Title, SubHeading, Label } from "../components/styles/Headings";
+import { Title, SubTitle, Label } from "../components/styles/Headings";
 
 const ContactPage = styled.div`
-  max-width: ${props => props.theme.maxWidth};
-  margin: 2rem;
   display: flex;
   flex-direction: column;
+  max-width: ${props => props.theme.maxWidth};
+  width: 100%;
 `;
+
+const ContactSuperTitle = styled(SubTitle)``;
 
 const ContactTitle = styled(Title)`
-  display: block;
-  margin-bottom: 0.4rem;
-  align-self: center;
-`;
-
-const ContactHeading = styled(SubHeading)`
-  font-family: "DejaVu Extra Light";
+  margin-top: 4rem;
 `;
 
 const ContactLinks = styled.div`
-  margin-top: 4rem;
+  margin: 4rem 2rem 2rem 2rem;
 `;
 
 const ContactItem = styled.div`
@@ -59,10 +55,10 @@ const Icon = styled.div`
   border: 0px solid ${props => props.theme.colors.accent};
 `;
 
-const Contact = () => (
-  <ContactPage>
-    <ContactHeading>{"Let's get in"}</ContactHeading>
-    <ContactTitle extraLarge>{"contact"}</ContactTitle>
+const Contact = ({ ...props }) => (
+  <ContactPage {...props}>
+    <ContactTitle>{"Contact"}</ContactTitle>
+    <ContactSuperTitle>{"LET'S CHAT"}</ContactSuperTitle>
     <ContactLinks>
       <ContactItem>
         <a

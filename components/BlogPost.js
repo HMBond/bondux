@@ -9,7 +9,7 @@ const BlogPostBase = styled.div`
   max-width: ${props => props.theme.maxWidth};
   display: flex;
   flex-direction: column;
-  margin-bottom: ${props => (props.card ? "4rem" : 0)};
+  margin-top: ${props => (props.card ? "4rem" : 0)};
   align-items: center;
   cursor: pointer;
 `;
@@ -110,7 +110,7 @@ const Category = styled.div`
   font-size: 1.2em;
   font-variant: small-caps;
   padding: 0.8rem 0.8rem 0.8rem 0;
-  height: 3rem;
+  height: 4rem;
   background: ${props => props.theme.colors.lightGrey};
   &:before {
     content: " ";
@@ -119,9 +119,9 @@ const Category = styled.div`
     position: absolute;
     bottom: 0;
     right: 99.98%;
-    border-top: 3rem solid transparent;
-    border-left: 3rem solid transparent;
-    border-bottom: 3rem solid ${props => props.theme.colors.lightGrey};
+    border-top: 4rem solid transparent;
+    border-left: 4rem solid transparent;
+    border-bottom: 4rem solid ${props => props.theme.colors.lightGrey};
   }
 `;
 
@@ -150,10 +150,10 @@ const Paragraph = styled.div`
 `;
 
 const BlogText = styled.p`
-  margin: 1rem 2rem 3rem 2rem;
+  margin: 1rem 2rem 4rem 2rem;
   line-height: 1.8rem;
   @media screen and (min-width: 600px) {
-    margin: 1rem 0 3rem;
+    margin: 1rem 0 4rem;
   }
 `;
 
