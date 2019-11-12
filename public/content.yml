@@ -39,62 +39,62 @@
   blogPosts:
     - category: design
       title: Design Vision
-      topImgUrl: "../static/design.jpg"
+      topImgUrl: "/public/design.jpg"
       titleInTopImg: true
       topImgRoundness: "50%"
       summary: "How do I think about design in practice? An overview of the things I learned during my study at TU−Delft and my own perspective on design!"
       paragraphs:
         - heading: Simplicity
           text: "The main outcome of my graduation project was that simplicity is effective. Throughout my study and work I heard many people talking about Keep It Simple Stupid (KISS), but in practice this is hard to maintain throughout. I learned some methodology to keep things simple and clear, let me share some of them."
-          imgUrl: "../static/design1.jpg"
+          imgUrl: "/public/design1.jpg"
         - heading: Diverge and converge
           text: "Generate many ideas, concepts, sub-solutions and abstracts on post-its on a wall to compare them side by side. This helps in not to always choose the first idea/solution that pops up in your mind to be worked out. The first idea/solution often turns out to not be the most easy and efficient one, after you briefly investigate the alternatives. Design is about keeping a broad overview and then choosing a path. After each choice, you explore new paths where to go, and so on, and so on... However, I found myself pressured to choose the 'right' path and got stuck quite often. As in life, there is no right path and (design) choices can be overruled if the path happened to be a dead end. What you gain by working this way? You will spend less time on working out something that later will become irrelevant cause of something better that you overlooked before."
-          imgUrl: "../static/design2.jpg"
+          imgUrl: "/public/design2.jpg"
         - heading: Design Together
           text: "Choosing the right path to go is not only done in a global manner, e.g. Marketing wants a design for getting more customer trust. As a designer or developer you have to make little decisions quite often and sometimes you need to stop if it didn't work out and go back to see if there are alternatives. To evaluate your options, it is important to use surrounding resources. A good company provides the ability, by mentality and organization, to speak about any (small or big) choice to be made. A designer carries the responsibility to make this possible, by breaking the boundaries between departments, because he or she knows the importance of open communication in the design process. Pro-efficient internal communication can be organized just like a designer organizes user-research, by using tools. Workshops, stand-ups, a stage for giving simple lectures about relevant problems and solutions and many more are proven to be more effective than the old-school board-room meeting. It also improves the atmosphere and mentality towards the ease of just asking each other about any opinion on any small choice to be made. I had very happy experiences in my job at Mobiel.nl regarding an open work-mentality, but many friends of mine experience the sluggishness of big companies that struggle with open communication between departments or distance between colleagues. Next to internal communication, there is the communication with the actual users of the product or service you design. An outgoing user-research team can provide amazing insights, data and general information to be used to base decisions on. Again, this is only used to its full potential when communicated (and presented) openly within the company or organization."
-          imgUrl: "../static/design2.jpg"
+          imgUrl: "/public/design2.jpg"
         - heading: Iterate
           text: "As mentioned in Diverge and Converge, do not start building the final version from an underdeveloped design. There is a long road in between an idea and a product, but this long road will be shortened by iteration. When you have the general idea of what you are about to create, it is time to create a simplified version of the product in mind. An iteration can take many shapes: A drawing, paper prototype, story in form of futuristic or best/worst-case scenario, a collage of what it should represent emotionally, a rapid prototype, etc. etc. <br><br> The beauty of creating a simplified version is that it generates obstacles straight away. Foreseeing obstacles helps to make decisions and drives the design process further, thus elaborating the concepts or ideas. Iteration is all about revealing the hidden pitfalls and generating new ideas to solve earlier obstacles. I heard that <a href='https://www.inc.com/ilan-mochari/vacuum-innovation.html' target='_blank'>Dyson iterated over 5000+ times by building prototypes</a> in order to make the worlds best vacuum cleaner. This is dedication!"
-          imgUrl: "../static/design3.jpg"
+          imgUrl: "/public/design3.jpg"
         - heading: Dig, Cut and Restructure
           text: "Most design is redesign. Imagine a restaurant owner that has a huge menu card, three cooks from which two of them are on the edge of having a burn-out, customers who are confused and waiters who mess up the orders. This situation is common within companies and organizations. The over extended menu card can be compared to an app with too many features - a.k. the feature Christmas tree. Like with the restaurant, the necessary approach is to dig the pearls. Find out what is the core selling point. Isolate all the attributes that are needed to achieve this and cut out the additional crap. Later, the scraped stuff could be re-evaluated and maybe added back in a structured way. Redesign can be harsh because you have to dig through the crap, but the restructuring of all the functionalities often ends up with a beautiful outcome that could not have become this way by starting from scratch."
-          imgUrl: "../static/design4.jpg"
+          imgUrl: "/public/design4.jpg"
         - heading: Graphic Design
           text: "Decorations tend to distract and keep the eyes from seeing the real beauty of work. Cutting away all irrelevant is used in Zen-art principles and became a rule in design since the nineties. Although widely known by designers and artists, this principle is not always taken to its full potential. The use of ratios and symmetry also helps in giving the viewer focus to what is important. Many graphic designers know, but I run into many websites that are inconsistent. I do not strife for a minimalist zen style in everything, because I love eccentric, vulgar, outgoing and provocative styles. But if the intention is to have simplicity, keep it simple. It goes wrong when the intention is not clear or not clearly communicated through the design, but it does make me smile when I run into an amateur bilboard that shows its intention, but in a very wrong way."
-          imgUrl: "../static/design5.jpg"
+          imgUrl: "/public/design5.jpg"
           imgUrls:
-            - "../static/image2.jpg"
-            - "../static/image3.jpg"
+            - "/public/image2.jpg"
+            - "/public/image3.jpg"
     - category: photography
       title: Photography
-      topImgUrl: "../static/photography.jpg"
+      topImgUrl: "/public/photography.jpg"
       titleInTopImg: true
       summary: "My vision on photography is vividly under development! Nevertheless, I can share you my current thoughts on shooting photos."
       paragraphs:
         - heading: Advices
           text: "Mother's advice: 'When you look back at the photos you've made, the ones that mean something to you are always the ones of real people. The other photos with mountains and trees on it can be thrown in the bin.' <br><br> Contrary to this advice are the masses that are taking selfies everywhere all the time. I never joined the selfie culture, but I would imagine that a selfie looses its value when you take so many of them. But let's focus on something far more interesting: Art Photography!"
-          imgUrl: "../static/photography1.jpg"
+          imgUrl: "/public/photography1.jpg"
         - heading: Truth
           text: "For me, the photos that remain value are the ones that tell the truth about the time and situation I was in when I shot the photo. This truth-factor in photography is fragile. It is destroyed whenever I play around with the objects or scene I want to shoot. Same goes for posing, although taking portraits is interesting. It is hard, because you want to tell the truth about the subject, but the subject is posing. So looking back at all those photos, only few will be satisfying. With posing there can be a truth revealed when the posing is done honestly. This is hard for the subject and Matthieu Stern provides some nice tricks to help them out. Although posing and setting up a scene generally destroys the truth, it can be used to tell a hidden truth that is in your mind as an artist. I'd like to explore this in the near future. But for now, my photos will hopefully show the true beauty of the moments I'm in, from the eyes of a spectator."
-          imgUrl: "../static/photography2.jpg"
+          imgUrl: "/public/photography2.jpg"
         - heading: Selfie Culture
           text: "I try to be as less intrusive as possible when shooting photos, but all around me, photographers (and especially the models) seem to think differently. On a train to Ella in Sri Lanka I saw a white couple hanging from the train door, screaming and getting a lot of attention. Next to me I heard a member of the train staff mumbling worried and eventually shouting to his colleague near the girl to do something. Two weeks later on Instagram, I see this hip travel photography agent posting the photos of the couple pretending this photo was taken spontaneously. For their information, kissing in public and hanging out of the train is not acceptable in Sri Lanka, the train staff is just too kind to give a fine."
-          imgUrl: "../static/photography3.jpg"
+          imgUrl: "/public/photography3.jpg"
         - heading: Consent
           text: "On the other hand there are many western tourists shooting photos of Asian children without permission or consent. I must say that I'm guilty of that as well, but there is a clear boundary. Some photographers or tourists did not develop themselves a sense of respect nor empathy. Does the subject mind if you take a photo? If you develop a sense of social empathy, you can not only see, but feel if the situation is appropriate for shooting a photo. I've witnessed awkward situations such as: disrespect to locals, ruining beautiful sights, blindness to cultural differences and destroying the nature which attracted them to come there."
-          imgUrl: "../static/photography4.jpg"
+          imgUrl: "/public/photography4.jpg"
         - heading: My most appreciated photographers and vloggers
           text: <ul><li>Fan Ho</li> <li>Jamie Windsor</li> <a href="https://www.youtube.com/user/mat0fr" target="_blank"><li>Matthieu Stern</li></a></ul>
     - category: music
       title: Music & Art
       slug: music-art
-      topImgUrl: "../static/music.jpg"
+      topImgUrl: "/public/music.jpg"
       titleInTopImg: true
       summary: "My mind is currently focussed at code and photography, but my heart still belongs to music."
       paragraphs:
         - heading: Popmusic
           text: "Music, as a form of art, has the strongest emotional impact on an audience. Music can change moods, makes you sleepy or awake, helps you think or relax.. But for me, not all music is art. When the motive of a piece of music is only to become popular by the bare minimum use of chliché musical formulas, the music sounds to me just like that. Once you listen clearly to music, you can hear the intention behind it and you will come to a choice: Does this suit me or nothning to me at all? Most popular music sounds like it is made to sell. Just that. And if it has nothing else then this motive, it is considered a business product or advertisement. So for me, that is fine, but I do not consider it to be art. An art piece needs three aspects: form, impact and creativity. In general, popmusic misses out on the creativity part. The creativity part is interesting. I asked some friends who are in music business what they do at the very beginning of making a piece of music. All (except one) answered they start off with improvisation and they come across some sounds that provoke kind of idea to build from. One answered that he started by taking an existing song and copying everything but the lyrics to record them in Dutch. His goal was to become rich oneday making music."
-          imgUrl: "../static/music1.jpg"
+          imgUrl: "/public/music1.jpg"
         - heading: Recommended to listen
           text: <ul><a href="https://www.youtube.com/watch?v=Rnm-w6ifpbc" ><li>Sphongle</li></a> <a href="https://www.youtube.com/watch?v=rFUVLGqsgts" > <li>Colin Stetson</li></a> <a href="https://www.youtube.com/watch?v=ne4PoC7V0Mk" target="_blank"><li>Igor Stravinsky</li></a></ul>
 - name: SKILLS

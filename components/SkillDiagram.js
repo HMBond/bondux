@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import styled, { css } from "styled-components";
 
 import SkillProgressBar from "./styles/SkillProgressBar";
-import ArrowSvg from "../static/arrow.svg";
+import ArrowSvg from "../public/arrow.svg";
 
 import { arrange, makeSlug } from "./helpers/functions";
 import uniqid from "uniqid";

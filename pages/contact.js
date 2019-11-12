@@ -72,7 +72,7 @@ const Contact = () => (
             "mailto:post@bondux.dev?subject=Contact&body=Hi Mike, ...%0D%0A%0D%0A%0D%0A%0D%0A"
           }
         >
-          <Icon src={"../static/email.svg"} />
+          <Icon src={"/public/email.svg"} />
           <Label>{"Email"}</Label>
         </a>
       </ContactItem>
@@ -83,13 +83,13 @@ const Contact = () => (
             "https://api.whatsapp.com/send?phone=31654356094&text=Hi%20mike"
           }
         >
-          <Icon src={"../static/phone.svg"} />
+          <Icon src={"/public/phone.svg"} />
           <Label>{"WhatsApp"}</Label>
         </a>
       </ContactItem>
       <ContactItem>
         <a target={"_blank"} href={"https://www.flickr.com/photos/7363277@N07"}>
-          <Icon src={"../static/camera.svg"} />
+          <Icon src={"/public/camera.svg"} />
           <Label>{"Photography"}</Label>
         </a>
       </ContactItem>

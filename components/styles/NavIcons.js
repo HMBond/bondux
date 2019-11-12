@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ArrowSvg from "../../static/arrow.svg";
+import ArrowSvg from "../../public/arrow.svg";
 
 export const NavBackIcon = styled(ArrowSvg)`
   width: 30px;
