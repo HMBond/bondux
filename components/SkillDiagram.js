@@ -98,6 +98,7 @@ const SkillDiagram = ({
                   skillLabelClickHandler({ e, index, subSkill: true })
                 }
                 hasChildren={subSkill.description}
+                open={openSubSkill === index}
               >
                 {subSkill.description && (
                   <CollapseIcon open={openSubSkill === index} />
