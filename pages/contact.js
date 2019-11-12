@@ -14,7 +14,7 @@ const ContactTitle = styled(Title)`
   align-self: center;
 `;
 
-const ContactHeading = styled(Heading)`
+const FlexEndHeading = styled(Heading)`
   align-self: flex-end;
 `;
 
@@ -63,7 +63,7 @@ const Contact = () => (
   <ContactPage>
     <SubHeading>{"Please get in "}</SubHeading>
     <ContactTitle extraLarge>{"contact"}</ContactTitle>
-    <ContactHeading>{" with me!"}</ContactHeading>
+    <FlexEndHeading>{" with me!"}</FlexEndHeading>
     <ContactLinks>
       <ContactItem>
         <a
@@ -72,7 +72,7 @@ const Contact = () => (
             "mailto:post@bondux.dev?subject=Contact&body=Hi Mike, ...%0D%0A%0D%0A%0D%0A%0D%0A"
           }
         >
-          <Icon src={"/public/email.svg"} />
+          <Icon src={"/email.svg"} />
           <Label>{"Email"}</Label>
         </a>
       </ContactItem>
@@ -83,13 +83,13 @@ const Contact = () => (
             "https://api.whatsapp.com/send?phone=31654356094&text=Hi%20mike"
           }
         >
-          <Icon src={"/public/phone.svg"} />
+          <Icon src={"/phone.svg"} />
           <Label>{"WhatsApp"}</Label>
         </a>
       </ContactItem>
       <ContactItem>
         <a target={"_blank"} href={"https://www.flickr.com/photos/7363277@N07"}>
-          <Icon src={"/public/camera.svg"} />
+          <Icon src={"/camera.svg"} />
           <Label>{"Photography"}</Label>
         </a>
       </ContactItem>

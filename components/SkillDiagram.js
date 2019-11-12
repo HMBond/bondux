@@ -7,7 +7,11 @@ import ArrowSvg from "../public/arrow.svg";
 import { arrange, makeSlug } from "./helpers/functions";
 import uniqid from "uniqid";
 
-const SkillDiagramBase = styled.div``;
+const SkillDiagramBase = styled.div`
+  margin: 2rem 0;
+  width: 100%;
+  max-width: ${props => props.theme.maxWidth};
+`;
 
 const Skill = styled.div``;
 

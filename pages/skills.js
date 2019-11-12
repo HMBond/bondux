@@ -4,6 +4,7 @@ import Context from "../components/Context";
 
 import WhiteSpace from "../components/styles/WhiteSpace";
 import SkillDiagram from "../components/SkillDiagram";
+import { Title, SubHeading } from "../components/styles/Text";
 
 const FullScreenContainer = styled.div`
   width: 100vw;
@@ -15,11 +16,11 @@ const FullScreenContainer = styled.div`
   overflow-x: hidden;
 `;
 
-const StyledSkillDiagram = styled(SkillDiagram)`
-  margin: auto 0;
-  width: 100%;
-  max-width: ${props => props.theme.maxWidth};
+const SkillsHeading = styled(SubHeading)`
+  margin-top: 3rem;
 `;
+
+const SkillsTitle = styled(Title)``;
 
 const Skills = () => {
   const [openSkill, setOpenSkill] = useState(null);
@@ -43,7 +44,9 @@ const Skills = () => {
       {context => (
         <Fragment>
           <FullScreenContainer onClick={e => collapseAll(e)}>
-            <StyledSkillDiagram
+            <SkillsHeading>{"These are my "}</SkillsHeading>
+            <SkillsTitle>{"Skills"}</SkillsTitle>
+            <SkillDiagram
               onClick={e => {
                 e.stopPropagation();
               }}
