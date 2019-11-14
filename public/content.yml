@@ -126,7 +126,7 @@
         - name: Scrum
           progress: 67%
         - name: Testing
-          description: <ul><li>Unit Testing</li><li>Rspec</li><li>Integration Testing</li><li><a href="https://www.cypress.io/" target="_blank" >Cypress.io</a></li></ul>
+          description: <ul><h4>Unit Testing</h4><li>Jest</li><li>Rspec</li><h4>Integration Testing</h4><li><a href="https://www.cypress.io/" target="_blank" >Cypress.io</a></li></ul>
           progress: 60%
       description: "I started HTML, CSS and simple JavaScript coding when I was 13 years old. During my masters study I picked up coding and at Mobiel.nl, I learned how to code professionally: readable, reliable and concise. There, I discovered working methods and structural principles, such as TDD, Mobile First and CRUD."
     - name: Design

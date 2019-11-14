@@ -4,7 +4,10 @@ import Context from "../components/Context";
 
 import WhiteSpace from "../components/styles/WhiteSpace";
 import SkillDiagram from "../components/SkillDiagram";
-import { Title, SubTitle } from "../components/styles/Headings";
+import {
+  Title,
+  SubTitle as SkillsSubTitle
+} from "../components/styles/Headings";
 
 const FullScreenContainer = styled.div`
   width: 100vw;
@@ -15,8 +18,6 @@ const FullScreenContainer = styled.div`
   align-items: center;
   overflow-x: hidden;
 `;
-
-const SkillsSubTitle = styled(SubTitle)``;
 
 const SkillsTitle = styled(Title)`
   margin-top: 4rem;
@@ -31,12 +32,14 @@ const Skills = () => {
     setOpenSkill(null);
   };
 
-  const skillLabelClickHandler = ({ e, index, subSkill = false }) => {
-    if (subSkill) {
-      index === openSubSkill ? setOpenSubSkill(null) : setOpenSubSkill(index);
-    } else {
-      index === openSkill ? setOpenSkill(null) : setOpenSkill(index);
-    }
+  const onSkillClick = skill => {
+    skill === openSkill ? setOpenSkill(null) : setOpenSkill(skill);
+  };
+
+  const onSubSkillClick = subSkill => {
+    subSkill === openSubSkill
+      ? setOpenSubSkill(null)
+      : setOpenSubSkill(subSkill);
   };
 
   return (
@@ -53,7 +56,8 @@ const Skills = () => {
               skillList={
                 context.content.find(page => page.url == "/skills").skillList
               }
-              skillLabelClickHandler={skillLabelClickHandler}
+              onSkillClick={onSkillClick}
+              onSubSkillClick={onSubSkillClick}
               openSkill={openSkill}
               openSubSkill={openSubSkill}
             />
