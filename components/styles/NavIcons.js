@@ -1,31 +1,29 @@
 import styled from "styled-components";
 import ArrowSvg from "../../public/arrow.svg";
 
-export const NavBackIcon = styled(ArrowSvg)`
+const NavIconBase = styled(ArrowSvg)`
+  opacity: ${props => (props.hidden ? "0" : "1")};
+  order: ${props => props.order};
   width: 30px;
   height: 30px;
-  fill: ${props => props.theme.colors.bg};
+  fill: ${props => props.theme.colors.primary};
   cursor: pointer;
+  transition: transform 0.3s ease-in-out, opacity 0.5s ease-in-out;
+`;
+
+export const NavBackIcon = styled(NavIconBase)`
   transform: rotate(180deg);
-  transition: transform 0.3s ease-in-out;
+  margin: 25px;
 `;
 
-export const NavToggleIcon = styled(ArrowSvg)`
-  width: 30px;
-  height: 30px;
-  fill: ${props => props.theme.colors.bg};
-  cursor: pointer;
-  transform: ${props => (props.open ? "rotate(-630deg)" : "rotate(-90deg)")};
-  transition: transform 0.3s ease-in-out;
-`;
-
-export const NavForwardIcon = styled(ArrowSvg)`
-  width: 30px;
-  height: 30px;
-  fill: ${props => props.theme.colors.bg};
-  cursor: pointer;
+export const NavForwardIcon = styled(NavIconBase)`
   transform: rotate(0deg);
-  transition: transform 0.3s ease-in-out;
+  margin: 25px;
+`;
+
+export const NavToggleIcon = styled(NavIconBase)`
+  fill: ${props => props.theme.colors.bg};
+  transform: ${props => (props.open ? "rotate(-630deg)" : "rotate(-90deg)")};
 `;
 
 export default { NavBackIcon, NavToggleIcon, NavForwardIcon };

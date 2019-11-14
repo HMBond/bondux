@@ -81,29 +81,23 @@ class Nav extends Component {
       <Context.Consumer>
         {context => (
           <NavBase ssrReady={ssrReady}>
-            <NavButton
+            <NavBackIcon
               hidden={
                 context.nav.currentPath === context.content[0].url ||
                 context.nav.open
               }
-              properlyClosed={properlyClosed}
               onClick={() => context.nav.back()}
               order={1}
-            >
-              <NavBackIcon />
-            </NavButton>
-            <NavButton
+            ></NavBackIcon>
+            <NavForwardIcon
               hidden={
                 context.nav.currentPath ===
                   context.content[context.content.length - 1].url ||
                 context.nav.open
               }
-              properlyClosed={properlyClosed}
               onClick={() => context.nav.forward()}
               order={3}
-            >
-              <NavForwardIcon />
-            </NavButton>
+            ></NavForwardIcon>
             <NavButton
               open={context.nav.open}
               properlyClosed={properlyClosed}
