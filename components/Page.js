@@ -35,9 +35,6 @@ const GlobalStyle = createGlobalStyle`
     html {
       font-size: 14px;
     }
-    * {
-    scrollbar-width: none;
-    }
   }
   
   @media screen and (max-width: 370px) {
