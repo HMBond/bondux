@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const SkillProgressBar = styled.div`
   padding: 0 1rem;
-  margin: 1rem 0;
   line-height: 2rem;
   position: relative;
 

@@ -28,7 +28,7 @@ const Path = styled.path`
       stroke-dasharray: 100;
       stroke-dashoffset: 100;
       animation: ${props =>
-        props.light ? "" : "dash 1s ease-in 1s forwards normal"};
+        props.light ? "" : "dash 1s ease-in 0.5s forwards normal"};
     `}
 
   @keyframes dash {

@@ -6,8 +6,8 @@ const CollapseIconBase = styled(ArrowSvg)`
   width: 1rem;
   height: 1rem;
   margin: auto 0.5rem auto 0;
-  transform: ${props => (props.open ? "rotate(720deg)" : "rotate(90deg)")};
-  transition: all 0.6s ease-in-out;
+  transform: ${props => (props.open ? "rotate(360deg)" : "rotate(90deg)")};
+  transition: transform 0.3s ease-in-out;
 `;
 
 const CollapseIcon = ({ open, ...props }) => (

@@ -22,6 +22,7 @@ const GlobalStyle = createGlobalStyle`
 
   * {
     box-sizing: border-box;
+    scrollbar-width: thin;
   }
 
   a {
@@ -33,6 +34,9 @@ const GlobalStyle = createGlobalStyle`
   @media screen and (max-width: 420px) {
     html {
       font-size: 14px;
+    }
+    * {
+    scrollbar-width: none;
     }
   }
   

@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Router from "next/router";
 import styled from "styled-components";
-import Fade from "react-reveal/Fade";
 
 import Context from "../components/Context";
 import BlogPost from "../components/BlogPost.js";
@@ -51,6 +50,7 @@ const Blog = () => {
               entry.slug = entry.slug || makeSlug(entry.title);
               return (
                 <BlogPost
+                  key={uniqid()}
                   onClick={() => {
                     setOpenPost(entry.slug);
                     if (entry.slug !== openPost) {

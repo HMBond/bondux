@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { arrange } from "../helpers/functions";
-import uniqid from "uniqid";
 
 import Skill, { Skill as SubSkill } from "./Skill";
 
@@ -30,40 +29,42 @@ const SkillDiagram = ({
   onSubSkillClick,
   openSkill,
   openSubSkill,
-  className,
   ...props
 }) => (
-    <SkillDiagramBase {...props}>
-      {arrange(skillList).map((skill, index) => (
-        <Skill
-          key={"" + index}
-          open={openSkill === skill}
-          skill={skill}
-          onClick={() => onSkillClick(skill)}
-        >
-          {skill.description && (
-            <SkillDescription
-              dangerouslySetInnerHTML={{ __html: skill.description }}
-            ></SkillDescription>
-          )}
-          {skill.subSkills &&
-            arrange(skill.subSkills).map((subSkill, index) => (
-              <SubSkill
-                key={"" + index}
-                open={openSubSkill === subSkill}
-                skill={subSkill}
-                onClick={() => onSubSkillClick(subSkill)}
-              >
-                {subSkill.description && (
-                  <SkillDescription
-                    dangerouslySetInnerHTML={{ __html: subSkill.description }}
-                  ></SkillDescription>
-                )}
-              </SubSkill>
-            ))}
-        </Skill>
-      ))}
-    </SkillDiagramBase>
-  );
+  <SkillDiagramBase {...props}>
+    {arrange(skillList).map((skill, index) => (
+      <Skill
+        key={"" + index}
+        open={openSkill === skill}
+        skill={skill}
+        onClick={() => onSkillClick(skill)}
+      >
+        {skill.description && (
+          <SkillDescription
+            open={openSkill === skill}
+            dangerouslySetInnerHTML={{ __html: skill.description }}
+          ></SkillDescription>
+        )}
+        {skill.subSkills &&
+          arrange(skill.subSkills).map((subSkill, index) => (
+            <SubSkill
+              key={"" + index}
+              open={openSubSkill === subSkill}
+              skill={subSkill}
+              onClick={() => onSubSkillClick(subSkill)}
+              isSubSkill
+            >
+              {subSkill.description && (
+                <SkillDescription
+                  open={openSubSkill === subSkill}
+                  dangerouslySetInnerHTML={{ __html: subSkill.description }}
+                ></SkillDescription>
+              )}
+            </SubSkill>
+          ))}
+      </Skill>
+    ))}
+  </SkillDiagramBase>
+);
 
 export default SkillDiagram;
