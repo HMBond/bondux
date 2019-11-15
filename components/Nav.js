@@ -18,9 +18,6 @@ const NavBase = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  max-width: 400px;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
   background: repeating-linear-gradient(
       -45deg,
       transparent,
@@ -30,6 +27,11 @@ const NavBase = styled.div`
     ),
     linear-gradient(transparent, ${props => props.theme.colors.bg}),
     linear-gradient(transparent, ${props => props.theme.colors.bg});
+  @media screen and (min-width: 420px) {
+    max-width: 400px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+  }
 `;
 
 const NavPage = styled.div`
