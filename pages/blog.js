@@ -50,18 +50,16 @@ const Blog = () => {
             .blogPosts.map(entry => {
               entry.slug = entry.slug || makeSlug(entry.title);
               return (
-                <Fade cascade big key={uniqid()}>
-                  <BlogPost
-                    onClick={() => {
-                      setOpenPost(entry.slug);
-                      if (entry.slug !== openPost) {
-                        document.getElementById("blog-page").scrollIntoView();
-                      }
-                    }}
-                    card={entry.slug !== openPost}
-                    entry={entry}
-                  />
-                </Fade>
+                <BlogPost
+                  onClick={() => {
+                    setOpenPost(entry.slug);
+                    if (entry.slug !== openPost) {
+                      document.getElementById("blog-page").scrollIntoView();
+                    }
+                  }}
+                  card={entry.slug !== openPost}
+                  entry={entry}
+                />
               );
             })}
           <WhiteSpace />
