@@ -105,11 +105,11 @@
       subSkills:
         - name: React
           progress: 85%
-          description: <ul><li>React State Hooks</li><li>NextJS</li><li>Styled Components</li></ul>
+          description: <ul><li>React State Hooks</li><li>NextJS</li><li>MobX</li><li>Styled Components</li></ul>
         - name: DevTools
           progress: 63%
           description: <ul><li>Visual Studio Code</li><li>Linux (ZSH) Terminal</li><li>Git</li><li>Svgo</li><li>VIM</li><li>Chrome Inspector</li></ul>
-        - name: JavaScript
+        - name: JavaScript & ES6
           progress: 70%
         - name: HTML5
           progress: 80%
@@ -119,8 +119,6 @@
           progress: 65%
         - name: Max MSP
           progress: 55%
-        - name: ES6
-          progress: 95%
         - name: Git
           progress: 60%
         - name: Scrum
