@@ -19,6 +19,8 @@ const NavBase = styled.div`
   align-items: flex-end;
   justify-content: space-between;
   max-width: 400px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
   background: repeating-linear-gradient(
       -45deg,
       transparent,
