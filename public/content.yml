@@ -113,7 +113,7 @@
           progress: 70%
         - name: HTML5
           progress: 80%
-        - name: CSS / SCSS / SASS
+        - name: CSS / SCSS
           progress: 75%
         - name: Ruby on Rails
           progress: 65%
@@ -124,7 +124,7 @@
         - name: Scrum
           progress: 67%
         - name: Testing
-          description: <ul><h4>Unit Testing</h4><li>Jest</li><li>Rspec</li><h4>Integration Testing</h4><li><a href="https://www.cypress.io/" target="_blank" >Cypress.io</a></li></ul>
+          description: <ul><h4>Unit, integration and regression testing</h4><li>Jest</li><li>Rspec</li><li><a href="https://www.cypress.io/" target="_blank" >Cypress.io</a></li></ul>
           progress: 60%
       description: "I started HTML, CSS and simple JavaScript coding when I was 13 years old. During my masters study I picked up coding and at Mobiel.nl, I learned how to code professionally: readable, reliable and concise. There, I discovered working methods and structural principles, such as TDD, Mobile First and CRUD."
     - name: Design
