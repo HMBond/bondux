@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useRef, useEffect } from "react";
 import styled from "styled-components";
 import { makeSlug } from "../helpers/functions";
 
@@ -24,16 +24,23 @@ const SkillLabel = styled(ProgressBar)`
 
 const SkillTitle = styled.div`
   color: ${props => props.theme.colors.bg};
-  margin-bottom: 1rem;
   font-family: "DejaVu Condensed Bold";
 `;
 
 const SkillInnerContainer = styled.div`
-  max-height: ${props => (props.open ? "80rem" : "0")};
-  overflow-y: ${props => (props.open ? "auto" : "hidden")};
-  transition: max-height 0.5s
-    ${props => (props.open ? "ease-in" : "cubic-bezier(0.22, 0.61, 0.36, 1)")};
-  scrollbar-width: none;
+  & > div,
+  > ul,
+  * {
+    max-height: ${props => (props.open ? "15rem" : "0")};
+    margin: ${props => (props.open ? "" : "0")};
+    padding: ${props => (props.open ? "" : "0")};
+    opacity: ${props => (props.open ? "1" : "0")};
+    transition: max-height 0.5s
+        ${props => (!props.open ? "ease-in" : "ease-out")},
+      margin ${props => (!props.open ? " 0.3s ease 0.2s" : " 0.3s ease")},
+      padding ${props => (!props.open ? " 0.3s ease 0.2s" : " 0.3s ease")},
+      opacity 0.3s linear;
+  }
   overflow: hidden;
 `;
 
@@ -45,20 +52,37 @@ export const Skill = ({
   children,
   isSubSkill,
   ...props
-}) => (
-  <SkillBase open={open} isSubSkill {...props}>
-    <SkillLabel
-      id={makeSlug(skill.name)}
-      progress={skill.progress}
-      open={open}
-      onClick={() => children && onClick(skill)}
-      hasChildren={children}
-    >
-      {children && <CollapseIcon open={open} />}
-      <SkillTitle>{skill.name}</SkillTitle>
-    </SkillLabel>
-    <SkillInnerContainer open={open}>{children}</SkillInnerContainer>
-  </SkillBase>
-);
+}) => {
+  const scrollTo = () => {
+    document.getElementById(makeSlug(skill.name)).scrollIntoView({
+      behavior: "smooth"
+    });
+  };
+
+  useEffect(() => {
+    open && setTimeout(scrollTo, 100);
+    open && !isSubSkill && setTimeout(scrollTo, 500);
+    return () => {
+      clearTimeout(scrollTo, 100);
+      clearTimeout(scrollTo, 500);
+    };
+  }, [open]);
+
+  return (
+    <SkillBase open={open} isSubSkill {...props}>
+      <SkillLabel
+        id={makeSlug(skill.name)}
+        progress={skill.progress}
+        open={open}
+        onClick={() => children && onClick(skill)}
+        hasChildren={children}
+      >
+        {children && <CollapseIcon open={open} />}
+        <SkillTitle>{skill.name}</SkillTitle>
+      </SkillLabel>
+      <SkillInnerContainer open={open}>{children}</SkillInnerContainer>
+    </SkillBase>
+  );
+};
 
 export default Skill;

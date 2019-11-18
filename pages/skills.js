@@ -34,6 +34,7 @@ const Skills = () => {
 
   const onSkillClick = skill => {
     skill === openSkill ? setOpenSkill(null) : setOpenSkill(skill);
+    setOpenSubSkill(null);
   };
 
   const onSubSkillClick = subSkill => {

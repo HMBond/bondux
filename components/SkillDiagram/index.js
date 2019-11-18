@@ -32,9 +32,9 @@ const SkillDiagram = ({
   ...props
 }) => (
   <SkillDiagramBase {...props}>
-    {arrange(skillList).map((skill, index) => (
+    {arrange(skillList).map(skill => (
       <Skill
-        key={"" + index}
+        key={skill.name}
         open={openSkill === skill}
         skill={skill}
         onClick={() => onSkillClick(skill)}
@@ -46,9 +46,9 @@ const SkillDiagram = ({
           ></SkillDescription>
         )}
         {skill.subSkills &&
-          arrange(skill.subSkills).map((subSkill, index) => (
+          arrange(skill.subSkills).map(subSkill => (
             <SubSkill
-              key={"" + index}
+              key={subSkill.name}
               open={openSubSkill === subSkill}
               skill={subSkill}
               onClick={() => onSubSkillClick(subSkill)}
