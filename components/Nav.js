@@ -28,9 +28,11 @@ const NavBase = styled.div`
     linear-gradient(transparent, ${props => props.theme.colors.bg}),
     linear-gradient(transparent, ${props => props.theme.colors.bg});
   @media screen and (min-width: 420px) {
-    max-width: 400px;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
+    max-width: 240px;
+    height: 120px;
+    border-top-left-radius: 120px;
+    border-top-right-radius: 120px;
+    padding: 0 10px;
   }
 `;
 

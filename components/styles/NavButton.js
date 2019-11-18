@@ -7,7 +7,7 @@ const NavButtonBase = styled.div`
   order: ${props => props.order};
   opacity: ${props => (props.hidden ? "0" : "1")};
   transition: opacity 0.5s ease-in-out;
-  margin: 10px;
+  margin: 15px 0;
 `;
 
 const NavIconContainer = styled.div`
