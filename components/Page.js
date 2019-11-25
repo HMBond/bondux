@@ -1,6 +1,6 @@
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 import Context from "./Context";
-import Nav from "./Nav.js";
+import Nav from "./Nav";
 import Meta from "./Meta.js";
 import Keyboard from "./helpers/Keyboard";
 import { theme, devMode } from "./styles/Theme";

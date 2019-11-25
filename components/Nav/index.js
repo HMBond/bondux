@@ -1,13 +1,13 @@
 import { Component } from "react";
-import Context from "./Context";
+import Context from "../Context";
 import styled from "styled-components";
 import debounce from "lodash/debounce";
 import uniqid from "uniqid";
 
-import Logo from "./styles/Logo.js";
-import NavItem from "./styles/NavItem";
-import { NavBackIcon, NavForwardIcon, NavToggleIcon } from "./styles/NavIcons";
-import { NavButton } from "./styles/NavButton";
+import Logo from "../styles/Logo.js";
+import NavItem from "./NavItem";
+import { NavBackIcon, NavForwardIcon, NavToggleIcon } from "./NavIcons";
+import { NavButton } from "./NavButton";
 
 const NavBase = styled.div`
   opacity: ${props => (props.ssrReady ? "1" : "0")};
