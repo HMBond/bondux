@@ -111,7 +111,7 @@ const Category = styled.div`
   font-size: 1.2em;
   font-variant: small-caps;
   padding: 0.8rem 0.8rem 0.8rem 0;
-  height: 4rem;
+  height: 3rem;
   background: ${props => props.theme.colors.lightGrey};
   &:before {
     content: " ";
@@ -120,9 +120,9 @@ const Category = styled.div`
     position: absolute;
     bottom: 0;
     right: 99.98%;
-    border-top: 4rem solid transparent;
-    border-left: 4rem solid transparent;
-    border-bottom: 4rem solid ${props => props.theme.colors.lightGrey};
+    border-top: 3rem solid transparent;
+    border-left: 3rem solid transparent;
+    border-bottom: 3rem solid ${props => props.theme.colors.lightGrey};
   }
 `;
 
@@ -163,7 +163,7 @@ const BlogPost = ({ card, entry, ...props }) => {
     return (
       <BlogPostBase card {...props}>
         {entry.topImgUrl && (
-          <BlogImage src={entry.topImgUrl} card {...props}>
+          <BlogImage src={entry.topImgUrl} card>
             {entry.title && (
               <BlogCardTitleBox shortTitle={entry.title.length < 16}>
                 <BlogTitle>{entry.title}</BlogTitle>
@@ -182,7 +182,6 @@ const BlogPost = ({ card, entry, ...props }) => {
       <BlogPostBase card={false} {...props}>
         {entry.topImgUrl && (
           <BlogImage
-            {...props}
             src={entry.topImgUrl}
             roundness={entry.topImgRoundness}
             titleInTopImg={entry.titleInTopImg}

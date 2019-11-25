@@ -8,11 +8,11 @@ export const Title = styled.span`
 `;
 
 export const SubTitle = styled.span`
-  font-size: 1.4rem;
-  margin: 1rem;
-  font-family: "DejaVu Extra Light";
-  text-align: center;
   color: ${props => props.theme.colors.accent};
+  font-family: "DejaVu Extra Light";
+  font-size: 1.4rem;
+  text-align: center;
+  margin: 1rem;
 `;
 
 export const Heading = styled.span`
@@ -24,12 +24,13 @@ export const Heading = styled.span`
 export const SubHeading = styled.span`
   font-family: "DejaVu Serif";
   font-size: 2rem;
+  text-align: center;
   margin: 1rem;
 `;
 
 export const Label = styled.span`
+  color: ${props => props.theme.colors.accent};
   font-size: 1.4rem;
   font-weight: bolder;
-  color: ${props => props.theme.colors.accent};
   cursor: pointer;
 `;
