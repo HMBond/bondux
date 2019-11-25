@@ -52,23 +52,25 @@ export const Skill = ({
   isSubSkill,
   ...props
 }) => {
-  const scrollTo = () => {
-    document.getElementById(makeSlug(skill.name)).scrollIntoView({
-      behavior: "smooth"
-    });
+  const scrollBackUp = () => {
+    const thisEl = document.querySelector(`#${makeSlug(skill.name)}`);
+    const thisBaseEl = thisEl.parentElement;
+    const upperEl = thisBaseEl.previousSibling;
+
+    upperEl &&
+      upperEl.scrollIntoView({
+        behavior: "smooth"
+      });
   };
 
   useEffect(() => {
-    open && !isSubSkill && setTimeout(scrollTo, 600);
-    return () => {
-      clearTimeout(scrollTo, 600);
-    };
+    open && !isSubSkill && scrollBackUp;
   }, [open]);
 
   return (
     <SkillBase open={open} isSubSkill {...props}>
       <SkillLabel
-        id={makeSlug(skill.name)}
+        id={makeSlug(skill.name)} //scroll to Label, not to Base
         progress={skill.progress}
         open={open}
         onClick={() => children && onClick(skill)}
