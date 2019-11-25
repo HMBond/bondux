@@ -1,8 +1,10 @@
+import { Fragment } from "react";
 import styled, { css } from "styled-components";
 import Fade from "react-reveal/Fade";
 import { Title, SubHeading } from "./styles/Headings";
 import Hr from "./styles/Hr";
 import uniqid from "uniqid";
+import WhiteSpace from "./styles/WhiteSpace";
 
 const BlogPostBase = styled.div`
   order: ${props => (props.card ? "" : "-1")};
@@ -20,7 +22,7 @@ const BlogImage = styled.div`
   justify-content: space-between;
   position: relative;
   background: url(${props => props.src});
-  background-size: cover;
+  background-size: ${props => (props.contain ? "contain" : "cover")};
   background-position: center;
   background-repeat: no-repeat;
   border-radius: ${props => props.roundness};
@@ -196,7 +198,7 @@ const BlogPost = ({ card, entry, ...props }) => {
           <BlogTitle large>{entry.title}</BlogTitle>
         )}
         {entry.paragraphs &&
-          entry.paragraphs.map(paragraph => (
+          entry.paragraphs.map((paragraph, index) => (
             <Fade cascade big key={uniqid()}>
               <Paragraph>
                 {paragraph.heading && (
@@ -207,7 +209,12 @@ const BlogPost = ({ card, entry, ...props }) => {
                     dangerouslySetInnerHTML={{ __html: paragraph.text }}
                   />
                 )}
-                {paragraph.imgUrl && <BlogImage src={paragraph.imgUrl} />}
+                {paragraph.imgUrl && (
+                  <Fragment>
+                    <BlogImage contain src={paragraph.imgUrl} />
+                    {entry.paragraphs.length - 1 == index && <WhiteSpace />}
+                  </Fragment>
+                )}
               </Paragraph>
             </Fade>
           ))}
