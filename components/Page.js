@@ -18,6 +18,10 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1em;
     font-family: 'DejaVu Extra Light';
     margin: 0px;
+    cursor: default;
+    *:not(input, p) {
+      user-select: none;
+    }
   }
 
   * {

@@ -13,7 +13,7 @@ const BlogPostBase = styled.div`
   flex-direction: column;
   margin-top: ${props => (props.card ? "4rem" : 0)};
   align-items: center;
-  cursor: pointer;
+  cursor: ${props => (props.card ? "pointer" : "")};
 `;
 
 const BlogImage = styled.div`
