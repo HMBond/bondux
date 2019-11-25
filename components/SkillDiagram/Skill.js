@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useEffect } from "react";
 import styled from "styled-components";
 import { makeSlug } from "../helpers/functions";
 
@@ -31,7 +31,7 @@ const SkillInnerContainer = styled.div`
   & > div,
   > ul,
   * {
-    max-height: ${props => (props.open ? "15rem" : "0")};
+    max-height: ${props => (props.open ? "25rem" : "0")};
     margin: ${props => (props.open ? "" : "0")};
     padding: ${props => (props.open ? "" : "0")};
     opacity: ${props => (props.open ? "1" : "0")};
