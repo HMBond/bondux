@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start -p 3000",
     "heroku-postbuild": "npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "node deploy"
   },
   "author": "Mike Bond",
   "license": "ISC",
@@ -20,7 +21,8 @@
     "react-dom": "^16.8.6",
     "react-reveal": "^1.2.2",
     "styled-components": "^4.3.2",
-    "uniqid": "^5.0.3"
+    "uniqid": "^5.0.3",
+    "ftp-deploy": "^2.3.3"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
