@@ -51,9 +51,10 @@ const BlogImage = styled.div`
       color: ${props =>
         props.titleInTopImg.color
           ? props.theme.colors[props.titleInTopImg.color]
-          : props.theme.colors.offWhite};
+          : props.theme.colors.accent};
       span {
         margin: 0 1rem;
+        mix-blend-mode: hard-light;
       }
       display: flex;
       justify-content: center;
