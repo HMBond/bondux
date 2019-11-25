@@ -29,14 +29,13 @@ const SkillTitle = styled.div`
 
 const SkillInnerContainer = styled.div`
   & > div,
-  > ul,
-  * {
+  > ul {
     max-height: ${props => (props.open ? "25rem" : "0")};
     margin: ${props => (props.open ? "" : "0")};
     padding: ${props => (props.open ? "" : "0")};
     opacity: ${props => (props.open ? "1" : "0")};
     transition: max-height 0.5s
-        ${props => (!props.open ? "ease-in" : "ease-out")},
+        ${props => (!props.open ? "ease-out" : "ease-in")},
       margin ${props => (!props.open ? " 0.3s ease 0.2s" : " 0.3s ease")},
       padding ${props => (!props.open ? " 0.3s ease 0.2s" : " 0.3s ease")},
       opacity 0.3s linear;
@@ -60,11 +59,9 @@ export const Skill = ({
   };
 
   useEffect(() => {
-    open && setTimeout(scrollTo, 100);
-    open && !isSubSkill && setTimeout(scrollTo, 500);
+    open && !isSubSkill && setTimeout(scrollTo, 600);
     return () => {
-      clearTimeout(scrollTo, 100);
-      clearTimeout(scrollTo, 500);
+      clearTimeout(scrollTo, 600);
     };
   }, [open]);
 
