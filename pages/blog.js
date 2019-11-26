@@ -10,8 +10,10 @@ import { Title, SubTitle } from "../components/styles/Headings";
 import { makeSlug } from "../components/helpers/functions";
 
 const BlogPage = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 
 const BlogSubTitle = styled(SubTitle)``;
@@ -24,9 +26,9 @@ const Blog = () => {
   const [openPost, setOpenPost] = useState(null);
 
   const hashChangeHandler = () => {
-    const manualSlug = location.hash.replace("#", "");
-    if (openPost !== manualSlug) {
-      setOpenPost(manualSlug);
+    const requestedSlug = location.hash.replace("#", "");
+    if (openPost !== requestedSlug) {
+      setOpenPost(requestedSlug);
     }
   };
 

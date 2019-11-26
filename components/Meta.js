@@ -7,7 +7,7 @@ const Meta = () => (
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
     />
     <meta charSet="utf-8" />
-    <title>The Bond Experience</title>
+    <title>Bondux.dev</title>
     <link rel="icon" type="image/png" href="/favicon.png" key="favicon"></link>
     <link rel="stylesheet" type="text/css" href="/fonts.css" key="fonts" />
   </Head>
