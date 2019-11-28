@@ -47,7 +47,7 @@ const ContactItem = styled.div`
 
 const Icon = styled.div`
   background: url(${props => props.src});
-  background-size: cover;
+  background-size: contain;
   width: 2.8rem;
   height: 2.8rem;
   margin-right: 1rem;
@@ -67,7 +67,7 @@ const Contact = ({ ...props }) => (
             "mailto:post@bondux.dev?subject=Contact&body=Hi Mike, ...%0D%0A%0D%0A%0D%0A%0D%0A"
           }
         >
-          <Icon src={"/email.svg"} />
+          <Icon src={"/email.svg"} alt="Gmail" />
           <Label>{"Email"}</Label>
         </a>
       </ContactItem>
@@ -78,13 +78,13 @@ const Contact = ({ ...props }) => (
             "https://api.whatsapp.com/send?phone=31654356094&text=Hi%20mike"
           }
         >
-          <Icon src={"/phone.svg"} />
+          <Icon src={"/phone.svg"} alt="WhatsApp" />
           <Label>{"WhatsApp"}</Label>
         </a>
       </ContactItem>
       <ContactItem>
         <a target={"_blank"} href={"https://www.flickr.com/photos/7363277@N07"}>
-          <Icon src={"/camera.svg"} />
+          <Icon src={"/camera.svg"} alt="Photography Page" />
           <Label>{"Photography"}</Label>
         </a>
       </ContactItem>
