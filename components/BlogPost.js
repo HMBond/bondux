@@ -3,7 +3,6 @@ import styled, { css } from "styled-components";
 import Fade from "react-reveal/Fade";
 import { Title, SubHeading } from "./styles/Headings";
 import Hr from "./styles/Hr";
-import uniqid from "uniqid";
 import WhiteSpace from "./styles/WhiteSpace";
 
 const BlogPostBase = styled.div`
@@ -53,7 +52,7 @@ const BlogImage = styled.div`
       color: ${props =>
         props.titleInTopImg.color
           ? props.theme.colors[props.titleInTopImg.color]
-          : props.theme.colors.accent};
+          : props.theme.colors.bg};
       span {
         margin: 0 1rem;
         mix-blend-mode: hard-light;
@@ -199,7 +198,7 @@ const BlogPost = ({ card, entry, ...props }) => {
         )}
         {entry.paragraphs &&
           entry.paragraphs.map((paragraph, index) => (
-            <Fade cascade big key={uniqid()}>
+            <Fade cascade big key={paragraph.heading + index}>
               <Paragraph>
                 {paragraph.heading && (
                   <SubHeading>{paragraph.heading}</SubHeading>

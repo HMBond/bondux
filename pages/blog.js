@@ -4,7 +4,6 @@ import styled from "styled-components";
 
 import Context from "../components/Context";
 import BlogPost from "../components/BlogPost.js";
-import uniqid from "uniqid";
 import WhiteSpace from "../components/styles/WhiteSpace";
 import { Title, SubTitle } from "../components/styles/Headings";
 import { makeSlug } from "../components/helpers/functions";
@@ -52,10 +51,10 @@ const Blog = () => {
               entry.slug = entry.slug || makeSlug(entry.title);
               return (
                 <BlogPost
-                  key={uniqid()}
+                  key={entry.title}
                   onClick={() => {
-                    setOpenPost(entry.slug);
                     if (entry.slug !== openPost) {
+                      setOpenPost(entry.slug);
                       document.getElementById("blog-page").scrollIntoView();
                     }
                   }}

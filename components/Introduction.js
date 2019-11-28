@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Flip from "react-reveal/Flip";
 import Link from "next/link";
 import { Label } from "./styles/Headings";
-import uniqid from "uniqid";
 
 const IntroductionBase = styled.div`
   width: 100%;
@@ -83,7 +82,7 @@ class Introduction extends Component {
     return (
       <IntroductionBase>
         {!context.nav.open && quote && (
-          <TextBox ssrReady={ssrReady} key={uniqid()}>
+          <TextBox ssrReady={ssrReady} key={quote.text}>
             {quote.text && (
               <Text>
                 <Flip right cascade>

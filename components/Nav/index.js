@@ -2,7 +2,6 @@ import { Component } from "react";
 import Context from "../Context";
 import styled from "styled-components";
 import debounce from "lodash/debounce";
-import uniqid from "uniqid";
 
 import Logo from "../styles/Logo.js";
 import NavItem from "./NavItem";
@@ -127,7 +126,7 @@ class Nav extends Component {
                 {context.content.map((item, index) => (
                   <NavItem
                     item={item}
-                    key={index}
+                    key={item.name + index}
                     selected={index === context.selector.position}
                     select={() => context.selector.setPosition(index)}
                   />
