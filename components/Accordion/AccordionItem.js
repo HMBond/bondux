@@ -2,35 +2,27 @@ import { useState, useRef } from "react";
 import debounce from "lodash/debounce";
 import styled from "styled-components";
 
-import ProgressBar from "../styles/ProgressBar";
+import AccordionItemLabel from "./AccordionItemLabel";
 import CollapseIcon from "./CollapseIcon";
 
 const contentHeightSafetyMargin = 40;
 const maxTransitionTime = 500; // 0.5s
 
-const SkillBase = styled.div`
+const AccordionItemBase = styled.div`
   margin: 1rem;
-  border-bottom: ${props =>
-    props.open ? `dashed ${props.theme.colors.primary} 1px` : "none"};
+  border-bottom-width: 1px;
+  border-bottom-style: dashed;
+  border-bottom-color: ${props =>
+    props.open ? `${props.theme.colors.primary}` : "transparent"};
+  transition: border-bottom-color 0.3s linear;
 `;
 
-const SkillLabel = styled(ProgressBar)`
-  display: flex;
-  height: 2rem;
-  cursor: ${props => (props.hasChildren ? "pointer" : "default")};
-  background-color: ${props =>
-    props.hasChildren && !props.open
-      ? props.theme.colors.accent
-      : props.theme.colors.grey};
-  transition: background-color 0.3s linear;
-`;
-
-const SkillTitle = styled.div`
+const AccordionItemTitle = styled.div`
   color: ${props => props.theme.colors.bg};
   font-family: "DejaVu Condensed Bold";
 `;
 
-const SkillChildrenContainer = styled.div`
+const AccordionItemChildrenContainer = styled.div`
   max-height: ${props =>
     props.open
       ? `${props.contentHeight + contentHeightSafetyMargin}px`
@@ -46,37 +38,50 @@ const SkillChildrenContainer = styled.div`
   overflow: hidden;
 `;
 
-export const Skill = ({
+export const AccordionItemDescription = styled.div`
+  padding: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.4rem;
+  ul {
+    margin: 0;
+    padding-left: 1rem;
+
+    li {
+      margin-left: 1rem;
+    }
+  }
+`;
+
+export const AccordionItem = ({
   id,
   open,
-  skill,
+  item,
   onClick,
   children,
-  isSubSkill,
   ...props
 }) => {
   const contentRef = useRef();
   const [contentHeight, setContentHeight] = useState(0);
-  const onClickHandler = skill => {
+  const onClickHandler = item => {
     setContentHeight(contentRef.current.clientHeight);
-    onClick(skill);
+    onClick(item);
   };
   const updateContentHeight = () => {
     setContentHeight(contentRef.current.clientHeight);
   };
 
   return (
-    <SkillBase open={open} isSubSkill {...props}>
-      <SkillLabel
-        progress={skill.progress}
+    <AccordionItemBase open={open} {...props}>
+      <AccordionItemLabel
+        progress={item.progress}
         open={open}
-        onClick={() => children && onClickHandler(skill)}
+        onClick={() => children && onClickHandler(item)}
         hasChildren={children}
       >
         {children && <CollapseIcon open={open} />}
-        <SkillTitle>{skill.name}</SkillTitle>
-      </SkillLabel>
-      <SkillChildrenContainer contentHeight={contentHeight} open={open}>
+        <AccordionItemTitle>{item.name}</AccordionItemTitle>
+      </AccordionItemLabel>
+      <AccordionItemChildrenContainer contentHeight={contentHeight} open={open}>
         <div
           ref={contentRef}
           onClick={debounce(() => updateContentHeight(), maxTransitionTime, {
@@ -86,9 +91,9 @@ export const Skill = ({
         >
           {children}
         </div>
-      </SkillChildrenContainer>
-    </SkillBase>
+      </AccordionItemChildrenContainer>
+    </AccordionItemBase>
   );
 };
 
-export default Skill;
+export default AccordionItem;
