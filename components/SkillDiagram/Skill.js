@@ -1,9 +1,12 @@
-import { useEffect } from "react";
+import { useState, useRef } from "react";
+import debounce from "lodash/debounce";
 import styled from "styled-components";
-import { makeSlug } from "../helpers/functions";
 
 import ProgressBar from "../styles/ProgressBar";
 import CollapseIcon from "./CollapseIcon";
+
+const contentHeightSafetyMargin = 40;
+const maxTransitionTime = 500; // 0.5s
 
 const SkillBase = styled.div`
   margin: 1rem;
@@ -27,19 +30,19 @@ const SkillTitle = styled.div`
   font-family: "DejaVu Condensed Bold";
 `;
 
-const SkillInnerContainer = styled.div`
-  & > div,
-  > ul {
-    max-height: ${props => (props.open ? "25rem" : "0")};
-    margin: ${props => (props.open ? "" : "0")};
-    padding: ${props => (props.open ? "" : "0")};
-    opacity: ${props => (props.open ? "1" : "0")};
-    transition: max-height 0.5s
-        ${props => (!props.open ? "ease-out" : "ease-in")},
-      margin ${props => (!props.open ? " 0.3s ease 0.2s" : " 0.3s ease")},
-      padding ${props => (!props.open ? " 0.3s ease 0.2s" : " 0.3s ease")},
-      opacity 0.3s linear;
-  }
+const SkillChildrenContainer = styled.div`
+  max-height: ${props =>
+    props.open
+      ? `${props.contentHeight + contentHeightSafetyMargin}px`
+      : "0px"};
+  margin: ${props => (props.open ? "" : "0")};
+  padding: ${props => (props.open ? "" : "0")};
+  opacity: ${props => (props.open ? "1" : "0")};
+  transition: max-height /* dont go over maxTransitionTime */
+      ${props => (!props.open ? "0.45s ease-out" : "0.4s ease-in 0.1s")},
+    margin ${props => (!props.open ? " 0.3s ease" : " 0.3s ease 0.2s")},
+    padding ${props => (!props.open ? " 0.3s ease" : " 0.3s ease 0.2s")},
+    opacity ${props => (!props.open ? " 0.1s linear" : " 0.5s linear 0.2s")};
   overflow: hidden;
 `;
 
@@ -52,34 +55,38 @@ export const Skill = ({
   isSubSkill,
   ...props
 }) => {
-  const scrollBackUp = () => {
-    const thisEl = document.querySelector(`#${makeSlug(skill.name)}`);
-    const thisBaseEl = thisEl.parentElement;
-    const upperEl = thisBaseEl.previousSibling;
-
-    upperEl &&
-      upperEl.scrollIntoView({
-        behavior: "smooth"
-      });
+  const contentRef = useRef();
+  const [contentHeight, setContentHeight] = useState(0);
+  const onClickHandler = skill => {
+    setContentHeight(contentRef.current.clientHeight);
+    onClick(skill);
   };
-
-  useEffect(() => {
-    open && !isSubSkill && scrollBackUp;
-  }, [open]);
+  const updateContentHeight = () => {
+    setContentHeight(contentRef.current.clientHeight);
+  };
 
   return (
     <SkillBase open={open} isSubSkill {...props}>
       <SkillLabel
-        id={makeSlug(skill.name)} //scroll to Label, not to Base
         progress={skill.progress}
         open={open}
-        onClick={() => children && onClick(skill)}
+        onClick={() => children && onClickHandler(skill)}
         hasChildren={children}
       >
         {children && <CollapseIcon open={open} />}
         <SkillTitle>{skill.name}</SkillTitle>
       </SkillLabel>
-      <SkillInnerContainer open={open}>{children}</SkillInnerContainer>
+      <SkillChildrenContainer contentHeight={contentHeight} open={open}>
+        <div
+          ref={contentRef}
+          onClick={debounce(() => updateContentHeight(), maxTransitionTime, {
+            leading: false,
+            trailing: true
+          })}
+        >
+          {children}
+        </div>
+      </SkillChildrenContainer>
     </SkillBase>
   );
 };
