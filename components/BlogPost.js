@@ -88,7 +88,7 @@ const BlogCardTitleBox = styled.div`
     `}
 `;
 
-const BlogTitle = styled(Title)``;
+const BlogPostTitle = styled(Title)``;
 
 const BlogCardSummaryBox = styled.div`
   margin-top: auto;
@@ -167,7 +167,7 @@ const BlogPost = ({ card, entry, ...props }) => {
           <BlogImage src={entry.topImgUrl} card>
             {entry.title && (
               <BlogCardTitleBox shortTitle={entry.title.length < 16}>
-                <BlogTitle>{entry.title}</BlogTitle>
+                <BlogPostTitle>{entry.title}</BlogPostTitle>
               </BlogCardTitleBox>
             )}
             <BlogCardSummaryBox>
@@ -189,12 +189,12 @@ const BlogPost = ({ card, entry, ...props }) => {
             titlePhoto
           >
             {entry.title && entry.titleInTopImg && (
-              <BlogTitle large>{entry.title}</BlogTitle>
+              <BlogPostTitle large>{entry.title}</BlogPostTitle>
             )}
           </BlogImage>
         )}
         {entry.title && !entry.titleInTopImg && (
-          <BlogTitle large>{entry.title}</BlogTitle>
+          <BlogPostTitle large>{entry.title}</BlogPostTitle>
         )}
         {entry.paragraphs &&
           entry.paragraphs.map((paragraph, index) => (
