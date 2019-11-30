@@ -34,7 +34,7 @@ class Keyboard extends Component {
   }
 
   render() {
-    return <div />;
+    return null;
   }
 }
 

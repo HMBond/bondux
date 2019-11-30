@@ -27,7 +27,7 @@ const BlogImage = styled.div`
   border-radius: ${props => props.roundness};
   margin-top: ${props => (props.roundness ? "2rem" : 0)};
   width: ${props => (props.roundness ? "calc(100% - 4rem)" : "100%")};
-  height: ${props => (props.card ? "50vh" : "calc(100vw - 4rem)")};
+  height: ${props => (props.card ? "28rem" : "calc(100vw - 4rem)")};
 
   @media screen and (min-width: 600px) {
     height: 28rem;
