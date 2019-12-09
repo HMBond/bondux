@@ -34,6 +34,13 @@
       link:
         url: "/contact"
         label: "contact me!"
+- name: DETAILS
+  url: "/details"
+  paragraphs:
+    - heading: Office
+      text: "I like to work with colleagues! The office mentality and direct contact with a team is very informative and keeps me actively involved in coding. I’ve worked in a scrum team and believe in the pro-efficiency of this working method, especially in bigger companies. The daily stand-up for instance, as simple as it is, has a great effect on feeling involved. It creates a clear overview of your part within the resulting product and thereby making you appreciate your work in respect to the bigger picture. <br /><br />Next to a serious and hyper-focused working attitude, I highly appreciate the social aspect of working with colleagues. That’s why I like to work with people who are not afraid to tell something personal or non-work-related and can joke around when it’s appropriate."
+    - heading: Freelancing
+      text: "As a developer with a Msc. in interaction design, I’m very happy to think along in the design process. The key is that a developer knows the possibilities and obstructions that could arise when building a design idea. Besides consultancy over choices, it can be useful to come up with cool new ideas. For such ideas, a designer might think it would be too much to ask for development, while the developer knows the world of front-end development is progressing fast, which makes life easier for tackling challenges and building interesting components. Retaining a strong connection between design and development has always been crucial in digital development. <br /><br />This results in a way of working where I talk about the design, get to know the intentions and reasons behind choices (preferably in a user-oriented perspective), explore the possibilities and create a plan. This approach if flexible, but getting a elaborated idea of the desired product is necessary to construct it."
 - name: BLOG
   url: "/blog"
   blogPosts:
