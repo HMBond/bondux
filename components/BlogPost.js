@@ -1,7 +1,8 @@
 import { Fragment } from "react";
 import styled, { css } from "styled-components";
 import Fade from "react-reveal/Fade";
-import { Title, SubHeading } from "./styles/Headings";
+import { Title as BlogPostTitle } from "./styles/Headings";
+import Paragraph, { ParagraphText, ParagraphHeading } from "./styles/Paragraph";
 import Hr from "./styles/Hr";
 import WhiteSpace from "./styles/WhiteSpace";
 
@@ -88,8 +89,6 @@ const BlogCardTitleBox = styled.div`
     `}
 `;
 
-const BlogPostTitle = styled(Title)``;
-
 const BlogCardSummaryBox = styled.div`
   margin-top: auto;
   width: 100%;
@@ -131,32 +130,6 @@ const BlogSummary = styled.div`
   font-size: 1rem;
   font-weight: bolder;
   line-height: 1.4rem;
-`;
-
-const Paragraph = styled.div`
-  align-self: flex-start;
-  margin-top: 2em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  & p:first-letter {
-    font-size: 2rem;
-    font-family: "DejaVu Serif";
-    color: ${props => props.theme.colors.primary + "80"};
-  }
-  & *:not(p):first-letter {
-    font-size: inherit;
-    font-family: inherit;
-    color: inherit;
-  }
-`;
-
-const BlogText = styled.p`
-  margin: 1rem 2rem 4rem 2rem;
-  line-height: 1.8rem;
-  @media screen and (min-width: 600px) {
-    margin: 1rem 0 4rem;
-  }
 `;
 
 const BlogPost = ({ card, entry, ...props }) => {
@@ -201,10 +174,10 @@ const BlogPost = ({ card, entry, ...props }) => {
             <Fade cascade big key={paragraph.heading + index}>
               <Paragraph>
                 {paragraph.heading && (
-                  <SubHeading>{paragraph.heading}</SubHeading>
+                  <ParagraphHeading>{paragraph.heading}</ParagraphHeading>
                 )}
                 {paragraph.text && (
-                  <BlogText
+                  <ParagraphText
                     dangerouslySetInnerHTML={{ __html: paragraph.text }}
                   />
                 )}

@@ -21,13 +21,6 @@ export const Heading = styled.span`
   margin: 1rem;
 `;
 
-export const SubHeading = styled.span`
-  font-family: "DejaVu Serif";
-  font-size: 2rem;
-  text-align: center;
-  margin: 1rem;
-`;
-
 export const Label = styled.span`
   color: ${props => props.theme.colors.accent};
   font-size: 1.4rem;
