@@ -25,7 +25,8 @@ export const devMode = ({ colors: { bg, grey, lightGrey }, ...rest }) => ({
     accent: "lime",
     grey: lightGrey,
     lightGrey: grey,
-    offWhite: "#111"
+    offWhite: "#111",
+    transparent: (color, transparency) => makeTransparent(color, transparency)
   },
   ...rest
 });
