@@ -2,7 +2,7 @@ import React from "react";
 import App from "next/app";
 import Page from "../components/Page";
 
-import { ContextProvider } from "../components/Context";
+import Context, { ContextProvider } from "../components/Context";
 
 class MyApp extends App {
   render() {
@@ -10,9 +10,13 @@ class MyApp extends App {
 
     return (
       <ContextProvider>
-        <Page>
-          <Component />
-        </Page>
+        <Context.Consumer>
+          {context => (
+            <Page context={context}>
+              <Component context={context} />
+            </Page>
+          )}
+        </Context.Consumer>
       </ContextProvider>
     );
   }

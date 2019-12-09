@@ -23,35 +23,31 @@ const DetailsTitle = styled(Title)`
   margin-top: 4rem;
 `;
 
-const Details = () => {
+const Details = ({ context }) => {
   return (
-    <Context.Consumer>
-      {context => (
-        <DetailsPage>
-          <DetailsTitle>{"Details"}</DetailsTitle>
-          <DetailsSubTitle>{"HOW I Work"}</DetailsSubTitle>
-          {context.content
-            .find(page => page.url == "/details")
-            .paragraphs.map(paragraph => {
-              return (
-                <Fade cascade big key={paragraph.heading}>
-                  <Paragraph>
-                    {paragraph.heading && (
-                      <ParagraphHeading>{paragraph.heading}</ParagraphHeading>
-                    )}
-                    {paragraph.text && (
-                      <ParagraphText
-                        dangerouslySetInnerHTML={{ __html: paragraph.text }}
-                      />
-                    )}
-                  </Paragraph>
-                </Fade>
-              );
-            })}
-          <WhiteSpace />
-        </DetailsPage>
-      )}
-    </Context.Consumer>
+    <DetailsPage>
+      <DetailsTitle>{"Details"}</DetailsTitle>
+      <DetailsSubTitle>{"HOW I Work"}</DetailsSubTitle>
+      {context.content
+        .find(page => page.url == "/details")
+        .paragraphs.map(paragraph => {
+          return (
+            <Fade cascade big key={paragraph.heading}>
+              <Paragraph>
+                {paragraph.heading && (
+                  <ParagraphHeading>{paragraph.heading}</ParagraphHeading>
+                )}
+                {paragraph.text && (
+                  <ParagraphText
+                    dangerouslySetInnerHTML={{ __html: paragraph.text }}
+                  />
+                )}
+              </Paragraph>
+            </Fade>
+          );
+        })}
+      <WhiteSpace />
+    </DetailsPage>
   );
 };
 

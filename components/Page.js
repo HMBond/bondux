@@ -56,21 +56,17 @@ const StyledPage = styled.div`
   overflow-x: hidden;
 `;
 
-const Page = props => {
+const Page = ({ children, context }) => {
   return (
-    <Context.Consumer>
-      {context => (
-        <ThemeProvider theme={context.devMode ? devMode(theme) : theme}>
-          <StyledPage>
-            <Meta />
-            <Keyboard />
-            <GlobalStyle />
-            {props.children}
-            <Nav />
-          </StyledPage>
-        </ThemeProvider>
-      )}
-    </Context.Consumer>
+    <ThemeProvider theme={context.devMode ? devMode(theme) : theme}>
+      <StyledPage>
+        <Meta />
+        <Keyboard context={context} />
+        <GlobalStyle />
+        {children}
+        <Nav />
+      </StyledPage>
+    </ThemeProvider>
   );
 };
 

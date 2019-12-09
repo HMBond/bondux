@@ -55,8 +55,8 @@ const Icon = styled.div`
   border: 0px solid ${props => props.theme.colors.accent};
 `;
 
-const Contact = ({ ...props }) => (
-  <ContactPage {...props}>
+const Contact = ({ context }) => (
+  <ContactPage>
     <ContactTitle>{"Contact"}</ContactTitle>
     <ContactSuperTitle>{"LET'S CHAT"}</ContactSuperTitle>
     <ContactLinks>

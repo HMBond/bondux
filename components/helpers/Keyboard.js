@@ -1,26 +1,25 @@
 import React, { Component } from "react";
-import Context from "../Context";
 
 class Keyboard extends Component {
   constructor(props) {
     super(props);
   }
 
-  keyUpHandler = e => {
+  keyUpHandler = ({ key }) => {
     const { selector, nav, toggleDevMode } = this.props.context;
-    if (e.key == "ArrowUp") {
+    if (key == "ArrowUp") {
       selector.setPosition(selector.position - 1);
-    } else if (e.key == "ArrowDown") {
+    } else if (key == "ArrowDown") {
       selector.setPosition(selector.position + 1);
-    } else if (e.key == "ArrowLeft") {
+    } else if (key == "ArrowLeft") {
       nav.back();
-    } else if (e.key == "ArrowRight") {
+    } else if (key == "ArrowRight") {
       nav.forward();
-    } else if (e.key == "Enter") {
+    } else if (key == "Enter") {
       selector.go();
-    } else if (e.key == "Escape") {
+    } else if (key == "Escape") {
       nav.setOpen(!nav.open);
-    } else if (e.key == "Dead") {
+    } else if (key == "d") {
       toggleDevMode();
     }
   };
@@ -38,8 +37,4 @@ class Keyboard extends Component {
   }
 }
 
-export default () => (
-  <Context.Consumer>
-    {context => <Keyboard context={context} />}
-  </Context.Consumer>
-);
+export default ({ context }) => <Keyboard context={context} />;

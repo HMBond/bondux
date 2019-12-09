@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import Router from "next/router";
 import styled from "styled-components";
 
-import Context from "../components/Context";
 import BlogPost from "../components/BlogPost.js";
 import WhiteSpace from "../components/styles/WhiteSpace";
 import { Title, SubTitle } from "../components/styles/Headings";
@@ -21,7 +20,7 @@ const BlogTitle = styled(Title)`
   margin-top: 4rem;
 `;
 
-const Blog = () => {
+const Blog = ({ context }) => {
   const [openPost, setOpenPost] = useState(null);
 
   const hashChangeHandler = () => {
@@ -40,33 +39,29 @@ const Blog = () => {
   }, [openPost]);
 
   return (
-    <Context.Consumer>
-      {context => (
-        <BlogPage id={"blog-page"}>
-          <BlogTitle>{"My Blog"}</BlogTitle>
-          <BlogSubTitle>{"HOW I THINK"}</BlogSubTitle>
-          {context.content
-            .find(page => page.url == "/blog")
-            .blogPosts.map(entry => {
-              entry.slug = entry.slug || makeSlug(entry.title);
-              return (
-                <BlogPost
-                  key={entry.title}
-                  onClick={() => {
-                    if (entry.slug !== openPost) {
-                      setOpenPost(entry.slug);
-                      document.getElementById("blog-page").scrollIntoView();
-                    }
-                  }}
-                  card={entry.slug !== openPost}
-                  entry={entry}
-                />
-              );
-            })}
-          <WhiteSpace />
-        </BlogPage>
-      )}
-    </Context.Consumer>
+    <BlogPage id={"blog-page"}>
+      <BlogTitle>{"My Blog"}</BlogTitle>
+      <BlogSubTitle>{"HOW I THINK"}</BlogSubTitle>
+      {context.content
+        .find(page => page.url == "/blog")
+        .blogPosts.map(entry => {
+          entry.slug = entry.slug || makeSlug(entry.title);
+          return (
+            <BlogPost
+              key={entry.title}
+              onClick={() => {
+                if (entry.slug !== openPost) {
+                  setOpenPost(entry.slug);
+                  document.getElementById("blog-page").scrollIntoView();
+                }
+              }}
+              card={entry.slug !== openPost}
+              entry={entry}
+            />
+          );
+        })}
+      <WhiteSpace />
+    </BlogPage>
   );
 };
 
