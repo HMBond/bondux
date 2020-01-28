@@ -2,9 +2,9 @@ import { Component, createContext } from "react";
 import Router from "next/router";
 import { values, reduce, debounce, first, last } from "lodash";
 import content from "../public/content.yml";
-import { constrain } from "./helpers/functions";
-const Context = createContext();
+import { constrain, getFirstPropertyOfObject } from "./helpers/functions";
 
+const Context = createContext();
 export default Context;
 
 export class ContextProvider extends Component {
@@ -20,6 +20,7 @@ export class ContextProvider extends Component {
       },
       nav: {
         currentPath: null,
+        pageList: values(content),
         onFirstPage: true,
         onLastPage: true,
         back: () => this.navigate(-1),
@@ -27,16 +28,11 @@ export class ContextProvider extends Component {
         open: false,
         setOpen: bool => this.setNavOpen(bool)
       },
-      content: values(content),
-      pages: reduce(content, (pages, page) => {
-        Object.assign(pages, page);
-        return pages;
-      })
+      content: content
     };
   }
 
   componentDidUpdate() {
-    console.log(this.state);
     this.updateCurrentPath();
   }
   componentDidMount() {
@@ -55,8 +51,8 @@ export class ContextProvider extends Component {
         nav: {
           ...prevstate.nav,
           currentPath: Router.router.pathname,
-          onFirstPage: Router.router.pathname == first(content).url,
-          onLastPage: Router.router.pathname == last(content).url
+          onFirstPage: Router.router.pathname == content.index.url,
+          onLastPage: Router.router.pathname == content.contact.url
         }
       }));
   };
@@ -69,7 +65,7 @@ export class ContextProvider extends Component {
   };
 
   setSelectorPos = newPosition => {
-    if (content[newPosition]) {
+    if (this.state.nav.pageList[newPosition]) {
       this.setState(prevstate => ({
         ...prevstate,
         selector: {
@@ -81,18 +77,21 @@ export class ContextProvider extends Component {
   };
 
   visitSelection = () => {
-    const go = () => Router.push(content[prevstate.selector.position].url);
+    const selectedIndex = this.state.selector.position;
+    const go = () => Router.push(this.state.nav.pageList[selectedIndex].url);
     setTimeout(go, 100);
-    Router.prefetch(content[prevstate.selector.position].url);
+    Router.prefetch(this.state.nav.pageList[selectedIndex].url);
     this.setNavOpen(false);
   };
 
   navigate = advance => {
-    const currentPageIndex = content.indexOf(
-      content.find(page => page.url === Router.router.pathname)
+    const pageList = this.state.nav.pageList
+    const currentPageIndex = pageList.indexOf(
+      pageList.find(page => page.url === this.state.nav.currentPath)
     );
-    const newIndex = constrain(currentPageIndex + advance, content.length);
-    Router.push(content[newIndex].url);
+    const nextIndex = constrain(currentPageIndex + advance, content.length);
+    const url = this.state.nav.pageList[nextIndex].url
+    Router.push(url);
     this.setNavOpen(false);
   };
 

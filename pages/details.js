@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Context from "../components/Context";
+import { getFirstPropertyOfObject } from "../components/helpers/functions";
 
 import Fade from "react-reveal/Fade";
 import WhiteSpace from "../components/styles/WhiteSpace";
@@ -28,24 +29,22 @@ const Details = ({ context }) => {
     <DetailsPage>
       <DetailsTitle>{"Details"}</DetailsTitle>
       <DetailsSubTitle>{"HOW I Work"}</DetailsSubTitle>
-      {context.content
-        .find(page => page.url == "/details")
-        .paragraphs.map(paragraph => {
-          return (
-            <Fade cascade big key={paragraph.heading}>
-              <Paragraph>
-                {paragraph.heading && (
-                  <ParagraphHeading>{paragraph.heading}</ParagraphHeading>
-                )}
-                {paragraph.text && (
-                  <ParagraphText
-                    dangerouslySetInnerHTML={{ __html: paragraph.text }}
-                  />
-                )}
-              </Paragraph>
-            </Fade>
-          );
-        })}
+      {context.content.details.paragraphs.map(paragraph => {
+        return (
+          <Fade cascade big key={paragraph.heading}>
+            <Paragraph>
+              {paragraph.heading && (
+                <ParagraphHeading>{paragraph.heading}</ParagraphHeading>
+              )}
+              {paragraph.text && (
+                <ParagraphText
+                  dangerouslySetInnerHTML={{ __html: paragraph.text }}
+                />
+              )}
+            </Paragraph>
+          </Fade>
+        );
+      })}
       <WhiteSpace />
     </DetailsPage>
   );

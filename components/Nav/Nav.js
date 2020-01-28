@@ -100,7 +100,7 @@ const Nav = () => {
           >
             <Logo light />
             <NavMenu>
-              {context.content.map(({ navName, url }, index) => (
+              {context.nav.pageList.map(({ navName, url }, index) => (
                 <NavItem
                   navName={navName}
                   url={url}

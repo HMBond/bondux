@@ -17,7 +17,7 @@ const Skills = ({ context }) => (
     <SkillsTitle>{"Skill Set"}</SkillsTitle>
     <SkillsSubTitle>{"WHAT I CAN DO"}</SkillsSubTitle>
     <SkillAccordion
-      skillList={context.content.find(page => page.url == "/skills").skillList}
+      skillList={context.content.skills.skillList}
     />
     <WhiteSpace />
   </Fragment>

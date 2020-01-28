@@ -42,9 +42,7 @@ const Blog = ({ context }) => {
     <BlogPage id={"blog-page"}>
       <BlogTitle>{"My Blog"}</BlogTitle>
       <BlogSubTitle>{"HOW I THINK"}</BlogSubTitle>
-      {context.content
-        .find(page => page.url == "/blog")
-        .blogPosts.map(entry => {
+      {context.content.blog.blogPosts.map(entry => {
           entry.slug = entry.slug || makeSlug(entry.title);
           return (
             <BlogPost

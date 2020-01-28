@@ -35,3 +35,7 @@ export const hexToRGBA = (hex, opacity) => {
     ")"
   );
 };
+
+export const getFirstPropertyOfObject = (obj) => {
+  return obj[Object.keys(obj)[0]]
+}
