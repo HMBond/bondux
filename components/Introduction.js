@@ -31,7 +31,7 @@ class Introduction extends Component {
     super(props);
     this.state = {
       ssrReady: false,
-      showLine: null
+      activeLine: null
     };
     this.timer = null;
   }
@@ -39,7 +39,7 @@ class Introduction extends Component {
   componentDidMount() {
     this.setState({
       ssrReady: true,
-      showLine: 0
+      activeLine: 0
     });
   }
 
@@ -52,7 +52,7 @@ class Introduction extends Component {
   }
 
   componentWillUnmount() {
-    this.state = { ssrReady: false, showLine: 0 };
+    this.state = { ssrReady: false, activeLine: 0 };
   }
 
   newTimer = () => {
@@ -63,21 +63,18 @@ class Introduction extends Component {
   nextLine = () => {
     this.state.ssrReady &&
       this.setState(prevstate => {
-        if (
-          prevstate.showLine <
-          this.props.context.content[0].introduction.length - 1
-        ) {
-          return { showLine: prevstate.showLine + 1 };
+        if (prevstate.activeLine < this.props.introductionLines.length - 1) {
+          return { activeLine: prevstate.activeLine + 1 };
         } else {
-          return { showLine: 0 };
+          return { activeLine: 0 };
         }
       });
   };
 
   render() {
-    const { context } = this.props;
-    const { ssrReady, showLine } = this.state;
-    const quote = context.content[0].introduction[showLine];
+    const { introductionLines } = this.props;
+    const { ssrReady, activeLine } = this.state;
+    const quote = introductionLines[activeLine];
 
     return (
       <IntroductionBase>

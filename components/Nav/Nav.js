@@ -71,19 +71,12 @@ const Nav = () => {
       {context => (
         <NavBase showNav={showNav}>
           <NavBackIcon
-            hidden={
-              context.nav.currentPath === context.content[0].url ||
-              context.nav.open
-            }
+            hidden={context.nav.onFirstPage || context.nav.open}
             onClick={() => context.nav.back()}
             order={1}
           ></NavBackIcon>
           <NavForwardIcon
-            hidden={
-              context.nav.currentPath ===
-                context.content[context.content.length - 1].url ||
-              context.nav.open
-            }
+            hidden={context.nav.onLastPage || context.nav.open}
             onClick={() => context.nav.forward()}
             order={3}
           ></NavForwardIcon>
@@ -107,10 +100,11 @@ const Nav = () => {
           >
             <Logo light />
             <NavMenu>
-              {context.content.map((item, index) => (
+              {context.content.map(({ navName, url }, index) => (
                 <NavItem
-                  item={item}
-                  key={item.name + index}
+                  navName={navName}
+                  url={url}
+                  key={index}
                   selected={index === context.selector.position}
                   select={() => context.selector.setPosition(index)}
                 />

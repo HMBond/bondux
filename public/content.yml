@@ -1,199 +1,201 @@
-- name: INTRO
-  url: "/"
-  introduction:
-    - text: "Hi, I'm Mike Bond!"
-    - text: "I'm a "
-      link:
-        url: /skills
-        label: "Frontend Developer,.."
-    - text: "...a User Interaction and "
-      link:
-        url: "/skills"
-        label: "Experience Designer..."
-    - text: "...and a"
-      link:
-        url: "/skills"
-        label: "musician."
-    - text: "I love how technology can "
-      link:
-        url: "/blog"
-        label: "provoke emotions..."
-    - text: "...and connects people "
-      link:
-        url: "/blog"
-        label: "socially."
-    - text: "I'm a freelancer and "
-      link:
-        url: "/contact"
-        label: "eager to work for you!"
-    - text: "...or if you like to learn "
-      link:
-        url: "/blog"
-        label: "overtone singing,.."
-    - text: "...please "
-      link:
-        url: "/contact"
-        label: "contact me!"
-- name: DETAILS
-  url: "/details"
-  paragraphs:
-    - heading: Office
-      text: "I like to work with colleagues! The office mentality and direct contact with a team is very informative and keeps me actively involved in coding. I’ve worked in a scrum team and believe in the pro-efficiency of this working method, especially in bigger companies. The daily stand-up for instance, as simple as it is, has a great effect on feeling involved. It creates a clear overview of your part within the resulting product and thereby making you appreciate your work in respect to the bigger picture. <br /><br />Next to a serious and hyper-focused working attitude, I highly appreciate the social aspect of working with colleagues. That’s why I like to work with people who are not afraid to tell something personal or non-work-related and can joke around when it’s appropriate."
-    - heading: Freelancing
-      text: "As a developer with a Msc. in interaction design, I’m very happy to think along in the design process. The key is that a developer knows the possibilities and obstructions that could arise when building a design idea. Besides consultancy over choices, it can be useful to come up with cool new ideas. For such ideas, a designer might think it would be too much to ask for development, while the developer knows the world of front-end development is progressing fast, which makes life easier for tackling challenges and building interesting components. Retaining a strong connection between design and development has always been crucial in digital development. <br /><br />This results in a way of working where I talk about the design, get to know the intentions and reasons behind choices (preferably in a user-oriented perspective), explore the possibilities and create a plan. This approach if flexible, but getting a elaborated idea of the desired product is necessary to construct it."
-- name: BLOG
-  url: "/blog"
-  blogPosts:
-    - category: design
-      title: Design Vision
-      topImgUrl: "/design.jpg"
-      titleInTopImg: true
-      topImgRoundness: 50%
-      summary: "How do I think about design in practice? An overview of the things I learned during my study at TU−Delft and my own perspective on design!"
-      paragraphs:
-        - heading: Simplicity
-          text: "The main outcome of my graduation project was that simplicity is effective. Throughout my study and work I heard many people talking about Keep It Simple Stupid (KISS), but in practice this is hard to maintain throughout. I learned some methodology to keep things simple and clear, let me share some of them."
-          imgUrl: "/design_context.png"
-        - heading: Diverge and converge
-          text: "Generate many ideas, concepts, sub-solutions and abstracts on post-its on a wall to compare them side by side. This helps in not to always choose the first idea/solution that pops up in your mind to be worked out. The first idea/solution often turns out to not be the most easy and efficient one, after you briefly investigate the alternatives. Design is about keeping a broad overview and then choosing a path. After each choice, you explore new paths where to go, and so on, and so on... However, I found myself pressured to choose the 'right' path and got stuck quite often. As in life, there is no right path and (design) choices can be overruled if the path happened to be a dead end. What you gain by working this way? You will spend less time on working out something that later will become irrelevant cause of something better that you overlooked before."
-          imgUrl: "/design_converge-diverge.png"
-        - heading: Design Together
-          text: "Choosing the right path to go is not only done in a global manner, e.g. Marketing wants a design for getting more customer trust. As a designer or developer you have to make little decisions quite often and sometimes you need to stop if it didn't work out and go back to see if there are alternatives. To evaluate your options, it is important to use surrounding resources. A good company provides the ability, by mentality and organization, to speak about any (small or big) choice to be made. A designer carries the responsibility to make this possible, by breaking the boundaries between departments, because he or she knows the importance of open communication in the design process. Pro-efficient internal communication can be organized just like a designer organizes user-research, by using tools. Workshops, stand-ups, a stage for giving simple lectures about relevant problems and solutions and many more are proven to be more effective than the old-school board-room meeting. It also improves the atmosphere and mentality towards the ease of just asking each other about any opinion on any small choice to be made. I had very happy experiences in my job at Mobiel.nl regarding an open work-mentality, but many friends of mine experience the sluggishness of big companies that struggle with open communication between departments or distance between colleagues. Next to internal communication, there is the communication with the actual users of the product or service you design. An outgoing user-research team can provide amazing insights, data and general information to be used to base decisions on. Again, this is only used to its full potential when communicated (and presented) openly within the company or organization."
-          imgUrl: "/design_together.png"
-        - heading: Iterate
-          text: "As mentioned in Diverge and Converge, do not start building the final version from an underdeveloped design. There is a long road in between an idea and a product, but this long road will be shortened by iteration. When you have the general idea of what you are about to create, it is time to create a simplified version of the product in mind. An iteration can take many shapes: A drawing, paper prototype, story in form of futuristic or best/worst-case scenario, a collage of what it should represent emotionally, a rapid prototype, etc. etc. <br><br> The beauty of creating a simplified version is that it generates obstacles straight away. Foreseeing obstacles helps to make decisions and drives the design process further, thus elaborating the concepts or ideas. Iteration is all about revealing the hidden pitfalls and generating new ideas to solve earlier obstacles. I heard that <a href='https://www.inc.com/ilan-mochari/vacuum-innovation.html' target='_blank'>Dyson iterated over 5000+ times by building prototypes</a> in order to make the worlds best vacuum cleaner. This is dedication!"
-          imgUrl: "/design_iterate.png"
-        - heading: Dig, Cut and Restructure
-          text: "Most design is redesign. Imagine a restaurant owner that has a huge menu card, three cooks from which two of them are on the edge of having a burn-out, customers who are confused and waiters who mess up the orders. This situation is common within companies and organizations. The over extended menu card can be compared to an app with too many features - a.k. the feature Christmas tree. Like with the restaurant, the necessary approach is to dig the pearls. Find out what is the core selling point. Isolate all the attributes that are needed to achieve this and cut out the additional crap. Later, the scraped stuff could be re-evaluated and maybe added back in a structured way. Redesign can be harsh because you have to dig through the crap, but the restructuring of all the functionalities often ends up with a beautiful outcome that could not have become this way by starting from scratch."
-          imgUrl: "/design_christmastree.png"
-        - heading: Graphic Design
-          text: "Decorations tend to distract and keep the eyes from seeing the real beauty of work. Although widely known by designers and artists, this principle is not always taken to its full potential. The use of ratios and symmetry also helps in giving the viewer focus to what is important. I do not strife for a minimalist zen style in everything, because I love eccentric, vulgar, outgoing and provocative styles. But if the intention is to have simplicity, keep it simple."
-          imgUrl: "/design_graphic.jpg"
-          imgUrls:
-            - "/image2.jpg"
-            - "/image3.jpg"
-    - category: photography
-      title: Photography
-      topImgUrl: "/photography.jpg"
-      titleInTopImg: true
-      summary: "My vision on photography is vividly under development! Nevertheless, I can share you my current thoughts on shooting photos."
-      paragraphs:
-        - heading: Advices
-          text: "Mother's advice: 'When you look back at the photos you've made, the ones that mean something to you are always the ones of real people. The other photos with mountains and trees on it can be thrown in the bin.' <br><br> Contrary to this advice are the masses that are taking selfies everywhere all the time. I never joined the selfie culture, but I would imagine that a selfie looses its value when you take so many of them. Instead, let's first focus on art photography!"
-          imgUrl: "/photography1.jpg"
-        - heading: Truth
-          text: "For me, the photos that remain value are the ones that tell the truth about the time and situation I was in when I shot the photo. This thrutfull moment is destroyed whenever I play around with the objects or scene I want to shoot. Same goes for posing, although taking portraits is interesting. It is hard, because you want a natural photo of the subject, but the subject is posing. So looking back at all those photos, only few will be satisfying. Matthieu Stern provides some practical tricks to help out subjects on posing naturally. I'd like to explore this in the near future. But for now, I'll focus on catching nice moments and interesting compositions."
-          imgUrl: "/photography2.jpg"
-        - heading: Selfie Culture
-          text: "I try to be as less intrusive as possible when shooting photos, but all around me, photographers (and especially the models) seem to think differently. On a train to Ella in Sri Lanka I saw a white couple hanging from the train door, screaming and getting a lot of attention. Next to me I heard a member of the train staff mumbling worried and eventually shouting to his colleague near the girl to do something. Two weeks later on Instagram, I see this hip travel photography agent posting the photos of the couple pretending this photo was taken spontaneously. For their information, kissing in public and hanging out of the train is not acceptable in Sri Lanka, the train staff is just too kind to give a fine."
-          imgUrl: "/photography3.jpg"
-        - heading: Consent
-          text: "On the other hand there are many western tourists shooting photos of Asian children without permission or consent. I must say that I'm guilty of that as well, but there is a clear boundary. Some photographers or tourists did not develop themselves a sense of respect nor empathy. Does the subject mind if you take a photo? If you develop a sense of social empathy, you can not only see, but feel if the situation is appropriate for shooting a photo. I've witnessed awkward situations such as: disrespect to locals, ruining beautiful sights, blindness to cultural differences and destroying the nature which attracted them to come there."
-          imgUrl: "/photography4.jpg"
-        - heading: My most appreciated photographers and vloggers
-          text: <ul><li>Fan Ho</li><a href="https://www.youtube.com/user/jamiewindsor" target="_blank"><li>Jamie Windsor</li></a><a href="https://www.youtube.com/user/mat0fr" target="_blank"><li>Matthieu Stern</li></a></ul>
-    - category: music
-      title: Music
-      slug: music-art
-      topImgUrl: "/music.jpg"
-      titleInTopImg: true
-      summary: "My mind is currently focussed at code and photography, but my heart still belongs to music."
-      paragraphs:
-        - heading: Pop
-          text: "For me, music has the strongest emotional impact on an audience as a form of art. Music can change moods, makes you sleepy or awake, helps you think or relax.. But not all music is art. When the motive of a piece of music is only to become popular by the bare minimum use of chliché musical formulas, the music sounds just like that. Once you listen clearly to music, you can hear the intention behind it and you will come to the question: Do I like the intention? Most popular music sounds like it is just made to sell. If it has no other then this motive, it is considered a business product or advertisement. I do not consider this to be art. An art piece needs three aspects: form, impact and creativity. In general, popmusic misses out on the creativity part. The creativity part is most interesting. I asked some friends who are in music business what they do at the very beginning of making a piece of music. All (except one) answered they start off with improvisation untill they come across some sounds that provoke a feeling and translate this to a piece of music. One answered that he started by taking an existing song, copying everything but the lyrics and record the vocals in Dutch. His goal was to become rich from his music someday and the music became nothing but a part of the business model to serve his goal. By observing an end-product up close, you can find the intention of the makers."
-          imgUrl: "/music1.jpg"
-        - heading: Rock & Roll
-          text: Most music I like sounds like it is made for fun and exploration. In some music for instance, you can hear that the musicians had a lot of fun by exploring various sound effects. On the other side, music is a result of rythmic and melodic exploration. And we as human beings have been structurizing and categorizing music into various forms (e.g. genres) according to the sort of impact the music has emotionally. For me, the term Rock & Roll always rings a bell. Some would see it as old-folk music, I see it as something empowering and outrageous. I sometimes hear my interpretation of Rock & Roll in good electronic music. It can provoke the same feeling as listening to Little Richard's <a href="https://www.youtube.com/watch?v=LVIttmFAzek" target="_blank" >Tutti Frutti</a>. I used to play to become better at playing, but at a certain moment, I decided to play only what I like to hear, so I could enjoy it. I still like to play Rock & Roll to get that Rock & Roll feeling, but I also love to explore making compositions for interactive / performance art or to mix overtone singing with EDM.
-          imgUrl: "/music2.jpg"
-        - heading: "Recommendations: "
-          text: <ul><a href="https://www.youtube.com/watch?v=Rnm-w6ifpbc" target="_blank"><li>Sphongle</li></a> <a href="https://www.youtube.com/watch?v=rFUVLGqsgts" target="_blank"> <li>Colin Stetson</li></a> <a href="https://www.youtube.com/watch?v=ne4PoC7V0Mk" target="_blank"><li>Igor Stravinsky</li></a></ul>
-- name: SKILLS
-  url: "/skills"
-  skillList:
-    - name: Coding
-      progress: 80%
-      subSkills:
-        - name: React
-          progress: 85%
-          description: <ul><li>React State Hooks</li><li>NextJS</li><li>MobX</li><li>Styled Components</li></ul>
-        - name: DevTools
-          progress: 63%
-          description: <ul><li>Visual Studio Code</li><li>Linux (ZSH) Terminal</li><li>Git</li><li>Svgo</li><li>VIM</li><li>Chrome Inspector</li></ul>
-        - name: JavaScript & ES6
-          progress: 70%
-        - name: HTML5
-          progress: 80%
-        - name: CSS / SCSS
-          progress: 75%
-        - name: Ruby on Rails
-          progress: 65%
-        - name: Max MSP
-          progress: 55%
-        - name: Git
-          progress: 60%
-        - name: Scrum
-          progress: 67%
-        - name: Testing
-          description: <ul><h4>Unit, integration and regression testing</h4><li>Jest</li><li>Rspec</li><li><a href="https://www.cypress.io/" target="_blank" >Cypress.io</a></li></ul>
-          progress: 60%
-      description: "I started HTML, CSS and simple JavaScript coding when I was 13 years old. During my masters study I picked up coding and at Mobiel.nl, I learned how to code professionally: readable, reliable and concise. There, I discovered working methods and structural principles, such as TDD, Mobile First and CRUD."
-    - name: Design
-      subSkills:
-        - name: Interactive Audio Design
-          progress: 80%
-        - name: Prototyping
-          progress: 75%
-        - name: Design Thinking
-          progress: 70%
-        - name: Scrum
-          progress: 67%
-        - name: Concept Sketching
-          progress: 60%
-        - name: Graphic Design
-          progress: 55%
-        - name: User Research
-          progress: 52%
-        - name: Context Mapping
-          progress: 50%
-        - name: Data Visualization
-          progress: 50%
-      description: "With a Master's Degree in Design For Interaction, I helped many people in their personal projects to clarify their design choices and future process. The advice can be about the technical aspects, but often comes down to rethinking the motives that drive a project. Practically, the chosen work method has a great influence on the end-product and service. Although helping others is fun and interesting, I would still like to become better at design by doing design related work. For more in depth explanation, read my <a href='/blog#design-vision'>vision on design</a>!"
-      progress: 70%
-    - name: Music
-      subSkills:
-        - name: Vocals
-          progress: 90%
-        - name: Guitar
-          progress: 85%
-        - name: Harmonica
-          progress: 80%
-        - name: Percussion
-          progress: 45%
-        - name: Production
-          progress: 60%
-        - name: Bass Guitar
-          progress: 70%
-        - name: Overtone Singing
-          progress: 75%
-        - name: Flute
-          progress: 35%
-        - name: Trumpet
-          progress: 30%
-        - name: Recording
-          progress: 65%
-        - name: Sound Design
-          progress: 67%
-      progress: 90%
-    - name: Prototyping
-      subSkills:
-        - name: (Interactive) Electronics
-          progress: 90%
-        - name: Construction
-          progress: 50%
-        - name: Assembly Design
-          progress: 70%
-        - name: Mockup models
-          progress: 80%
-      progress: 50%
-- name: CONTACT
-  url: "/contact"
+- index:
+    url: "/"
+    navName: INTRO
+    introduction:
+      - text: "Hi, I'm Mike Bond!"
+      - text: "I'm a "
+        link:
+          url: /skills
+          label: "Frontend Developer,.."
+      - text: "...a User Interaction and "
+        link:
+          url: "/skills"
+          label: "Experience Designer..."
+      - text: "...and a"
+        link:
+          url: "/skills"
+          label: "musician."
+      - text: "I love how technology can "
+        link:
+          url: "/blog"
+          label: "provoke emotions..."
+      - text: "...and connects people "
+        link:
+          url: "/blog"
+          label: "socially."
+      - text: "I'm a freelancer and "
+        link:
+          url: "/contact"
+          label: "eager to work for you!"
+      - text: "...or if you like to learn "
+        link:
+          url: "/blog"
+          label: "overtone singing,.."
+      - text: "...please "
+        link:
+          url: "/contact"
+          label: "contact me!"
+- details:
+    url: "/details"
+    navName: DETAILS
+    paragraphs:
+      - heading: Office
+        text: "I like to work with colleagues! The office mentality and direct contact with a team is very informative and keeps me actively involved in coding. I’ve worked in a scrum team and believe in the pro-efficiency of this working method, especially in bigger companies. The daily stand-up for instance, as simple as it is, has a great effect on feeling involved. It creates a clear overview of your part within the resulting product and thereby making you appreciate your work in respect to the bigger picture. <br /><br />Next to a serious and hyper-focused working attitude, I highly appreciate the social aspect of working with colleagues. That’s why I like to work with people who are not afraid to tell something personal or non-work-related and can joke around when it’s appropriate."
+      - heading: Freelancing
+        text: "As a developer with a Msc. in interaction design, I’m very happy to think along in the design process. The key is that a developer knows the possibilities and obstructions that could arise when building a design idea. Besides consultancy over choices, it can be useful to come up with cool new ideas. For such ideas, a designer might think it would be too much to ask for development, while the developer knows the world of front-end development is progressing fast, which makes life easier for tackling challenges and building interesting components. Retaining a strong connection between design and development has always been crucial in digital development. <br /><br />This results in a way of working where I talk about the design, get to know the intentions and reasons behind choices (preferably in a user-oriented perspective), explore the possibilities and create a plan. This approach if flexible, but getting a elaborated idea of the desired product is necessary to construct it."
+- blog:
+    url: "/blog"
+    navName: BLOG
+    blogPosts:
+      - category: design
+        title: Design Vision
+        topImgUrl: "/design.jpg"
+        titleInTopImg: true
+        topImgRoundness: 50%
+        summary: "How do I think about design in practice? An overview of the things I learned during my study at TU−Delft and my own perspective on design!"
+        paragraphs:
+          - heading: Simplicity
+            text: "The main outcome of my graduation project was that simplicity is effective. Throughout my study and work I heard many people talking about Keep It Simple Stupid (KISS), but in practice this is hard to maintain throughout. I learned some methodology to keep things simple and clear, let me share some of them."
+            imgUrl: "/design_context.png"
+          - heading: Diverge and converge
+            text: "Generate many ideas, concepts, sub-solutions and abstracts on post-its on a wall to compare them side by side. This helps in not to always choose the first idea/solution that pops up in your mind to be worked out. The first idea/solution often turns out to not be the most easy and efficient one, after you briefly investigate the alternatives. Design is about keeping a broad overview and then choosing a path. After each choice, you explore new paths where to go, and so on, and so on... However, I found myself pressured to choose the 'right' path and got stuck quite often. As in life, there is no right path and (design) choices can be overruled if the path happened to be a dead end. What you gain by working this way? You will spend less time on working out something that later will become irrelevant cause of something better that you overlooked before."
+            imgUrl: "/design_converge-diverge.png"
+          - heading: Design Together
+            text: "Choosing the right path to go is not only done in a global manner, e.g. Marketing wants a design for getting more customer trust. As a designer or developer you have to make little decisions quite often and sometimes you need to stop if it didn't work out and go back to see if there are alternatives. To evaluate your options, it is important to use surrounding resources. A good company provides the ability, by mentality and organization, to speak about any (small or big) choice to be made. A designer carries the responsibility to make this possible, by breaking the boundaries between departments, because he or she knows the importance of open communication in the design process. Pro-efficient internal communication can be organized just like a designer organizes user-research, by using tools. Workshops, stand-ups, a stage for giving simple lectures about relevant problems and solutions and many more are proven to be more effective than the old-school board-room meeting. It also improves the atmosphere and mentality towards the ease of just asking each other about any opinion on any small choice to be made. I had very happy experiences in my job at Mobiel.nl regarding an open work-mentality, but many friends of mine experience the sluggishness of big companies that struggle with open communication between departments or distance between colleagues. Next to internal communication, there is the communication with the actual users of the product or service you design. An outgoing user-research team can provide amazing insights, data and general information to be used to base decisions on. Again, this is only used to its full potential when communicated (and presented) openly within the company or organization."
+            imgUrl: "/design_together.png"
+          - heading: Iterate
+            text: "As mentioned in Diverge and Converge, do not start building the final version from an underdeveloped design. There is a long road in between an idea and a product, but this long road will be shortened by iteration. When you have the general idea of what you are about to create, it is time to create a simplified version of the product in mind. An iteration can take many shapes: A drawing, paper prototype, story in form of futuristic or best/worst-case scenario, a collage of what it should represent emotionally, a rapid prototype, etc. etc. <br><br> The beauty of creating a simplified version is that it generates obstacles straight away. Foreseeing obstacles helps to make decisions and drives the design process further, thus elaborating the concepts or ideas. Iteration is all about revealing the hidden pitfalls and generating new ideas to solve earlier obstacles. I heard that <a href='https://www.inc.com/ilan-mochari/vacuum-innovation.html' target='_blank'>Dyson iterated over 5000+ times by building prototypes</a> in order to make the worlds best vacuum cleaner. This is dedication!"
+            imgUrl: "/design_iterate.png"
+          - heading: Dig, Cut and Restructure
+            text: "Most design is redesign. Imagine a restaurant owner that has a huge menu card, three cooks from which two of them are on the edge of having a burn-out, customers who are confused and waiters who mess up the orders. This situation is common within companies and organizations. The over extended menu card can be compared to an app with too many features - a.k. the feature Christmas tree. Like with the restaurant, the necessary approach is to dig the pearls. Find out what is the core selling point. Isolate all the attributes that are needed to achieve this and cut out the additional crap. Later, the scraped stuff could be re-evaluated and maybe added back in a structured way. Redesign can be harsh because you have to dig through the crap, but the restructuring of all the functionalities often ends up with a beautiful outcome that could not have become this way by starting from scratch."
+            imgUrl: "/design_christmastree.png"
+          - heading: Graphic Design
+            text: "Decorations tend to distract and keep the eyes from seeing the real beauty of work. Although widely known by designers and artists, this principle is not always taken to its full potential. The use of ratios and symmetry also helps in giving the viewer focus to what is important. I do not strife for a minimalist zen style in everything, because I love eccentric, vulgar, outgoing and provocative styles. But if the intention is to have simplicity, keep it simple."
+            imgUrl: "/design_graphic.jpg"
+      - category: photography
+        title: Photography
+        topImgUrl: "/photography.jpg"
+        titleInTopImg: true
+        summary: "My vision on photography is vividly under development! Nevertheless, I can share you my current thoughts on shooting photos."
+        paragraphs:
+          - heading: Advices
+            text: "Mother's advice: 'When you look back at the photos you've made, the ones that mean something to you are always the ones of real people. The other photos with mountains and trees on it can be thrown in the bin.' <br><br> Contrary to this advice are the masses that are taking selfies everywhere all the time. I never joined the selfie culture, but I would imagine that a selfie looses its value when you take so many of them. Instead, let's first focus on art photography!"
+            imgUrl: "/photography1.jpg"
+          - heading: Truth
+            text: "For me, the photos that remain value are the ones that tell the truth about the time and situation I was in when I shot the photo. This thrutfull moment is destroyed whenever I play around with the objects or scene I want to shoot. Same goes for posing, although taking portraits is interesting. It is hard, because you want a natural photo of the subject, but the subject is posing. So looking back at all those photos, only few will be satisfying. Matthieu Stern provides some practical tricks to help out subjects on posing naturally. I'd like to explore this in the near future. But for now, I'll focus on catching nice moments and interesting compositions."
+            imgUrl: "/photography2.jpg"
+          - heading: Selfie Culture
+            text: "I try to be as less intrusive as possible when shooting photos, but all around me, photographers (and especially the models) seem to think differently. On a train to Ella in Sri Lanka I saw a white couple hanging from the train door, screaming and getting a lot of attention. Next to me I heard a member of the train staff mumbling worried and eventually shouting to his colleague near the girl to do something. Two weeks later on Instagram, I see this hip travel photography agent posting the photos of the couple pretending this photo was taken spontaneously. For their information, kissing in public and hanging out of the train is not acceptable in Sri Lanka, the train staff is just too kind to give a fine."
+            imgUrl: "/photography3.jpg"
+          - heading: Consent
+            text: "On the other hand there are many western tourists shooting photos of Asian children without permission or consent. I must say that I'm guilty of that as well, but there is a clear boundary. Some photographers or tourists did not develop themselves a sense of respect nor empathy. Does the subject mind if you take a photo? If you develop a sense of social empathy, you can not only see, but feel if the situation is appropriate for shooting a photo. I've witnessed awkward situations such as: disrespect to locals, ruining beautiful sights, blindness to cultural differences and destroying the nature which attracted them to come there."
+            imgUrl: "/photography4.jpg"
+          - heading: My most appreciated photographers and vloggers
+            text: <ul><li>Fan Ho</li><a href="https://www.youtube.com/user/jamiewindsor" target="_blank"><li>Jamie Windsor</li></a><a href="https://www.youtube.com/user/mat0fr" target="_blank"><li>Matthieu Stern</li></a></ul>
+      - category: music
+        title: Music
+        slug: music-art
+        topImgUrl: "/music.jpg"
+        titleInTopImg: true
+        summary: "My mind is currently focussed at code and photography, but my heart still belongs to music."
+        paragraphs:
+          - heading: Pop
+            text: "For me, music has the strongest emotional impact on an audience as a form of art. Music can change moods, makes you sleepy or awake, helps you think or relax.. But not all music is art. When the motive of a piece of music is only to become popular by the bare minimum use of chliché musical formulas, the music sounds just like that. Once you listen clearly to music, you can hear the intention behind it and you will come to the question: Do I like the intention? Most popular music sounds like it is just made to sell. If it has no other then this motive, it is considered a business product or advertisement. I do not consider this to be art. An art piece needs three aspects: form, impact and creativity. In general, popmusic misses out on the creativity part. The creativity part is most interesting. I asked some friends who are in music business what they do at the very beginning of making a piece of music. All (except one) answered they start off with improvisation untill they come across some sounds that provoke a feeling and translate this to a piece of music. One answered that he started by taking an existing song, copying everything but the lyrics and record the vocals in Dutch. His goal was to become rich from his music someday and the music became nothing but a part of the business model to serve his goal. By observing an end-product up close, you can find the intention of the makers."
+            imgUrl: "/music1.jpg"
+          - heading: Rock & Roll
+            text: Most music I like sounds like it is made for fun and exploration. In some music for instance, you can hear that the musicians had a lot of fun by exploring various sound effects. On the other side, music is a result of rythmic and melodic exploration. And we as human beings have been structurizing and categorizing music into various forms (e.g. genres) according to the sort of impact the music has emotionally. For me, the term Rock & Roll always rings a bell. Some would see it as old-folk music, I see it as something empowering and outrageous. I sometimes hear my interpretation of Rock & Roll in good electronic music. It can provoke the same feeling as listening to Little Richard's <a href="https://www.youtube.com/watch?v=LVIttmFAzek" target="_blank" >Tutti Frutti</a>. I used to play to become better at playing, but at a certain moment, I decided to play only what I like to hear, so I could enjoy it. I still like to play Rock & Roll to get that Rock & Roll feeling, but I also love to explore making compositions for interactive / performance art or to mix overtone singing with EDM.
+            imgUrl: "/music2.jpg"
+          - heading: "Recommendations: "
+            text: <ul><a href="https://www.youtube.com/watch?v=Rnm-w6ifpbc" target="_blank"><li>Sphongle</li></a> <a href="https://www.youtube.com/watch?v=rFUVLGqsgts" target="_blank"> <li>Colin Stetson</li></a> <a href="https://www.youtube.com/watch?v=ne4PoC7V0Mk" target="_blank"><li>Igor Stravinsky</li></a></ul>
+- skills:
+    url: "/skills"
+    navName: SKILLS
+    skillList:
+      - name: Coding
+        progress: 80%
+        description: "I started HTML, CSS and simple JavaScript coding when I was 13 years old. During my masters study I picked up coding and at Mobiel.nl, I learned how to code professionally: readable, reliable and concise. There, I discovered working methods and structural principles, such as TDD, Mobile First and CRUD."
+        subSkills:
+          - name: React
+            progress: 85%
+            description: <ul><li>React State Hooks</li><li>NextJS</li><li>MobX</li><li>Styled Components</li></ul>
+          - name: DevTools
+            progress: 63%
+            description: <ul><li>Visual Studio Code</li><li>Linux (ZSH) Terminal</li><li>Git</li><li>Svgo</li><li>VIM</li><li>Chrome Inspector</li></ul>
+          - name: JavaScript & ES6
+            progress: 70%
+          - name: HTML5
+            progress: 80%
+          - name: CSS / SCSS
+            progress: 75%
+          - name: Ruby on Rails
+            progress: 65%
+          - name: Max MSP
+            progress: 55%
+          - name: Git
+            progress: 60%
+          - name: Scrum
+            progress: 67%
+          - name: Testing
+            progress: 60%
+            description: <ul><h4>Unit, integration and regression testing</h4><li>Jest</li><li>Rspec</li><li><a href="https://www.cypress.io/" target="_blank" >Cypress.io</a></li></ul>
+      - name: Design
+        progress: 70%
+        subSkills:
+          - name: Interactive Audio Design
+            progress: 80%
+          - name: Prototyping
+            progress: 75%
+          - name: Design Thinking
+            progress: 70%
+          - name: Scrum
+            progress: 67%
+          - name: Concept Sketching
+            progress: 60%
+          - name: Graphic Design
+            progress: 55%
+          - name: User Research
+            progress: 52%
+          - name: Context Mapping
+            progress: 50%
+          - name: Data Visualization
+            progress: 50%
+        description: "With a Master's Degree in Design For Interaction, I helped many people in their personal projects to clarify their design choices and future process. The advice can be about the technical aspects, but often comes down to rethinking the motives that drive a project. Practically, the chosen work method has a great influence on the end-product and service. Although helping others is fun and interesting, I would still like to become better at design by doing design related work. For more in depth explanation, read my <a href='/blog#design-vision'>vision on design</a>!"
+      - name: Music
+        progress: 90%
+        subSkills:
+          - name: Vocals
+            progress: 90%
+          - name: Guitar
+            progress: 85%
+          - name: Harmonica
+            progress: 80%
+          - name: Percussion
+            progress: 45%
+          - name: Production
+            progress: 60%
+          - name: Bass Guitar
+            progress: 70%
+          - name: Overtone Singing
+            progress: 75%
+          - name: Flute
+            progress: 35%
+          - name: Trumpet
+            progress: 30%
+          - name: Recording
+            progress: 65%
+          - name: Sound Design
+            progress: 67%
+      - name: Prototyping
+        progress: 50%
+        subSkills:
+          - name: (Interactive) Electronics
+            progress: 90%
+          - name: Construction
+            progress: 50%
+          - name: Assembly Design
+            progress: 70%
+          - name: Mockup models
+            progress: 80%
+- contact:
+    url: "/contact"
+    navName: CONTACT

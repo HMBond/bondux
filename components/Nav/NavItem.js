@@ -15,16 +15,15 @@ const NavItemButton = styled.div`
   }
 `;
 
-const NavItem = ({ item, selected, select }) => {
-  const { name, url } = item;
+const NavItem = ({ navName, url, selected, select, ...props }) => {
   return (
-    <NavItemLink href={url || "/"}>
+    <NavItemLink href={url || "/"} {...props}>
       <NavItemButton
         selected={selected}
         onMouseOver={() => select()}
         onClick={() => select()}
       >
-        {name}
+        {navName}
       </NavItemButton>
     </NavItemLink>
   );

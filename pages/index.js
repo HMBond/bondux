@@ -2,7 +2,6 @@ import { Fragment, useEffect } from "react";
 
 import Logo from "../components/styles/Logo.js";
 import Introduction from "../components/Introduction.js";
-import Context from "../components/Context";
 import WhiteSpace from "../components/styles/WhiteSpace.js";
 
 const Index = ({ context }) => {
@@ -20,7 +19,7 @@ const Index = ({ context }) => {
     <Fragment>
       <Logo />
       <WhiteSpace />
-      <Introduction context={context} />
+      {false && <Introduction introductionLines={context} />}
     </Fragment>
   );
 };

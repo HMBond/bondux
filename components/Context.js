@@ -1,6 +1,6 @@
 import { Component, createContext } from "react";
 import Router from "next/router";
-import debounce from "lodash/debounce";
+import { values, reduce, debounce, first, last } from "lodash";
 import content from "../public/content.yml";
 import { constrain } from "./helpers/functions";
 const Context = createContext();
@@ -16,25 +16,30 @@ export class ContextProvider extends Component {
       selector: {
         position: 0,
         setPosition: newPosition => this.setSelectorPos(newPosition),
-        go: () => this.visitSelectionAndCloseNav()
+        go: () => this.visitSelection()
       },
-
       nav: {
-        currentPath: "/",
+        currentPath: null,
+        onFirstPage: true,
+        onLastPage: true,
         back: () => this.navigate(-1),
         forward: () => this.navigate(1),
         open: false,
         setOpen: bool => this.setNavOpen(bool)
       },
-      content
+      content: values(content),
+      pages: reduce(content, (pages, page) => {
+        Object.assign(pages, page);
+        return pages;
+      })
     };
   }
 
-  componentDidMount() {
+  componentDidUpdate() {
+    console.log(this.state);
     this.updateCurrentPath();
   }
-
-  componentDidUpdate() {
+  componentDidMount() {
     this.updateCurrentPath();
   }
 
@@ -44,17 +49,16 @@ export class ContextProvider extends Component {
   }
 
   updateCurrentPath = () => {
-    this.setState(prevstate => {
-      if (prevstate.nav.currentPath !== Router.router.pathname) {
-        return {
-          ...prevstate,
-          nav: {
-            ...prevstate.nav,
-            currentPath: Router.router.pathname
-          }
-        };
-      }
-    });
+    this.state.nav.currentPath !== Router.router.pathname &&
+      this.setState(prevstate => ({
+        ...prevstate,
+        nav: {
+          ...prevstate.nav,
+          currentPath: Router.router.pathname,
+          onFirstPage: Router.router.pathname == first(content).url,
+          onLastPage: Router.router.pathname == last(content).url
+        }
+      }));
   };
 
   toggleDevMode = () => {
@@ -76,32 +80,19 @@ export class ContextProvider extends Component {
     }
   };
 
-  visitSelectionAndCloseNav = () => {
-    this.setState(prevstate => {
-      const go = () => Router.push(content[prevstate.selector.position].url);
-      setTimeout(go, 100);
-      Router.prefetch(content[prevstate.selector.position].url);
-      return {
-        ...prevstate,
-        nav: {
-          ...prevstate.nav,
-          open: false
-        }
-      };
-    });
-    this.updateCurrentPath();
+  visitSelection = () => {
+    const go = () => Router.push(content[prevstate.selector.position].url);
+    setTimeout(go, 100);
+    Router.prefetch(content[prevstate.selector.position].url);
+    this.setNavOpen(false);
   };
 
   navigate = advance => {
     const currentPageIndex = content.indexOf(
       content.find(page => page.url === Router.router.pathname)
     );
-    this.setState(prevstate => {
-      Router.push(
-        content[constrain(currentPageIndex + advance, content.length)].url
-      );
-    });
-    this.updateCurrentPath();
+    const newIndex = constrain(currentPageIndex + advance, content.length);
+    Router.push(content[newIndex].url);
     this.setNavOpen(false);
   };
 
