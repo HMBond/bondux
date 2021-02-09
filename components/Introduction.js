@@ -1,8 +1,8 @@
-import { Component } from "react";
-import styled from "styled-components";
-import Flip from "react-reveal/Flip";
-import Link from "next/link";
-import { Label } from "./styles/Headings";
+import { Component } from 'react';
+import styled from 'styled-components';
+import Flip from 'react-reveal/Flip';
+import Link from 'next/link';
+import { Label } from './styles/Headings';
 
 const IntroductionBase = styled.div`
   width: 100%;
@@ -17,12 +17,12 @@ const TextBox = styled.div`
   max-width: 400px;
   padding: 10px;
   text-align: center;
-  opacity: ${props => (props.ssrReady ? "1" : "0")};
+  opacity: ${(props) => (props.ssrReady ? '1' : '0')};
 `;
 
 const Text = styled(Label)`
   margin: 0;
-  color: ${props => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.primary};
   cursor: default;
 `;
 
@@ -31,50 +31,42 @@ class Introduction extends Component {
     super(props);
     this.state = {
       ssrReady: false,
-      activeLine: null
+      intervalDuration: 3000,
+      activeLine: 0,
     };
-    this.timer = null;
+    this.timer = 0;
   }
 
   componentDidMount() {
-    this.setState({
+    this.setState((prevState) => ({
+      ...prevState,
       ssrReady: true,
-      activeLine: 0
-    });
-  }
-
-  componentDidUpdate() {
-    if (this.props.context.nav.open) {
-      this.state.ssrReady && clearTimeout(this.timer);
-    } else {
-      this.state.ssrReady && this.newTimer();
-    }
+    }));
+    this.nextLine();
   }
 
   componentWillUnmount() {
-    this.state = { ssrReady: false, activeLine: 0 };
+    clearTimeout(this.timer);
   }
 
-  newTimer = () => {
-    this.timer && clearTimeout(this.timer);
-    this.timer = setTimeout(this.nextLine, 2500);
-  };
-
   nextLine = () => {
-    this.state.ssrReady &&
-      this.setState(prevstate => {
-        if (prevstate.activeLine < this.props.introductionLines.length - 1) {
-          return { activeLine: prevstate.activeLine + 1 };
-        } else {
-          return { activeLine: 0 };
-        }
-      });
+    const maxLines = this.props.context.content.index.introduction.length;
+    this.timer = setInterval(() => {
+      this.state.ssrReady &&
+        this.setState((prevState) => {
+          if (prevState.activeLine + 1 < maxLines) {
+            return { ...prevState, activeLine: prevState.activeLine + 1 };
+          } else {
+            return { ...prevState, activeLine: 0 };
+          }
+        });
+    }, this.state.intervalDuration);
   };
 
   render() {
-    const { introductionLines } = this.props;
+    const { context } = this.props;
     const { ssrReady, activeLine } = this.state;
-    const quote = introductionLines[activeLine];
+    const quote = context.content.index.introduction[activeLine];
 
     return (
       <IntroductionBase>

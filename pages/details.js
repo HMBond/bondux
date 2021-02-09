@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import Context from "../components/Context";
-import { getFirstPropertyOfObject } from "../components/helpers/functions";
 
 import Fade from "react-reveal/Fade";
 import WhiteSpace from "../components/styles/WhiteSpace";

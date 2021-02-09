@@ -1,20 +1,20 @@
-import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
-import Context from "./Context";
-import Nav from "./Nav";
-import Meta from "./Meta.js";
-import Keyboard from "./helpers/Keyboard";
-import { theme, devMode } from "./styles/Theme";
+import Context from '../components/Context';
+import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
+import Nav from './Nav';
+import Meta from './Meta.js';
+import Keyboard from './helpers/Keyboard';
+import { theme, devMode } from './styles/Theme';
 
 const GlobalStyle = createGlobalStyle`
   :root {
-    --theme-background-color: ${props => props.theme.colors.bg};
-    --theme-foreground-color: ${props => props.theme.colors.primary};
-    --theme-accent-color: ${props => props.theme.colors.accent};
+    --theme-background-color: ${(props) => props.theme.colors.bg};
+    --theme-foreground-color: ${(props) => props.theme.colors.primary};
+    --theme-accent-color: ${(props) => props.theme.colors.accent};
   }
 
   body {
-    background-color: ${props => props.theme.colors.bg};
-    color: ${props => props.theme.colors.primary};
+    background-color: ${(props) => props.theme.colors.bg};
+    color: ${(props) => props.theme.colors.primary};
     font-size: 1em;
     font-family: 'DejaVu Extra Light';
     margin: 0px;
@@ -32,15 +32,15 @@ const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
     color: inherit;
-    color: ${props => props.theme.colors.accent};
+    color: ${(props) => props.theme.colors.accent};
   }
-  
+
   @media screen and (max-width: 420px) {
     html {
       font-size: 14px;
     }
   }
-  
+
   @media screen and (max-width: 370px) {
     html {
       font-size: 12px;
@@ -54,19 +54,25 @@ const StyledPage = styled.div`
   align-items: center;
   width: 100%;
   overflow-x: hidden;
+  /* prevent scrollbar shifting page/nav */
+  padding-left: calc(100vw - 100%);
 `;
 
-const Page = ({ children, context }) => {
+const Page = ({ children }) => {
   return (
-    <ThemeProvider theme={context.devMode ? devMode(theme) : theme}>
-      <StyledPage>
-        <Meta />
-        <Keyboard context={context} />
-        <GlobalStyle />
-        {children}
-        <Nav />
-      </StyledPage>
-    </ThemeProvider>
+    <Context.Consumer>
+      {(context) => (
+        <ThemeProvider theme={context.devMode ? devMode(theme) : theme}>
+          <StyledPage>
+            <Meta />
+            <Keyboard context={context} />
+            <GlobalStyle />
+            {children}
+            <Nav />
+          </StyledPage>
+        </ThemeProvider>
+      )}
+    </Context.Consumer>
   );
 };
 

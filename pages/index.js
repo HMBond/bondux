@@ -1,5 +1,4 @@
 import { Fragment, useEffect } from "react";
-
 import Logo from "../components/styles/Logo.js";
 import Introduction from "../components/Introduction.js";
 import WhiteSpace from "../components/styles/WhiteSpace.js";
@@ -19,7 +18,7 @@ const Index = ({ context }) => {
     <Fragment>
       <Logo />
       <WhiteSpace />
-      {false && <Introduction introductionLines={context} />}
+      <Introduction context={context} />
     </Fragment>
   );
 };

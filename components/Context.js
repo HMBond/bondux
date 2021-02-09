@@ -1,8 +1,7 @@
-import { Component, createContext } from "react";
-import Router from "next/router";
-import { values, reduce, debounce, first, last } from "lodash";
-import content from "../public/content.yml";
-import { constrain, getFirstPropertyOfObject } from "./helpers/functions";
+import { Component, createContext } from 'react';
+import Router from 'next/router';
+import { values, reduce, throttle, first, last } from 'lodash';
+import content from '../public/content.yml';
 
 const Context = createContext();
 export default Context;
@@ -15,8 +14,8 @@ export class ContextProvider extends Component {
       toggleDevMode: () => this.toggleDevMode(),
       selector: {
         position: 0,
-        setPosition: newPosition => this.setSelectorPos(newPosition),
-        go: () => this.visitSelection()
+        setPosition: (newPosition) => this.setSelectorPos(newPosition),
+        go: () => this.visitSelection(),
       },
       nav: {
         currentPath: null,
@@ -26,52 +25,47 @@ export class ContextProvider extends Component {
         back: () => this.navigate(-1),
         forward: () => this.navigate(1),
         open: false,
-        setOpen: bool => this.setNavOpen(bool)
+        setOpen: (bool) => this.setNavOpen(bool),
       },
-      content: content
+      content: content,
     };
   }
 
   componentDidUpdate() {
-    this.updateCurrentPath();
+    this.updateRoutingState();
   }
   componentDidMount() {
-    this.updateCurrentPath();
+    this.updateRoutingState();
   }
 
-  render() {
-    const { children } = this.props;
-    return <Context.Provider value={this.state}>{children}</Context.Provider>;
-  }
-
-  updateCurrentPath = () => {
+  updateRoutingState = () => {
     this.state.nav.currentPath !== Router.router.pathname &&
-      this.setState(prevstate => ({
-        ...prevstate,
+      this.setState((prevState) => ({
+        ...prevState,
         nav: {
-          ...prevstate.nav,
+          ...prevState.nav,
           currentPath: Router.router.pathname,
           onFirstPage: Router.router.pathname == content.index.url,
-          onLastPage: Router.router.pathname == content.contact.url
-        }
+          onLastPage: Router.router.pathname == content.contact.url,
+        },
       }));
   };
 
   toggleDevMode = () => {
-    this.setState(prevstate => ({
-      ...prevstate,
-      devMode: !prevstate.devMode
+    this.setState((prevState) => ({
+      ...prevState,
+      devMode: !prevState.devMode,
     }));
   };
 
-  setSelectorPos = newPosition => {
+  setSelectorPos = (newPosition) => {
     if (this.state.nav.pageList[newPosition]) {
-      this.setState(prevstate => ({
-        ...prevstate,
+      this.setState((prevState) => ({
+        ...prevState,
         selector: {
-          ...prevstate.selector,
-          position: newPosition
-        }
+          ...prevState.selector,
+          position: newPosition,
+        },
       }));
     }
   };
@@ -84,27 +78,41 @@ export class ContextProvider extends Component {
     this.setNavOpen(false);
   };
 
-  navigate = advance => {
-    const pageList = this.state.nav.pageList
-    const currentPageIndex = pageList.indexOf(
-      pageList.find(page => page.url === this.state.nav.currentPath)
-    );
-    const nextIndex = constrain(currentPageIndex + advance, content.length);
-    const url = this.state.nav.pageList[nextIndex].url
-    Router.push(url);
+  navigate = (advance) => {
+    let toIndex = this.getPageIndex(advance);
+    Router.push(this.state.nav.pageList[toIndex].url);
     this.setNavOpen(false);
   };
 
-  setNavOpen = debounce(
-    bool =>
-      this.setState(prevstate => ({
-        ...prevstate,
+  setNavOpen = throttle(
+    (bool) =>
+      this.setState((prevState) => ({
+        ...prevState,
         nav: {
-          ...prevstate.nav,
-          open: bool
-        }
+          ...prevState.nav,
+          open: bool,
+        },
       })),
     400,
-    { leading: true, trailing: false }
+    { leading: true, trailing: false },
   );
+
+  getPageIndex(advance) {
+    const pageList = this.state.nav.pageList;
+    const currentPageIndex = pageList.indexOf(
+      pageList.find((page) => page.url === this.state.nav.currentPath),
+    );
+    let toIndex = currentPageIndex;
+    if (advance > 0 && currentPageIndex + advance < this.state.nav.pageList.length) {
+      toIndex++;
+    } else if (advance < 0 && currentPageIndex + advance >= 0) {
+      toIndex--;
+    }
+    return toIndex;
+  }
+
+  render() {
+    const { children } = this.props;
+    return <Context.Provider value={this.state}>{children}</Context.Provider>;
+  }
 }
