@@ -9,13 +9,14 @@
     "start": "next start -p 3000",
     "heroku-postbuild": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "node deploy"
+    "deploy": "node private/deploy",
+    "deploy-public": "node private/deployPublic"
   },
   "author": "Mike Bond",
   "license": "ISC",
   "dependencies": {
     "@svgr/webpack": "^5.1.0",
-    "ftp-deploy": "^2.3.6",
+    "ftp-deploy": "^2.4.1",
     "js-yaml-loader": "^1.2.2",
     "next": "^9.3.2",
     "react": "^16.12.0",
