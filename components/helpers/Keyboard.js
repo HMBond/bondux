@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 
 class Keyboard extends Component {
   constructor(props) {
@@ -37,4 +37,4 @@ class Keyboard extends Component {
   }
 }
 
-export default ({ context }) => <Keyboard context={context} />;
+export default Keyboard;
