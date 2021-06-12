@@ -1,7 +1,7 @@
 import { Component, createContext } from 'react';
 import Router from 'next/router';
-import { values, reduce, throttle, first, last } from 'lodash';
-import content from '../public/content.yml';
+import { values, throttle } from 'lodash';
+import content from '../content.yml';
 
 const Context = createContext();
 export default Context;
@@ -14,7 +14,7 @@ export class ContextProvider extends Component {
       toggleDevMode: () => this.toggleDevMode(),
       selector: {
         position: 0,
-        setPosition: (newPosition) => this.setSelectorPos(newPosition),
+        setPosition: this.setSelectorPos,
         go: () => this.visitSelection(),
       },
       nav: {
