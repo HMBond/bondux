@@ -4,4 +4,3 @@ node_modules/
 _next/
 *.log
 private/
-yarn.lock
