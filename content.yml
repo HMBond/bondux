@@ -109,9 +109,11 @@ skills:
   navName: SKILLS
   skillList:
     - name: Coding
-      progress: 80%
+      progress: 60%
       description: 'I started by making simple websites with HTML, CSS and a bit of JavaScript when I was 13 years old. During my masters study I picked up coding and at Mobiel.nl, I learned how to code professionally: readable, reliable (tested) and concise. I got introduced to many working principles, such as Test Driven Development, Mobile First and Rest APIs.'
       subSkills:
+        - name: Svelte
+          progress: 90%
         - name: React
           progress: 85%
           description: <ul><li>React State Hooks</li><li>NextJS</li><li>MobX</li><li>Apollo</li><li>Styled Components</li></ul>
@@ -126,7 +128,7 @@ skills:
           progress: 70%
         - name: JavaScript
           progress: 70%
-        - name: HTML5
+        - name: HTML
           progress: 80%
         - name: CSS / SCSS
           progress: 75%
@@ -138,7 +140,8 @@ skills:
           progress: 60%
           description: <ul><li>Jest</li><li>Rspec</li><li>Cypress</li></ul>
     - name: Design
-      progress: 70%
+      progress: 40%
+      description: 'I have a masters degree in Design For Interaction (TU-Delft) and I am used to think along with the designers as a developer. I did some graphic and UX design for modernizing a back-office and a new air traffic control game. As a small side project, I am designing and developing a game about Santa Claus.'
       subSkills:
         - name: Interactive Audio Design
           progress: 80%
@@ -156,9 +159,8 @@ skills:
           progress: 50%
         - name: Data Visualization
           progress: 40%
-      description: "With a Master's Degree in Design For Interaction, I helped many people in their personal projects to clarify their design choices and future process. The advice can be about the technical aspects, but often comes down to rethinking the motives that drive a project. Practically, the chosen work method has a great influence on the end-product and service. Although helping others is fun and interesting, I would still like to become better at design by doing design related work. For more in depth explanation, read my <a href='/blog#design-vision'>vision on design</a>!"
     - name: Music
-      progress: 90%
+      progress: 50%
       subSkills:
         - name: Harmonica
           progress: 50%
