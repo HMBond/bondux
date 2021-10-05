@@ -1,5 +1,5 @@
 export const clientSideRender = () => {
-  return typeof window !== "undefined" && window.document ? true : false;
+  return typeof window !== 'undefined' && window.document ? true : false;
 };
 
 export const constrain = (value, arrayLength) => {
@@ -12,30 +12,30 @@ export const constrain = (value, arrayLength) => {
   }
 };
 
-export const arrange = array => {
+export const sortByProgress = (array) => {
   return array.sort((a, b) => {
     return parseFloat(b.progress) - parseFloat(a.progress);
   });
 };
 
-export const makeSlug = string => {
-  return string.toLocaleLowerCase().replace(" ", "-");
+export const makeSlug = (string) => {
+  return string.toLocaleLowerCase().replace(' ', '-');
 };
 
 export const hexToRGBA = (hex, opacity) => {
   return (
-    "rgba(" +
-    (hex = hex.replace("#", ""))
-      .match(new RegExp("(.{" + hex.length / 3 + "})", "g"))
-      .map(function(l) {
+    'rgba(' +
+    (hex = hex.replace('#', ''))
+      .match(new RegExp('(.{' + hex.length / 3 + '})', 'g'))
+      .map(function (l) {
         return parseInt(hex.length % 2 ? l + l : l, 16);
       })
       .concat(opacity || 1)
-      .join(",") +
-    ")"
+      .join(',') +
+    ')'
   );
 };
 
 export const getFirstPropertyOfObject = (obj) => {
-  return obj[Object.keys(obj)[0]]
-}
+  return obj[Object.keys(obj)[0]];
+};

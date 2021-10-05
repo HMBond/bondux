@@ -19,7 +19,7 @@ export class ContextProvider extends Component {
       },
       nav: {
         currentPath: null,
-        pageList: values(content),
+        pageList: [content.index, content.skills, content.contact],
         onFirstPage: true,
         onLastPage: true,
         back: () => this.navigate(-1),
@@ -94,16 +94,19 @@ export class ContextProvider extends Component {
         },
       })),
     400,
-    { leading: true, trailing: false },
+    { leading: true, trailing: false }
   );
 
   getPageIndex(advance) {
     const pageList = this.state.nav.pageList;
     const currentPageIndex = pageList.indexOf(
-      pageList.find((page) => page.url === this.state.nav.currentPath),
+      pageList.find((page) => page.url === this.state.nav.currentPath)
     );
     let toIndex = currentPageIndex;
-    if (advance > 0 && currentPageIndex + advance < this.state.nav.pageList.length) {
+    if (
+      advance > 0 &&
+      currentPageIndex + advance < this.state.nav.pageList.length
+    ) {
       toIndex++;
     } else if (advance < 0 && currentPageIndex + advance >= 0) {
       toIndex--;

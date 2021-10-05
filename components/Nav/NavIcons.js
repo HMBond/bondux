@@ -1,12 +1,12 @@
-import styled from "styled-components";
-import ArrowSvg from "../../public/arrow.svg";
+import styled from 'styled-components';
+import ArrowSvg from '../../public/arrow.svg';
 
 const NavIconBase = styled(ArrowSvg)`
-  opacity: ${props => (props.hidden ? "0" : "1")};
-  order: ${props => props.order};
+  opacity: ${(props) => (props.hidden ? '0' : '1')};
+  order: ${(props) => props.order};
   width: 30px;
   height: 30px;
-  fill: ${props => props.theme.colors.primary};
+  fill: ${(props) => props.theme.colors.primary};
   cursor: pointer;
   transition: transform 0.3s ease-in-out, opacity 0.5s ease-in-out;
 `;
@@ -22,8 +22,8 @@ export const NavForwardIcon = styled(NavIconBase)`
 `;
 
 export const NavToggleIcon = styled(NavIconBase)`
-  fill: ${props => props.theme.colors.bg};
-  transform: ${props => (props.open ? "rotate(-630deg)" : "rotate(-90deg)")};
+  fill: ${(props) => props.theme.colors.bg};
+  transform: ${(props) => (props.open ? 'rotate(-630deg)' : 'rotate(-90deg)')};
 `;
 
 export default { NavBackIcon, NavToggleIcon, NavForwardIcon };

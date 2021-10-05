@@ -1,29 +1,29 @@
-import { useState } from "react";
-import styled from "styled-components";
-import { arrange } from "./helpers/functions";
+import { useState } from 'react';
+import styled from 'styled-components';
+import { sortByProgress } from './helpers/functions';
 
 import {
   AccordionItem as Skill,
   AccordionItem as SubSkill,
-  AccordionItemDescription as SkillDescription
-} from "./Accordion";
+  AccordionItemDescription as SkillDescription,
+} from './Accordion';
 
 const SkillAccordionBase = styled.div`
   margin: 2rem 0;
   width: 100%;
-  max-width: ${props => props.theme.maxWidth};
+  max-width: ${(props) => props.theme.maxWidth};
 `;
 
 const SkillAccordion = ({ skillList, ...props }) => {
   const [openSkill, setOpenSkill] = useState(null);
   const [openSubSkill, setOpenSubSkill] = useState(null);
 
-  const onSkillClick = skill => {
+  const onSkillClick = (skill) => {
     skill === openSkill ? setOpenSkill(null) : setOpenSkill(skill);
     setOpenSubSkill(null);
   };
 
-  const onSubSkillClick = subSkill => {
+  const onSubSkillClick = (subSkill) => {
     subSkill === openSubSkill
       ? setOpenSubSkill(null)
       : setOpenSubSkill(subSkill);
@@ -31,7 +31,7 @@ const SkillAccordion = ({ skillList, ...props }) => {
 
   return (
     <SkillAccordionBase {...props}>
-      {arrange(skillList).map(skill => (
+      {sortByProgress(skillList).map((skill) => (
         <Skill
           key={skill.name}
           open={openSkill === skill}
@@ -45,7 +45,7 @@ const SkillAccordion = ({ skillList, ...props }) => {
             ></SkillDescription>
           )}
           {skill.subSkills &&
-            arrange(skill.subSkills).map(subSkill => (
+            sortByProgress(skill.subSkills).map((subSkill) => (
               <SubSkill
                 key={subSkill.name}
                 open={openSubSkill === subSkill}

@@ -1,9 +1,9 @@
-import { useState, useRef } from "react";
-import debounce from "lodash/debounce";
-import styled from "styled-components";
+import { useState, useRef } from 'react';
+import debounce from 'lodash/debounce';
+import styled from 'styled-components';
 
-import AccordionItemLabel from "./AccordionItemLabel";
-import CollapseIcon from "./CollapseIcon";
+import AccordionItemLabel from './AccordionItemLabel';
+import CollapseIcon from './CollapseIcon';
 
 const contentHeightSafetyMargin = 40;
 const maxTransitionTime = 500; // 0.5s
@@ -12,29 +12,29 @@ const AccordionItemBase = styled.div`
   margin: 1rem;
   border-bottom-width: 1px;
   border-bottom-style: dashed;
-  border-bottom-color: ${props =>
-    props.open ? `${props.theme.colors.primary}` : "transparent"};
+  border-bottom-color: ${(props) =>
+    props.open ? `${props.theme.colors.primary}` : 'transparent'};
   transition: border-bottom-color 0.3s linear;
 `;
 
 const AccordionItemTitle = styled.div`
-  color: ${props => props.theme.colors.bg};
-  font-family: "DejaVu Condensed Bold";
+  color: ${(props) => props.theme.colors.bg};
+  font-family: 'DejaVu Condensed';
 `;
 
 const AccordionItemChildrenContainer = styled.div`
-  max-height: ${props =>
+  max-height: ${(props) =>
     props.open
       ? `${props.contentHeight + contentHeightSafetyMargin}px`
-      : "0px"};
-  margin: ${props => (props.open ? "" : "0")};
-  padding: ${props => (props.open ? "" : "0")};
-  opacity: ${props => (props.open ? "1" : "0")};
+      : '0px'};
+  margin: ${(props) => (props.open ? '' : '0')};
+  padding: ${(props) => (props.open ? '' : '0')};
+  opacity: ${(props) => (props.open ? '1' : '0')};
   transition: max-height /* dont go over maxTransitionTime */
-      ${props => (!props.open ? "0.45s ease-out" : "0.4s ease-in 0.1s")},
-    margin ${props => (!props.open ? " 0.3s ease" : " 0.3s ease 0.2s")},
-    padding ${props => (!props.open ? " 0.3s ease" : " 0.3s ease 0.2s")},
-    opacity ${props => (!props.open ? " 0.1s linear" : " 0.5s linear 0.2s")};
+      ${(props) => (!props.open ? '0.45s ease-out' : '0.4s ease-in 0.1s')},
+    margin ${(props) => (!props.open ? ' 0.3s ease' : ' 0.3s ease 0.2s')},
+    padding ${(props) => (!props.open ? ' 0.3s ease' : ' 0.3s ease 0.2s')},
+    opacity ${(props) => (!props.open ? ' 0.1s linear' : ' 0.5s linear 0.2s')};
   overflow: hidden;
 `;
 
@@ -62,7 +62,7 @@ export const AccordionItem = ({
 }) => {
   const contentRef = useRef();
   const [contentHeight, setContentHeight] = useState(0);
-  const onClickHandler = item => {
+  const onClickHandler = (item) => {
     setContentHeight(contentRef.current.clientHeight);
     onClick(item);
   };
@@ -86,7 +86,7 @@ export const AccordionItem = ({
           ref={contentRef}
           onClick={debounce(() => updateContentHeight(), maxTransitionTime, {
             leading: false,
-            trailing: true
+            trailing: true,
           })}
         >
           {children}
