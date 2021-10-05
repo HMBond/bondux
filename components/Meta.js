@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Head from 'next/head';
 
 const Meta = () => (
   <Head>
@@ -9,7 +9,6 @@ const Meta = () => (
     <meta charSet="utf-8" />
     <title>Bondux.dev</title>
     <link rel="icon" type="image/png" href="/favicon.png" key="favicon"></link>
-    <link rel="stylesheet" type="text/css" href="/fonts.css" key="fonts" />
   </Head>
 );
 

@@ -26,4 +26,5 @@ export const NavToggleIcon = styled(NavIconBase)`
   transform: ${(props) => (props.open ? 'rotate(-630deg)' : 'rotate(-90deg)')};
 `;
 
-export default { NavBackIcon, NavToggleIcon, NavForwardIcon };
+const NavIcons = { NavBackIcon, NavToggleIcon, NavForwardIcon };
+export default NavIcons;

@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'DejaVu Serif';
+  src: url('DejaVuSerifCondensed-Bold.ttf') format('truetype');
+  font-weight: bolder;
+  font-style: serif;
+}
+
+@font-face {
+  font-family: 'DejaVu Extra Light';
+  src: url('DejaVuSans-ExtraLight.ttf') format('truetype');
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DejaVu Condensed Bold';
+  src: url('DejaVuSansCondensed-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DejaVu Condensed';
+  src: url('DejaVuSansCondensed.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

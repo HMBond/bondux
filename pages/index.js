@@ -1,25 +1,25 @@
-import { Fragment, useEffect } from "react";
-import Logo from "../components/styles/Logo.js";
-import Introduction from "../components/Introduction.js";
-import WhiteSpace from "../components/styles/WhiteSpace.js";
+import { useEffect } from 'react';
+import Logo from '../components/styles/Logo.js';
+import Introduction from '../components/Introduction.js';
+import WhiteSpace from '../components/styles/WhiteSpace.js';
+
+const setLocation = (title, newLocation) => {
+  if (location.pathname !== newLocation) {
+    history.replaceState({}, title, newLocation);
+  }
+};
 
 const Index = ({ context }) => {
-  const setLocation = (title, newLocation) => {
-    if (location.pathname !== newLocation) {
-      history.replaceState({}, title, newLocation);
-    }
-  };
-
   useEffect(() => {
-    setLocation("Bondux.dev", "/");
+    setLocation('Bondux.dev', '/');
   });
 
   return (
-    <Fragment>
+    <>
       <Logo />
       <WhiteSpace />
       <Introduction context={context} />
-    </Fragment>
+    </>
   );
 };
 

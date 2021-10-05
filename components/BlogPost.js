@@ -1,19 +1,19 @@
-import { Fragment } from "react";
-import styled, { css } from "styled-components";
-import Fade from "react-reveal/Fade";
-import { Title as BlogPostTitle } from "./styles/Headings";
-import Paragraph, { ParagraphText, ParagraphHeading } from "./styles/Paragraph";
-import Hr from "./styles/Hr";
-import WhiteSpace from "./styles/WhiteSpace";
+import { Fragment } from 'react';
+import styled, { css } from 'styled-components';
+import Fade from 'react-reveal/Fade';
+import { Title as BlogPostTitle } from './styles/Headings';
+import Paragraph, { ParagraphText, ParagraphHeading } from './styles/Paragraph';
+import Hr from './styles/Hr';
+import WhiteSpace from './styles/WhiteSpace';
 
 const BlogPostBase = styled.div`
-  order: ${props => (props.card ? "" : "-1")};
-  max-width: ${props => props.theme.maxWidth};
+  order: ${(props) => (props.card ? '' : '-1')};
+  max-width: ${(props) => props.theme.maxWidth};
   display: flex;
   flex-direction: column;
-  margin-top: ${props => (props.card ? "4rem" : 0)};
+  margin-top: ${(props) => (props.card ? '4rem' : 0)};
   align-items: center;
-  cursor: ${props => (props.card ? "pointer" : "")};
+  cursor: ${(props) => (props.card ? 'pointer' : '')};
 `;
 
 const BlogImage = styled.div`
@@ -21,25 +21,25 @@ const BlogImage = styled.div`
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  background: url(${props => props.src});
-  background-size: ${props => (props.contain ? "contain" : "cover")};
+  background: url(${(props) => props.src});
+  background-size: ${(props) => (props.contain ? 'contain' : 'cover')};
   background-position: center;
   background-repeat: no-repeat;
-  border-radius: ${props => props.roundness};
-  margin-top: ${props => (props.roundness ? "2rem" : 0)};
-  width: ${props => (props.roundness ? "calc(100% - 4rem)" : "100%")};
-  height: ${props => (props.card ? "28rem" : "calc(100vw - 4rem)")};
+  border-radius: ${(props) => props.roundness};
+  margin-top: ${(props) => (props.roundness ? '2rem' : 0)};
+  width: ${(props) => (props.roundness ? 'calc(100% - 4rem)' : '100%')};
+  height: ${(props) => (props.card ? '28rem' : 'calc(100vw - 4rem)')};
 
   @media screen and (min-width: 600px) {
     height: 28rem;
-    ${props =>
+    ${(props) =>
       props.roundness &&
       css`
         width: 100%;
         height: 100vw;
-        max-height: ${props => props.theme.maxWidth};
+        max-height: ${(props) => props.theme.maxWidth};
       `}
-    ${props =>
+    ${(props) =>
       !props.roundness &&
       props.titlePhoto &&
       css`
@@ -47,10 +47,10 @@ const BlogImage = styled.div`
       `}
   }
 
-  ${props =>
+  ${(props) =>
     props.titleInTopImg &&
     css`
-      color: ${props =>
+      color: ${(props) =>
         props.titleInTopImg.color
           ? props.theme.colors[props.titleInTopImg.color]
           : props.theme.colors.bg};
@@ -65,10 +65,10 @@ const BlogImage = styled.div`
 `;
 
 const BlogCardTitleBox = styled.div`
-  color: ${props => props.theme.colors.bg};
-  background: ${props => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.bg};
+  background: ${(props) => props.theme.colors.primary};
   padding: 2rem;
-  ${props =>
+  ${(props) =>
     props.shortTitle &&
     css`
       padding: 1.2rem 0rem 2rem 2rem;
@@ -76,7 +76,7 @@ const BlogCardTitleBox = styled.div`
       margin-right: auto;
       height: 6rem;
       &:before {
-        content: " ";
+        content: ' ';
         width: 0;
         height: 0;
         position: absolute;
@@ -84,7 +84,7 @@ const BlogCardTitleBox = styled.div`
         left: 99.98%;
         border-bottom: 6rem solid transparent;
         border-right: 6rem solid transparent;
-        border-top: 6rem solid ${props => props.theme.colors.primary};
+        border-top: 6rem solid ${(props) => props.theme.colors.primary};
       }
     `}
 `;
@@ -93,11 +93,11 @@ const BlogCardSummaryBox = styled.div`
   margin-top: auto;
   width: 100%;
   padding: 2rem 30% 2rem 2rem;
-  color: ${props => props.theme.colors.bg};
+  color: ${(props) => props.theme.colors.bg};
   background-image: radial-gradient(
     at bottom left,
-    ${props => props.theme.colors.accent} 20%,
-    ${props => props.theme.colors.transparent("accent", 0.4)}
+    ${(props) => props.theme.colors.accent} 20%,
+    ${(props) => props.theme.colors.transparent('accent', 0.4)}
   );
   hyphens: none;
 `;
@@ -106,15 +106,15 @@ const Category = styled.div`
   position: absolute;
   bottom: 0;
   right: 0;
-  color: ${props => props.theme.colors.primary};
-  font-family: "DejaVu Condensed Bold";
+  color: ${(props) => props.theme.colors.primary};
+  font-family: 'DejaVu Condensed Bold';
   font-size: 1.2em;
   font-variant: small-caps;
   padding: 0.8rem 0.8rem 0.8rem 0;
   height: 3rem;
-  background: ${props => props.theme.colors.lightGrey};
+  background: ${(props) => props.theme.colors.lightGrey};
   &:before {
-    content: " ";
+    content: ' ';
     width: 0;
     height: 0;
     position: absolute;
@@ -122,7 +122,7 @@ const Category = styled.div`
     right: 99.98%;
     border-top: 3rem solid transparent;
     border-left: 3rem solid transparent;
-    border-bottom: 3rem solid ${props => props.theme.colors.lightGrey};
+    border-bottom: 3rem solid ${(props) => props.theme.colors.lightGrey};
   }
 `;
 

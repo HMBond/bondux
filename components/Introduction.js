@@ -80,7 +80,7 @@ class Introduction extends Component {
               </Text>
             )}
             {quote.link && (
-              <Link href={quote.link.url}>
+              <Link href={quote.link.url} passHref={true}>
                 <Label>
                   <Flip right cascade>
                     {quote.link.label}

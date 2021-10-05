@@ -1,10 +1,10 @@
-import styled from "styled-components";
-import { Title, SubTitle, Label } from "../components/styles/Headings";
+import styled from 'styled-components';
+import { Title, SubTitle, Label } from '../components/styles/Headings';
 
 const ContactPage = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: ${props => props.theme.maxWidth};
+  max-width: ${(props) => props.theme.maxWidth};
   width: 100%;
 `;
 
@@ -51,35 +51,41 @@ const Icon = styled.img`
 
 const Contact = ({ context }) => (
   <ContactPage>
-    <ContactTitle>{"Contact"}</ContactTitle>
+    <ContactTitle>{'Contact'}</ContactTitle>
     <ContactSuperTitle>{"LET'S CHAT"}</ContactSuperTitle>
     <ContactLinks>
       <ContactItem>
         <a
-          target={"_blank"}
+          target={'_blank'}
+          rel="noreferrer"
           href={
-            "mailto:post@bondux.dev?subject=Contact&body=Hi Mike, ...%0D%0A%0D%0A%0D%0A%0D%0A"
+            'mailto:post@bondux.dev?subject=Contact&body=Hi Mike, %0D%0A%0D%0A%0D%0A%0D%0A'
           }
         >
-          <Label>{"Email"}</Label>
-          <Icon src={"/email.svg"} alt="Gmail" />
+          <Label>{'Email'}</Label>
+          <Icon src={'/email.svg'} alt="Gmail" />
         </a>
       </ContactItem>
       <ContactItem>
         <a
-          target={"_blank"}
+          target={'_blank'}
+          rel="noreferrer"
           href={
-            "https://api.whatsapp.com/send?phone=31654356094&text=Hi%20mike"
+            'https://api.whatsapp.com/send?phone=31654356094&text=Hi%20Mike'
           }
         >
-          <Label>{"WhatsApp"}</Label>
-          <Icon src={"/phone.svg"} alt="WhatsApp" />
+          <Label>{'WhatsApp'}</Label>
+          <Icon src={'/phone.svg'} alt="WhatsApp" />
         </a>
       </ContactItem>
       <ContactItem>
-        <a target={"_blank"} href={"https://www.flickr.com/photos/7363277@N07"}>
-          <Label>{"Photography"}</Label>
-          <Icon src={"/camera.svg"} alt="Photography Page" />
+        <a
+          target={'_blank'}
+          rel="noreferrer"
+          href={'https://www.flickr.com/photos/7363277@N07'}
+        >
+          <Label>{'Photography'}</Label>
+          <Icon src={'/camera.svg'} alt="Photography Page" />
         </a>
       </ContactItem>
     </ContactLinks>

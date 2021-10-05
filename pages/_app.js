@@ -1,25 +1,19 @@
-import React from "react";
-import App from "next/app";
-import Page from "../components/Page";
+import '../public/fonts.css';
+import Page from '../components/Page';
+import Context, { ContextProvider } from '../components/Context';
 
-import Context, { ContextProvider } from "../components/Context";
-
-class MyApp extends App {
-  render() {
-    const { Component } = this.props;
-
-    return (
-      <ContextProvider>
-        <Context.Consumer>
-          {context => (
-            <Page context={context}>
-              <Component context={context} />
-            </Page>
-          )}
-        </Context.Consumer>
-      </ContextProvider>
-    );
-  }
+function MyApp({ Component, pageProps }) {
+  return (
+    <ContextProvider>
+      <Context.Consumer>
+        {(context) => (
+          <Page context={context}>
+            <Component context={context} {...pageProps} />
+          </Page>
+        )}
+      </Context.Consumer>
+    </ContextProvider>
+  );
 }
 
 export default MyApp;
