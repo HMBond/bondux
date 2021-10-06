@@ -5,3 +5,4 @@ _next/
 *.log
 private/
 .DS_Store
+out/
