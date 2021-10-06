@@ -1,17 +1,3 @@
-export const clientSideRender = () => {
-  return typeof window !== 'undefined' && window.document ? true : false;
-};
-
-export const constrain = (value, arrayLength) => {
-  if (value <= 0) {
-    return 0;
-  } else if (value >= arrayLength - 1) {
-    return arrayLength - 1;
-  } else {
-    return value;
-  }
-};
-
 export const sortByProgress = (array) => {
   return array.sort((a, b) => {
     return parseFloat(b.progress) - parseFloat(a.progress);
@@ -34,8 +20,4 @@ export const hexToRGBA = (hex, opacity) => {
       .join(',') +
     ')'
   );
-};
-
-export const getFirstPropertyOfObject = (obj) => {
-  return obj[Object.keys(obj)[0]];
 };

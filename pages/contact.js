@@ -70,14 +70,15 @@ const Contact = ({ context }) => (
         <a
           target={'_blank'}
           rel="noreferrer"
-          href={
-            'https://api.whatsapp.com/send?phone=31654356094&text=Hi%20Mike'
-          }
+          href={'https://www.linkedin.com/in/mike-bond-3258a32a/'}
         >
-          <Label>{'WhatsApp'}</Label>
-          <Icon src={'/phone.svg'} alt="WhatsApp" />
+          <Label>{'LinkedIn'}</Label>
+          <Icon src={'/linkedin.svg'} alt="LinkedIn" />
         </a>
       </ContactItem>
+    </ContactLinks>
+    <ContactSuperTitle>OTHER LINKS</ContactSuperTitle>
+    <ContactLinks>
       <ContactItem>
         <a
           target={'_blank'}
@@ -85,7 +86,27 @@ const Contact = ({ context }) => (
           href={'https://www.flickr.com/photos/7363277@N07'}
         >
           <Label>{'Photography'}</Label>
-          <Icon src={'/camera.svg'} alt="Photography Page" />
+          <Icon src={'/camera.svg'} alt="Flickr.com" />
+        </a>
+      </ContactItem>
+      <ContactItem>
+        <a
+          target={'_blank'}
+          rel="noreferrer"
+          href={'https://soundcloud.com/mike-bond-sound/tracks'}
+        >
+          <Label>{'Soundcloud'}</Label>
+          <Icon src={'/soundcloud.svg'} alt="Soundcloud" />
+        </a>
+      </ContactItem>
+      <ContactItem>
+        <a
+          target={'_blank'}
+          rel="noreferrer"
+          href={'https://soundcloud.com/towardstheartist/sets/set1'}
+        >
+          <Label>{'Towards the artist'}</Label>
+          <Icon src={'/towards_the_artist.svg'} alt="Towards the artist" />
         </a>
       </ContactItem>
     </ContactLinks>

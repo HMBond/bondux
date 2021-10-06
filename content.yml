@@ -108,7 +108,7 @@ skills:
   url: '/skills'
   navName: SKILLS
   skillList:
-    - name: Coding
+    - name: Software Development
       progress: 60%
       description: 'I started by making simple websites with HTML, CSS and a bit of JavaScript when I was 13 years old. During my masters study I picked up coding and at Mobiel.nl, I learned how to code professionally: readable, reliable (tested) and concise. I got introduced to many working principles, such as Test Driven Development, Mobile First and Rest APIs.'
       subSkills:
@@ -155,10 +155,6 @@ skills:
           progress: 55%
         - name: User Research
           progress: 52%
-        - name: Context Mapping
-          progress: 50%
-        - name: Data Visualization
-          progress: 40%
     - name: Music
       progress: 50%
       subSkills:
@@ -170,7 +166,7 @@ skills:
           progress: 70%
         - name: Vocals & Overtone Singing
           progress: 75%
-        - name: Sound Design & Production
+        - name: Audio Production
           progress: 45%
 contact:
   url: '/contact'
