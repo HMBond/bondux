@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Title, SubTitle, Label } from '../components/styles/Headings';
+import WhiteSpace from '../components/styles/WhiteSpace';
 
 const ContactPage = styled.div`
   display: flex;
@@ -24,19 +25,17 @@ const ContactItem = styled.div`
     align-items: center;
     line-height: 4rem;
   }
-  @media screen and (pointer: fine) {
-    /* only cursor operated devices */
-    span {
-      color: ${(props) => props.theme.colors.primary};
-    }
-    &:hover span {
-      color: ${(props) => props.theme.colors.accent};
-    }
-    &:hover img {
-      /* temp trick to color svg https://codepen.io/sosuke/pen/Pjoqqp */
-      filter: invert(54%) sepia(93%) saturate(751%) hue-rotate(359deg)
-        brightness(100%) contrast(104%);
-    }
+
+  span {
+    color: ${(props) => props.theme.colors.primary};
+  }
+  &:hover span {
+    color: ${(props) => props.theme.colors.accent};
+  }
+  &:hover img {
+    /* temp trick to color svg https://codepen.io/sosuke/pen/Pjoqqp */
+    filter: invert(54%) sepia(93%) saturate(751%) hue-rotate(359deg)
+      brightness(100%) contrast(104%);
   }
 `;
 
@@ -110,6 +109,7 @@ const Contact = ({ context }) => (
         </a>
       </ContactItem>
     </ContactLinks>
+    <WhiteSpace />
   </ContactPage>
 );
 
