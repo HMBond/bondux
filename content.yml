@@ -6,19 +6,19 @@ index:
       link: null
     - text: 'I am a Frontend Developer,'
       link:
-        url: /skills
+        url: /details
         label: 'Sound Producer,..'
     - text: 'designer and '
       link:
-        url: '/skills'
+        url: '/details'
         label: 'performing artist.'
     - text: 'I love how technology can '
       link:
-        url: '/blog'
+        url: '/details'
         label: 'provoke emotions...'
     - text: '...and positively'
       link:
-        url: '/blog'
+        url: '/details'
         label: 'influence social interaction.'
     - text: "I'm a freelancer and "
       link:
@@ -26,20 +26,36 @@ index:
         label: 'eager to work for you,'
     - text: '...or if you like to learn '
       link:
-        url: '/blog'
+        url: '/contact'
         label: 'overtone singing,..'
     - text: '...just'
       link:
         url: '/contact'
         label: 'contact me!'
-details:
-  url: '/details'
-  navName: DETAILS
-  paragraphs:
-    - heading: Office
-      text: 'I like to work with colleagues! The office mentality and direct contact with a team is very informative and keeps me actively involved in coding. I’ve worked in a scrum team and believe in the pro-efficiency of this working method, especially in bigger companies. The daily stand-up for instance, as simple as it is, has a great effect on feeling involved. It creates a clear overview of your part within the resulting product and thereby making you appreciate your work in respect to the bigger picture. <br /><br />Next to a serious and hyper-focused working attitude, I highly appreciate the social aspect of working with colleagues. That’s why I like to work with people who are not afraid to tell something personal or non-work-related and can joke around when it’s appropriate.'
-    - heading: Freelancing
-      text: 'As a developer with a Msc. in interaction design, I’m very happy to think along in the design process. The key is that a developer knows the possibilities and obstructions that could arise when building a design idea. Besides consultancy over choices, it can be useful to come up with cool new ideas. For such ideas, a designer might think it would be too much to ask for development, while the developer knows the world of front-end development is progressing fast, which makes life easier for tackling challenges and building interesting components. Retaining a strong connection between design and development has always been crucial in digital development. <br /><br />This results in a way of working where I talk about the design, get to know the intentions and reasons behind choices (preferably in a user-oriented perspective), explore the possibilities and create a plan. This approach if flexible, but getting a elaborated idea of the desired product is necessary to construct it.'
+cv:
+  url: '/cv'
+  navName: CURRICULUM VITAE
+  experience:
+    paragraphs: 
+      - heading: Freelancing
+        started: May 2019
+        ended: '-'
+        text: 'After working for Mobiel.nl I started freelancing with the goal to become digital nomad. This did not happen, but I did create a website for a Sri Lankan guesthouse owner in Sri Lanka. Now the reason I maintain freelancing is to create immersive background music for social interaction projects for SMELT (Rotterdam). This includes recording voices and composing.'
+      - heading: Ix Technologies
+        role: Senior Frontend Developer
+        started: Feb 2020
+        ended: July 2021
+        text: 'At Ix Technoloiesy, a very small company in Delft, I was mainly Frontend Developer, but also learned my way in the backend (.NET/Azure) and did UX design. I worked with AngularJs to maintain and upgrade existing serious games and air-traffic-control admission tests. We needed to upgrade our framework to Blazor, which uses webassemby to run compiled C# code in the browser. With Blazor I build a brand new back-office (including component suite) and two admission tests (air-traffic-control games). I also had a big part in the design of these projects, as most design was done by me and my boss.'
+      - heading: Mobiel.nl
+        role: Junior Frontend Developer
+        started: Aug 2018
+        ended: Jul 2019
+        text: 'At Mobiel.nl I learned to code professionally. I had a very good personal coach, <a href="https://www.linkedin.com/in/samtaal/" target="_blank">Sam Taal</a>, worked in a scrum (agile) development team with daily code reviews and learned to use React and Ruby on Rails. This helped me to become critical about each line of code and to become more proficient in writing, debugging and understanding the architecture.'
+      - heading: Towards the Artist
+        role: Founder
+        started: Feb 2013
+        ended: Dec 2014
+        text: 'Towards the Artist was a personal project to record local artists and present them online. The original idea was to also include video recording for a Youtube channel, but as I was making the website, contacting new artists to join, going to their homes with recording gear and mixing the recordings, this idea was scrapped. Although the project did not took off, the artists themselves were very enthousiastic. Many of them started recording their work soon after and one of them even mentioned the reason for starting as a solo artist was due to my project. The lesson learned was that a personal project should either be kept managable, or involve more contributors. Please have a listen to the recordings on <a href="https://soundcloud.com/towardstheartist/sets/set1" target="_blank">SoundCloud</a>.'
 blog:
   url: '/blog'
   navName: BLOG

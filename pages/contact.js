@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Title, SubTitle, Label } from '../components/styles/Headings';
+import { PageTitle, SubTitle, Label } from '../components/styles/Headings';
 import WhiteSpace from '../components/styles/WhiteSpace';
 
 const ContactPage = styled.div`
@@ -9,14 +9,8 @@ const ContactPage = styled.div`
   width: 100%;
 `;
 
-const ContactSuperTitle = styled(SubTitle)``;
-
-const ContactTitle = styled(Title)`
-  margin-top: 4rem;
-`;
-
 const ContactLinks = styled.div`
-  margin: 4rem 2rem 2rem 2rem;
+  margin: 2rem;
 `;
 
 const ContactItem = styled.div`
@@ -50,8 +44,8 @@ const Icon = styled.img`
 
 const Contact = ({ context }) => (
   <ContactPage>
-    <ContactTitle>{'Contact'}</ContactTitle>
-    <ContactSuperTitle>{"LET'S CHAT"}</ContactSuperTitle>
+    <PageTitle>{'Contact'}</PageTitle>
+    <SubTitle>{"LET'S CHAT"}</SubTitle>
     <ContactLinks>
       <ContactItem>
         <a
@@ -76,7 +70,7 @@ const Contact = ({ context }) => (
         </a>
       </ContactItem>
     </ContactLinks>
-    <ContactSuperTitle>OTHER LINKS</ContactSuperTitle>
+    <SubTitle>OTHER LINKS</SubTitle>
     <ContactLinks>
       <ContactItem>
         <a

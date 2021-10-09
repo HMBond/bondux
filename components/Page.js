@@ -53,7 +53,6 @@ const StyledPage = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  overflow-x: hidden;
   /* prevent scrollbar shifting page/nav */
   padding-left: calc(100vw - 100%);
 `;

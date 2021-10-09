@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import styled, { css } from 'styled-components';
 import Fade from 'react-reveal/Fade';
-import { Title as BlogPostTitle } from './styles/Headings';
+import { Title } from './styles/Headings';
 import Paragraph, { ParagraphText, ParagraphHeading } from './styles/Paragraph';
 import Hr from './styles/Hr';
 import WhiteSpace from './styles/WhiteSpace';
@@ -140,7 +140,7 @@ const BlogPost = ({ card, entry, ...props }) => {
           <BlogImage src={entry.topImgUrl} card>
             {entry.title && (
               <BlogCardTitleBox shortTitle={entry.title.length < 16}>
-                <BlogPostTitle>{entry.title}</BlogPostTitle>
+                <Title>{entry.title}</Title>
               </BlogCardTitleBox>
             )}
             <BlogCardSummaryBox>
@@ -162,12 +162,12 @@ const BlogPost = ({ card, entry, ...props }) => {
             titlePhoto
           >
             {entry.title && entry.titleInTopImg && (
-              <BlogPostTitle large>{entry.title}</BlogPostTitle>
+              <Title large>{entry.title}</Title>
             )}
           </BlogImage>
         )}
         {entry.title && !entry.titleInTopImg && (
-          <BlogPostTitle large>{entry.title}</BlogPostTitle>
+          <Title large>{entry.title}</Title>
         )}
         {entry.paragraphs &&
           entry.paragraphs.map((paragraph, index) => (

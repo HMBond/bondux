@@ -7,6 +7,10 @@ export const Title = styled.span`
   text-align: center;
 `;
 
+export const PageTitle = styled(Title)`
+  margin-top: 4rem;
+`;
+
 export const SubTitle = styled.span`
   color: ${(props) => props.theme.colors.accent};
   font-family: 'DejaVu Extra Light';

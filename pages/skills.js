@@ -3,19 +3,12 @@ import styled from 'styled-components';
 
 import WhiteSpace from '../components/styles/WhiteSpace';
 import SkillAccordion from '../components/SkillAccordion';
-import {
-  Title,
-  SubTitle as SkillsSubTitle,
-} from '../components/styles/Headings';
-
-const SkillsTitle = styled(Title)`
-  margin-top: 4rem;
-`;
+import { PageTitle, SubTitle } from '../components/styles/Headings';
 
 const Skills = ({ context }) => (
   <Fragment>
-    <SkillsTitle>{'Skills'}</SkillsTitle>
-    <SkillsSubTitle>{'WHAT I CAN DO'}</SkillsSubTitle>
+    <PageTitle>{'Skills'}</PageTitle>
+    <SubTitle>{'WHAT I CAN DO'}</SubTitle>
     <SkillAccordion skillList={context.content.skills.skillList} />
     <WhiteSpace />
   </Fragment>

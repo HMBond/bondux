@@ -1,4 +1,3 @@
-import '../public/fonts.css';
 import Page from '../components/Page';
 import Context, { ContextProvider } from '../components/Context';
 
