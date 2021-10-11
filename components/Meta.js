@@ -7,35 +7,35 @@ const Meta = () => (
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
     />
     <meta charSet="utf-8" />
-    <title>Bondux.dev</title>
-    <link rel="icon" type="image/png" href="/favicon.png" key="favicon"></link>
+    <title>Bondux</title>
+    <link rel="icon" type="image/png" href="/favicon.png" key="favicon" />
     <link
-      href="/fonts/DejaVuSans-ExtraLight.ttf"
       rel="preload"
+      href="/fonts/DejaVuSans-ExtraLight.woff2"
       as="font"
-      type="font/ttf"
-      crossOrigin="anonymous"
+      type="font/woff2"
+      crossOrigin=""
     />
     <link
-      href="/fonts/DejaVuSansCondensed-Bold.ttf"
       rel="preload"
+      href="/fonts/DejaVuSansCondensed-Bold.woff2"
       as="font"
-      type="font/ttf"
-      crossOrigin="anonymous"
+      type="font/woff2"
+      crossOrigin=""
     />
     <link
-      href="/fonts/DejaVuSansCondensed.ttf"
       rel="preload"
+      href="/fonts/DejaVuSansCondensed.woff2"
       as="font"
-      type="font/ttf"
-      crossOrigin="anonymous"
+      type="font/woff2"
+      crossOrigin=""
     />
     <link
-      href="/fonts/DejaVuSerifCondensed-Bold.ttf"
       rel="preload"
+      href="/fonts/DejaVuSerifCondensed-Bold.woff2"
       as="font"
-      type="font/ttf"
-      crossOrigin="anonymous"
+      type="font/woff2"
+      crossOrigin=""
     />
   </Head>
 );

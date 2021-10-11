@@ -1,8 +1,7 @@
 import Page from '../components/Page';
 import Context, { ContextProvider } from '../components/Context';
-import '../public/fonts/fonts.css';
 
-function MyApp({ Component, pageProps }) {
+function App({ Component, pageProps }) {
   return (
     <ContextProvider>
       <Context.Consumer>
@@ -16,4 +15,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default MyApp;
+export default App;
