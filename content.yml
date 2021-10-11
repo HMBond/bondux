@@ -7,11 +7,11 @@ index:
     - text: 'I am a Frontend Developer,'
       link:
         url: /details
-        label: 'Sound Producer,..'
-    - text: 'designer and '
+        label: 'artist and audio producer.'
+    - text: 'I think along with designers'
       link:
         url: '/details'
-        label: 'performing artist.'
+        label: 'and the client.'
     - text: 'I love how technology can '
       link:
         url: '/details'
@@ -20,15 +20,15 @@ index:
       link:
         url: '/details'
         label: 'influence social interaction.'
-    - text: "I'm a freelancer and "
+    - text: "I'm currently looking for"
       link:
         url: '/contact'
-        label: 'eager to work for you,'
-    - text: '...or if you like to learn '
+        label: 'a job in Berlin.'
+    - text: 'And I am open '
       link:
         url: '/contact'
-        label: 'overtone singing,..'
-    - text: '...just'
+        label: 'for musical collaboration.'
+    - text: 'If you are interested, '
       link:
         url: '/contact'
         label: 'contact me!'
@@ -37,15 +37,15 @@ cv:
   navName: CURRICULUM VITAE
   experience:
     paragraphs: 
-      - heading: Freelancing
-        started: May 2019
-        ended: '-'
-        text: 'After working for Mobiel.nl I started freelancing with the goal to become digital nomad. This did not happen, but I did create a website for a Sri Lankan guesthouse owner in Sri Lanka. Now the reason I maintain freelancing is to create immersive background music for social interaction projects for SMELT (Rotterdam). This includes recording voices and composing.'
       - heading: Ix Technologies
         role: Senior Frontend Developer
         started: Feb 2020
         ended: July 2021
-        text: 'At Ix Technoloiesy, a very small company in Delft, I was mainly Frontend Developer, but also learned my way in the backend (.NET/Azure) and did UX design. I worked with AngularJs to maintain and upgrade existing serious games and air-traffic-control admission tests. We needed to upgrade our framework to Blazor, which uses webassemby to run compiled C# code in the browser. With Blazor I build a brand new back-office (including component suite) and two admission tests (air-traffic-control games). I also had a big part in the design of these projects, as most design was done by me and my boss.'
+        text: 'At Ix Technologies, a very small company in Delft, I was mainly Frontend Developer, but also learned my way in the backend (.NET/Azure) and did UX design. I worked with AngularJs to maintain and upgrade existing serious games and air-traffic-control admission tests. We upgraded from AngularJs to Blazor, which uses webassemby to run compiled C# code in the browser. With Blazor I build a brand new back-office (including component suite) and two admission tests (air-traffic-control games). I also had a big part in the design of these projects, as most design was done by me and my boss.'
+      - heading: Freelancing
+        started: May 2019
+        ended: '-'
+        text: 'After working for Mobiel.nl I started freelancing with the goal to become a digital nomad. Although I stopped persuing this goal, I did create a website for a Sri Lankan guesthouse owner in Sri Lanka. For now, I maintain freelancing to create immersive background music for social interaction projects for SMELT (Rotterdam). This includes recording voices and composing.'
       - heading: Mobiel.nl
         role: Junior Frontend Developer
         started: Aug 2018
@@ -55,7 +55,7 @@ cv:
         role: Founder
         started: Feb 2013
         ended: Dec 2014
-        text: 'Towards the Artist was a personal project to record local artists and present them online. The original idea was to also include video recording for a Youtube channel, but as I was making the website, contacting new artists to join, going to their homes with recording gear and mixing the recordings, this idea was scrapped. Although the project did not took off, the artists themselves were very enthousiastic. Many of them started recording their work soon after and one of them even mentioned the reason for starting as a solo artist was due to my project. The lesson learned was that a personal project should either be kept managable, or involve more contributors. Please have a listen to the recordings on <a href="https://soundcloud.com/towardstheartist/sets/set1" target="_blank">SoundCloud</a>.'
+        text: 'Towards the Artist was a personal project to record local artists and present them online. The original idea was to also include video recording for a YouTube channel, but as I was making the website, contacting new artists, going to their homes with recording gear and mixing the recordings, I was not able to include video editting. Although the project did not took off, the artists themselves were very enthousiastic. Many of them started recording their work soon after. One of them even mentioned the reason for starting as a solo artist was due to my project. The lesson learned was that a personal project should either be kept manageable, or involve more contributors. Please have a listen to the recordings on <a href="https://soundcloud.com/towardstheartist/sets/set1" target="_blank">SoundCloud</a>.'
 blog:
   url: '/blog'
   navName: BLOG
