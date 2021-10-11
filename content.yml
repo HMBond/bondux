@@ -8,30 +8,22 @@ index:
       link:
         url: /details
         label: 'artist and audio producer.'
-    - text: 'I think along with designers'
+    - text: 'I like to actively think along '
       link:
         url: '/details'
-        label: 'and the client.'
-    - text: 'I love how technology can '
-      link:
-        url: '/details'
-        label: 'provoke emotions...'
-    - text: '...and positively'
-      link:
-        url: '/details'
-        label: 'influence social interaction.'
-    - text: "I'm currently looking for"
+        label: 'with designers and clients.'
+    - text: 'Currently, I am looking for'
       link:
         url: '/contact'
-        label: 'a job in Berlin.'
+        label: 'a job in Berlin!'
     - text: 'And I am open '
       link:
         url: '/contact'
-        label: 'for musical collaboration.'
+        label: 'to musical collaboration.'
     - text: 'If you are interested, '
       link:
         url: '/contact'
-        label: 'contact me!'
+        label: 'please contact me!'
 cv:
   url: '/cv'
   navName: CURRICULUM VITAE
@@ -45,7 +37,7 @@ cv:
       - heading: Freelancing
         started: May 2019
         ended: '-'
-        text: 'After working for Mobiel.nl I started freelancing with the goal to become a digital nomad. Although I stopped persuing this goal, I did create a website for a Sri Lankan guesthouse owner in Sri Lanka. For now, I maintain freelancing to create immersive background music for social interaction projects for SMELT (Rotterdam). This includes recording voices and composing.'
+        text: 'After working for Mobiel.nl I started freelancing with the goal to become a digital nomad. Although I stopped pursuing this goal, I did create a website for a guest house owner in Sri Lanka. For now, I maintain freelancing to create immersive background music for social interaction projects for SMELT (Rotterdam). This includes recording voices and composing.'
       - heading: Mobiel.nl
         role: Junior Frontend Developer
         started: Aug 2018
@@ -55,7 +47,7 @@ cv:
         role: Founder
         started: Feb 2013
         ended: Dec 2014
-        text: 'Towards the Artist was a personal project to record local artists and present them online. The original idea was to also include video recording for a YouTube channel, but as I was making the website, contacting new artists, going to their homes with recording gear and mixing the recordings, I was not able to include video editting. Although the project did not take off as imagined, the artists themselves were very enthousiastic. Many of them started recording their work soon after. One of them even mentioned the reason for starting as a solo artist was due to my project. The lesson learned was that a personal project should either be kept manageable, or involve more contributors. Please have a listen to the recordings on <a href="https://soundcloud.com/towardstheartist/sets/set1" target="_blank">SoundCloud</a>.'
+        text: 'Towards the Artist was a personal project to record local artists and present them online. The original idea was to also include video recording for a YouTube channel, but as I was making the website, contacting new artists, going to their homes with recording gear and mixing the recordings, I was not able to include video editing. Although the project did not take off as imagined, the artists themselves were very enthusiastic. Many of them started recording their work soon after. One of them even mentioned the reason for starting as a solo artist was due to my project. The lesson learned was that a personal project should either be kept manageable, or involve more contributors. Please have a listen to the recordings on <a href="https://soundcloud.com/towardstheartist/sets/set1" target="_blank">SoundCloud</a>.'
 blog:
   url: '/blog'
   navName: BLOG
