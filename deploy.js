@@ -22,6 +22,8 @@ const config = {
   sftp: false,
 };
 
+console.log('deploying...');
+
 ftpDeploy
   .deploy(config)
   .then((res) => console.log('finished:', res))
