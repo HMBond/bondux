@@ -98,8 +98,8 @@ const Contact = ({ context }) => (
           rel="noreferrer"
           href={'https://soundcloud.com/towardstheartist/sets/set1'}
         >
-          <Label>{'Towards the artist'}</Label>
-          <Icon src={'/towards_the_artist.svg'} alt="Towards the artist" />
+          <Label>{'Towards the Artist'}</Label>
+          <Icon src={'/towards_the_artist.svg'} alt="Towards the Artist" />
         </a>
       </ContactItem>
     </ContactLinks>
