@@ -10,7 +10,7 @@
     "start": "next start",
     "lint": "next lint",
     "serve": "serve out",
-    "deploy": "next build && next export && node deploy"
+    "deploy": "next build && next export && node deploy.mjs"
   },
   "dependencies": {
     "dotenv": "^10.0.0",
