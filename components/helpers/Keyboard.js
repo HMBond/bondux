@@ -1,4 +1,4 @@
-import { Component } from "react";
+import { Component } from 'react';
 
 class Keyboard extends Component {
   constructor(props) {
@@ -7,29 +7,44 @@ class Keyboard extends Component {
 
   keyUpHandler = ({ key }) => {
     const { selector, nav, toggleDevMode } = this.props.context;
-    if (key == "ArrowUp") {
-      selector.setPosition(selector.position - 1);
-    } else if (key == "ArrowDown") {
-      selector.setPosition(selector.position + 1);
-    } else if (key == "ArrowLeft") {
-      nav.back();
-    } else if (key == "ArrowRight") {
-      nav.forward();
-    } else if (key == "Enter") {
-      selector.go();
-    } else if (key == "Escape") {
-      nav.setOpen(!nav.open);
-    } else if (key == "d") {
-      toggleDevMode();
+    switch (key) {
+      case 'w':
+      case 'ArrowUp':
+        selector.setPosition(selector.position - 1);
+        return;
+      case 's':
+      case 'ArrowDown':
+        selector.setPosition(selector.position + 1);
+        return;
+      case 'a':
+      case 'ArrowLeft':
+        nav.back();
+        return;
+      case 'd':
+      case 'ArrowRight':
+        nav.forward();
+        return;
+      case ' ':
+      case 'Enter':
+        selector.go();
+        return;
+      case 'Escape':
+        nav.setOpen(!nav.open);
+        return;
+      case 'D':
+        toggleDevMode();
+        return;
+      default:
+        return;
     }
   };
 
   componentDidMount() {
-    document.addEventListener("keyup", this.keyUpHandler);
+    document.addEventListener('keyup', this.keyUpHandler);
   }
 
   componentWillUnmount() {
-    document.removeEventListener("keyup", this.keyUpHandler);
+    document.removeEventListener('keyup', this.keyUpHandler);
   }
 
   render() {
