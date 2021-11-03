@@ -25,6 +25,12 @@ export const Heading = styled.span`
   margin: 1rem;
 `;
 
+export const SmallHeading = styled.h6`
+  font-family: 'DejaVu Serif';
+  font-size: 1.4rem;
+  margin: 1rem 1rem 0;
+`;
+
 export const Label = styled.span`
   color: ${(props) => props.theme.colors.accent};
   font-size: 1.4rem;

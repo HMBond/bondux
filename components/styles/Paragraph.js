@@ -1,16 +1,15 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Paragraph = styled.div`
-  max-width: ${props => props.theme.maxWidth};
-  align-self: flex-start;
+  max-width: ${(props) => props.theme.maxWidth};
   margin-top: 2em;
   display: flex;
   flex-direction: column;
   align-items: center;
   & p:first-letter {
     font-size: 2rem;
-    font-family: "DejaVu Serif";
-    color: ${props => props.theme.colors.primary + "80"};
+    font-family: 'DejaVu Serif';
+    color: ${(props) => props.theme.colors.primary + '80'};
   }
   & *:not(p):first-letter {
     font-size: inherit;
@@ -27,11 +26,11 @@ export const ParagraphText = styled.p`
   }
 `;
 
-export const ParagraphHeading = styled.span`
-  font-family: "DejaVu Serif";
+export const ParagraphHeading = styled.div`
+  font-family: 'DejaVu Serif';
   font-size: 2rem;
   text-align: center;
-  margin: 1rem;
+  margin-top: 1rem;
 `;
 
 export default Paragraph;

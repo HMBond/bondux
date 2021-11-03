@@ -33,6 +33,10 @@ const NavBase = styled.div`
     border-top-right-radius: 120px;
     padding: 0 10px;
   }
+
+  @media print {
+    display: none;
+  }
 `;
 
 const NavPage = styled.div`

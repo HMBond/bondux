@@ -28,26 +28,56 @@ cv:
   url: '/cv'
   navName: CURRICULUM VITAE
   experience:
-    paragraphs: 
-      - heading: Ix Technologies
-        role: Senior Frontend Developer
-        started: Feb 2020
-        ended: July 2021
-        text: 'At Ix Technologies, a very small company in Delft, I was mainly Frontend Developer, but also learned my way in the backend (.NET/Azure) and did UX design. I worked with AngularJs to maintain and upgrade existing serious games and air-traffic-control admission tests. We upgraded from AngularJs to Blazor, which uses webassemby to run compiled C# code in the browser. With Blazor I build a brand new back-office (including component suite) and two admission tests (air-traffic-control games). I also had a big part in the design of these projects, as most design was done by me and my boss.'
-      - heading: Freelancing
-        started: May 2019
-        ended: '-'
-        text: 'After working for Mobiel.nl I started freelancing with the goal to become a digital nomad. Although I stopped pursuing this goal, I did create a website for a guest house owner in Sri Lanka. For now, I maintain freelancing to create immersive background music for social interaction projects for SMELT (Rotterdam). This includes recording voices and composing.'
-      - heading: Mobiel.nl
-        role: Junior Frontend Developer
-        started: Aug 2018
-        ended: Jul 2019
-        text: 'At Mobiel.nl I learned to code professionally. I had a very good personal coach, <a href="https://www.linkedin.com/in/samtaal/" target="_blank">Sam Taal</a>, worked in a scrum (agile) development team with daily code reviews and learned to use React and Ruby on Rails. This helped me to become critical about each line of code and to become more proficient in writing, debugging and understanding the architecture.'
-      - heading: Towards the Artist
-        role: Founder
-        started: Feb 2013
-        ended: Dec 2014
-        text: 'Towards the Artist was a personal project to record local artists and present them online. The original idea was to also include video recording for a YouTube channel, but as I was making the website, contacting new artists, going to their homes with recording gear and mixing the recordings, I was not able to include video editing. Although the project did not take off as imagined, the artists themselves were very enthusiastic. Many of them started recording their work soon after. One of them even mentioned the reason for starting as a solo artist was due to my project. The lesson learned was that a personal project should either be kept manageable, or involve more contributors. Please have a listen to the recordings on <a href="https://soundcloud.com/towardstheartist/sets/set1" target="_blank">SoundCloud</a>.'
+    - heading: Ix Technologies
+      role: Senior Frontend Developer
+      started: Feb 2020
+      ended: July 2021
+      text: 'At Ix Technologies, a very small company in Delft, my role was mainly Frontend Developer, but also learned my way in the backend (.NET/C#) and did UX design. It started out with maintaining and upgrading professional negotiation game, an immersion game (for research purpose) and multiple air-traffic-control admission tests. Soon, we made a framework switch to Blazor, which uses webassemby to run compiled C# code in the browser. Using Blazor, I build a brand new back-office (including component suite) and two admission tests (air-traffic-control games). I also had a big part in the design of these projects, as most design was done by me and my boss.'
+    - heading: The Bond Experience
+      role: Freelancing
+      started: May 2019
+      text: 'After working for Mobiel.nl I started freelancing with the goal to become a digital nomad. Although I stopped pursuing this goal, I did create a website for a guest house owner in Sri Lanka. For now, I maintain freelancing to create immersive background music for social interaction projects for SMELT (Rotterdam). This includes recording voices and composing.'
+    - heading: Mobiel.nl
+      role: Junior Frontend Developer
+      started: Aug 2018
+      ended: Jul 2019
+      text: 'At Mobiel.nl I learned to code professionally. I had a very good mentor, <a href="https://www.linkedin.com/in/samtaal/" target="_blank">Sam Taal</a>, worked in a Scrum (Agile) development team with daily code reviews and learned to use React and Ruby on Rails. This helped me to become critical about each line of code and to become more proficient in writing, debugging and understanding the architecture.'
+    - heading: Towards the Artist
+      role: Founder
+      started: Feb 2013
+      ended: Dec 2014
+      text: 'Towards the Artist was a personal project to record local artists and present them online. The original idea was to also include video recording for a YouTube channel, but as I was making the website, contacting new artists, going to their homes with recording gear and mixing the recordings, I was not able to include video editing. Although the project did not take off as imagined, the artists themselves were very enthusiastic. Many of them started recording their work soon after. One of them even mentioned the reason for starting as a solo artist was due to my project. The lesson learned was that a personal project should either be kept manageable, or involve more contributors. Please have a listen to the recordings on <a href="https://soundcloud.com/towardstheartist/sets/set1" target="_blank">SoundCloud</a>.'
+  education:
+    - heading: Msc. Design for Interaction
+      institude: Delft University of Technology
+      started: 2013
+      ended: 2016
+    - heading: Minor Physics Education
+      institude: Delft University of Technology
+      started: 2009
+    - heading: Bsc. Industrial Design
+      institude: Delft University of Technology
+      started: 2006
+      ended: 2011
+  volunteering:
+    - heading: Facilitator
+      institude: Design Research Society (DRS)
+      started: 2016
+    - heading: Secretary of Vereniging Bagijnhof 13
+      institude: Social housing community
+      started: 2017
+      ended: 2019
+    - heading: Board member of social society
+      institude: Wolbodo
+      started: 2016
+      ended: 2017
+    - heading: Secretary of Intra Muros
+      institude: Wolbodo
+      started: 2020
+      ended: 2021
+    - heading: Doorman, cook & entertainer
+      institude: Magneet Festival
+      started: 2014
 blog:
   url: '/blog'
   navName: BLOG
@@ -142,11 +172,11 @@ skills:
           progress: 75%
         - name: Git
           progress: 60%
-        - name: Scrum
+        - name: Scrum (Agile)
           progress: 67%
         - name: Testing
-          progress: 60%
-          description: <ul><li>Jest</li><li>Rspec</li><li>Cypress</li></ul>
+          progress: 70%
+          description: <ul><li>Jest</li><li>Rspec</li><li>Cypress</li><li>xUnit/bUnit (.Net Core)</li></ul>
     - name: Design
       progress: 40%
       description: 'I have a masters degree in Design For Interaction (TU-Delft) and I am used to think along with the designers as a developer. I did some graphic and UX design for modernizing a back-office and a new air traffic control game. As a small side project, I am designing and developing a game about Santa Claus.'
@@ -157,7 +187,7 @@ skills:
           progress: 75%
         - name: Design Thinking
           progress: 70%
-        - name: Scrum
+        - name: Scrum (Agile)
           progress: 67%
         - name: Visual Communication
           progress: 55%
