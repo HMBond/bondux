@@ -19,7 +19,7 @@ export class ContextProvider extends Component {
       },
       nav: {
         currentPath: null,
-        pageList: [content.index, content.cv, content.skills, content.contact],
+        pageList: [content.index, content.skills, content.contact],
         onFirstPage: true,
         onLastPage: true,
         back: () => this.navigate(-1),
