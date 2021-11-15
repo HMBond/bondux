@@ -3,7 +3,7 @@ import Context from '../Context';
 import styled from 'styled-components';
 import debounce from 'lodash/debounce';
 
-import Logo from '../styles/Logo.js';
+import Logo from '../styled/Logo';
 import NavItem from './NavItem';
 import { NavBackIcon, NavForwardIcon, NavToggleIcon } from './NavIcons';
 import { NavButton } from './NavButton';

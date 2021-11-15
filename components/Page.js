@@ -3,7 +3,7 @@ import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 import Nav from './Nav';
 import Meta from './Meta.js';
 import Keyboard from './helpers/Keyboard';
-import { theme, devMode } from './styles/Theme';
+import { theme, devMode } from './styled/Theme';
 
 const GlobalStyle = createGlobalStyle`
   @font-face {

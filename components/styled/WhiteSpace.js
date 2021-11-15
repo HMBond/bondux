@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const WhiteSpaceStyled = styled.div`
-  padding-bottom: ${props => (props.height ? props.height : "10rem")};
+  padding-bottom: ${(props) => (props.height ? props.height : '10rem')};
 `;
 
 const WhiteSpace = ({ height, ...props }) => (

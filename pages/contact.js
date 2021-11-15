@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { PageTitle, SubTitle, Label } from '../components/styles/Headings';
-import WhiteSpace from '../components/styles/WhiteSpace';
+import { PageTitle, SubTitle, Label } from '../components/styled/Headings';
+import WhiteSpace from '../components/styled/WhiteSpace';
 
 const ContactPage = styled.div`
   display: flex;

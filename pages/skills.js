@@ -1,9 +1,9 @@
 import { Fragment } from 'react';
 import styled from 'styled-components';
 
-import WhiteSpace from '../components/styles/WhiteSpace';
+import WhiteSpace from '../components/styled/WhiteSpace';
 import SkillAccordion from '../components/SkillAccordion';
-import { PageTitle, SubTitle } from '../components/styles/Headings';
+import { PageTitle, SubTitle } from '../components/styled/Headings';
 
 const Skills = ({ context }) => (
   <Fragment>

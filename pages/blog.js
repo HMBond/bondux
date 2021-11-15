@@ -3,8 +3,8 @@ import Router from 'next/router';
 import styled from 'styled-components';
 
 import BlogPost from '../components/BlogPost.js';
-import WhiteSpace from '../components/styles/WhiteSpace';
-import { Title, SubTitle } from '../components/styles/Headings';
+import WhiteSpace from '../components/styled/WhiteSpace';
+import { Title, SubTitle } from '../components/styled/Headings';
 import { makeSlug } from '../components/helpers/functions';
 
 const BlogPage = styled.div`

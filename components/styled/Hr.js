@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Hr = styled.hr`
   width: 80%;
@@ -6,7 +6,7 @@ const Hr = styled.hr`
   border: none;
   border-image: radial-gradient(
       at top center,
-      ${props => props.theme.colors.grey},
+      ${(props) => props.theme.colors.grey},
       transparent 90%
     )
     1;

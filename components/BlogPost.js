@@ -1,10 +1,10 @@
 import { Fragment } from 'react';
 import styled, { css } from 'styled-components';
 import Fade from 'react-reveal/Fade';
-import { Title } from './styles/Headings';
-import Paragraph, { ParagraphText, ParagraphHeading } from './styles/Paragraph';
-import Hr from './styles/Hr';
-import WhiteSpace from './styles/WhiteSpace';
+import { Title } from './styled/Headings';
+import Paragraph, { ParagraphText, ParagraphHeading } from './styled/Paragraph';
+import Hr from './styled/Hr';
+import WhiteSpace from './styled/WhiteSpace';
 
 const BlogPostBase = styled.div`
   order: ${(props) => (props.card ? '' : '-1')};

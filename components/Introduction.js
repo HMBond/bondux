@@ -2,7 +2,7 @@ import { Component } from 'react';
 import styled from 'styled-components';
 import Flip from 'react-reveal/Flip';
 import Link from 'next/link';
-import { Label } from './styles/Headings';
+import { Label } from './styled/Headings';
 
 const IntroductionBase = styled.div`
   width: 100%;
