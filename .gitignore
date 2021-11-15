@@ -2,6 +2,8 @@ raw/
 node_modules/
 .next/
 _next/
+.next/
+yarn.lock
 *.log
 private/
 .DS_Store
