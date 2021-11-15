@@ -6,11 +6,11 @@ index:
       link: null
     - text: 'I am a Frontend Developer,'
       link:
-        url: /details
+        url: /skills
         label: 'artist and audio producer.'
     - text: 'I like to actively think along '
       link:
-        url: '/details'
+        url: '/skills'
         label: 'with designers and clients.'
     - text: 'Currently, I am looking for'
       link:
