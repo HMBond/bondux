@@ -1,3 +1,4 @@
+import '../global.css';
 import Page from '../components/Page';
 import Context, { ContextProvider } from '../components/Context';
 

@@ -9,34 +9,6 @@ const Meta = () => (
     <meta charSet="utf-8" />
     <title>Bondux</title>
     <link rel="icon" type="image/png" href="/favicon.png" key="favicon" />
-    <link
-      rel="preload"
-      href="/fonts/DejaVuSans-ExtraLight.woff2"
-      as="font"
-      type="font/woff2"
-      crossOrigin=""
-    />
-    <link
-      rel="preload"
-      href="/fonts/DejaVuSansCondensed-Bold.woff2"
-      as="font"
-      type="font/woff2"
-      crossOrigin=""
-    />
-    <link
-      rel="preload"
-      href="/fonts/DejaVuSansCondensed.woff2"
-      as="font"
-      type="font/woff2"
-      crossOrigin=""
-    />
-    <link
-      rel="preload"
-      href="/fonts/DejaVuSerifCondensed-Bold.woff2"
-      as="font"
-      type="font/woff2"
-      crossOrigin=""
-    />
   </Head>
 );
 

@@ -6,38 +6,6 @@ import Keyboard from './helpers/Keyboard';
 import { theme, devMode } from './styled/Theme';
 
 const GlobalStyle = createGlobalStyle`
-  @font-face {
-    font-family: 'DejaVu Extra Light';
-    src: url('/fonts/DejaVuSans-ExtraLight.woff2') format('woff2');
-    font-weight: lighter;
-    font-style: normal;
-    font-display: block;
-  }
-
-  @font-face {
-    font-family: 'DejaVu Serif';
-    src: url('/fonts/DejaVuSerifCondensed-Bold.woff2') format('woff2');
-    font-weight: bolder;
-    font-style: serif;
-    font-display: block;
-  }
-
-  @font-face {
-    font-family: 'DejaVu Condensed Bold';
-    src: url('/fonts/DejaVuSansCondensed-Bold.woff2') format('woff2');
-    font-weight: bold;
-    font-style: normal;
-    font-display: block;
-  }
-
-  @font-face {
-    font-family: 'DejaVu Condensed';
-    src: url('/fonts/DejaVuSansCondensed.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
-  }
-
   :root {
     --theme-background-color: ${(props) => props.theme.colors.bg};
     --theme-foreground-color: ${(props) => props.theme.colors.primary};
@@ -51,9 +19,6 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'DejaVu Extra Light';
     margin: 0px;
     cursor: default;
-    *:not(input, p) {
-      user-select: none;
-    }
   }
 
   * {
