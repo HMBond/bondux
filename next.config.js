@@ -1,6 +1,9 @@
 const withPWA = require('next-pwa');
 
 module.exports = withPWA({
+  experimental: {
+    modern: false,
+  },
   swcMinify: true,
   reactStrictMode: true,
   optimizeFonts: false,

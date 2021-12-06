@@ -19,6 +19,8 @@ function App({ Component, pageProps }) {
           }
         );
       });
+    } else {
+      console.log('no serviceWorker in navigator');
     }
   }, []);
 
