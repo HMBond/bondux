@@ -1,30 +1,23 @@
-index:
+introduction:
   url: '/'
   navName: INTRO
-  introduction:
-    - text: "Hi, I'm Mike Bond!"
-      link: null
-    - text: 'I am a Frontend Developer,'
-      link:
-        url: /skills
-        label: 'artist and audio producer.'
-    - text: 'I like to actively think along '
-      link:
-        url: '/skills'
-        label: 'with designers and clients.'
-    - text: 'Currently, I am looking for'
-      link:
-        url: '/contact'
-        label: 'a job in Berlin!'
-    - text: 'And I am open '
-      link:
-        url: '/contact'
-        label: 'to musical collaboration.'
-    - text: 'If you are interested, '
-      link:
-        url: '/contact'
-        label: 'please contact me!'
+  paragraphs:
+    - "Hi, I'm Mike Bond!"
+    - "I'm a Frontend Developer, performer and computer keyboard enthausiast. With a Msc. in Design for Interaction (TU-Delft) and an affinity for UX design, I like to actively involve product owners, users and clients in the creative process, deliver clean code and create strange music."
+    - "Currently, I'm looking for a job in Berlin, and I am open to musical collaboration."
+    - "If you are interested in what I do, let's get in contact!"
 blog:
+  posts: 
+    - title: Example
+      category: cats
+      topImgUrl: '/example.jpg'
+      titleInTopImg: true
+      topImgRoundness: 50%
+      summary: 'A cat is an animal'
+      paragraphs: 
+        - heading: Animals
+          text: "There are many animals living on the planet. Let's keep it that way..."
+          imgUrl: '/animals_example.jpg'
 skills:
   url: '/skills'
   navName: SKILLS
