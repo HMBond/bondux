@@ -38,22 +38,24 @@ const Blog = ({ context }) => {
     };
   });
 
+  function handleBlogPostClick(slug) {
+    if (slug !== openPost) {
+      setOpenPost(slug);
+      document.getElementById('blog-page').scrollIntoView();
+    }
+  }
+
   return (
     <BlogPage id={'blog-page'}>
       <BlogTitle>{'My Blog'}</BlogTitle>
       <BlogSubTitle>{'HOW I THINK'}</BlogSubTitle>
-      {context.content.blog.blogPosts.map((entry) => {
-        entry.slug = entry.slug || makeSlug(entry.title);
+      {context.content.blog.posts.map((entry) => {
+        const slug = entry.slug || makeSlug(entry.title);
         return (
           <BlogPost
             key={entry.title}
-            onClick={() => {
-              if (entry.slug !== openPost) {
-                setOpenPost(entry.slug);
-                document.getElementById('blog-page').scrollIntoView();
-              }
-            }}
-            card={entry.slug !== openPost}
+            onClick={() => handleBlogPostClick(slug)}
+            card={slug !== openPost}
             entry={entry}
           />
         );

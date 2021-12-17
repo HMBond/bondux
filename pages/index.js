@@ -12,13 +12,14 @@ const setLocation = (title, newLocation) => {
 const Index = ({ context }) => {
   useEffect(() => {
     setLocation('Bondux.dev', '/');
-  });
+  }, []);
 
   return (
     <>
       <Logo />
-      <WhiteSpace />
+      <WhiteSpace height={'3rem'} />
       <Introduction context={context} />
+      <WhiteSpace height={'6rem'} />
     </>
   );
 };

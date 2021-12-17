@@ -19,7 +19,7 @@ export class ContextProvider extends Component {
       },
       nav: {
         currentPath: null,
-        pageList: [content.index, content.skills, content.contact],
+        pageList: [content.introduction, content.skills, content.contact],
         onFirstPage: true,
         onLastPage: true,
         back: () => this.navigate(-1),
@@ -45,7 +45,7 @@ export class ContextProvider extends Component {
         nav: {
           ...prevState.nav,
           currentPath: Router.router.pathname,
-          onFirstPage: Router.router.pathname == content.index.url,
+          onFirstPage: Router.router.pathname == content.introduction.url,
           onLastPage: Router.router.pathname == content.contact.url,
         },
       }));
