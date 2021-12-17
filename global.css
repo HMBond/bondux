@@ -29,3 +29,8 @@
   font-style: normal;
   font-display: block;
 }
+
+p {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
