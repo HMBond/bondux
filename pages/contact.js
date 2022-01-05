@@ -16,6 +16,7 @@ const ContactLinks = styled.div`
 const ContactItem = styled.div`
   a {
     display: flex;
+    gap: 1rem;
     align-items: center;
     line-height: 4rem;
   }
@@ -37,9 +38,9 @@ const Icon = styled.img`
   background: url(${(props) => props.src});
   background-size: contain;
   background-repeat: no-repeat;
-  width: 2.8rem;
-  height: 2.8rem;
-  margin-left: auto;
+  width: 1.8rem;
+  height: 1.8rem;
+  margin-left: 1rem;
 `;
 
 const Contact = ({ context }) => (
@@ -55,8 +56,8 @@ const Contact = ({ context }) => (
             'mailto:post@bondux.dev?subject=Contact&body=Hi Mike, %0D%0A%0D%0A%0D%0A%0D%0A'
           }
         >
-          <Label>{'Email'}</Label>
           <Icon src={'/email.svg'} alt="Gmail" />
+          <Label>{'Email'}</Label>
         </a>
       </ContactItem>
       <ContactItem>
@@ -65,8 +66,8 @@ const Contact = ({ context }) => (
           rel="noreferrer"
           href={'https://www.linkedin.com/in/mike-bond-3258a32a/'}
         >
-          <Label>{'LinkedIn'}</Label>
           <Icon src={'/linkedin.svg'} alt="LinkedIn" />
+          <Label>{'LinkedIn'}</Label>
         </a>
       </ContactItem>
     </ContactLinks>
@@ -78,8 +79,8 @@ const Contact = ({ context }) => (
           rel="noreferrer"
           href={'https://www.flickr.com/photos/7363277@N07'}
         >
-          <Label>{'Photography'}</Label>
           <Icon src={'/camera.svg'} alt="Flickr.com" />
+          <Label>{'Photography'}</Label>
         </a>
       </ContactItem>
       <ContactItem>
@@ -88,8 +89,8 @@ const Contact = ({ context }) => (
           rel="noreferrer"
           href={'https://soundcloud.com/mike-bond-sound/tracks'}
         >
-          <Label>{'Soundcloud'}</Label>
           <Icon src={'/soundcloud.svg'} alt="Soundcloud" />
+          <Label>{'Soundcloud'}</Label>
         </a>
       </ContactItem>
       <ContactItem>
@@ -98,8 +99,8 @@ const Contact = ({ context }) => (
           rel="noreferrer"
           href={'https://soundcloud.com/towardstheartist/sets/set1'}
         >
-          <Label>{'Towards the Artist'}</Label>
           <Icon src={'/towards_the_artist.svg'} alt="Towards the Artist" />
+          <Label>{'Towards the Artist'}</Label>
         </a>
       </ContactItem>
     </ContactLinks>
