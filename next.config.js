@@ -1,15 +1,16 @@
 const withPWA = require('next-pwa');
-const prod = process.env.NODE_ENV === 'production';
 
-module.exports = withPWA({
+/**
+ * @type {import('next').NextConfig}
+ */
+const config = {
   experimental: {
-    modern: false,
+    styledComponents: true,
   },
   swcMinify: true,
   reactStrictMode: true,
-  optimizeFonts: false,
   pwa: {
-    disable: prod ? false : true,
+    disable: process.env.NODE_ENV === 'development',
     dest: 'public',
     swSrc: 'service-worker.js',
   },
@@ -24,4 +25,6 @@ module.exports = withPWA({
     });
     return config;
   },
-});
+};
+
+module.exports = withPWA(config);
