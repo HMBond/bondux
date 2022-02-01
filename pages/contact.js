@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { PageTitle, SubTitle, Label } from '../components/styled/Headings';
+import { Label, PageTitle, SubTitle } from '../components/styled/Headings';
 import WhiteSpace from '../components/styled/WhiteSpace';
 
 const ContactPage = styled.div`
@@ -45,29 +45,26 @@ const Icon = styled.img`
 
 const Contact = ({ context }) => (
   <ContactPage>
-    <PageTitle>{'Contact'}</PageTitle>
+    <PageTitle>Contact</PageTitle>
     <SubTitle>{"LET'S CHAT"}</SubTitle>
     <ContactLinks>
       <ContactItem>
         <a
-          target={'_blank'}
-          rel="noreferrer"
-          href={
-            'mailto:post@bondux.dev?subject=Contact&body=Hi Mike, %0D%0A%0D%0A%0D%0A%0D%0A'
-          }
+          target="_top"
+          href="mailto:post@bondux.dev?subject=Contact&body=Hi Mike, %0D%0A"
         >
-          <Icon src={'/email.svg'} alt="Gmail" />
-          <Label>{'Email'}</Label>
+          <Icon src="/email.svg" alt="send email" />
+          <Label>Email</Label>
         </a>
       </ContactItem>
       <ContactItem>
         <a
-          target={'_blank'}
+          target="_blank"
           rel="noreferrer"
-          href={'https://www.linkedin.com/in/mike-bond-3258a32a/'}
+          href="https://www.linkedin.com/in/mike-bond-3258a32a/"
         >
-          <Icon src={'/linkedin.svg'} alt="LinkedIn" />
-          <Label>{'LinkedIn'}</Label>
+          <Icon src="/linkedin.svg" alt="LinkedIn" />
+          <Label>LinkedIn</Label>
         </a>
       </ContactItem>
     </ContactLinks>
@@ -75,32 +72,32 @@ const Contact = ({ context }) => (
     <ContactLinks>
       <ContactItem>
         <a
-          target={'_blank'}
+          target="_blank"
           rel="noreferrer"
-          href={'https://www.flickr.com/photos/7363277@N07'}
+          href="https://www.flickr.com/photos/7363277@N07"
         >
-          <Icon src={'/camera.svg'} alt="Flickr.com" />
-          <Label>{'Photography'}</Label>
+          <Icon src="/camera.svg" alt="Flickr.com" />
+          <Label>Photography</Label>
         </a>
       </ContactItem>
       <ContactItem>
         <a
-          target={'_blank'}
+          target="_blank"
           rel="noreferrer"
-          href={'https://soundcloud.com/mike-bond-sound/tracks'}
+          href="https://soundcloud.com/mike-bond-sound/tracks"
         >
-          <Icon src={'/soundcloud.svg'} alt="Soundcloud" />
-          <Label>{'Soundcloud'}</Label>
+          <Icon src="/soundcloud.svg" alt="Soundcloud" />
+          <Label>Soundcloud</Label>
         </a>
       </ContactItem>
       <ContactItem>
         <a
-          target={'_blank'}
+          target="_blank"
           rel="noreferrer"
-          href={'https://soundcloud.com/towardstheartist/sets/set1'}
+          href="https://soundcloud.com/towardstheartist/sets/set1"
         >
-          <Icon src={'/towards_the_artist.svg'} alt="Towards the Artist" />
-          <Label>{'Towards the Artist'}</Label>
+          <Icon src="/towards_the_artist.svg" alt="Towards the Artist" />
+          <Label>Towards the Artist</Label>
         </a>
       </ContactItem>
     </ContactLinks>
