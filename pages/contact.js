@@ -51,7 +51,7 @@ const Contact = ({ context }) => (
       <ContactItem>
         <a
           target="_top"
-          href="mailto:post@bondux.dev?subject=Contact&body=Hi Mike, %0D%0A"
+          href="mailto:hubertusmariabond@gmail.com?subject=Contact&body=Hi Mike, %0D%0A"
         >
           <Icon src="/email.svg" alt="send email" />
           <Label>Email</Label>
