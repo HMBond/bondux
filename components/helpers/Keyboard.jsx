@@ -24,10 +24,6 @@ class Keyboard extends Component {
       case 'ArrowRight':
         nav.forward();
         return;
-      case ' ':
-      case 'Enter':
-        selector.go();
-        return;
       case 'Escape':
         nav.setOpen(!nav.open);
         return;

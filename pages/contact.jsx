@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Label, PageTitle, SubTitle } from '../components/styled/Headings';
-import WhiteSpace from '../components/styled/WhiteSpace';
 
 const ContactPage = styled.div`
   display: flex;
@@ -101,7 +100,6 @@ const Contact = ({ context }) => (
         </a>
       </ContactItem>
     </ContactLinks>
-    <WhiteSpace />
   </ContactPage>
 );
 

@@ -1,20 +1,23 @@
 import { useState } from "react";
 import styled, { css, keyframes } from "styled-components";
 import Context from "../Context";
+import Button from "../styled/Button";
 
-const NavButtonBase = styled.div`
+const NavButtonBase = styled(Button)`
+  position: relative;
   display: flex;
-  order: ${props => props.order};
-  opacity: ${props => (props.hidden ? "0" : "1")};
   transition: opacity 0.5s ease-in-out;
   margin: 15px 0;
 `;
 
 const NavIconContainer = styled.div`
-  position: relative;
-  left: -40px;
-  top: 10px;
-  width: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
 `;
 
 const devanimation = keyframes`
@@ -28,7 +31,6 @@ const devanimation = keyframes`
 
 const NavBall = styled.div`
   z-index: -1; /* fix for FireFox */
-  display: block;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -70,7 +72,6 @@ const NavBall = styled.div`
 
 export const NavButton = ({
   children,
-  hidden,
   open,
   properlyClosed,
   onClick,
@@ -82,7 +83,6 @@ export const NavButton = ({
     <Context.Consumer>
       {context => (
         <NavButtonBase
-          hidden={hidden}
           open={open}
           order={order}
           onMouseEnter={() => {

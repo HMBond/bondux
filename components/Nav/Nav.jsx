@@ -1,12 +1,13 @@
-import { useState, useEffect } from 'react';
-import Context from '../Context';
-import styled from 'styled-components';
 import debounce from 'lodash/debounce';
+import { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import Context from '../Context';
 
+import Button from '../styled/Button';
 import Logo from '../styled/Logo';
-import NavItem from './NavItem';
-import { NavBackIcon, NavForwardIcon, NavToggleIcon } from './NavIcons';
 import { NavButton } from './NavButton';
+import { NavBackIcon, NavForwardIcon, NavToggleIcon } from './NavIcons';
+import NavItem from './NavItem';
 
 const NavBase = styled.div`
   opacity: ${(props) => (props.showNav ? '1' : '0')};
@@ -16,7 +17,6 @@ const NavBase = styled.div`
   width: 100%;
   display: flex;
   align-items: flex-end;
-  justify-content: space-between;
   background: repeating-linear-gradient(
       -45deg,
       transparent,
@@ -39,6 +39,13 @@ const NavBase = styled.div`
   }
 `;
 
+const NavButtonsContainer = styled.div`
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 const NavPage = styled.div`
   position: fixed;
   top: 0;
@@ -53,7 +60,7 @@ const NavPage = styled.div`
   transition: opacity 0.5s ease-in-out;
 `;
 
-const NavMenu = styled.div`
+const NavMenu = styled.nav`
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -74,27 +81,33 @@ const Nav = () => {
     <Context.Consumer>
       {(context) => (
         <NavBase showNav={showNav}>
-          <NavBackIcon
-            hidden={context.nav.onFirstPage || context.nav.open}
-            onClick={() => context.nav.back()}
-            order={1}
-          ></NavBackIcon>
-          <NavForwardIcon
-            hidden={context.nav.onLastPage || context.nav.open}
-            onClick={() => context.nav.forward()}
-            order={3}
-          ></NavForwardIcon>
-          <NavButton
-            open={context.nav.open}
-            properlyClosed={properlyClosed}
-            onClick={() => {
-              debounce(() => setProperlyClosed(false), 500);
-              context.nav.setOpen(true);
-            }}
-            order={2}
-          >
-            <NavToggleIcon open={context.nav.open} />
-          </NavButton>
+          <NavButtonsContainer>
+            <Button
+              onClick={() => context.nav.back()}
+              order={1}
+              disabled={context.nav.onFirstPage || context.nav.open}
+            >
+              <NavBackIcon />
+            </Button>
+            <Button
+              onClick={() => context.nav.forward()}
+              order={3}
+              disabled={context.nav.onLastPage || context.nav.open}
+            >
+              <NavForwardIcon />
+            </Button>
+            <NavButton
+              open={context.nav.open}
+              properlyClosed={properlyClosed}
+              order={2}
+              onClick={() => {
+                debounce(() => setProperlyClosed(false), 500);
+                context.nav.setOpen(true);
+              }}
+            >
+              <NavToggleIcon open={context.nav.open} />
+            </NavButton>
+          </NavButtonsContainer>
           <NavPage
             open={context.nav.open}
             onClick={() => {

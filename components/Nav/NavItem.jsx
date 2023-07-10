@@ -1,7 +1,8 @@
-import styled from 'styled-components';
 import NavItemLink from 'next/link';
+import styled from 'styled-components';
+import Button from '../styled/Button';
 
-const NavItemButton = styled.div`
+const NavItemButton = styled(Button)`
   color: ${(props) => props.theme.colors.bg};
   font-size: 2.8rem;
   padding: 10px;

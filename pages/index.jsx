@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import Introduction from '../components/Introduction';
 import Logo from '../components/styled/Logo';
 import WhiteSpace from '../components/styled/WhiteSpace';
+import Contact from './contact';
+import Skills from './skills';
 
 const setLocation = (title, newLocation) => {
   if (location.pathname !== newLocation) {
@@ -19,7 +21,8 @@ const Index = ({ context }) => {
       <Logo />
       <WhiteSpace height={'3rem'} />
       <Introduction context={context} />
-      <WhiteSpace height={'6rem'} />
+      <Skills context={context} />
+      <Contact context={context} />
     </>
   );
 };

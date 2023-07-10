@@ -3,6 +3,7 @@ import Meta from './Meta.jsx';
 import Nav from './Nav';
 import Keyboard from './helpers/Keyboard';
 import { devMode, theme } from './styled/Theme';
+import WhiteSpace from './styled/WhiteSpace.jsx';
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -61,6 +62,7 @@ const Page = ({ children, context }) => {
         <Keyboard context={context} />
         <GlobalStyle />
         {children}
+        <WhiteSpace />
         <Nav />
       </StyledPage>
     </ThemeProvider>
