@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
 import Router from 'next/router';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-import BlogPost from '../components/BlogPost.js';
-import WhiteSpace from '../components/styled/WhiteSpace';
-import { Title, SubTitle } from '../components/styled/Headings';
+import BlogPost from '../components/BlogPost';
 import { makeSlug } from '../components/helpers/functions';
+import { SubTitle, Title } from '../components/styled/Headings';
+import WhiteSpace from '../components/styled/WhiteSpace';
 
 const BlogPage = styled.div`
   width: 100%;

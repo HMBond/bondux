@@ -1,9 +1,8 @@
-import Context from '../components/Context';
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
+import Meta from './Meta.jsx';
 import Nav from './Nav';
-import Meta from './Meta.js';
 import Keyboard from './helpers/Keyboard';
-import { theme, devMode } from './styled/Theme';
+import { devMode, theme } from './styled/Theme';
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -54,21 +53,17 @@ const StyledPage = styled.div`
   padding-left: calc(100vw - 100%);
 `;
 
-const Page = ({ children }) => {
+const Page = ({ children, context }) => {
   return (
-    <Context.Consumer>
-      {(context) => (
-        <ThemeProvider theme={context.devMode ? devMode(theme) : theme}>
-          <StyledPage>
-            <Meta />
-            <Keyboard context={context} />
-            <GlobalStyle />
-            {children}
-            <Nav />
-          </StyledPage>
-        </ThemeProvider>
-      )}
-    </Context.Consumer>
+    <ThemeProvider theme={context.devMode ? devMode(theme) : theme}>
+      <StyledPage>
+        <Meta />
+        <Keyboard context={context} />
+        <GlobalStyle />
+        {children}
+        <Nav />
+      </StyledPage>
+    </ThemeProvider>
   );
 };
 

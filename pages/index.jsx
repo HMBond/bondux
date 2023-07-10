@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
-import Logo from '../components/styled/Logo.js';
-import Introduction from '../components/Introduction.js';
-import WhiteSpace from '../components/styled/WhiteSpace.js';
+import Introduction from '../components/Introduction';
+import Logo from '../components/styled/Logo';
+import WhiteSpace from '../components/styled/WhiteSpace';
 
 const setLocation = (title, newLocation) => {
   if (location.pathname !== newLocation) {
