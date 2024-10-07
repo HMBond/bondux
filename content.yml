@@ -1,6 +1,6 @@
 introduction:
   url: '/'
-  navName: INTRO
+  navName: "ABOUT ME"
   paragraphs:
     - "Hi, I'm Mike Bond!"
     - "A full stack developer with an affinity for UX. Experienced in work on internal and public applications that are build to last."
