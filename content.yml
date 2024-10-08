@@ -9,7 +9,7 @@ skills:
   url: '/skills'
   navName: SKILLS
   skillList:
-    - name: Software Development
+    - name: "Software Development"
       progress: 60%
       description: 'I started by making simple websites with HTML, CSS and a bit of JavaScript when I was 13 years old. During my masters study I picked up coding and at Mobiel.nl, I learned how to code professionally: readable, reliable (tested) and concise. I got introduced to many working principles, such as Test Driven Development, Mobile First and Rest APIs.'
       subSkills:
@@ -72,3 +72,5 @@ skills:
 contact:
   url: '/contact'
   navName: CONTACT
+blog:
+  posts: []

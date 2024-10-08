@@ -1,9 +1,8 @@
 import { Fragment } from 'react';
 import styled, { css } from 'styled-components';
-import Fade from 'react-reveal/Fade';
 import { Title } from './styled/Headings';
-import Paragraph, { ParagraphText, ParagraphHeading } from './styled/Paragraph';
 import Hr from './styled/Hr';
+import Paragraph, { ParagraphHeading, ParagraphText } from './styled/Paragraph';
 import WhiteSpace from './styled/WhiteSpace';
 
 const BlogPostBase = styled.div`
@@ -171,24 +170,22 @@ const BlogPost = ({ card, entry, ...props }) => {
         )}
         {entry.paragraphs &&
           entry.paragraphs.map((paragraph, index) => (
-            <Fade cascade big key={paragraph.heading + index}>
-              <Paragraph>
-                {paragraph.heading && (
-                  <ParagraphHeading>{paragraph.heading}</ParagraphHeading>
-                )}
-                {paragraph.text && (
-                  <ParagraphText
-                    dangerouslySetInnerHTML={{ __html: paragraph.text }}
-                  />
-                )}
-                {paragraph.imgUrl && (
-                  <Fragment>
-                    <BlogImage contain src={paragraph.imgUrl} />
-                    {entry.paragraphs.length - 1 == index && <WhiteSpace />}
-                  </Fragment>
-                )}
-              </Paragraph>
-            </Fade>
+            <Paragraph key={paragraph.heading + index}>
+              {paragraph.heading && (
+                <ParagraphHeading>{paragraph.heading}</ParagraphHeading>
+              )}
+              {paragraph.text && (
+                <ParagraphText
+                  dangerouslySetInnerHTML={{ __html: paragraph.text }}
+                />
+              )}
+              {paragraph.imgUrl && (
+                <Fragment>
+                  <BlogImage contain src={paragraph.imgUrl} />
+                  {entry.paragraphs.length - 1 == index && <WhiteSpace />}
+                </Fragment>
+              )}
+            </Paragraph>
           ))}
         <Hr />
       </BlogPostBase>

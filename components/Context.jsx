@@ -1,6 +1,6 @@
-import { Component, createContext } from 'react';
+import { throttle } from 'lodash';
 import Router from 'next/router';
-import { values, throttle } from 'lodash';
+import { Component, createContext } from 'react';
 import content from '../content.yml';
 
 const Context = createContext();
