@@ -62,13 +62,13 @@ skills:
         - name: Harmonica
           progress: 50%
         - name: Tabla
-          progress: 25%
+          progress: 60%
         - name: (Bass) Guitar
           progress: 70%
-        - name: Vocals & Overtone Singing
+        - name: Overtone Singing
           progress: 75%
         - name: Audio Production
-          progress: 45%
+          progress: 40%
 contact:
   url: '/contact'
   navName: CONTACT

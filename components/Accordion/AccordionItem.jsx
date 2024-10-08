@@ -1,5 +1,5 @@
-import { useState, useRef } from 'react';
 import debounce from 'lodash/debounce';
+import { useRef, useState } from 'react';
 import styled from 'styled-components';
 
 import AccordionItemLabel from './AccordionItemLabel';
@@ -10,11 +10,6 @@ const maxTransitionTime = 500; // 0.5s
 
 const AccordionItemBase = styled.div`
   margin: 1rem;
-  border-bottom-width: 1px;
-  border-bottom-style: dashed;
-  border-bottom-color: ${(props) =>
-    props.open ? `${props.theme.colors.primary}` : 'transparent'};
-  transition: border-bottom-color 0.3s linear;
 `;
 
 const AccordionItemTitle = styled.div`
@@ -84,7 +79,7 @@ export const AccordionItem = ({
       <AccordionItemChildrenContainer contentHeight={contentHeight} open={open}>
         <div
           ref={contentRef}
-          onClick={debounce(() => updateContentHeight(), maxTransitionTime, {
+          onClick={debounce(updateContentHeight, maxTransitionTime, {
             leading: false,
             trailing: true,
           })}

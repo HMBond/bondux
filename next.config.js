@@ -2,6 +2,7 @@
  * @type {import('next').NextConfig}
  */
 const config = {
+  output: 'export',
   webpack: function (config) {
     config.module.rules.push({
       test: /\.ya?ml$/,
