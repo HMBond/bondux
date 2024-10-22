@@ -1,9 +1,10 @@
+import debounce from 'lodash/debounce';
 import { Component } from 'react';
 import styled, { css } from 'styled-components';
-import debounce from 'lodash/debounce';
 
 const StyledSvg = styled.svg`
   max-width: 500px;
+  justify-self: center;
   align-self: center;
 `;
 

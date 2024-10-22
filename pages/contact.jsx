@@ -6,10 +6,14 @@ const ContactPage = styled.div`
   flex-direction: column;
   max-width: ${(props) => props.theme.maxWidth};
   width: 100%;
+  margin-left: 1rem;
 `;
 
 const ContactLinks = styled.div`
   margin: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 `;
 
 const ContactItem = styled.div`

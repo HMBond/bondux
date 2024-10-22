@@ -4,18 +4,17 @@ export const Title = styled.span`
   font-family: 'DejaVu Serif';
   font-size: ${(props) =>
     props.extraLarge ? '5.6rem' : props.large ? '4rem' : '2.8rem'};
-  text-align: center;
 `;
 
 export const PageTitle = styled(Title)`
   margin-top: 4rem;
+  margin-left: 1rem;
 `;
 
 export const SubTitle = styled.span`
   color: ${(props) => props.theme.colors.accent};
   font-family: 'DejaVu Extra Light';
   font-size: 1.4rem;
-  text-align: center;
   margin: 1rem;
 `;
 

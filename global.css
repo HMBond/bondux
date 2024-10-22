@@ -31,6 +31,12 @@
 }
 
 p {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin: 1rem 0;
+}
+
+@media (prefers-reduced-motion) {
+  * {
+    transition: none;
+    animation: none;
+  }
 }

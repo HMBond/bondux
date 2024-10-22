@@ -2,26 +2,27 @@ introduction:
   url: '/'
   navName: "ABOUT ME"
   paragraphs:
-    - "Hi, I'm Mike Bond!"
-    - "A full stack developer with an affinity for UX. Experienced in work on internal and public applications that are build to last."
-    - "If you are interested in what I do, let's get in contact!"
+    - Hi, I'm Mike Bond!
+    - A full stack developer with an affinity for UX. Experienced with internal and customer facing applications. An advocate for accessibility and clean code. 
+    - Check out my <a target="_blank" href="https://cv.mrsunshine.live">CV</a> for more details or goto <a href="/skills">skills</a> for a broader overview.
+    - If you are interested in what I do, let's get in contact!
 skills:
   url: '/skills'
   navName: SKILLS
   skillList:
     - name: "Software Development"
-      progress: 60%
+      progress: 80%
       description: 'I started by making simple websites with HTML, CSS and a bit of JavaScript when I was 13 years old. During my masters study I picked up coding and at Mobiel.nl, I learned how to code professionally: readable, reliable (tested) and concise. I got introduced to many working principles, such as Test Driven Development, Mobile First and Rest APIs.'
       subSkills:
         - name: Svelte
           progress: 90%
         - name: React
           progress: 85%
-          description: <ul><li>React State Hooks</li><li>NextJS</li><li>MobX</li><li>Apollo</li><li>Styled Components</li></ul>
+          description: <ul><li>React State Management</li><li>NextJS</li><li>MobX</li><li>Apollo</li><li>Styled Components</li></ul>
         - name: Development Tools
           progress: 63%
-          description: <ul><li>Visual Studio Code</li><li>Linux (ZSH) Terminal</li><li>Git</li><li>Svgo</li><li>VIM</li><li>Browser tools</li></ul>
-        - name: C#
+          description: <ul><li>Visual Studio Code</li><li>ZSH Scripting</li><li>Git</li><li>Svgo</li><li>VIM</li><li>Browser tools & extensions (e.g. Lighthouse)</li></ul>
+        - name: C# / ASP.NET / Blazor
           progress: 70%
         - name: GraphQL
           progress: 60%
@@ -29,40 +30,42 @@ skills:
           progress: 70%
         - name: JavaScript
           progress: 70%
-        - name: HTML
+        - name: HTML & accessibility
           progress: 80%
         - name: CSS / SCSS
           progress: 75%
         - name: Git
           progress: 60%
-        - name: Scrum (Agile)
+        - name: Agile Development / SCRUM
           progress: 67%
         - name: Testing
           progress: 70%
-          description: <ul><li>Jest</li><li>Rspec</li><li>Cypress</li><li>xUnit/bUnit (.Net Core)</li></ul>
+          description: <ul><li>Jest / Vitest</li><li>Rspec</li><li>Cypress</li><li>Playwright</li><li>xUnit/bUnit (C#)</li></ul>
     - name: Design
-      progress: 40%
-      description: 'I have a masters degree in Design For Interaction (TU-Delft) and I am used to think along with the designers as a developer. I did some graphic and UX design for modernizing a back-office and a new air traffic control game. As a small side project, I am designing and developing a game about Santa Claus.'
+      progress: 70%
+      description: I have a masters degree in Design For Interaction (TU-Delft) and I am used to think along with the designers as a developer. I did some graphic and UX design for modernizing a back-office and a new air traffic control game. On the side, I'm designing a modular midi controller (<a href="https://mmc.mrsunshine.live">MMC3000</a>) to bridge the gap between audience and performer and develop an interactive platform for creating musical games.
       subSkills:
+        - name: Creative facilitation
+          progress: 90%
         - name: Interactive Audio Design
           progress: 80%
         - name: Prototyping
           progress: 75%
         - name: Design Thinking
           progress: 70%
-        - name: Scrum (Agile)
-          progress: 67%
         - name: Visual Communication
           progress: 55%
         - name: User Research
           progress: 52%
     - name: Music
-      progress: 50%
+      progress: 60%
       subSkills:
+        - name: Flute
+          progress: 55%
         - name: Harmonica
           progress: 50%
         - name: Tabla
-          progress: 60%
+          progress: 65%
         - name: (Bass) Guitar
           progress: 70%
         - name: Overtone Singing

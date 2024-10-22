@@ -1,7 +1,7 @@
-import { useState } from "react";
-import styled, { css, keyframes } from "styled-components";
-import Context from "../Context";
-import Button from "../styled/Button";
+import { useState } from 'react';
+import styled, { css, keyframes } from 'styled-components';
+import Context from '../Context';
+import Button from '../styled/Button';
 
 const NavButtonBase = styled(Button)`
   position: relative;
@@ -35,32 +35,32 @@ const NavBall = styled.div`
   height: 50px;
   border-radius: 50%;
 
-  transform: ${props => {
+  transform: ${(props) => {
     if (props.open) {
-      return "scale(100)";
+      return 'scale(100)';
     } else if (props.hover) {
-      return "scale(1.1)";
+      return 'scale(1.1)';
     } else {
-      return "none";
+      return 'none';
     }
   }};
 
-  ${props => {
+  ${(props) => {
     if (props.open) {
-      return "transition: transform 0.5s ease-in, background-color 0.2s linear";
+      return 'transition: transform 0.5s ease-in, background-color 0.2s linear';
     } else if (props.hover) {
-      return "transition: transform 0.2s ease-out, background-color 0.2s linear 0.5s";
+      return 'transition: transform 0.2s ease-out, background-color 0.2s linear 0.5s';
     } else {
-      return "transition: transform 0.5s ease-out, background-color 0.2s linear 0.5s";
+      return 'transition: transform 0.5s ease-out, background-color 0.2s linear 0.5s';
     }
   }};
 
-  background-color: ${props =>
+  background-color: ${(props) =>
     props.open ? props.theme.colors.accent : props.theme.colors.primary};
   background-position: center;
   background-repeat: no-repeat;
 
-  ${props =>
+  ${(props) =>
     props.devMode &&
     props.open &&
     css`
@@ -75,13 +75,13 @@ export const NavButton = ({
   open,
   properlyClosed,
   onClick,
-  order
+  order,
 }) => {
   const [hover, setHover] = useState(false);
 
   return (
     <Context.Consumer>
-      {context => (
+      {(context) => (
         <NavButtonBase
           open={open}
           order={order}

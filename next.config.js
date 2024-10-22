@@ -3,6 +3,10 @@
  */
 const config = {
   output: 'export',
+  images: { unoptimized: true },
+  compiler: {
+    styledComponents: true,
+  },
   webpack: function (config) {
     config.module.rules.push({
       test: /\.ya?ml$/,

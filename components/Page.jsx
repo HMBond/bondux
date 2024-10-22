@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
     color: ${(props) => props.theme.colors.primary};
     font-size: 1em;
     font-family: 'DejaVu Extra Light';
-    margin: 0px;
+    margin: 0;
     cursor: default;
   }
 
@@ -48,10 +48,10 @@ const GlobalStyle = createGlobalStyle`
 const StyledPage = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 100%;
+  max-width: 100vw;
+  overflow: hidden;
   /* prevent scrollbar shifting page/nav */
-  padding-left: calc(100vw - 100%);
+  /* padding-left: calc(100vw - 100%); */
 `;
 
 const Page = ({ children, context }) => {

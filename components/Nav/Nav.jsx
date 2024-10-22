@@ -16,6 +16,8 @@ const NavBase = styled.div`
   bottom: -1px;
   width: 100%;
   display: flex;
+  justify-content: center;
+  align-self: center;
   align-items: flex-end;
   background: repeating-linear-gradient(
       -45deg,
@@ -44,6 +46,7 @@ const NavButtonsContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  justify-self: center;
 `;
 
 const NavPage = styled.div`
@@ -56,7 +59,7 @@ const NavPage = styled.div`
   flex-direction: column;
   justify-content: center;
   opacity: ${(props) => (props.open ? '1' : '0')};
-  pointer-events: ${(props) => (props.open ? 'all' : 'none')};
+  pointer-events: ${(props) => (props.open ? 'auto' : 'none')};
   transition: opacity 0.5s ease-in-out;
 `;
 
