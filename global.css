@@ -36,7 +36,7 @@ p {
 
 @media (prefers-reduced-motion) {
   * {
-    transition: none;
-    animation: none;
+    transition: none !important;
+    animation: none !important;
   }
 }
