@@ -53,7 +53,8 @@ const Contact = ({ context }) => (
     <ContactLinks>
       <ContactItem>
         <a
-          target="_top"
+          target="_blank"
+          rel="noreferrer"
           href="mailto:hubertusmariabond@gmail.com?subject=Contact&body=Hi Mike, %0D%0A"
         >
           <Icon src="/email.svg" alt="send email" />
