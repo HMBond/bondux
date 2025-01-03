@@ -34,7 +34,7 @@ skills:
           description: <ul><li>Jest / Vitest</li><li>Rspec</li><li>Cypress</li><li>Playwright</li><li>xUnit/bUnit (C#)</li></ul>
     - name: Design
       progress: 90%
-      description: I have a masters degree in Design For Interaction (TU-Delft) and I am used to think along with the designers as a developer. I did graphic and UX design for modernizing a back-office and a new air traffic control game. On the side, I'm designing a (<a href="https://mmc.mrsunshine.live">modular midi controller</a>) for artists to give the audience predefined control over their (live) music. Allowing artists to create interactive audio games and listeners to participate. Next to that I like to tinker and solder. For instance, I repair tube amplifiers and used an Arduino nano to make a IBM Model M keyboard compatible with USB.
+      description: I have a masters degree in Design For Interaction (TU-Delft) and I am used to think along with the designers as a developer. I did graphic and UX design for modernizing a back-office and a new air traffic control game. On the side, I'm designing a <a href="https://mmc.mrsunshine.live">modular midi controller</a> for artists to give the audience predefined control over their (live) music. Allowing artists to create interactive audio games and listeners to participate. Next to that I like to tinker and solder. For instance, I repair tube amplifiers and used an Arduino nano to make a IBM Model M keyboard compatible with USB.
       subSkills:
         - name: Organising workshops
           progress: 90%
