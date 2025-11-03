@@ -14,8 +14,7 @@ export const theme = {
     offWhite: '#EDEDED',
     transparent: (color, transparency) => makeTransparent(color, transparency),
   },
-  maxWidth: '800px',
-  bs: '0 12px 24px 0 rgba(0, 0, 0, 0.09)',
+  maxWidth: '50rem',
 };
 
 export const devMode = ({ colors: { bg, grey, lightGrey }, ...rest }) => ({

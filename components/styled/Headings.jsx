@@ -8,7 +8,6 @@ export const Title = styled.span`
 
 export const PageTitle = styled(Title)`
   margin-top: 4rem;
-  margin-left: 1rem;
 `;
 
 export const SubTitle = styled.span`

@@ -68,7 +68,6 @@ export const AccordionItem = ({
   return (
     <AccordionItemBase open={open} {...props}>
       <AccordionItemLabel
-        progress={item.progress}
         open={open}
         onClick={() => children && onClickHandler(item)}
         hasChildren={children}

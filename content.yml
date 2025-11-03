@@ -11,59 +11,38 @@ skills:
   navName: SKILLS
   skillList:
     - name: "Software Development"
-      description: I'm a professional webdeveloper with an eye for User Experience Design. I like to setup and optimise CI/CD pipelines and I'm experienced with Agile Development. I value clean code, optimised workflows and I'm always eager to learn new things.
-      progress: 90%
+      description: I'm a professional web-developer and worked with a variety of tooling. I like to work Agile, set up or improve CI/CD workflows, produce clean code, helping colleagues to improve their workflow and to learn new tools, skills and concepts.
       subSkills:
         - name: Svelte
-          progress: 90%
         - name: React
-          progress: 90%
           description: <ul><li>Redux</li><li>Hooks</li><li>Next</li><li>MobX</li><li>Apollo</li><li>Styled Components</li></ul>
         - name: Development Tools
-          progress: 90%
           description: <ul><li>Visual Studio Code</li><li>ZSH Scripting</li><li>Git</li><li>Svgo</li><li>VIM</li><li>Lighthouse</li></ul>
         - name: Languages
-          progress: 90%
           description: <ul><li>TS</li><li>C#</li><li>Kotlin/Java</li><li>SQL</li><li>Cypher</li><li>GraphQL</li><li>HTML</li><li>CSS</li><li>Python</li></ul>
         - name: ASP.NET / Blazor
-          progress: 90%
         - name: Agile Development
-          progress: 90%
         - name: Testing
-          progress: 90%
           description: <ul><li>Jest / Vitest</li><li>Rspec</li><li>Cypress</li><li>Playwright</li><li>xUnit/bUnit (C#)</li></ul>
     - name: Design
-      progress: 90%
-      description: I have a masters degree in Design For Interaction (TU-Delft) and I am used to think along with the designers as a developer. I did graphic and UX design for modernizing a back-office and a new air traffic control game. On the side, I'm designing a <a href="https://mmc.mrsunshine.live">modular midi controller</a> for artists to give the audience predefined control over their (live) music. Allowing artists to create interactive audio games and listeners to participate. Next to that I like to tinker and solder. For instance, I repair tube amplifiers and used an Arduino nano to make a IBM Model M keyboard compatible with USB.
+      description: I am used to think along with the designers as a developer. I did graphic and UX design for modernizing a back-office and a new air traffic control game. On the side, I'm designing a <a href="https://mmc.mrsunshine.live">multiplayer midi controller</a> for artists to give the audience predefined control over their (live) music. Allowing artists to create interactive audio games. Next to that I like to tinker and solder on hardware projects, such as writing open-source firmware for <a href="https://patsaudio.com">Pats</a>.
       subSkills:
         - name: Organising workshops
-          progress: 90%
         - name: Interactive Audio Design
-          progress: 90%
         - name: Electronics & Prototyping
-          progress: 90%
         - name: Design Thinking
-          progress: 90%
         - name: Data Visualization
-          progress: 90%
         - name: Unbiased User Research
-          progress: 90%
     - name: Music
-      progress: 90%
-      description: I love to perform (improvised) live music. Occasionally, I perform in bars or at festivals for small audiences, and I also give workshops to teach and explain overtone singing.
+      description: I love to perform (improvised) using synthesizers, grooveboxes and acoustic instruments. Next to performance, I give music lessons and workshops to learn overtone singing.
       subSkills:
         - name: Flute
-          progress: 90%
         - name: Harmonica
-          progress: 90%
         - name: Tabla
-          progress: 90%
         - name: (Bass) Guitar
-          progress: 90%
         - name: Overtone Singing
-          progress: 90%
+        - name: Synths and Drum Computers
         - name: Audio Production
-          progress: 90%
 contact:
   url: '/contact'
   navName: CONTACT

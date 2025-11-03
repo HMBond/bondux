@@ -1,9 +1,3 @@
-export const sortByProgress = (array) => {
-  return array.sort((a, b) => {
-    return parseFloat(b.progress) - parseFloat(a.progress);
-  });
-};
-
 export const makeSlug = (string) => {
   return string.toLocaleLowerCase().replace(' ', '-');
 };

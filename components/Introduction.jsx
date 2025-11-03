@@ -2,15 +2,15 @@ import styled from 'styled-components';
 import Image from '../node_modules/next/image';
 import { Title } from './styled/Headings';
 import Logo from './styled/Logo';
-import WhiteSpace from './styled/WhiteSpace';
 
 const IntroductionBase = styled.div`
   display: grid;
   min-height: 105vh;
   padding: 0 2rem;
+  margin: 0 auto;
 
   & p {
-    max-width: 800px;
+    max-width: ${(props) => props.theme.maxWidth};
   }
 `;
 
@@ -19,25 +19,37 @@ const ProfileImageContainer = styled.div`
   width: 100vw;
   margin: 2rem -2rem;
   background: black;
-  padding: 0;
-  border: 0;
-  outline: 0;
+
+  @media (min-width: 768px) {
+    & img {
+      margin-left: 5vw;
+    }
+  }
+`;
+
+const IntroContainer = styled.div`
+  max-width: ${(props) => props.theme.maxWidth};
+  place-self: center;
 `;
 
 export default function Introduction({ context }) {
   return (
     <IntroductionBase>
       <Logo />
-      <WhiteSpace height={'2rem'} />
-      {context.content.introduction.paragraphs.map((paragraph, index) => {
-        if (index === 0) {
-          return <Title key={index}>{paragraph}</Title>;
-        } else {
-          return (
-            <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }}></p>
-          );
-        }
-      })}
+      <IntroContainer>
+        {context.content.introduction.paragraphs.map((paragraph, index) => {
+          if (index === 0) {
+            return <Title key={index}>{paragraph}</Title>;
+          } else {
+            return (
+              <p
+                key={index}
+                dangerouslySetInnerHTML={{ __html: paragraph }}
+              ></p>
+            );
+          }
+        })}
+      </IntroContainer>
       <ProfileImageContainer>
         <Image
           alt="photo of Mike Bond"

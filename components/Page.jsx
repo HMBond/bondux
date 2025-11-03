@@ -28,8 +28,11 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: inherit;
     color: ${(props) => props.theme.colors.accent};
+  }
+
+  a:hover {
+    text-decoration: underline;
   }
 
   @media screen and (max-width: 420px) {
@@ -50,8 +53,6 @@ const StyledPage = styled.div`
   flex-direction: column;
   max-width: 100vw;
   overflow: hidden;
-  /* prevent scrollbar shifting page/nav */
-  /* padding-left: calc(100vw - 100%); */
 `;
 
 const Page = ({ children, context }) => {

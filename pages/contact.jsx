@@ -5,15 +5,20 @@ const ContactPage = styled.div`
   display: flex;
   flex-direction: column;
   max-width: ${(props) => props.theme.maxWidth};
+  padding: 0 2rem;
+  place-self: center;
   width: 100%;
-  margin-left: 1rem;
 `;
 
 const ContactLinks = styled.div`
-  margin: 2rem;
+  margin: 0 2rem 2rem;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+
+  @media (max-width: 480px) {
+    flex-flow: column nowrap;
+  }
 `;
 
 const ContactItem = styled.div`
