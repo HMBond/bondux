@@ -54,6 +54,7 @@ const StyledPage = styled.div`
   max-width: 100vw;
   overflow: hidden;
   place-items: center;
+  caret-color: transparent;
 `;
 
 const Page = ({ children, context }) => {
