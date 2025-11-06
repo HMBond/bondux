@@ -49,11 +49,10 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const StyledPage = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  place-items: center;
   max-width: 100vw;
   overflow: hidden;
-  place-items: center;
   caret-color: transparent;
 `;
 
