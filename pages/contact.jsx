@@ -1,11 +1,9 @@
 import styled from 'styled-components';
-import { Label, PageTitle, SubTitle } from '../components/styled/Headings';
+import { Label, SubTitle, Title } from '../components/styled/Headings';
 
-const ContactPage = styled.div`
-  display: flex;
-  flex-direction: column;
+const ContactPage = styled.section`
+  display: grid;
   max-width: ${(props) => props.theme.maxWidth};
-  padding: 0 2rem;
   width: 100%;
 `;
 
@@ -20,13 +18,12 @@ const ContactLinks = styled.div`
   }
 `;
 
-const ContactItem = styled.div`
-  a {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    line-height: 4rem;
-  }
+const ContactItem = styled.a`
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  line-height: 4rem;
+  font-family: 'DejaVu Extra Light';
 
   span {
     color: ${(props) => props.theme.colors.primary};
@@ -52,61 +49,51 @@ const Icon = styled.img`
 
 const Contact = ({ context }) => (
   <ContactPage>
-    <PageTitle>Contact</PageTitle>
+    <Title>Contact</Title>
     <SubTitle>{"LET'S CHAT"}</SubTitle>
     <ContactLinks>
-      <ContactItem>
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href="mailto:hubertusmariabond@gmail.com?subject=Contact&body=Hi Mike, %0D%0A"
-        >
-          <Icon src="/email.svg" alt="send email" />
-          <Label>Email</Label>
-        </a>
+      <ContactItem
+        target="_blank"
+        rel="noreferrer"
+        href="mailto:hubertusmariabond@gmail.com?subject=Contact&body=Hi Mike, %0D%0A"
+      >
+        <Icon src="/email.svg" />
+        <Label>Email</Label>
       </ContactItem>
-      <ContactItem>
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href="https://www.linkedin.com/in/mike-bond-3258a32a/"
-        >
-          <Icon src="/linkedin.svg" alt="LinkedIn" />
-          <Label>LinkedIn</Label>
-        </a>
+      <ContactItem
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.linkedin.com/in/mike-bond-3258a32a/"
+      >
+        <Icon src="/linkedin.svg" />
+        <Label>LinkedIn</Label>
       </ContactItem>
     </ContactLinks>
     <SubTitle>OTHER LINKS</SubTitle>
     <ContactLinks>
-      <ContactItem>
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href="https://www.flickr.com/photos/7363277@N07"
-        >
-          <Icon src="/camera.svg" alt="Flickr.com" />
-          <Label>Photography</Label>
-        </a>
+      <ContactItem
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.flickr.com/photos/7363277@N07"
+      >
+        <Icon src="/camera.svg" />
+        <Label>Photography</Label>
       </ContactItem>
-      <ContactItem>
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href="https://soundcloud.com/mike-bond-sound/tracks"
-        >
-          <Icon src="/soundcloud.svg" alt="Soundcloud" />
-          <Label>Soundcloud</Label>
-        </a>
+      <ContactItem
+        target="_blank"
+        rel="noreferrer"
+        href="https://soundcloud.com/mike-bond-sound/tracks"
+      >
+        <Icon src="/soundcloud.svg" />
+        <Label>Soundcloud</Label>
       </ContactItem>
-      <ContactItem>
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href="https://soundcloud.com/towardstheartist/sets/set1"
-        >
-          <Icon src="/towards_the_artist.svg" alt="Towards the Artist" />
-          <Label>Towards the Artist</Label>
-        </a>
+      <ContactItem
+        target="_blank"
+        rel="noreferrer"
+        href="https://soundcloud.com/towardstheartist/sets/set1"
+      >
+        <Icon src="/towards_the_artist.svg" />
+        <Label>Towards the Artist</Label>
       </ContactItem>
     </ContactLinks>
   </ContactPage>

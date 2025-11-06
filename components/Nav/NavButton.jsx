@@ -76,6 +76,7 @@ export const NavButton = ({
   properlyClosed,
   onClick,
   order,
+  ...rest
 }) => {
   const [hover, setHover] = useState(false);
 
@@ -92,6 +93,7 @@ export const NavButton = ({
           }}
           onMouseLeave={() => setHover(false)}
           onClick={() => onClick()}
+          {...rest}
         >
           <NavBall open={open} hover={hover} devMode={context.devMode} />
           <NavIconContainer>{children}</NavIconContainer>

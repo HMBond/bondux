@@ -5,20 +5,19 @@ import Context from '../Context';
 
 import Button from '../styled/Button';
 import Logo from '../styled/Logo';
+import WhiteSpace from '../styled/WhiteSpace';
 import { NavButton } from './NavButton';
 import { NavBackIcon, NavForwardIcon, NavToggleIcon } from './NavIcons';
 import NavItem from './NavItem';
 
-const NavBase = styled.div`
+const NavBase = styled.nav`
   opacity: ${(props) => (props.showNav ? '1' : '0')};
   transition: opacity 0.3s ease-in;
   position: fixed;
   bottom: -1px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-self: center;
-  align-items: flex-end;
+  width: 100vw;
+  display: grid;
+  justify-items: center;
   background: repeating-linear-gradient(
       -45deg,
       transparent,
@@ -28,12 +27,13 @@ const NavBase = styled.div`
     ),
     linear-gradient(transparent, ${(props) => props.theme.colors.bg}),
     linear-gradient(transparent, ${(props) => props.theme.colors.bg});
+
   @media screen and (min-width: 420px) {
     max-width: 240px;
     height: 120px;
     border-top-left-radius: 120px;
     border-top-right-radius: 120px;
-    padding: 0 10px;
+    left: calc(50vw - 120px);
   }
 
   @media print {
@@ -46,7 +46,6 @@ const NavButtonsContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  justify-self: center;
 `;
 
 const NavPage = styled.div`
@@ -55,15 +54,15 @@ const NavPage = styled.div`
   left: 0;
   bottom: 0;
   right: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding: 0 2rem;
+  display: grid;
+  justify-items: center;
   opacity: ${(props) => (props.open ? '1' : '0')};
   pointer-events: ${(props) => (props.open ? 'auto' : 'none')};
   transition: opacity 0.5s ease-in-out;
 `;
 
-const NavMenu = styled.nav`
+const NavMenu = styled.div`
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -86,6 +85,7 @@ const Nav = () => {
         <NavBase showNav={showNav}>
           <NavButtonsContainer>
             <Button
+              aria-label="Goto last page"
               onClick={() => context.nav.back()}
               order={1}
               disabled={context.nav.onFirstPage || context.nav.open}
@@ -93,6 +93,7 @@ const Nav = () => {
               <NavBackIcon />
             </Button>
             <Button
+              aria-label="Goto next page"
               onClick={() => context.nav.forward()}
               order={3}
               disabled={context.nav.onLastPage || context.nav.open}
@@ -100,6 +101,7 @@ const Nav = () => {
               <NavForwardIcon />
             </Button>
             <NavButton
+              aria-label="Open navigation menu"
               open={context.nav.open}
               properlyClosed={properlyClosed}
               order={2}
@@ -130,6 +132,7 @@ const Nav = () => {
                 />
               ))}
             </NavMenu>
+            <WhiteSpace />
           </NavPage>
         </NavBase>
       )}

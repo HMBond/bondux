@@ -33,7 +33,7 @@ const AccordionItemChildrenContainer = styled.div`
   overflow: hidden;
 `;
 
-export const AccordionItemDescription = styled.div`
+export const AccordionItemDescription = styled.p`
   padding: 1rem;
   margin-bottom: 1rem;
   line-height: 1.4rem;

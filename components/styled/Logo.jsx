@@ -4,8 +4,7 @@ import styled, { css } from 'styled-components';
 
 const StyledSvg = styled.svg`
   max-width: 500px;
-  justify-self: center;
-  align-self: center;
+  color: ${(props) => props.theme.colors.accent};
 `;
 
 const Path = styled.path`
@@ -19,7 +18,7 @@ const Path = styled.path`
     props.colorClass === 'svg-orange' &&
     css`
       fill: ${(props) =>
-        props.light ? props.theme.colors.bg : props.theme.colors.accent};
+        props.light ? props.theme.colors.bg : 'currentColor'};
     `}
   ${(props) =>
     props.colorClass === 'svg-dark-stroke-animation' &&
@@ -106,7 +105,7 @@ class Logo extends Component {
   render() {
     const { leftEyeRotation, rightEyeRotation, popEyes } = this.state;
     return (
-      <StyledSvg version="1.0" viewBox="0 0 250 100" {...this.props}>
+      <StyledSvg viewBox="0 0 250 100" {...this.props}>
         <Path
           {...this.props}
           colorClass="svg-dark"
@@ -148,9 +147,7 @@ class Logo extends Component {
             transition: popEyes
               ? 'transform 2s linear 1s'
               : 'transform 0.4s ease',
-            fill: this.props.light
-              ? 'transparent'
-              : 'var(--theme-accent-color)',
+            fill: this.props.light ? 'transparent' : 'currentColor',
           }}
           className="logo-left-eye"
           r="10"
@@ -166,9 +163,7 @@ class Logo extends Component {
             transition: popEyes
               ? 'transform 2s linear 1s'
               : 'transform 0.4s ease',
-            fill: this.props.light
-              ? 'transparent'
-              : 'var(--theme-accent-color)',
+            fill: this.props.light ? 'transparent' : 'currentColor',
           }}
           className="logo-right-eye"
           r="10"

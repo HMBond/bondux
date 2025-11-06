@@ -1,18 +1,11 @@
 import styled from 'styled-components';
 import Image from '../node_modules/next/image';
 import { Title } from './styled/Headings';
-import Logo from './styled/Logo';
 
-const IntroductionBase = styled.div`
+const IntroductionBase = styled.section`
   display: grid;
-  min-height: 105vh;
-  padding: 0 2rem;
   margin: 0 auto;
-  place-items: center;
-
-  & p {
-    max-width: ${(props) => props.theme.maxWidth};
-  }
+  justify-items: center;
 `;
 
 const ProfileImageContainer = styled.div`
@@ -23,19 +16,18 @@ const ProfileImageContainer = styled.div`
 
   @media (min-width: 768px) {
     & img {
-      margin-left: 5vw;
+      margin-left: 10vw;
     }
   }
 `;
 
 const IntroContainer = styled.div`
-  max-width: ${(props) => props.theme.maxWidth};
+  width: min(100%, ${(props) => props.theme.maxWidth});
 `;
 
 export default function Introduction({ context }) {
   return (
     <IntroductionBase>
-      <Logo />
       <IntroContainer>
         {context.content.introduction.paragraphs.map((paragraph, index) => {
           if (index === 0) {

@@ -30,8 +30,59 @@
   font-display: block;
 }
 
+body {
+  font-size: 1em;
+  font-family: 'DejaVu Extra Light';
+  margin: 0;
+  display: grid;
+  place-items: center;
+  caret-color: transparent;
+}
+
+* {
+  box-sizing: border-box;
+  scrollbar-width: thin;
+}
+
+#__next {
+  display: contents;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap-style: balance;
+  font-family: 'DejaVu Serif';
+}
+
 p {
   margin: 1rem 0;
+  text-wrap-style: pretty;
+  max-width: 40rem;
+}
+
+a {
+  text-decoration: none;
+  font-family: 'DejaVu Condensed Bold';
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 420px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  html {
+    font-size: 12px;
+  }
 }
 
 @media (prefers-reduced-motion) {

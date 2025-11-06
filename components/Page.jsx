@@ -2,6 +2,7 @@ import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 import Meta from './Meta.jsx';
 import Nav from './Nav';
 import Keyboard from './helpers/Keyboard';
+import Logo from './styled/Logo.jsx';
 import { devMode, theme } from './styled/Theme';
 import WhiteSpace from './styled/WhiteSpace.jsx';
 
@@ -15,58 +16,43 @@ const GlobalStyle = createGlobalStyle`
   body {
     background-color: ${(props) => props.theme.colors.bg};
     color: ${(props) => props.theme.colors.primary};
-    font-size: 1em;
-    font-family: 'DejaVu Extra Light';
-    margin: 0;
-    cursor: default;
-  }
-
-  * {
-    box-sizing: border-box;
-    scrollbar-width: thin;
   }
 
   a {
-    text-decoration: none;
     color: ${(props) => props.theme.colors.accent};
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-  @media screen and (max-width: 420px) {
-    html {
-      font-size: 14px;
-    }
-  }
-
-  @media screen and (max-width: 370px) {
-    html {
-      font-size: 12px;
-    }
   }
 `;
 
-const StyledPage = styled.div`
-  display: grid;
-  place-items: center;
+const StyledPage = styled.main`
+  width: 100%;
   max-width: 100vw;
   overflow: hidden;
-  caret-color: transparent;
+  display: grid;
+  justify-items: center;
+  padding: 0 2rem;
+`;
+
+const Header = styled.header`
+  display: grid;
+  justify-items: center;
+  width: 100%;
+  padding: 0 2rem;
 `;
 
 const Page = ({ children, context }) => {
   return (
     <ThemeProvider theme={context.devMode ? devMode(theme) : theme}>
+      <Header>
+        <Logo />
+      </Header>
       <StyledPage>
         <Meta />
         <Keyboard context={context} />
         <GlobalStyle />
         {children}
         <WhiteSpace />
-        <Nav />
       </StyledPage>
+      <Nav />
     </ThemeProvider>
   );
 };
