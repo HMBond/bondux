@@ -53,6 +53,7 @@ const StyledPage = styled.div`
   flex-direction: column;
   max-width: 100vw;
   overflow: hidden;
+  place-items: center;
 `;
 
 const Page = ({ children, context }) => {

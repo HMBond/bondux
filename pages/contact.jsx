@@ -6,7 +6,6 @@ const ContactPage = styled.div`
   flex-direction: column;
   max-width: ${(props) => props.theme.maxWidth};
   padding: 0 2rem;
-  place-self: center;
   width: 100%;
 `;
 

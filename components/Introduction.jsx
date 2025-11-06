@@ -8,6 +8,7 @@ const IntroductionBase = styled.div`
   min-height: 105vh;
   padding: 0 2rem;
   margin: 0 auto;
+  place-items: center;
 
   & p {
     max-width: ${(props) => props.theme.maxWidth};
@@ -29,7 +30,6 @@ const ProfileImageContainer = styled.div`
 
 const IntroContainer = styled.div`
   max-width: ${(props) => props.theme.maxWidth};
-  place-self: center;
 `;
 
 export default function Introduction({ context }) {
